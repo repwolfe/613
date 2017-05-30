@@ -1,15 +1,20 @@
 .echo OFF
 
 drop table if exists mitzvos;
-drop table if exists
+drop table if exists rambam;
+drop table if exists chinuch;
+drop table if exists ramban;
+drop table if exists bahag;
+drop table if exists rasag;
+drop table if exists chofetzChaim;
 
-create table mitzvos {
+create table mitzvos (
 	_id integer NOT NULL primary key,
 	mitzvahName varchar NOT NULL,
 	asehOrLoSaseh varchar NOT NULL
-};
+);
 
-create table rambam {
+create table rambam (
 	_id integer NOT NULL primary key,
 	mitzvahId integer NOT NULL,
 	mitzvahNumber integer NOT NULL,
@@ -17,9 +22,9 @@ create table rambam {
 	type varchar NOT NULL,
 	originalText varchar,
 	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
-};
+);
 
-create table chinuch {
+create table chinuch (
 	_id integer NOT NULL primary key,
 	mitzvahId integer NOT NULL,
 	mitzvahNumber integer NOT NULL,
@@ -28,9 +33,9 @@ create table chinuch {
 	whereApplies varchar,
 	onesh varchar,
 	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
-};
+);
 
-create table ramban {
+create table ramban (
 	_id integer NOT NULL primary key,
 	mitzvahId integer NOT NULL,
 	mitzvahNumber integer NOT NULL,
@@ -38,9 +43,9 @@ create table ramban {
 	type varchar NOT NULL,
 	originalText varchar,
 	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
-};
+);
 
-create table bahag {
+create table bahag (
 	_id integer NOT NULL primary key,
 	mitzvahId integer NOT NULL,
 	mitzvahNumber integer NOT NULL,
@@ -48,9 +53,9 @@ create table bahag {
 	type varchar NOT NULL,
 	originalText varchar,
 	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
-};
+);
 
-create table rasag {
+create table rasag (
 	_id integer NOT NULL primary key,
 	mitzvahId integer NOT NULL,
 	mitzvahNumber integer NOT NULL,
@@ -58,9 +63,9 @@ create table rasag {
 	type varchar NOT NULL,
 	originalText varchar,
 	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
-};
+);
 
-create table chofetzChaim {
+create table chofetzChaim (
 	_id integer NOT NULL primary key,
 	mitzvahId integer NOT NULL,
 	mitzvahNumber integer NOT NULL,
@@ -68,4 +73,4 @@ create table chofetzChaim {
 	type varchar NOT NULL,
 	originalText varchar,
 	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
-};
+);
