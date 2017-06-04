@@ -23,6 +23,16 @@ insert into mitzvos values (7, 'על כל הצריך לישבע שישבע בש�
 insert into mitzvos values (8, 'להדמות בדרכי השם יתברך הטובים והישרים', null, 'A');
 insert into mitzvos values (9, 'קידוש השם', null, 'A');
 insert into mitzvos values (10, 'קרית שמע שחרית וערבית', null, 'A');
+insert into mitzvos values (11, 'תלמוד תורה', null, 'A');
+insert into mitzvos values (12, 'תפילין של ראש', null, 'A');
+insert into mitzvos values (13, 'תפילין של יד', null, 'A');
+insert into mitzvos values (14, 'ציצית', null, 'A');
+insert into mitzvos values (15, 'מזוזה', null, 'A');
+insert into mitzvos values (16, 'הקהל במוצאי שביעית', null, 'A');
+insert into mitzvos values (17, 'על המלך לכתוב ספר תורה אחד יתר על שאר בני ישראל', null, 'A');
+insert into mitzvos values (18, 'לכתוב כל אחד מישראל ספר תורה לעצמו', null, 'A');
+insert into mitzvos values (19, 'ברכת המזון', null, 'A');
+insert into mitzvos values (20, 'בניין בית הבחירה', null, 'A');
 
 create table ramban (
 	_id integer NOT NULL primary key,
