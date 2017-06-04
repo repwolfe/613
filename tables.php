@@ -4,7 +4,7 @@
 			$this->open("db.db");
 		}
 		function loadTables() {
-			$columns = array("mitzvahNumber", "mitzvahName", "name || ':' || chapter || ',' || verse as tanachSource", "type", "originalText");
+			$columns = array("mitzvahNumber as num", "mitzvahName", "name || ':' || chapter || ',' || verse as tanachSource", "type", "whoApplies as who", "originalText");
 			$this->makeRow($columns);
 			$result = $this->query(
 				'SELECT ' . implode(",", $columns) . 
