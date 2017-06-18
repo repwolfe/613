@@ -1,7 +1,7 @@
 <?php
 	class MyDB extends SQLite3 {
 		function __construct() {
-			$this->open("db.db");
+			$this->open("db/db.db");
 		}
 		function loadTables() {
 			$columns = array("mitzvahNumber as num", "mitzvahName", "name || ':' || chapter || ',' || verse as tanachSource", "type", "whoApplies as who", "originalText");
