@@ -26,6 +26,9 @@ $container["queries"] = function($c) {
 		"SELECT * from books, verses
 		 WHERE books._id = verses.bookId";
 
+	$query["mitzvos"] =
+		"SELECT * from mitzvos";
+
 	$query["rambam"] = 
 		"SELECT * FROM books, verses, mitzvos, rambam 
 		 WHERE mitzvos._id = rambam.mitzvahId and verses._id = rambam.source and books._id = verses.bookId";
@@ -38,9 +41,22 @@ $app->get("/verses", function(Request $request, Response $response) {
 	return $response;
 });
 
-$app->get("/verses/{id}", function(Request $request, Response $response) {
+$app->get("/verses/{id}", function(Request $request, Response $response, $args) {
 	$res = $this->db->prepare($this->queries["verses"] . " and verses._id = ?;");
-	$res->execute([$id]);
+	$res->execute([$args["id"]]);
+	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
+	return $response;
+});
+
+$app->get("/mitzvos", function(Request $request, Response $response) {
+	$res = $this->db->query($this->queries["mitzvos"] . ";");
+	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
+	return $response;
+});
+
+$app->get("/mitzvos/{id}", function(Request $request, Response $response, $args) {
+	$res = $this->db->prepare($this->queries["mitzvos"] . " and mitzvos._id = ?;");
+	$res->execute([$args["id"]]);
 	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
 	return $response;
 });
@@ -51,10 +67,10 @@ $app->get("/rambam", function(Request $request, Response $response) {
 	return $response;
 });
 
-$app->get("/rambam/{id}", function(Request $request, Response $response) {
+$app->get("/rambam/{id}", function(Request $request, Response $response, $args) {
 	$id = $request->getAttribute("id");
 	$res = $this->db->prepare($this->queries["rambam"] . " and rambam._id = ?;");
-	$res->execute([$id]);
+	$res->execute([$args["id"]]);
 	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
 	return $response;
 });
