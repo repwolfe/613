@@ -1,0 +1,33 @@
+$reg-font: sans-serif;
+$fancy-font: 'Alef';
+$backup-font: $reg-font;
+$font-weight: 400;
+
+@mixin set-font($whichfont, $fontsize, $lineheight) {
+	font: $font-weight #{$fontsize}/#{$lineheight} $whichfont, "Taamey David CLM", $backup-font, sans-serif;
+}
+
+body {
+	@include set-font($fancy-font, 16px, 1.25);
+}
+
+#container {
+
+}
+
+#mitzvos {
+	margin: 0 auto;
+	text-align: center;
+	list-style-type: none;
+}
+
+#mitzvos li {
+	display: inline-block;
+	text-align: right;
+	vertical-align: top;
+	width: 140px;
+	height: 140px;
+	background: #f00;
+	padding: 10px;
+	margin: 5px;
+}
