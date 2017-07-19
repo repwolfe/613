@@ -1,4 +1,4 @@
-$reg-font: sans-serif;
+$reg-font: Verdana;
 $fancy-font: 'Alef';
 $backup-font: $reg-font;
 $font-weight: 400;
@@ -8,7 +8,26 @@ $font-weight: 400;
 }
 
 body {
+	
+}
+
+.hebrew {
+	text-align: right;
 	@include set-font($fancy-font, 16px, 1.25);
+}
+
+.english {
+	text-align: left;
+	@include set-font($reg-font, 13px, 1.25);
+}
+
+#language {
+	margin: 0 auto;
+	text-align: right;
+}
+
+#language-btn {
+	padding: 10px 15px;
 }
 
 #container {
@@ -17,6 +36,7 @@ body {
 
 #mitzvos {
 	margin: 0 auto;
+	padding: 0;
 	text-align: center;
 	list-style-type: none;
 }

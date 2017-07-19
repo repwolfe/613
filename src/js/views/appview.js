@@ -20,6 +20,12 @@ var AppView = Backbone.View.extend({
 
 	addAll: function() {
 		Rambams.each(this.addOne, this);
+	},
+
+	languageSwitch: function() {
+		Rambams.each(function(mitzvah) {
+			mitzvah.trigger("languageSwitch");
+		});
 	}
 });
 
