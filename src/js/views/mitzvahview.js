@@ -10,17 +10,19 @@ var MitzvahView = Backbone.View.extend({
 	curLang: "he",
 
 	initialize: function() {
-		this.model.on("languageSwitch", this.languageSwitch, this);
+		this.listenTo(this.model, "languageSwitch", this.languageSwitch);
 	},
 
 	/**
 	 * Update the template based on which language is being displayed
 	 */
 	languageSwitch: function() {
+		// Was Hebrew
 		if (this.curLang === "he") {
 			this.template = _.template($(templateEn).html());
 			this.curLang = "en";
 		}
+		// Was English
 		else {
 			this.template = _.template($(templateHe).html());
 			this.curLang = "he";

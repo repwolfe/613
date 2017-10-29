@@ -30,6 +30,21 @@ body {
 	padding: 10px 15px;
 }
 
+#sorting {
+	height: 50px;
+	text-align: center;
+	@include set-font($reg-font, 18px, 1.25);
+}
+
+#sorting a {
+	padding: 10px 20px;
+	margin: 10px;
+
+	background-color: #eee;
+	border-style: solid;
+	border-width: 1px;
+}
+
 #container {
 
 }
