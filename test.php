@@ -4,9 +4,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Alef|Open+Sans" rel="stylesheet">
 	<script type="text/template" id="mitzvah-template-he">
 		<div class="hebrew">
-			<b><%- mitzvahNumber %></b><br>
+			&rlm;<b><%- mitzvahNumber %></b><br>
 			<b><%- mitzvahName %></b><br>
-			<%- bookName %> <%- chapter %>:<%- verse %><br>
+			<%- bookName %> <%- chapter %>, <%- verse %><br>
 			<%- mitzvahTypeHe %>, <%- punishmentHe %>, <%- whoAppliesHe %>
 		</div>
 	</script>
