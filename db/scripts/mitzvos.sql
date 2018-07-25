@@ -1,7 +1,6 @@
 .echo OFF
 
 drop table if exists mitzvos;
-drop table if exists ramban;
 drop table if exists bahag;
 drop table if exists rasag;
 drop table if exists chofetzChaim;
@@ -13,6 +12,7 @@ create table mitzvos (
 	asehOrLoSaseh char(1) NOT NULL	-- A/L
 );
 
+-- rambam's unique mitzvos
 insert into mitzvos values (1, 'מצות האמנה במציאות השם יתברך', 'Emunah in the reality of Hashem Yisboroch', 'A');	
 insert into mitzvos values (2, 'מצות אחדות השם', 'Unity of Hashem', 'A');
 insert into mitzvos values (3, 'מצות אהבת השם', 'Love of Hashem', 'A');
@@ -531,18 +531,63 @@ insert into mitzvos values (515, 'שלא לאכול השכיר בשעת מלאכ
 insert into mitzvos values (516, 'שלא יקח השכיר בידו יותר על אכילתו', null, 'L');
 insert into mitzvos values (517, 'שלא להתעלם מן האבדה', null, 'L');
 insert into mitzvos values (518, 'שלא להניח בהמת חבירו רובצת תחת משאה', null, 'L');
+insert into mitzvos values (519, 'שלא להונות במדות וכל המדות בכלל', null, 'L');
+insert into mitzvos values (520, 'שלא נשהה מאזנים ומשקלים חסרים עמנו ואף על פי שלא נשא ונתן בהן', null, 'L');
+insert into mitzvos values (521, 'שלא לעוול המשפט', null, 'L');
+insert into mitzvos values (522, 'שלא ליקח שוחד', null, 'L');
+insert into mitzvos values (523, 'שלא לכבד גדול בדין', null, 'L');
+insert into mitzvos values (524, 'שלא יירא הדיין בדין מאדם רע', null, 'L');
+insert into mitzvos values (525, 'שלא לרחם על עני בדין', null, 'L');
+insert into mitzvos values (526, 'שלא להטות משפט חוטא מפני רשעו', null, 'L');
+insert into mitzvos values (527, 'שלא לרחם על המזיק בדיני קנסות', null, 'L');
+insert into mitzvos values (528, 'שלא להטות משפט גר או יתום', null, 'L');
+insert into mitzvos values (529, 'שלא לשמוע טענת בעל דין שלא בפני בעל דינו', null, 'L');
+insert into mitzvos values (530, 'שלא לנטות אחרי רבים בדיני נפשות בשביל אחד', null, 'L');
+insert into mitzvos values (531, 'שלא ילמד חובה מי שלמד זכות תחילה בדיני נפשות', null, 'L');
+insert into mitzvos values (532, 'שלא למנות דיין אדם שאינו חכם בדיני תורה אף על פי שהוא חכם בחכמות אחרות', null, 'L');
+insert into mitzvos values (533, 'שלא להעיד בשקר', null, 'L');
+insert into mitzvos values (534, 'שלא יעיד בעל עבירה', null, 'L');
+insert into mitzvos values (535, 'שלא יעיד קרוב', null, 'L');
+insert into mitzvos values (536, 'שלא לחתוך הדין על פי עד אחד', null, 'L');
+insert into mitzvos values (537, 'שלא להרוג נקי', null, 'L');
+insert into mitzvos values (538, 'שלא לחתוך הדין באומד הדעת', null, 'L');
+insert into mitzvos values (539, 'שלא יורה העד בדין שהעיד בו בדיני נפשות', null, 'L');
+insert into mitzvos values (540, 'שלא להרוג מחוייב קודם שיעמוד בדין', null, 'L');
+insert into mitzvos values (541, 'שלא לחוס על הרודף', null, 'L');
+insert into mitzvos values (542, 'שלא לענוש האנוס', null, 'L');
+insert into mitzvos values (543, 'שלא ליקח כופר להציל ממות הרוצח', null, 'L');
+insert into mitzvos values (544, 'שלא ליקח כופר ממחוייב גלות לפוטרו מן הגלות', null, 'L');
+insert into mitzvos values (545, 'שלא לעמוד על דם רעים', null, 'L');
+insert into mitzvos values (546, 'שלא להניח מכשול', null, 'L');
+insert into mitzvos values (547, 'שלא להכשיל תם בדרך', null, 'L');
+insert into mitzvos values (548, 'שלא להוסיף במלקות המחוייב מלקות ובכללה שלא נכה ישראל', null, 'L');
+insert into mitzvos values (549, 'שלא לרגל', null, 'L');
+insert into mitzvos values (550, 'שלא לשנוא אחים', null, 'L');
+insert into mitzvos values (551, 'שלא להלבין פני אדם מישראל', null, 'L');
+insert into mitzvos values (552, 'שלא לנקום', null, 'L');
+insert into mitzvos values (553, 'שלא לנטור', null, 'L');
+insert into mitzvos values (554, 'שלא ליקח האם מעל הבנים', null, 'L');
+insert into mitzvos values (555, 'שלא לגלח שער הנתק', null, 'L');
+insert into mitzvos values (556, 'שלא לתלוש סימני צרעת', null, 'L');
+insert into mitzvos values (557, 'שלא לעבוד ולזרוע בנחל איתן', null, 'L');
+insert into mitzvos values (558, 'שלא להחיות מכשף', null, 'L');
+insert into mitzvos values (559, 'שלא להוציא חתן מביתו כל שנה ראשונה', null, 'L');
+insert into mitzvos values (560, 'שלא למרות על פי בית דין הגדול שיעמדו לישראל', null, 'L');
+insert into mitzvos values (561, 'שלא להוסיף על מצוות התורה', null, 'L');
+insert into mitzvos values (562, 'שלא לגרוע ממצוות התורה', null, 'L');
+insert into mitzvos values (563, 'שלא לקלל הדיין', null, 'L');
+insert into mitzvos values (564, 'שלא לקלל הנשיא', null, 'L');
+insert into mitzvos values (565, 'שלא לקלל אחד מישראל בין איש בין אשה', null, 'L');
+insert into mitzvos values (566, 'שלא לקלל אב ואם', null, 'L');
+insert into mitzvos values (567, 'שלא להכות אב ואם', null, 'L');
+insert into mitzvos values (568, 'שלא לעשות מלאכה בשבת', null, 'L');
 
+-- chinuch's unique mitzvah
 insert into mitzvos values (614, 'שלא להקריב קרבן פסח בבמת יחיד', null, 'L');
 
-create table ramban (
-	_id integer NOT NULL primary key,
-	mitzvahId integer NOT NULL,
-	mitzvahNumber integer NOT NULL,
-	source varchar NOT NULL,
-	type varchar NOT NULL,
-	originalText varchar,
-	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
-);
+-- ramban's unique mitzvos
+insert into mitzvos values (615, 'מצות אכילת מעשר שני ובכורות בירושלים', 'To Eat Maaser Sheni and Bechoros in Yerushalayim', 'A');
+insert into mitzvos values (616, 'מצות אכילת תרומה כשהיא טהורה ולא בטומאתה', 'To eat Terumah when it is pure and not while it is impure', 'A');
 
 create table bahag (
 	_id integer NOT NULL primary key,
