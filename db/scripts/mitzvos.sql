@@ -106,21 +106,21 @@ insert into mitzvos values (90, 'מצות שריפת בשר קודש שנטמא'
 insert into mitzvos values (91, 'מצות שריפת נותר הקדשים', null, 'A');
 insert into mitzvos values (92, 'מצות גדול שער הנזיר', null, 'A');
 insert into mitzvos values (93, 'מצות גלוח הנזיר והבאת קרבנותיו', null, 'A');
-insert into mitzvos values (94, 'מצות קיום מוצא שפתיו', null, 'A');
+insert into mitzvos values (94, 'מצות קיום מוצא שפתיו', 'To fulfill the vows of our mouths', 'A');
 insert into mitzvos values (95, 'מצות דין הפרת נדרים', null, 'A');
-insert into mitzvos values (96, 'מצות עניין טומאת נבילה', null, 'A');
-insert into mitzvos values (97, 'מצות טומאת שמנה שרצים', null, 'A');
-insert into mitzvos values (98, 'מצות עניין טומאת אוכלים', null, 'A');
-insert into mitzvos values (99, 'מצות עניין טומאת נדה שטמאה ומטמאה', null, 'A');
-insert into mitzvos values (100, 'מצות עניין טומאת יולדת', null, 'A');
-insert into mitzvos values (101, 'מצות עניין טומאת מצורע', null, 'A');
-insert into mitzvos values (102, 'מצות עניין נגעי בגדים', null, 'A');
-insert into mitzvos values (103, 'מצות עניין טומאת בית שיהיה בו נגע', null, 'A');
-insert into mitzvos values (104, 'מצות עניין טומאת זב להיות טמא ומטמא', null, 'A');
-insert into mitzvos values (105, 'מצות עניין טומאת שכבת זרע שהוא טמא ומטמא', null, 'A');
-insert into mitzvos values (106, 'מצות עניין טומאת זבה שטמאה ומטמאה', null, 'A');
-insert into mitzvos values (107, 'מצות טומאה של מת', null, 'A');
-insert into mitzvos values (108, 'מצות מי נדה שמטמאין אדם טהור ומטהרין אדם טמא מטומאת מת בלבד', null, 'A');
+insert into mitzvos values (96, 'מצות עניין טומאת נבילה', 'The concept of tumah of a neveilah', 'A');
+insert into mitzvos values (97, 'מצות טומאת שמנה שרצים', 'The concept of tumah of the eight sheratzim', 'A');
+insert into mitzvos values (98, 'מצות עניין טומאת אוכלים', 'The concept of tumah of food', 'A');
+insert into mitzvos values (99, 'מצות עניין טומאת נדה שטמאה ומטמאה', 'The concept of tumah of a niddah', 'A');
+insert into mitzvos values (100, 'מצות עניין טומאת יולדת', 'The concept of tumah of a woman who gave birth', 'A');
+insert into mitzvos values (101, 'מצות עניין טומאת מצורע', 'The concept of tumah of a metzora', 'A');
+insert into mitzvos values (102, 'מצות עניין נגעי בגדים', 'The concept of tumah of tzaraas on a garment', 'A');
+insert into mitzvos values (103, 'מצות עניין טומאת בית שיהיה בו נגע', 'The concept of tumah of tzaraas on a building', 'A');
+insert into mitzvos values (104, 'מצות עניין טומאת זב להיות טמא ומטמא', 'The concept of tumah of a zav', 'A');
+insert into mitzvos values (105, 'מצות עניין טומאת שכבת זרע שהוא טמא ומטמא', 'The concept of tumah of someone who had a seminal emission', 'A');
+insert into mitzvos values (106, 'מצות עניין טומאת זבה שטמאה ומטמאה', 'The concept of tumah of a zavah', 'A');
+insert into mitzvos values (107, 'מצות טומאה של מת', 'The concept of tumah of a corpse', 'A');
+insert into mitzvos values (108, 'מצות מי נדה שמטמאין אדם טהור ומטהרין אדם טמא מטומאת מת בלבד', 'The concept of the water of a red heffer which purify and contaminate', 'A');
 insert into mitzvos values (109, 'מצות טבילה לטמאים', null, 'A');
 insert into mitzvos values (110, 'מצות הטהרה מן הצרעת שתהיה במינים ידועים', null, 'A');
 insert into mitzvos values (111, 'מצות תגלחת מצורע ביום השביעי', null, 'A');
@@ -633,6 +633,21 @@ insert into mitzvos values (614, 'שלא להקריב קרבן פסח בבמת �
 -- ramban's unique mitzvos
 insert into mitzvos values (615, 'מצות אכילת מעשר שני ובכורות בירושלים', 'To Eat Maaser Sheni and Bechoros in Yerushalayim', 'A');
 insert into mitzvos values (616, 'מצות אכילת תרומה כשהיא טהורה ולא בטומאתה', 'To eat Terumah when it is pure and not while it is impure', 'A');
+insert into mitzvos values (617, 'מצות אכלית פירות שביעית', 'To only eat Shemittah fruit', 'A');
+insert into mitzvos values (618, 'מצות לקיים שבועה של רשות', 'To fulfill a vow to do something voluntary', 'A');
+insert into mitzvos values (619, 'מצות ישיבת הארץ', 'To settle the land of Israel', 'A');
+insert into mitzvos values (620, 'מצות להניח אחת מן הרוחות בלי מצור בשעת מלחמה', 'To leave one side of a city during a siege unprotected', 'A');
+insert into mitzvos values (621, 'מצות לאכול מן האילנות שבגבולה כל ימי המצור ולא לכרות אותם', 'To enjoy the fruits of the trees surrounding a city under siege and not to destroy them', 'A');
+insert into mitzvos values (622, 'מצות זכירה בפה מעשה מרים', 'To recall with words the story of Miriam', 'A');
+insert into mitzvos values (623, 'מצות להיות תמים עם השם', 'To be with pure trust trust in Hashem', 'A');
+insert into mitzvos values (624, 'מצות לפרוש תרומה מן היפה', 'To separate Terumah from the best portion', 'A');
+insert into mitzvos values (625, 'מצות להקריב רק בקר כשבים או עזים', 'To bring as an offering only cattle, sheep, or goats', 'A');
+insert into mitzvos values (626, 'מצות להקריב כל קרבנות בין שני התמידין', 'To offer all offerings between the two Tamid offerings', 'A');
+insert into mitzvos values (627, 'מצות אכילת הפסח בלילה', 'To eat the Pesach offering at night', 'A');
+insert into mitzvos values (628, 'מצות גואל הדם להרוג הרוצח במזיד', 'For the Goel HaDam to kill an intentional killer', 'A');
+insert into mitzvos values (629, 'מצות להרחיק מלהנות בבגד או בית שנראה בו נגע', 'To distance oneself from benefiting from a garment or house which has an affliction', 'A');
+insert into mitzvos values (630, 'מצות ברכית התורה', 'To make a blessing on learning Torah', 'A');
+insert into mitzvos values (631, 'מצות להחיות גר תושב', 'To support and sustain a Ger Toshav', 'A');
 
 create table bahag (
 	_id integer NOT NULL primary key,
