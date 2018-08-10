@@ -633,28 +633,32 @@ insert into mitzvos values (614, 'שלא להקריב קרבן פסח בבמת �
 -- ramban's unique mitzvos
 insert into mitzvos values (615, 'מצות אכילת מעשר שני ובכורות בירושלים', 'To Eat Maaser Sheni and Bechoros in Yerushalayim', 'A');
 insert into mitzvos values (616, 'מצות אכילת תרומה כשהיא טהורה ולא בטומאתה', 'To eat Terumah when it is pure and not while it is impure', 'A');
-insert into mitzvos values (617, 'מצות עבודת הכהנים בקרבנות', 'The Temple Service of the Kohanim with the offerings', 'A');
-insert into mitzvos values (618, 'מצות אכלית פירות שביעית', 'To only eat Shemittah fruit', 'A');
-insert into mitzvos values (619, 'מצות ישיבת הארץ', 'To settle the land of Israel', 'A');
-insert into mitzvos values (620, 'מצות להניח אחת מן הרוחות בלי מצור בשעת מלחמה', 'To leave one side of a city during a siege unprotected', 'A');
-insert into mitzvos values (621, 'מצות לאכול מן האילנות שבגבולה כל ימי המצור ולא לכרות אותם', 'To enjoy the fruits of the trees surrounding a city under siege and not to destroy them', 'A');	-- Derech Mitzvosecha § 1 explains the Ramban doesn't actually coutn this as a mitzvah
-insert into mitzvos values (622, 'מצות זכירה בפה מעשה מרים', 'To recall with words the story of Miriam', 'A');
+insert into mitzvos values (617, 'מצות קרית שמע בערב', 'Reciting the Shema in the evening', 'A');
+insert into mitzvos values (618, 'מצות הקטרת באין הארבים', 'Burning the afternoon incense', 'A');
+insert into mitzvos values (619, 'מצות קרבן הדמיד באין הארבים', 'The daily afternoon Tamid offering', 'A');
+insert into mitzvos values (620, 'מצות עבודת הכהנים בקרבנות', 'The Temple Service of the Kohanim with the offerings', 'A');
+insert into mitzvos values (621, 'מצות אכלית פירות שביעית', 'To only eat Shemittah fruit', 'A');
+insert into mitzvos values (622, 'מצות ישיבת הארץ', 'To settle the land of Israel', 'A');
 insert into mitzvos values (623, 'מצות לקיים שבועה של רשות', 'To fulfill a vow to do something voluntary', 'A');
-insert into mitzvos values (624, 'מצות להיות תמים עם השם', 'To be with pure trust trust in Hashem', 'A');
-insert into mitzvos values (625, 'מצות לפרוש תרומה מן היפה', 'To separate Terumah from the best portion', 'A');
-insert into mitzvos values (626, 'מצות להקריב רק בקר כשבים או עזים', 'To bring as an offering only cattle, sheep, or goats', 'A');
-insert into mitzvos values (627, 'מצות להקריב כל קרבנות בין שני התמידין', 'To offer all offerings between the two Tamid offerings', 'A');
-insert into mitzvos values (628, 'מצות אכילת הפסח בלילה', 'To eat the Pesach offering at night', 'A');
-insert into mitzvos values (629, 'מצות גואל הדם להרוג הרוצח במזיד', 'For the Goel HaDam to kill an intentional killer', 'A');
-insert into mitzvos values (630, 'מצות להרחיק מלהנות בבגד או בית שנראה בו נגע', 'To distance oneself from benefiting from a garment or house which has an affliction', 'A');
-insert into mitzvos values (631, 'מצות ברכית התורה', 'To make a blessing on learning Torah', 'A');
-insert into mitzvos values (632, 'מצות להחיות גר תושב', 'To support and sustain a Ger Toshav', 'A');
-insert into mitzvos values (633, 'מצות להחזיר רבית', 'To return interest', 'A');
-insert into mitzvos values (634, 'מצות נתינת תרומה לכהן', 'To give Terumah to the Kohen', 'A');
-insert into mitzvos values (635, 'מצות נתינת מעשר ראשון ללוי', 'To give Maaser Sheni to the Levi', 'A');
-insert into mitzvos values (636, 'מצות נתינת מעשר עני', 'To give Maaser Ani', 'A');
-insert into mitzvos values (637, 'מצות נתינת חלה לכהן', 'To give Chalah to the Kohen', 'A');
-insert into mitzvos values (638, 'מצות לעבר השנה', 'To calculate and establish leap years', 'A');
+insert into mitzvos values (624, 'מצות להניח אחת מן הרוחות בלי מצור בשעת מלחמה', 'To leave one side of a city during a siege unprotected', 'A');
+--insert into mitzvos values (625, 'מצות לאכול מן האילנות שבגבולה כל ימי המצור ולא לכרות אותם', 'To enjoy the fruits of the trees surrounding a city under siege and not to destroy them', 'A');	-- Derech Mitzvosecha § 1 explains the Ramban doesn't actually coutn this as a mitzvah
+insert into mitzvos values (626, 'מצות זכירה בפה מעשה מרים', 'To recall with words the story of Miriam', 'A');
+insert into mitzvos values (627, 'מצות להיות תמים עם השם', 'To be with pure trust trust in Hashem', 'A');
+insert into mitzvos values (628, 'מצות לפרוש תרומה מן היפה', 'To separate Terumah from the best portion', 'A');
+insert into mitzvos values (629, 'מצות להקריב רק בקר כשבים או עזים', 'To bring as an offering only cattle, sheep, or goats', 'A');
+insert into mitzvos values (630, 'מצות להקריב כל קרבנות בין שני התמידין', 'To offer all offerings between the two Tamid offerings', 'A');
+insert into mitzvos values (631, 'מצות אכילת הפסח בלילה', 'To eat the Pesach offering at night', 'A');
+insert into mitzvos values (632, 'מצות גואל הדם להרוג הרוצח במזיד', 'For the Goel HaDam to kill an intentional killer', 'A');
+insert into mitzvos values (633, 'מצות להרחיק מלהנות בבגד או בית שנראה בו נגע', 'To distance oneself from benefiting from a garment or house which has an affliction', 'A');
+insert into mitzvos values (634, 'מצות ברכית התורה', 'To make a blessing on learning Torah', 'A');
+insert into mitzvos values (635, 'מצות להחיות גר תושב', 'To support and sustain a Ger Toshav', 'A');
+insert into mitzvos values (636, 'מצות להחזיר רבית', 'To return interest', 'A');
+insert into mitzvos values (637, 'מצות להרחיק מלהנות משאר נזיר', 'To distance oneself from benefiting from the hair of a Nazir', 'A');
+insert into mitzvos values (638, 'מצות נתינת תרומה לכהן', 'To give Terumah to the Kohen', 'A');
+insert into mitzvos values (639, 'מצות נתינת מעשר ראשון ללוי', 'To give Maaser Sheni to the Levi', 'A');
+insert into mitzvos values (640, 'מצות נתינת מעשר עני', 'To give Maaser Ani', 'A');
+insert into mitzvos values (641, 'מצות נתינת חלה לכהן', 'To give Chalah to the Kohen', 'A');
+insert into mitzvos values (642, 'מצות לעבר השנה', 'To calculate and establish leap years', 'A');
 
 create table bahag (
 	_id integer NOT NULL primary key,
