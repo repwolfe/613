@@ -266,8 +266,8 @@ insert into mitzvos values (249, 'שלא נאמין אלוה בלתי השם ל�
 insert into mitzvos values (250, 'שלא לעשות פסל', null, 'L');
 insert into mitzvos values (251, 'שלא לעשות עבודה זרה לא לעצמו ולא לזולתו', null, 'L');
 insert into mitzvos values (252, 'שלא לעשות צורות לנוי', null, 'L');
-insert into mitzvos values (253, 'שלא להשתחוות לעבודה זרה', null, 'L');
-insert into mitzvos values (254, 'שלא לעבוד עבודה זרה במה שגרכה להעבד', null, 'L');
+insert into mitzvos values (253, 'שלא להשתחוות לעבודה זרה', 'Not to bow to idols', 'L');
+insert into mitzvos values (254, 'שלא לעבוד עבודה זרה במה שדרכה להעבד', 'Not to worship idols in their normal mode of service', 'L');
 insert into mitzvos values (255, 'שלא נתן מזרעינו למולך', null, 'L');
 insert into mitzvos values (256, 'שלא לעשות אוב', null, 'L');
 insert into mitzvos values (257, 'שלא לעשות מעשה ידעוני', null, 'L');
@@ -289,7 +289,7 @@ insert into mitzvos values (272, 'שלא ליהנות בממון עיר הנדח
 insert into mitzvos values (273, 'שלא להדביק שום דבר מעבודה זרה עם ממונינו וברשותינו ליהנות בו', null, 'L');
 insert into mitzvos values (274, 'שלא להתנבאות בשם עבודה זרה', null, 'L');
 insert into mitzvos values (275, 'שלא להתנבאת בשקר', null, 'L');
-insert into mitzvos values (276, 'שלא לשמע ממתנבא בשם עבודה זרה', null, 'L');
+insert into mitzvos values (276, 'שלא לשמע ממתנבא בשם עבודה זרה', 'Not to listen to someone who prophecizes in the name of an idol', 'L');
 insert into mitzvos values (277, 'שלא נמנע מהריגת נביא שקר ולא נגור ממנו', null, 'L');
 insert into mitzvos values (278, 'שלא ללכת בחוקות הגוים', null, 'L');
 insert into mitzvos values (279, 'שלא לקסום', null, 'L');
@@ -314,12 +314,12 @@ insert into mitzvos values (297, 'שלא להחיות אחד מכל שבעה ע�
 insert into mitzvos values (298, 'שלא לחון על עובדי עבודה זרה', null, 'L');
 insert into mitzvos values (299, 'שלא להושיב עובד עבודה זרה בארצנו', null, 'L');
 insert into mitzvos values (300, 'שלא להתחתן בעובדי עבודה זרה', null, 'L');
-insert into mitzvos values (301, 'שלא ישא עמוני ומואבי בת ישראל', null, 'L');
+insert into mitzvos values (301, 'שלא ישא עמוני ומואבי בת ישראל', 'An Ammonite or Moabite cannot marry a Jewish woman', 'L');
 insert into mitzvos values (302, 'שלא להרחיק זרע עשו מהתחתן עם זרע ישראל אחר שיתגיירו אלא עד ג'' דורות', null, 'L');
 insert into mitzvos values (303, 'שלא להרחיק מצרי כמו כן אלא עד דור שלישי ולא שלישי בכלל', null, 'L');
 insert into mitzvos values (304, 'שלא לקרוא שלום לעמון ומואב', null, 'L');
 insert into mitzvos values (305, 'שלא להשחית אילני מאכל במצור וכן כל השחתה בכלל הלאו', null, 'L');
-insert into mitzvos values (306, 'שלא לערוץ מפני אחד מכל שבעה עממין', null, 'L');
+insert into mitzvos values (306, 'שלא לערוץ מפני אחד מכל שבעה עממין', 'Do not be afraid of the enemy during battle', 'L');
 insert into mitzvos values (307, 'שלא נשכח מעשה עמלק שעשה עם אבותינו בצאתם ממצרים', null, 'L');
 insert into mitzvos values (308, 'לאו דברכת השם', null, 'L');
 insert into mitzvos values (309, 'שלא נשבע לשקר', null, 'L');
@@ -330,9 +330,9 @@ insert into mitzvos values (313, 'שלא למחות ספרי הקודש והשמ
 insert into mitzvos values (314, 'שלא ילין הצלוב על העץ וכן המת בביתו אלא לכבודו', 'Not to leave a dead person hanging or unburied', 'L');
 insert into mitzvos values (315, 'שלא לבטל שמירת המקדש', null, 'L');
 insert into mitzvos values (316, 'שלא יכנסו הכהנים בכל עת במקדש וכל שכן זרים', null, 'L');
-insert into mitzvos values (317, 'שלא יכנס בעל מום בהיכל', null, 'L');
+insert into mitzvos values (317, 'שלא יכנס בעל מום בהיכל', 'A blemished Kohen shall not enter the Temple Heichal', 'L');
 insert into mitzvos values (318, 'שלא יעבד הכן בעל מום', null, 'L');
-insert into mitzvos values (319, 'שלא יבער הכן בעל מום עובר', null, 'L');
+insert into mitzvos values (319, 'שלא יעבוד כהן בעל מום עובר', 'A Kohen with a temporary blemish should not perform the Temple service', 'L');
 insert into mitzvos values (320, 'שלא יתעסקו הכהנים בעבודת הלוים ולא הלוים בעבודת הכהנים', null, 'L');
 insert into mitzvos values (321, 'שלא להכנס שתויי יין במקדש וכן שלא ירוה שתוי', null, 'L');
 insert into mitzvos values (322, 'שלא יעבד זר במקדש', null, 'L');
@@ -356,12 +356,12 @@ insert into mitzvos values (339, 'שלא נקדיש בעלי מומין להקר
 insert into mitzvos values (340, 'שלא נשחט בעלי מומין לשם קרבן', null, 'L');
 insert into mitzvos values (341, 'שלא נזרוק דם בעל מום על המזבח', null, 'L');
 insert into mitzvos values (342, 'שלא נקטיר אימורי בעלי מומין', null, 'L');
-insert into mitzvos values (343, 'שלא להקריב קרבן בעל מום עובר', null, 'L');
+insert into mitzvos values (343, 'שלא להקריב קרבן בעל מום עובר', 'Not to sacrifice an animal with a temporary blemish', 'L');
 insert into mitzvos values (344, 'שלא להקריב קרבן בעל מום מיד הגוים', null, 'L');
 insert into mitzvos values (345, 'שלא נתן מום בקדשים', null, 'L');
-insert into mitzvos values (346, 'שלא להקריב שאור או דבש', null, 'L');
+insert into mitzvos values (346, 'שלא להקריב שאור או דבש', 'Not to offer leaven or honey', 'L');
 insert into mitzvos values (347, 'שלא להקריב קרבן בלא מלח', null, 'L');
-insert into mitzvos values (348, 'שלא להקריב אתנן זונה ומחיר כלב', null, 'L');
+insert into mitzvos values (348, 'שלא להקריב אתנן זונה ומחיר כלב', 'Not to offer a harlot''s wage or the exchange for a dog', 'L');
 insert into mitzvos values (349, 'שלא לשחוט בהמה ובנה ביום אחד', null, 'L');
 insert into mitzvos values (350, 'שלא ליתן שמן זית במנחת חוטא', null, 'L');
 insert into mitzvos values (351, 'שלא ליתן לבונה במנחת חוטא', null, 'L');
@@ -386,7 +386,7 @@ insert into mitzvos values (369, 'שלא לשבור עצם מן הפסח', null,
 insert into mitzvos values (370, 'שלא לשבור עצם מעצמות פסח שני', null, 'L');
 insert into mitzvos values (371, 'שלא להוציא מבשר הפסח חוצה', null, 'L');
 insert into mitzvos values (372, 'שלא לעשות שיירי מנחות חצץ', null, 'L');
-insert into mitzvos values (373, 'שלא לאכול הפסח נא ומבושל', null, 'L');
+insert into mitzvos values (373, 'שלא לאכול הפסח נא ומבושל', 'Not to eat the Pesach offering raw or boiled', 'L');
 insert into mitzvos values (374, 'שלא נאכיל מן הפסח לגר ולתושב', null, 'L');
 insert into mitzvos values (375, 'שלא יאכל ערל מן הפסח', null, 'L');
 insert into mitzvos values (376, 'שלא נאכיל מן הפסח לישראל משומד', null, 'L');
@@ -402,8 +402,8 @@ insert into mitzvos values (385, 'שלא תאכל חללה מן הקודש', nul
 insert into mitzvos values (386, 'שלא תאכל מנחת כהן', null, 'L');
 insert into mitzvos values (387, 'שלא לאכל מבשר חטאות הנעשות בפנים', null, 'L');
 insert into mitzvos values (388, 'שלא לאכול פסולי המוקדשין', null, 'L');
-insert into mitzvos values (389, 'שלא לאכול מעשר שני של דגן חוץ לירושלם', null, 'L');
-insert into mitzvos values (390, 'שלא לאכול מעשר שני של תירוש חוץ לירושלם', null, 'L');
+insert into mitzvos values (389, 'שלא לאכול מעשר שני של דגן חוץ לירושלם', 'Not to eat Maaser Sheni of grain outside Jerusalem', 'L');
+insert into mitzvos values (390, 'שלא לאכול מעשר שני של תירוש חוץ לירושלם', 'Not to eat Maaser Sheni of wine outside Jerusalem', 'L');
 insert into mitzvos values (391, 'שלא לאכול מעשר שני של יצהר חוץ לירושלם', null, 'L');
 insert into mitzvos values (392, 'שלא לאכול בכור תמים חוץ לירשלם', null, 'L');
 insert into mitzvos values (393, 'שלא לאכול בשר חטאת ואשם חוץ לקלעים ואפילו הכהנים', null, 'L');
@@ -411,9 +411,9 @@ insert into mitzvos values (394, 'שלא לאכול בשר העולה', null, 'L
 insert into mitzvos values (395, 'שלא לאכול בשר קדשים קלים קודם זריקת דמים', null, 'L');
 insert into mitzvos values (396, 'שלא יאכל זר בשר קודשי קודשים', null, 'L');
 insert into mitzvos values (397, 'שלא יאכלו כהנים ביכורים קודם הנחתם בעזרה', null, 'L');
-insert into mitzvos values (398, 'שלא לאכול מעשר שני בטומאה', null, 'L');
-insert into mitzvos values (399, 'שלא לאכול מעשר שנע באנינות', null, 'L');
-insert into mitzvos values (400, 'שלא להוציא דמי מעשר שני בשאר דברים שאינם מאכילה ושתייה', null, 'L');
+insert into mitzvos values (398, 'שלא לאכול מעשר שני בטומאה', 'Not to eat Maaser Sheni while impure', 'L');
+insert into mitzvos values (399, 'שלא לאכול מעשר שנע באנינות', 'Not to eat Maaser Sheni as an Onen', 'L');
+insert into mitzvos values (400, 'שלא להוציא דמי מעשר שני בשאר דברים שאינם מאכילה ושתייה', 'Not to purchase with Maaser Sheni money anything besides food or drink', 'L');
 insert into mitzvos values (401, 'שלא לאכל טבל', null, 'L');
 insert into mitzvos values (402, 'שלא להקדים חוקי התבואות', null, 'L');
 insert into mitzvos values (403, 'שלא לאחר הנדרים והנדבות', null, 'L');
@@ -438,9 +438,9 @@ insert into mitzvos values (421, 'שלא לאכול גד טמא', null, 'L');
 insert into mitzvos values (422, 'שלא לאכול עוף טמא', null, 'L');
 insert into mitzvos values (423, 'שלא לאכול חגב טמא וכן כל שרץ העוף', null, 'L');
 insert into mitzvos values (424, 'שלא לאכול שרץ הארץ', null, 'L');
-insert into mitzvos values (425, 'שלא לאכול מן השרצים המתהוים מן העפוש', null, 'L');
-insert into mitzvos values (426, 'שלא לאכול מיני שרצים דקים הנולדים בזרעים ובפירות', null, 'L');
-insert into mitzvos values (427, 'שלא לאכול משרץ המים', null, 'L');
+insert into mitzvos values (425, 'שלא לאכול מן השרצים המתהוים מן העפוש', 'Not to eat bugs that come from sweat', 'L');
+insert into mitzvos values (426, 'שלא לאכול מיני שרצים דקים הנולדים בזרעים ובפירות', 'Not to eat worms that come from seeds or fruits', 'L');
+insert into mitzvos values (427, 'שלא לאכול משרץ המים', 'Not to eat sea bugs', 'L');
 insert into mitzvos values (428, 'שלא לאכול מבשר בהמה וחיה ועוף שמתו מאליהם', null, 'L');
 insert into mitzvos values (429, 'שלא לאכול טריפה', null, 'L');
 insert into mitzvos values (430, 'שלא לאכול אבר מן החי', null, 'L');
@@ -450,17 +450,17 @@ insert into mitzvos values (433, 'שלא נאכל חלב', null, 'L');
 insert into mitzvos values (434, 'שלא לבשל בשר בחלב', null, 'L');
 insert into mitzvos values (435, 'שלא לאכול בשר בחלב', null, 'L');
 insert into mitzvos values (436, 'שלא לאכול שור הנסקל', null, 'L');
-insert into mitzvos values (437, 'שלא לאכול מתבואה חדשה קודם כלות יום י"ו בניסן', null, 'L');
-insert into mitzvos values (438, 'שלא לאכול קלי מתבואה עד ביום ההוא', null, 'L');
-insert into mitzvos values (439, 'שלא לאכול כרמל מתבואה עד הזמן הנזכר', null, 'L');
+insert into mitzvos values (437, 'שלא לאכול מתבואה חדשה קודם כלות יום י"ו בניסן', null, 'L');	------------------- <<<<< Fix this
+insert into mitzvos values (438, 'שלא לאכול קלי מתבואה עד ביום ההוא', 'Not to eat roasted grain until the Omer is brought', 'L');	------------------- <<<<< Fix this
+insert into mitzvos values (439, 'שלא לאכול כרמל מתבואה עד הזמן הנזכר', 'Not to eat fresh grain until the Omer is brought', 'L');	------------------- <<<<< Fix this
 insert into mitzvos values (440, 'שלא לאכול ערלה', null, 'L');
 insert into mitzvos values (441, 'שלא לאכול כלאי הכרם בארץ ישראל', null, 'L');
-insert into mitzvos values (442, 'שלא לאכול לשתות תקרובת עבודה זרה', null, 'L');
+insert into mitzvos values (442, 'שלא לשתות יין נסך', 'Not to drink an idol''s wine libations', 'L');	-- The Chinuch calls this 'שלא לאכול לשתות תקרובת עבודה זרה'
 insert into mitzvos values (443, 'שלא לאכול ולשתות כדרך זולל וסובא', null, 'L');
 insert into mitzvos values (444, 'שלא לאכול ולשתות ביום הכפורים', null, 'L');
 insert into mitzvos values (445, 'שלא לאכול חמץ בפסח', null, 'L');
-insert into mitzvos values (446, 'שלא לאכול מכל דבר שיש בו חמץ', null, 'L');
-insert into mitzvos values (447, 'שלא לאכול חמץ אחר חצות', null, 'L');
+insert into mitzvos values (446, 'שלא לאכול מכל דבר שיש בו חמץ', 'Not to eat anything that has chametz in it', 'L');
+insert into mitzvos values (447, 'שלא לאכול חמץ אחר חצות', 'Not to eat chametz after noon', 'L');
 insert into mitzvos values (448, 'שלא יראה לנו חמץ בפסח', null, 'L');
 insert into mitzvos values (449, 'שלא ימצא חמץ ברשותינו בפסח', null, 'L');
 insert into mitzvos values (450, 'שלא ישתה הנזיר יין או כל מיני שכר', null, 'L');
@@ -551,11 +551,11 @@ insert into mitzvos values (534, 'שלא יעיד בעל עבירה', null, 'L')
 insert into mitzvos values (535, 'שלא יעיד קרוב', null, 'L');
 insert into mitzvos values (536, 'שלא לחתוך הדין על פי עד אחד', null, 'L');
 insert into mitzvos values (537, 'שלא להרוג נקי', null, 'L');
-insert into mitzvos values (538, 'שלא לחתוך הדין באומד הדעת', null, 'L');
+insert into mitzvos values (538, 'שלא לחתוך הדין באומד הדעת', 'Not to decide someone''s fate just with estimation', 'L');
 insert into mitzvos values (539, 'שלא יורה העד בדין שהעיד בו בדיני נפשות', null, 'L');
 insert into mitzvos values (540, 'שלא להרוג מחוייב קודם שיעמוד בדין', null, 'L');
 insert into mitzvos values (541, 'שלא לחוס על הרודף', null, 'L');
-insert into mitzvos values (542, 'שלא לענוש האנוס', null, 'L');
+insert into mitzvos values (542, 'שלא לענוש האנוס', 'Not to punish someone coerced', 'L');
 insert into mitzvos values (543, 'שלא ליקח כופר להציל ממות הרוצח', null, 'L');
 insert into mitzvos values (544, 'שלא ליקח כופר ממחוייב גלות לפוטרו מן הגלות', null, 'L');
 insert into mitzvos values (545, 'שלא לעמוד על דם רעים', null, 'L');
@@ -579,8 +579,8 @@ insert into mitzvos values (562, 'שלא לגרוע ממצוות התורה', nu
 insert into mitzvos values (563, 'שלא לקלל הדיין', null, 'L');
 insert into mitzvos values (564, 'שלא לקלל הנשיא', null, 'L');
 insert into mitzvos values (565, 'שלא לקלל אחד מישראל בין איש בין אשה', null, 'L');
-insert into mitzvos values (566, 'שלא לקלל אב ואם', null, 'L');
-insert into mitzvos values (567, 'שלא להכות אב ואם', null, 'L');
+insert into mitzvos values (566, 'שלא לקלל אב ואם', 'Not to curse a father or mother', 'L');
+insert into mitzvos values (567, 'שלא להכות אב ואם', 'Not to injure a father or mother', 'L');
 insert into mitzvos values (568, 'שלא לעשות מלאכה בשבת', null, 'L');
 insert into mitzvos values (569, 'שלא נצא בשבת חוץ לתחום', null, 'L');
 insert into mitzvos values (570, 'שלא יעשו בית דין משפט מות בשבת', null, 'L');
@@ -665,6 +665,38 @@ insert into mitzvos values (644, 'מצות ב"ד להרוג מי שמחוייב 
 insert into mitzvos values (645, 'מצות לחכם להורות בלי להיות שכורים', 'For a Sage to rule without being intoxicated',  'A');
 insert into mitzvos values (646, 'לשחרר עבד כנעני אם הפיל עינו או שינו', 'For a master to free his Caananite slave if he removed his eye or tooth', 'A');
 insert into mitzvos values (647, 'לתת לבכור פי שנים', 'To give a first born a double inheritance',  'A');
+
+insert into mitzvos values (648, 'שלא לשכוח השם', 'Not to forget Hashem', 'L');
+insert into mitzvos values (649, 'שלא לשכוח מעמד הר סיני', 'Not to forget the giving of the Torah at Sinai', 'L');
+insert into mitzvos values (650, 'שלא לשנות הסדר של כלי המקדש', 'Not to change the order of the Temple vessels', 'L');
+insert into mitzvos values (651, 'שלא ישא מואבי בת ישראל', 'A Moabite cannot marry a Jewish woman', 'L');
+insert into mitzvos values (652, 'שלא לשחוט קרבנות על מנת לאכלם או לעשות עבודתם חוץ למקומם או לזמנם', 'Not to slaughter offerings with intention to eat them or perform their service outside of their location or time', 'L');
+insert into mitzvos values (653, 'שלא לאכול קרבנות ששחטן על מנת לאכלן או להקריבן חוץ למקומן', 'Not to eat offerings which were slaughtered with intention to eat them or perform their service outside of their location', 'L');
+insert into mitzvos values (654, 'שלא לאכול הצפור ששחטו אותה לטהרת המצורע', 'Not to eat of the bird slaughtered for the metzora''s purification', 'L');
+insert into mitzvos values (655, 'שלא להקריב דבש', 'Not to offer honey', 'L');
+insert into mitzvos values (656, 'שלא להקריב מחיר כלב', 'Not to offer the exchange for a dog', 'L');
+insert into mitzvos values (657, 'שלא לאכול הפסח מבושל', 'Not to eat the Pesach offering boiled', 'L');
+insert into mitzvos values (658, 'שלא ירימו הלויים תרומת מעשר מן הרע שבו אלא היפה', 'For the Leviim not to separate Terumas Maaser from the bad, rather from the good', 'L');
+insert into mitzvos values (659, 'שלא נקבל שקלים מן הגוים ולא נצרף אותם עמנו בקרבנות הציבור', 'Not to accept money from non-Jews or combine them with ours for communal offerings', 'L');
+insert into mitzvos values (660, 'שלא לקבל עדות מיוחדת בדיני נפשות', 'Not to accept non-unified testimony for capital cases', 'L');
+insert into mitzvos values (661, 'שלא יבוא האיש הירא ורך הלבב במלחמה', 'For a fearful person not to join in a war', 'L');
+insert into mitzvos values (662, 'שלא לעשות דבר שיסלק השכינה בזמן מלחמה', 'Not to do things which remove the Divine Presence during wartime', 'L');
+insert into mitzvos values (663, 'שלא להעביר הבכורה מן הבן הגדול', 'Not to withold the double inheritance deserved to a firstborn', 'L');
+insert into mitzvos values (664, 'שלא לחמול על נפש הרוצח במזיד', 'Not to have mercy on an intentional killer', 'L');
+insert into mitzvos values (665, 'שלא יבא החולץ ליבמתו עליה', 'For someone who performed chalitzah not to lye with her afterwards', 'L');
+insert into mitzvos values (666, 'שלא יבוא איש על אשתו שזנתה תחתיו', 'Not to lye with one''s wife who committed adultery', 'L');
+insert into mitzvos values (667, 'שלא יחר בעינינו בשלחנו העבדים חפשים בשנה השביעית', 'Not to be upset about setting free our slaves in their seventh year', 'L');
+insert into mitzvos values (668, 'שלא לענות ואלמנה', 'Not to oppress a widow', 'L');
+insert into mitzvos values (669, 'שלא להרוג צקיד בדין', 'Not to execute someone who was acquitted', 'L');
+insert into mitzvos values (670, 'שלא יחר בעינינו בתתנו צדקה לעניים', 'Not to be upset about giving tzedaka to the poor', 'L');
+insert into mitzvos values (671, 'שלא לגנוב כלי שרת מכלי המקדש', 'Not to steal any Temple vessel', 'L');
+insert into mitzvos values (672, 'שלא ישא לוי ארון הקדש בכתף מבן חמשים שנה', 'For a Levi not to carry the Aron Kodesh on his shoulders from the age of fifty', 'L');
+insert into mitzvos values (673, 'שלא תחטיא ב"ד הארץ להניח מחזיר גרושתו', 'For Beis Din not to ignore someone who remarried his divorcee', 'L');
+insert into mitzvos values (674, 'שלא יזנה איש הארץ בזנות', 'For a man not to profane the land with illicit relations', 'L');
+insert into mitzvos values (675, 'שלא יחלל כהן גדול המקדש בצאתו מהעבודה מפני אבל', 'For a Kohen Gadol not to defile the Temple by leaving his service due to mourning', 'L');
+insert into mitzvos values (676, 'שלא תטמא ב"ד את הארץ בלינת המת', 'For Beis Din not to profane the land by leaving a corpse hanging', 'L');
+insert into mitzvos values (677, 'שלא לחלוק על הכהונה', 'Not to dispute the Kehuna', 'L');
+insert into mitzvos values (678, 'שלא להנות מעגלה ערופה ופטר חמור', 'Not to benefit from the beheaded calf or firstborn of a donkey', 'L');
 
 create table bahag (
 	_id integer NOT NULL primary key,
