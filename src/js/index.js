@@ -1,10 +1,23 @@
 var css = require("../css/main.scss");
 
 var Backbone = require("backbone");
-var AppView = require("./views/appview");
+var RambamAppView = require("./views/rambamappview");
+var RambanAppView = require("./views/rambanappview");
 
 $(function() {
-	var App = new AppView;
+
+	switch(window.location.pathname) {
+		case "/rambam":
+			var App = new RambamAppView;
+			break;
+		case "/ramban":
+			var App = new RambanAppView;
+			break;
+		case "/compare":
+			break;
+		default:
+			break;
+	}
 	
 	var languageButton = "#language-btn";
 

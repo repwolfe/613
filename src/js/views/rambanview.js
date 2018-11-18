@@ -1,9 +1,9 @@
 var _ = require("underscore");
 
-var templateHe = "#mitzvah-template-he";
-var templateEn = "#mitzvah-template-en";
+var templateHe = "#ramban-template-he";
+var templateEn = "#ramban-template-en";
 
-var MitzvahView = Backbone.View.extend({
+var RambanView = Backbone.View.extend({
 	tagName: "li",
 	template: _.template($(templateHe).html()),
 	
@@ -52,4 +52,4 @@ var MitzvahView = Backbone.View.extend({
 	}
 });
 
-module.exports = MitzvahView;
+module.exports = RambanView;

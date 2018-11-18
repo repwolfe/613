@@ -1,9 +1,9 @@
 var RambamList = require("../collections/rambamlist");
-var MitzvahView = require("./mitzvahview");
+var RambamView = require("./rambamview");
 
 var Rambams = new RambamList;
 
-var AppView = Backbone.View.extend({
+var RambamAppView = Backbone.View.extend({
 	el: $("#container"),
 
 	curLang: "he",
@@ -17,7 +17,7 @@ var AppView = Backbone.View.extend({
 	},
 
 	addOne: function(mitzvah) {
-		var view = new MitzvahView({model: mitzvah});
+		var view = new RambamView({model: mitzvah});
 		$("#mitzvos").append(view.render().el);
 	},
 
@@ -48,4 +48,4 @@ var AppView = Backbone.View.extend({
 	}
 });
 
-module.exports = AppView;
+module.exports = RambamAppView;
