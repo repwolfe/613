@@ -3,6 +3,7 @@ var css = require("../css/main.scss");
 var Backbone = require("backbone");
 var RambamAppView = require("./views/rambamappview");
 var RambanAppView = require("./views/rambanappview");
+var CompareAppView = require("./views/compareappview");
 
 $(function() {
 
@@ -14,6 +15,9 @@ $(function() {
 			var App = new RambanAppView;
 			break;
 		case "/compare":
+			$("#container").hide();
+			$("#compare").show();
+			var App = new CompareAppView;
 			break;
 		default:
 			break;
@@ -30,6 +34,7 @@ $(function() {
 			$(languageButton).text("A");
 			
 			$("#container").attr("dir", "ltr");
+			$("#compare").attr("dir", "ltr");
 
 		}
 		// Was English
@@ -37,6 +42,7 @@ $(function() {
 			$(languageButton).text("א");
 
 			$("#container").attr("dir", "rtl");
+			$("#compare").attr("dir", "rtl");
 		}
 
 		App.languageSwitch();

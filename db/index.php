@@ -51,12 +51,22 @@ $container["queries"] = function($c) {
 };
 
 function inThisNotThat($a, $b) {
-	return "SELECT mitzvahNumber, asehOrLoSaseh, mitzvahNameEn
+	return "SELECT mitzvahNumber, asehOrLoSaseh, mitzvahName, mitzvahNameEn
 			FROM mitzvos, (
 		 		SELECT " . $a . ".mitzvahId, " . $a . ".mitzvahNumber
 		 	 	FROM " . $a . "
 		 		LEFT JOIN " . $b . " ON " . $a . ".mitzvahId = " .$b . ".mitzvahId
 		 		WHERE " . $b . ".mitzvahId IS NULL
+		 	)
+		 	WHERE mitzvos._id = mitzvahId;";
+}
+
+function inBoth($a, $b) {
+	return "SELECT mitzvahNumber, asehOrLoSaseh, mitzvahName, mitzvahNameEn
+			FROM mitzvos, (
+		 		SELECT " . $a . ".mitzvahId, " . $a . ".mitzvahNumber
+		 	 	FROM " . $a . "
+		 		INNER JOIN " . $b . " ON " . $a . ".mitzvahId = " .$b . ".mitzvahId
 		 	)
 		 	WHERE mitzvos._id = mitzvahId;";
 }
@@ -88,7 +98,12 @@ $app->get("/mitzvos/{id}", function(Request $request, Response $response, $args)
 });
 
 $app->get("/rambam/ramban", function(Request $request, Response $response) {
-	$res = $this->db->query(inThisNotThat("rambam", "ramban"));
+	if ($request->getQueryParam("both") === "yes") {
+		$res = $this->db->query(inBoth("rambam", "ramban"));
+	}
+	else {
+		$res = $this->db->query(inThisNotThat("rambam", "ramban"));
+	}
 	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
 	return $response;
 });

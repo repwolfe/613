@@ -49,20 +49,64 @@ body {
 
 }
 
+#compare {
+	#titleSection {
+		position: relative;
+		float: left;
+		height: 25px;
+		text-align: center;
+		width: percentage(1/3);
+	}
+
+	#leftTitle, #middleTitle, #rightTitle {
+		@extend #titleSection;
+	}
+
+	#compareSection {
+		position: relative;
+		float: left;
+		overflow-y: scroll;
+		height: 100%;
+		width: percentage(1/3);
+	}
+
+	#left, #middle, #right {
+		@extend #compareSection;
+	}
+
+	display: none;
+	height: 90%;
+	margin: 10px;
+}
+
 #mitzvos {
 	margin: 0 auto;
 	padding: 0;
 	text-align: center;
 	list-style-type: none;
+
+	li {
+		display: inline-block;
+		text-align: right;
+		vertical-align: top;
+		width: 140px;
+		height: 140px;
+		background: #f00;
+		padding: 10px;
+		margin: 5px;
+	}
 }
 
-#mitzvos li {
-	display: inline-block;
-	text-align: right;
-	vertical-align: top;
-	width: 140px;
-	height: 140px;
-	background: #f00;
-	padding: 10px;
-	margin: 5px;
+#leftMitzvos, #midMitzvos, #rightMitzvos {
+	@extend #mitzvos;
+
+	li {
+		width: 80%;
+		height: 40px;
+		text-align: center;
+
+		/*.hebrew, .english {
+			line-height: 40px;	/* Override font's line height to make it vertically center */
+		/*}*/
+	}
 }
