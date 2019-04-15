@@ -12,7 +12,7 @@ create table mitzvos (
 	asehOrLoSaseh char(1) NOT NULL	-- A/L
 );
 
--- rambam's unique mitzvos
+-- Rambam's unique mitzvos
 insert into mitzvos values (1, 'מצות האמנה במציאות השם יתברך', 'Emunah in the reality of Hashem Yisboroch', 'A');	
 insert into mitzvos values (2, 'מצות אחדות השם', 'Unity of Hashem', 'A');
 insert into mitzvos values (3, 'מצות אהבת השם', 'Love of Hashem', 'A');
@@ -165,7 +165,7 @@ insert into mitzvos values (149, 'מצות בדיקת סימני בהמה וחי
 insert into mitzvos values (150, 'מצות בדיקת סימני העוף', 'To check the kosher signs of birds', 'A');
 insert into mitzvos values (151, 'מצות בדיקת סימני חגבים', 'To check the kosher signs of grasshoppers', 'A');
 insert into mitzvos values (152, 'מצות בדיקת סימני דגים', 'To check the kosher signs of fish', 'A');
-insert into mitzvos values (153, 'מצות קדוש החודש', 'To sanctify the new month', 'A');
+insert into mitzvos values (153, 'מצות קדוש החודש ולחשב שנים וחדשים', 'To sanctify the new month and to calculate the months and years', 'A');
 insert into mitzvos values (154, 'מצות שביתה בשבת', null, 'A');
 insert into mitzvos values (155, 'מצות קדוש שבת בדברים', null, 'A');
 insert into mitzvos values (156, 'מצות השבתת חמץ', null, 'A');
@@ -628,17 +628,17 @@ insert into mitzvos values (611, 'שלא ירבה המלך סוסים', null, 'L
 insert into mitzvos values (612, 'שלא ירבה לו המלך נשים', null, 'L');
 insert into mitzvos values (613, 'שלא ירבה לו המלך כסף וזהב לבד מה שצריך לו', null, 'L');
 
--- chinuch's unique mitzvah
+-- Chinuch's unique mitzvah
 insert into mitzvos values (614, 'שלא להקריב קרבן פסח בבמת יחיד', 'Not to offer the Korbon Pesach on an individual Bamah', 'L');
 
--- ramban's unique mitzvos
+-- Ramban's unique mitzvos
 insert into mitzvos values (615, 'מצות אכילת מעשר שני ובכורות בירושלים', 'To Eat Maaser Sheni and Bechoros in Yerushalayim', 'A');
 insert into mitzvos values (616, 'מצות אכילת תרומה כשהיא טהורה ולא בטומאתה', 'To eat Terumah when it is pure and not while it is impure', 'A');
 insert into mitzvos values (617, 'מצות קרית שמע בערב', 'Reciting the Shema in the evening', 'A');
 insert into mitzvos values (618, 'מצות הקטרת באין הארבים', 'Burning the afternoon incense', 'A');
-insert into mitzvos values (619, 'מצות קרבן הדמיד באין הארבים', 'The daily afternoon Tamid offering', 'A');
+insert into mitzvos values (619, 'מצות קרבן התמיד בין הערבים', 'The daily afternoon Tamid offering', 'A');
 insert into mitzvos values (620, 'מצות עבודת הכהנים בקרבנות', 'The Temple Service of the Kohanim with the offerings', 'A');
-insert into mitzvos values (621, 'מצות אכלית פירות שביעית', 'To only eat Shemittah fruit', 'A');
+insert into mitzvos values (621, 'מצות אכילת פירות שביעית', 'To only eat Shemittah fruit', 'A');
 insert into mitzvos values (622, 'מצות ישיבת הארץ', 'To settle the land of Israel', 'A');
 insert into mitzvos values (623, 'מצות לקיים שבועה של רשות', 'To fulfill a vow to do something voluntary', 'A');
 insert into mitzvos values (624, 'מצות להניח אחת מן הרוחות בלי מצור בשעת מלחמה', 'To leave one side of a city during a siege unprotected', 'A');
@@ -651,10 +651,10 @@ insert into mitzvos values (630, 'מצות להקריב כל קרבנות בין
 insert into mitzvos values (631, 'מצות אכילת הפסח בלילה', 'To eat the Pesach offering at night', 'A');
 insert into mitzvos values (632, 'מצות גואל הדם להרוג הרוצח במזיד', 'For the Goel HaDam to kill an intentional killer', 'A');
 insert into mitzvos values (633, 'מצות להרחיק מלהנות בבגד או בית שנראה בו נגע', 'To avoid benefiting from a garment or house which has an affliction', 'A');
-insert into mitzvos values (634, 'מצות ברכית התורה', 'To make a blessing on learning Torah', 'A');
+insert into mitzvos values (634, 'מצות בירכת התורה', 'To make a blessing on learning Torah', 'A');
 insert into mitzvos values (635, 'מצות להחיות גר תושב', 'To support and sustain a Ger Toshav', 'A');
 insert into mitzvos values (636, 'מצות להחזיר רבית', 'To return interest', 'A');
-insert into mitzvos values (637, 'מצות להרחיק מלהנות משאר נזיר', 'To avoid benefiting from the hair of a Nazir', 'A');
+insert into mitzvos values (637, 'מצות להרחיק מלהנות משער נזיר', 'To avoid benefiting from the hair of a Nazir', 'A');
 insert into mitzvos values (638, 'מצות נתינת תרומה לכהן', 'To give Terumah to the Kohen', 'A');
 insert into mitzvos values (639, 'מצות נתינת מעשר ראשון ללוי', 'To give Maaser Sheni to the Levi', 'A');
 insert into mitzvos values (640, 'מצות נתינת מעשר עני', 'To give Maaser Ani', 'A');
@@ -697,6 +697,11 @@ insert into mitzvos values (675, 'שלא יחלל כהן גדול המקדש ב�
 insert into mitzvos values (676, 'שלא תטמא ב"ד את הארץ בלינת המת', 'For Beis Din not to profane the land by leaving a corpse hanging', 'L');
 insert into mitzvos values (677, 'שלא לחלוק על הכהונה', 'Not to dispute the Kehuna', 'L');
 insert into mitzvos values (678, 'שלא להנות מעגלה ערופה ופטר חמור', 'Not to benefit from the beheaded calf or firstborn of a donkey', 'L');
+
+-- Semag's unique mitzvos
+insert into mitzvos values (679, 'מצות צדקות הדין על כל מאורע ויחשוב כי הכל לטובתו', 'To consider everything that happens to you to be for the good', 'A');
+insert into mitzvos values (680, '', '', 'A');
+insert into mitzvos values (681, '', '', 'A');
 
 create table bahag (
 	_id integer NOT NULL primary key,
