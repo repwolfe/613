@@ -128,7 +128,7 @@ insert into mitzvos values (112, 'מצות הנהגת המצורע וכל מטמ
 insert into mitzvos values (113, 'מצות פרה אדומה', null, 'A');
 insert into mitzvos values (114, 'מצות מעריך אדם שיתן דמיו הקצובין בתורה', null, 'A');
 insert into mitzvos values (115, 'מצות מעריך בהמה שיתן כפי שיעריכנה הכהן', null, 'A');
-insert into mitzvos values (116, 'מצות מעריך בתים שיתן בערך שיעריכם בהכהן ותוספת חומש', null, 'A');
+insert into mitzvos values (116, 'מצות מעריך בתים שיתן בערך שיעריכם הכהן ותוספת חומש', null, 'A');
 insert into mitzvos values (117, 'מצות מעריך שדה שיתן בערך הקצוב בפרשה', null, 'A');
 insert into mitzvos values (118, 'מצות תוספת חומש לאוכל מן התרומה או מועל בה', null, 'A');
 insert into mitzvos values (119, 'מצות נטע רבעי', null, 'A');
@@ -141,8 +141,8 @@ insert into mitzvos values (125, 'מצות הבאת ביכורים', null, 'A');
 insert into mitzvos values (126, 'מצות הפרשת תרומה גדולה', 'To separate Terumah Gedolah', 'A');
 insert into mitzvos values (127, 'מצות מעשר ראשון', 'To separate Maaser Rishon', 'A');
 insert into mitzvos values (128, 'מצות מעשר שני', null, 'A');
-insert into mitzvos values (129, 'מצות הלוים לתת מעשר מעשר מן המעשר', null, 'A');
-insert into mitzvos values (130, 'מצות מעשר עני תחת מעשר שני בשנה שלישית', 'To separate Maaser Ani instead of Maaser Sheni in the third year', 'A');
+insert into mitzvos values (129, 'מצות הלוים לתת מעשר מן המעשר', null, 'A');
+insert into mitzvos values (130, 'מצות מעשר עני תחת מעשר שני בשנה שלישית ושישית', 'To separate Maaser Ani instead of Maaser Sheni in the third and sixth year', 'A');
 insert into mitzvos values (131, 'מצות וידוי מעשר', null, 'A');
 insert into mitzvos values (132, 'מצות קריאה על הביכורים', null, 'A');
 insert into mitzvos values (133, 'מצות חלה', null, 'A');
@@ -192,14 +192,14 @@ insert into mitzvos values (176, 'מצות מינוי שפטים ושוטרים 
 insert into mitzvos values (177, 'מצות שופט שישפוט בצדק', null, 'A');
 insert into mitzvos values (178, 'מצות עדות', null, 'A');
 insert into mitzvos values (179, 'מצות חקירת העדים היטב', null, 'A');
-insert into mitzvos values (180, 'מצות לעשות לעדים זוממים כמו שדמו לעשות', null, 'A');
+insert into mitzvos values (180, 'מצות לעשות לעדים זוממים כמו שזמו לעשות', 'To do to plotting witnesses as they planned', 'A');
 insert into mitzvos values (181, 'מצות עריפת העגלה בנחל', null, 'A');
 insert into mitzvos values (182, 'מצות להכין שש ערי מקלט', null, 'A');
 insert into mitzvos values (183, 'מצות ישראל לתת ערים ללוים לשבת בהן והן קולטות', null, 'A');
 insert into mitzvos values (184, 'מצות מעקה', null, 'A');
 insert into mitzvos values (185, 'מצות לאבד עבודה זרה ומשמשיה', null, 'A');
 insert into mitzvos values (186, 'מצות שריפת עיר הנדחת וכל אשר בה', null, 'A');
-insert into mitzvos values (187, 'מצות הריגת שבעה עעמין', null, 'A');
+insert into mitzvos values (187, 'מצות הריגת שבעה עממין', null, 'A');
 insert into mitzvos values (188, 'מצות להכרית זרעו של עמלק', null, 'A');
 insert into mitzvos values (189, 'מצות לזכור מה שעשה עמלק לישראל בצאתם ממצרים', null, 'A');
 insert into mitzvos values (190, 'מצות לעשות במלחמת הרשות כמשפט הכתוב', null, 'A');
@@ -233,7 +233,7 @@ insert into mitzvos values (217, 'מצות חליצה', null, 'A');
 insert into mitzvos values (218, 'מצות האונס שישא אנוסתו לאשה', null, 'A');
 insert into mitzvos values (219, 'מצות שתשב אשת מוציא שם רע תחתיו לעולם', null, 'A');
 insert into mitzvos values (220, 'מצות בית דין לדון בדין מפתה', null, 'A');
-insert into mitzvos values (221, 'מצות ידין יפת תואר', null, 'A');
+insert into mitzvos values (221, 'מצות דין יפת תואר', 'The law of the beautiful captive woman', 'A');
 insert into mitzvos values (222, 'מצות על הרוצה לגרש את אשתו שיגרשנו בשטר', null, 'A');
 insert into mitzvos values (223, 'מצות סוטה שיביאה הבעל אל הכהן ויעשה לה כמשפט הכתוב', null, 'A');
 insert into mitzvos values (224, 'מצות מלקות לרשעים', null, 'A');
@@ -248,7 +248,7 @@ insert into mitzvos values (232, 'מצות דין עבד עברי', null, 'A');
 insert into mitzvos values (233, 'מצות יעוד של אמה העבריה', null, 'A');
 insert into mitzvos values (234, 'מצות פדיון אמה העבריה', null, 'A');
 insert into mitzvos values (235, 'מצות עבודה בעבד כנעני לעולם', 'To rule over a Caananite slave forever', 'A');
-insert into mitzvos values (236, 'מצות דיני קנסות', null, 'A');
+insert into mitzvos values (236, 'מצות דיני חובל בחבירו שנקרא דיני קנסות', null, 'A');
 insert into mitzvos values (237, 'מצות בית דין לדון בנזקי בהמה', null, 'A');
 insert into mitzvos values (238, 'מצות בית דין לדון בנזקי הבור', null, 'A');
 insert into mitzvos values (239, 'מצות בית דין לדון גנב בתשלומין או במיתה', null, 'A');
@@ -700,8 +700,8 @@ insert into mitzvos values (678, 'שלא להנות מעגלה ערופה ופט
 
 -- Semag's unique mitzvos
 insert into mitzvos values (679, 'מצות צדקות הדין על כל מאורע ויחשוב כי הכל לטובתו', 'To consider everything that happens to you to be for the good', 'A');
-insert into mitzvos values (680, '', '', 'A');
-insert into mitzvos values (681, '', '', 'A');
+insert into mitzvos values (680, 'מצות חישוב תקופות מזלות ומולדות ולעבר השנים', 'To calculate the constellations, new moons and leap years', 'A');
+insert into mitzvos values (681, 'מצות הרחקה מן השקר', 'To distance oneself from falsehood', 'A');
 
 create table bahag (
 	_id integer NOT NULL primary key,
