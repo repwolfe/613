@@ -288,7 +288,7 @@ insert into ramban (_id, mitzvahId, mitzvahNumber) values (269, 269, 269);
 insert into ramban (_id, mitzvahId, mitzvahNumber) values (270, 270, 270);
 insert into ramban (_id, mitzvahId, mitzvahNumber) values (271, 271, 271);
 insert into ramban (_id, mitzvahId, mitzvahNumber) values (272, 272, 272);
-insert into ramban (_id, mitzvahId, mitzvahNumber) values (273, 273, 273);
+insert into ramban (_id, mitzvahId, mitzvahNumber) values (273, 273, 273);	-- The Ramban in Lo Saaseh #194 points out that he disagrees with Rambam's inclusion of meshameshei avodah zara in this mitzvah
 insert into ramban (_id, mitzvahId, mitzvahNumber) values (274, 274, 274);
 insert into ramban (_id, mitzvahId, mitzvahNumber) values (275, 275, 275);	-- Cholek on #28
 insert into ramban values (276, 650, 276, 3, 244, 'שנמנענו שלא לשנות סדר הנחת הכלים במקדש כשולחן והמנורה והמזבחות. והוא אמרו יתעלה ובכל אשר אמרתי אליכם תשמרו, ובא הפירוש המקובל שהיא אזהרה למה שצוה בענין סדור המקדש. אמרו במכילתא ובכל אשר אמרתי אליכם תשמרו למה נאמר לפי שהוא אומר ושמת את השלחן אם שינן עובר בלא תעשה נאמר ובכל אשר אמרתי אליכם תשמרו רבי מאיר אומר לעשות דברי תורה עליך חובה, ובגמרא שבת (דף י"ח) דורשין אותו בית שמאי לשביתת כלים ובית הלל לית להו והלכה היא כתנא קמא דמכילתא:');

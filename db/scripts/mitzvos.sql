@@ -3,6 +3,9 @@
 drop table if exists mitzvos;
 drop table if exists bahag;
 drop table if exists rasag;
+drop table if exists zoharRakiah;
+drop table if exists seferCharedim;
+drop table if exists semak;
 drop table if exists chofetzChaim;
 
 create table mitzvos (
@@ -278,8 +281,8 @@ insert into mitzvos values (261, 'שלא לטעת אילן במקדש', null, 'L
 insert into mitzvos values (262, 'שלא לישבע בעבודה זרה', null, 'L');
 insert into mitzvos values (263, 'שלא להדיח בני ישראל אחר עבודה זרה', null, 'L');
 insert into mitzvos values (264, 'שלא להסית אחד מישראל אחר עבודה זרה', null, 'L');
-insert into mitzvos values (265, 'שלא לאבוה המסית', null, 'L');
-insert into mitzvos values (266, 'שלא לעזוב השנאה מן במסית', null, 'L');
+insert into mitzvos values (265, 'שלא לאהוב המסית', null, 'L');
+insert into mitzvos values (266, 'שלא לעזוב השנאה מן המסית', null, 'L');
 insert into mitzvos values (267, 'שלא להציל המסית', null, 'L');
 insert into mitzvos values (268, 'שלא ילמד המוסת זכות על מסית', null, 'L');
 insert into mitzvos values (269, 'שלא ישתוק המוסת מללמד חובה על המסית', null, 'L');
@@ -434,7 +437,7 @@ insert into mitzvos values (417, 'שלא יהיה לשבט לוי נחלה בא�
 insert into mitzvos values (418, 'שלא יטול שבט לוי חלק בביזה בשעת כבוש הארץ', null, 'L');
 insert into mitzvos values (419, 'שלא לעשות קרחה על מת', null, 'L');
 insert into mitzvos values (420, 'שלא לאכול בהמה וחיה טמאה', null, 'L');
-insert into mitzvos values (421, 'שלא לאכול גד טמא', null, 'L');
+insert into mitzvos values (421, 'שלא לאכול דג טמא', null, 'L');
 insert into mitzvos values (422, 'שלא לאכול עוף טמא', null, 'L');
 insert into mitzvos values (423, 'שלא לאכול חגב טמא וכן כל שרץ העוף', null, 'L');
 insert into mitzvos values (424, 'שלא לאכול שרץ הארץ', null, 'L');
@@ -594,7 +597,7 @@ insert into mitzvos values (577, 'שלא לעשות מלאכה בעשרה בתש
 insert into mitzvos values (578, 'שלא לגלות ערות אם', null, 'L');
 insert into mitzvos values (579, 'שלא לגלות ערות אשת אב ואף על פי שאינה אמו', null, 'L');
 insert into mitzvos values (580, 'שלא לגלות ערות אחות בכל צד שהיא אחות', null, 'L');
-insert into mitzvos values (581, 'שלא לגלות ערות עחות מן האב והיא בת אשת אביו', null, 'L');
+insert into mitzvos values (581, 'שלא לגלות ערות אחות מן האב והיא בת אשת אביו', null, 'L');
 insert into mitzvos values (582, 'שלא לגלות ערות בת הבן', null, 'L');
 insert into mitzvos values (583, 'שלא לגלות ערות בת הבת', null, 'L');
 insert into mitzvos values (584, 'שלא לגלות ערות הבת', null, 'L');
@@ -621,7 +624,7 @@ insert into mitzvos values (604, 'שלא יחזיר המגרש גרושתו אח
 insert into mitzvos values (605, 'שלא תנשא היבמה לאחר חוץ מן היבם', null, 'L');
 insert into mitzvos values (606, 'שלא יגרש האונס את אנוסתו', null, 'L');
 insert into mitzvos values (607, 'שלא יגרש מוציא שם רע את אשתו', null, 'L');
-insert into mitzvos values (608, 'שלא יקח סריס בת ישראל', null, 'L');
+insert into mitzvos values (608, 'שלא יקח סריס בת ישראל', 'For someone lacking their male organ not to marry a Jewish woman', 'L');
 insert into mitzvos values (609, 'שלא לסרס אחד מכל המינין', null, 'L');
 insert into mitzvos values (610, 'שלא למנות מלך על ישראל כי אם מבני ישראל', null, 'L');
 insert into mitzvos values (611, 'שלא ירבה המלך סוסים', null, 'L');
@@ -702,7 +705,29 @@ insert into mitzvos values (678, 'שלא להנות מעגלה ערופה ופט
 insert into mitzvos values (679, 'מצות צדקות הדין על כל מאורע ויחשוב כי הכל לטובתו', 'To consider everything that happens to you to be for the good', 'A');
 insert into mitzvos values (680, 'מצות חישוב תקופות מזלות ומולדות ולעבר השנים', 'To calculate the constellations, new moons and leap years', 'A');
 insert into mitzvos values (681, 'מצות הרחקה מן השקר', 'To distance oneself from falsehood', 'A');
+insert into mitzvos values (682, 'שלא לנסות את השם', 'Not to test Hashem', 'L');
+insert into mitzvos values (683, 'שלא לפרוש מן התורה', 'Not to remove oneself from the Torah', 'L');
+insert into mitzvos values (684, 'שלא לעבוד עבודה זרה דרך כבוד אפילו אין דרך עבודתה בכך', 'Not to serve idols in an honorary way, even if its not its normal form of service', 'L');
+insert into mitzvos values (685, 'שלא להקים פסל', 'Not to set up a statue', 'L');
+insert into mitzvos values (686, 'שלא יתגאו בני ישראל', 'For a Jew not to become haughty', 'L');
+insert into mitzvos values (687, 'שלא ישא איש ישראל שפחה ולא תנשא בת ישראל לעבד', 'For a Jewish man not to marry a maidservant, not a Jewish woman a slave', 'L');
+insert into mitzvos values (688, 'שלא ישא מי שנכרת הגיד שלו בת ישראל', 'For someone lacking their corona not to marry a Jewish woman', 'L');
 
+/**
+71 Misah
+	18 Skilah
+	10 Sreifa**
+	2 Hereg (Sayif)
+	9 Chenek**
+	21 Kares**
+	11 Misah Bideo Shamayim
+
+277 Lo Saaseh on Yechidim
+
+200 Aseh on Yechidim
+
+65 Parshiyos
+*/
 create table bahag (
 	_id integer NOT NULL primary key,
 	mitzvahId integer NOT NULL,
@@ -713,7 +738,58 @@ create table bahag (
 	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
 );
 
+/**
+200 Aseh on Yechidim
+	97 Mitzvos HaGuf
+	45 Tumah
+ 	58 Kehunah
+
+277 Lo Saaseh on Yechidim
+	142 Mitzvos HaGuf
+	135 Remaining
+
+71 Misah (LeBeis Din)
+	23 Kares
+	18 Skilah
+	10 Sreifa
+	10 Misah Bidei Shamayim
+	6 Chenek
+	2 Kenaim
+	2 Sayif
+
+65 Parshiyos (Aseh/Lo Saaseh LeTzibbur)
+*/
 create table rasag (
+	_id integer NOT NULL primary key,
+	mitzvahId integer NOT NULL,
+	mitzvahNumber integer NOT NULL,
+	source varchar NOT NULL,
+	type varchar NOT NULL,
+	originalText varchar,
+	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
+);
+
+create table zoharRakiah (
+	_id integer NOT NULL primary key,
+	mitzvahId integer NOT NULL,
+	mitzvahNumber integer NOT NULL,
+	source varchar NOT NULL,
+	type varchar NOT NULL,
+	originalText varchar,
+	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
+);
+
+create table semak (
+	_id integer NOT NULL primary key,
+	mitzvahId integer NOT NULL,
+	mitzvahNumber integer NOT NULL,
+	source varchar NOT NULL,
+	type varchar NOT NULL,
+	originalText varchar,
+	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
+);
+
+create table seferCharedim (
 	_id integer NOT NULL primary key,
 	mitzvahId integer NOT NULL,
 	mitzvahNumber integer NOT NULL,
