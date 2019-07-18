@@ -4,16 +4,21 @@ drop table if exists semag;
 drop table if exists semagNotes;
 
 /* Mitzvah categories are:
-  0 - 
-  1 - Miseder Nashim
-  2 - Hechsher Maachalos
-  3 - Nezikin
-  4 - Nedarim UShevuos
-  5 - Mikdash
+  0  - 
+  1  - Miseder Nashim
+  2  - Hechsher Maachalos
+  3  - Nezikin
+  4  - Nedarim UShevuos
+  5  - Mikdash
 
-  6 -
-  7 - Miseder Nashim
-  8 - Issurei Maaachalos (and others)
+  6  -
+  7  - Miseder Nashim
+  8  - Issurei Maaachalos
+  9  -
+  10 - Nazir
+  11 -
+  12 - Midkash
+  13 -
 */
 create table semag (
 	_id integer NOT NULL primary key,
@@ -196,7 +201,7 @@ insert into semag (_id, mitzvahId, mitzvahNumber, category) values (160, 124, 16
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (161, 130, 161, 4);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (162, 195, 162, 4);
 
--- Mitzvos HaMikdash
+-- Mitzvos Aseh Shel HaMikdash
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (163,  20, 163, 5);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (164,  21, 164, 5);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (165,  22, 165, 5);
@@ -283,6 +288,7 @@ insert into semag (_id, mitzvahId, mitzvahNumber, category) values (246,  98, 24
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (247, 105, 247, 5);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (248, 109, 248, 5);
 
+-- Mitzvos Lo Saseh
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (249, 249,  1, 6);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (250, 311,  2, 6);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (251, 313,  3, 6);
@@ -363,7 +369,7 @@ insert into semag (_id, mitzvahId, mitzvahNumber, category) values (325, 448, 77
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (326, 449, 78, 6);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (327, 446, 79, 6);
 
--- MiSeder Nashim
+-- Mitzvos Lo Saseh MiSeder Nashim
 insert into semag values (328, 687, 80, 7, 467);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (329, 510, 81, 7);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (330, 604, 82, 7);
@@ -412,7 +418,7 @@ insert into semag (_id, mitzvahId, mitzvahNumber, category) values (372, 409, 12
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (373, 410, 125, 7);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (374, 601, 126, 7);
 
--- Issurei Maachalos (and others)
+-- Mitzvos Lo Saseh shel Issurei Maachalos
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (375, 420, 127, 8);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (376, 422, 128, 8);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (377, 421, 129, 8);
@@ -438,6 +444,227 @@ insert into semag (_id, mitzvahId, mitzvahNumber, category) values (396, 442, 14
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (397, 349, 149, 8);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (398, 554, 150, 8);
 
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (399, 519, 151, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (400, 520, 152, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (401, 494, 153, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (402, 492, 154, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (403, 493, 155, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (404, 495, 156, 9);
+insert into semag values (405, 689, 157, 9, 509);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (406, 513, 158, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (407, 517, 159, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (408, 537, 160, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (409, 543, 161, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (410, 544, 162, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (411, 540, 163, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (412, 541, 164, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (413, 545, 165, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (414, 557, 166, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (415, 546, 167, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (416, 547, 168, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (417, 518, 169, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (418, 498, 170, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (419, 499, 171, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (420, 500, 172, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (421, 501, 173, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (422, 507, 174, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (423, 506, 175, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (424, 505, 176, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (425, 508, 177, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (426, 481, 178, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (427, 509, 179, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (428, 502, 180, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (429, 486, 181, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (430, 516, 182, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (431, 515, 183, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (432, 467, 184, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (433, 482, 185, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (434, 487, 186, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (435, 488, 187, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (436, 489, 188, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (437, 490, 189, 9);
+insert into semag values (438, 690, 190, 9, 399);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (439, 483, 191, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (440, 484, 192, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (441, 485, 193, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (442, 532, 194, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (443, 530, 195, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (444, 531, 196, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (445, 314, 197, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (446, 558, 198, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (447, 548, 199, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (448, 538, 200, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (449, 542, 201, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (450, 527, 202, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (451, 525, 203, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (452, 523, 204, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (453, 521, 205, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (454, 528, 206, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (455, 524, 207, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (456, 522, 208, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (457, 563, 209, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (458, 564, 210, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (459, 565, 211, 9);
+insert into semag values (460, 691, 212, 9, 494);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (461, 536, 213, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (462, 534, 214, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (463, 535, 215, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (464, 533, 216, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (465, 560, 217, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (466, 566, 218, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (467, 567, 219, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (468, 443, 220, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (469, 610, 221, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (470, 612, 222, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (471, 613, 223, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (472, 611, 224, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (473, 297, 225, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (474, 307, 226, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (475, 294, 227, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (476, 304, 228, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (477, 305, 229, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (478, 559, 230, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (479, 306, 231, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (480, 511, 232, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (481, 512, 233, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (482, 414, 234, 9);
+insert into semag values (483, 692, 235, 9, 344);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (484, 415, 236, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (485, 416, 237, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (486, 310, 238, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (487, 309, 239, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (488, 496, 240, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (489, 497, 241, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (490, 405, 242, 9);
+
+-- Mitzvos Lo Saseh shel Nazir
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (491, 450, 243, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (492, 451, 244, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (493, 452, 245, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (494, 453, 246, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (495, 454, 247, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (496, 456, 248, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (497, 455, 249, 9);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (498, 457, 250, 9);
+
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (499, 358, 251, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (500, 359, 252, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (501, 402, 253, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (502, 381, 254, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (503, 382, 255, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (504, 385, 256, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (505, 384, 257, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (506, 383, 258, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (507, 389, 259, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (508, 390, 260, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (509, 391, 261, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (510, 398, 262, 10);
+insert into semag values (511, 693, 263, 10, 515);
+insert into semag values (512, 694, 264, 10, 334);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (513, 397, 265, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (514, 468, 266, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (515, 469, 267, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (516, 470, 268, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (517, 471, 269, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (518, 478, 270, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (519, 479, 271, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (520, 472, 272, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (521, 473, 273, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (522, 474, 274, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (523, 475, 275, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (524, 417, 276, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (525, 418, 277, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (526, 476, 278, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (527, 463, 279, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (528, 464, 280, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (529, 465, 281, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (530, 466, 282, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (531, 290, 283, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (532, 458, 284, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (533, 459, 285, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (534, 461, 286, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (535, 460, 287, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (536, 462, 288, 10);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (537, 480, 289, 10);
+
+-- Mitzvos Lo Saseh Hateluyin BaMikdash
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (538, 327, 290, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (539, 328, 291, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (540, 332, 292, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (541, 331, 293, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (542, 333, 294, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (543, 329, 295, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (544, 334, 296, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (545, 320, 297, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (546, 336, 298, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (547, 335, 299, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (548, 321, 300, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (549, 411, 301, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (550, 412, 302, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (551, 316, 303, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (552, 325, 304, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (553, 323, 305, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (554, 324, 306, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (555, 317, 307, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (556, 318, 308, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (557, 322, 309, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (558, 339, 310, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (559, 340, 311, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (560, 341, 312, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (561, 342, 313, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (562, 344, 314, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (563, 345, 315, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (564, 348, 316, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (565, 656, 317, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (566, 346, 318, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (567, 655, 319, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (568, 347, 320, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (569, 394, 321, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (570, 386, 322, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (571, 387, 323, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (572, 395, 324, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (573, 393, 325, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (574, 393, 326, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (575, 360, 327, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (576, 350, 328, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (577, 351, 329, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (578, 372, 330, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (579, 403, 331, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (580, 337, 332, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (581, 338, 333, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (582, 330, 334, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (583, 368, 335, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (584, 379, 336, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (585, 380, 337, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (586, 378, 338, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (587, 377, 339, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (588, 361, 340, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (589, 362, 341, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (590, 392, 342, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (591, 356, 343, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (592, 357, 344, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (593, 354, 345, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (594, 355, 346, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (595, 363, 347, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (596, 364, 348, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (597, 366, 349, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (598, 373, 350, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (599, 657, 351, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (600, 371, 352, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (601, 376, 353, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (602, 374, 354, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (603, 375, 355, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (604, 369, 356, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (605, 370, 357, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (606, 365, 358, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (607, 367, 359, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (608, 404, 360, 11);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (609, 477, 361, 11);
+
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (610, 555, 362, 12);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (611, 556, 363, 12);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (612, 561, 364, 12);
+insert into semag (_id, mitzvahId, mitzvahNumber, category) values (613, 562, 365, 12);
 
 create table semagNotes (
 	_id integer NOT NULL primary key,
@@ -466,3 +693,17 @@ insert into semagNotes values (360, null, 'The Semag defines this mitzvah slight
 insert into semagNotes values (361, null, 'Like the Ramban, the Semag splits this into two mitzvos. This one is about Ammon.');
 insert into semagNotes values (366, null, 'The Rambam counts this as one mitzvah, but the Semag splits it into two. This one is about someone without beitzim.');
 insert into semagNotes values (396, null, 'The Semag learns this mitzvah is forbidding eating from things used for idol worship, which includes the prohibition on drinking idol wine libations. He learns this from  Exodus 34:12. This is more like the Ramban''s understanding (see his comments on Rambam  #194), although the Ramban doesn''t count this mitzvah.');
+insert into semagNotes values (405, null, 'The Semag in his remazim sounds like he''s not sure if he should count lo sisgzol or contention. In the main work he decides on the latter.');
+insert into semagNotes values (406, null, 'The Semag combines Rambam''s #265 and #266.');
+insert into semagNotes values (427, null, 'The Semag sounds like this mitzvah is mainly on the father not to resell his daughter to slavery after her servitude ends. The Rambam (and Chinuch) place the focus of this mitzvah on her master not to sell her to another.');
+insert into semagNotes values (437, null, 'The Semag splits this mitzvah into two. This one is for a handmill.');
+insert into semagNotes values (450, null, 'The Semag formulates this mitzvah more like Ramban''s shichchah #13, but he''s apparently referring to the Rambam''s mitzvah #279. In fact, the Zohar HaRakiah suggests this is one of the mitzvos that the Ramban was missing from the Rambam, so really they''re the same mitzvah. However, this doesn''t fully explain the Ramban. See Frankel edition for sources that discuss this.');
+insert into semagNotes values (510, null, 'According to Derech Mitzvosecha II, the Semag counts this mitzvah, but uses Deuteronomy 12:17 as the source.');
+insert into semagNotes values (511, null, 'According to Derech Mitzvosecha II, the Semag''s conclusion is to count this instead of the Rambam''s mitzvah about maaser sheni beaninus (#151).');
+insert into semagNotes values (512, null, 'According to Derech Mitzvosecha II, the Semag''s conclusion is to count this instead of the Rambam''s mitzvah about misusing maaser sheni money (#152).');
+insert into semagNotes values (552, null, 'The Semag combines Rambam''s mitzvos #77 and #78 into this one.');
+insert into semagNotes values (556, null, 'The Semag combines Rambam''s mitzvos #70 and #71 into this one.');
+insert into semagNotes values (561, null, 'The Semag combines Rambam''s mitzvos #94 and #95 into this one.');
+insert into semagNotes values (564, null, 'The Semag splits the Rambam''s mitzvah #100 into two. This one is esnan zonah.');
+insert into semagNotes values (566, null, 'The Semag splits the Rambam''s mitzvah #98 into two. This one is seor.');
+insert into semagNotes values (598, null, 'The Semag splits the Rambam''s mitzvah #125 into two. This one is eating the korbon pesach raw.');
