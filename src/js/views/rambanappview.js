@@ -4,7 +4,7 @@ var RambanView = require("./rambanview");
 var Rambans = new RambanList;
 
 var RambanAppView = Backbone.View.extend({
-	el: $("#container"),
+	el: "#mitzvos",
 
 	curLang: "he",
 
@@ -13,12 +13,19 @@ var RambanAppView = Backbone.View.extend({
 		this.listenTo(Rambans, 'reset', this.addAll);
 
 		Rambans.fetch();
-		//this.setSorting(Rambams.columnsHe);
+		//this.setSorting(Rambans.columnsHe);
+	},
+
+	destroy: function() {
+		this.undelegateEvents();
+		this.$el.removeData().unbind();
+
+		this.$el.empty();
 	},
 
 	addOne: function(mitzvah) {
 		var view = new RambanView({model: mitzvah});
-		$("#mitzvos").append(view.render().el);
+		this.$el.append(view.render().el);
 	},
 
 	addAll: function() {

@@ -5,7 +5,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 require '../vendor/autoload.php';
 
 $config['displayErrorDetails'] = true;
-/*$config['db']['host']   = "localhost";
+/*$config['db']['host']   = "localhost"
 $config['db']['user']   = "user";
 $config['db']['pass']   = "password";
 $config['db']['dbname'] = "exampleapp";
@@ -47,6 +47,18 @@ $container["queries"] = function($c) {
 			LEFT JOIN rambam on ramban.mitzvahId = rambam.mitzvahId	-- Take everything from ramban and add any equivalent rambam's
 		 )
 		 WHERE mitzvos._id = mitzvahId AND books._id = verses.bookId AND verses._id = mergedSource";
+
+	$query["semag"] =
+		"SELECT " . $query["sharedColumns"] . "
+		 FROM mitzvos, books, verses, (
+			-- Combine Semag's list with the Rambams, retreiving any information that is missing in the Semag's from the Rambam's
+		 	SELECT semag.mitzvahId, semag.mitzvahNumber,
+			(COALESCE(semag.source, '') || COALESCE(rambam.source, '')) AS mergedSource	-- merge source columns, replacing NULL with ''
+			FROM semag
+			LEFT JOIN rambam on semag.mitzvahId = rambam.mitzvahId	-- Take everything from semag and add any equivalent rambam's
+		 )
+		 WHERE mitzvos._id = mitzvahId AND books._id = verses.bookId AND verses._id = mergedSource";
+
 	return $query;
 };
 
@@ -141,7 +153,18 @@ $app->get("/ramban/{id}", function(Request $request, Response $response, $args) 
 	return $response;
 });
 
+$app->get("/semag", function(Request $request, Response $response) {
+	$res = $this->db->query($this->queries["semag"] . ";");
+	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
+	return $response;
+});
 
+$app->get("/semag/{id}", function(Request $request, Response $response, $args) {
+	$res = $this->db->prepare($this->queries["semag"] . " and mitzvahNumber = ?;");
+	$res->execute([$args["id"]]);
+	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
+	return $response;
+});
 
 $app->run();
 

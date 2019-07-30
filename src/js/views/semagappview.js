@@ -1,19 +1,19 @@
-var RambamList = require("../collections/rambamlist");
-var RambamView = require("./rambamview");
+var SemagList = require("../collections/semaglist");
+var SemagView = require("./semagview");
 
-var Rambams = new RambamList;
+var Semags = new SemagList;
 
-var RambamAppView = Backbone.View.extend({
+var SemagAppView = Backbone.View.extend({
 	el: "#mitzvos",
 
 	curLang: "he",
 
 	initialize: function() {
-		this.listenTo(Rambams, 'add', this.addOne);
-		this.listenTo(Rambams, 'reset', this.addAll);
+		this.listenTo(Semags, 'add', this.addOne);
+		this.listenTo(Semags, 'reset', this.addAll);
 
-		Rambams.fetch();
-		this.setSorting(Rambams.columnsHe);
+		Semags.fetch();
+		//this.setSorting(Semags.columnsHe);
 	},
 
 	destroy: function() {
@@ -24,27 +24,27 @@ var RambamAppView = Backbone.View.extend({
 	},
 
 	addOne: function(mitzvah) {
-		var view = new RambamView({model: mitzvah});
+		var view = new SemagView({model: mitzvah});
 		this.$el.append(view.render().el);
 	},
 
 	addAll: function() {
-		Rambams.each(this.addOne, this);
+		Semags.each(this.addOne, this);
 	},
 
 	languageSwitch: function() {
-		Rambams.each(function(mitzvah) {
+		Semags.each(function(mitzvah) {
 			mitzvah.trigger("languageSwitch");
 		});
 		if (this.curLang === "he") {
-			this.setSorting(Rambams.columnsEn);
+			//this.setSorting(Semags.columnsEn);
 			this.curLang = "en";
 		}
 		else {
-			this.setSorting(Rambams.columnsHe);
+			//this.setSorting(Semags.columnsHe);
 			this.curLang = "he";
 		}
-	},
+	}/*,
 
 	setSorting: function(columns) {
 		$("#sorting").html("");
@@ -52,7 +52,7 @@ var RambamAppView = Backbone.View.extend({
 		for (i in columns) {
 			$("#sorting").append("<a href=\"#\">" + columns[i] + "</a>");
 		}
-	}
+	}*/
 });
 
-module.exports = RambamAppView;
+module.exports = SemagAppView;

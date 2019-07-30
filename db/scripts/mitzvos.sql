@@ -415,7 +415,7 @@ insert into mitzvos values (395, 'שלא לאכול בשר קדשים קלים �
 insert into mitzvos values (396, 'שלא יאכל זר בשר קודשי קודשים', null, 'L');
 insert into mitzvos values (397, 'שלא יאכלו כהנים ביכורים קודם הנחתם בעזרה', null, 'L');
 insert into mitzvos values (398, 'שלא לאכול מעשר שני בטומאה', 'Not to eat Maaser Sheni while impure', 'L');
-insert into mitzvos values (399, 'שלא לאכול מעשר שנע באנינות', 'Not to eat Maaser Sheni as an Onen', 'L');
+insert into mitzvos values (399, 'שלא לאכול מעשר שני באנינות', 'Not to eat Maaser Sheni as an Onen', 'L');
 insert into mitzvos values (400, 'שלא להוציא דמי מעשר שני בשאר דברים שאינם מאכילה ושתייה', 'Not to purchase with Maaser Sheni money anything besides food or drink', 'L');
 insert into mitzvos values (401, 'שלא לאכל טבל', null, 'L');
 insert into mitzvos values (402, 'שלא להקדים חוקי התבואות', null, 'L');

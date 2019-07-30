@@ -1,26 +1,16 @@
 var _ = require("underscore");
 
-var templateHe = "#compare-template-he";
-var templateEn = "#compare-template-en";
+var templateHe = "#semag-template-he";
+var templateEn = "#semag-template-en";
 
-var CompareView = Backbone.View.extend({
+var SemagView = Backbone.View.extend({
 	tagName: "li",
 	template: _.template($(templateHe).html()),
-
-	count: 0,
 	
 	curLang: "he",
 
 	initialize: function() {
 		this.listenTo(this.model, "languageSwitch", this.languageSwitch);
-	},
-
-	destroy: function() {
-		this.undelegateEvents();
-		this.$el.removeData().unbind();
-
-		this.$el.empty();
-		this.render();
 	},
 
 	/**
@@ -41,8 +31,6 @@ var CompareView = Backbone.View.extend({
 	},
 
 	render: function() {
-		this.model.set("count", this.count);
-		
 		this.$el.html(this.template(this.model.toJSON()));
 
 		var asehOrLoSaseh = this.model.get("asehOrLoSaseh");
@@ -64,4 +52,4 @@ var CompareView = Backbone.View.extend({
 	}
 });
 
-module.exports = CompareView;
+module.exports = SemagView;
