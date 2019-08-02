@@ -1,26 +1,13 @@
+var MoneiMitzvahAppView = require("./moneimitzvahappview");
 var RambamList = require("../collections/rambamlist");
 var RambamView = require("./rambamview");
 
-var Rambams = new RambamList;
-
-var RambamAppView = Backbone.View.extend({
-	el: "#mitzvos",
-
-	curLang: "he",
+var RambamAppView = MoneiMitzvahAppView.extend({
 
 	initialize: function() {
-		this.listenTo(Rambams, 'add', this.addOne);
-		this.listenTo(Rambams, 'reset', this.addAll);
-
-		Rambams.fetch();
-		this.setSorting(Rambams.columnsHe);
-	},
-
-	destroy: function() {
-		this.undelegateEvents();
-		this.$el.removeData().unbind();
-
-		this.$el.empty();
+		// Call super and pass it the collections/model-view class
+		MoneiMitzvahAppView.prototype.initialize(this, new RambamList());
+		this.setSorting(this.mitzvahList.columnsHe);
 	},
 
 	addOne: function(mitzvah) {
@@ -28,21 +15,13 @@ var RambamAppView = Backbone.View.extend({
 		this.$el.append(view.render().el);
 	},
 
-	addAll: function() {
-		Rambams.each(this.addOne, this);
-	},
-
 	languageSwitch: function() {
-		Rambams.each(function(mitzvah) {
-			mitzvah.trigger("languageSwitch");
-		});
-		if (this.curLang === "he") {
-			this.setSorting(Rambams.columnsEn);
-			this.curLang = "en";
+		MoneiMitzvahAppView.prototype.languageSwitch();
+		if (this.curLang === "en") {
+			this.setSorting(this.mitzvahList.columnsEn);
 		}
 		else {
-			this.setSorting(Rambams.columnsHe);
-			this.curLang = "he";
+			this.setSorting(this.mitzvahList.columnsHe);
 		}
 	},
 

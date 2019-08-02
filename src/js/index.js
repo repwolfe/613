@@ -45,18 +45,18 @@ $(function() {
 		}
 		switch(window.location.pathname) {
 			case Rambam.url:
-				App = new RambamAppView;
+				App = new RambamAppView();
 				break;
 			case Ramban.url:
-				App = new RambanAppView;
+				App = new RambanAppView();
 				break;
 			case Semag.url:
-				App = new SemagAppView;
+				App = new SemagAppView();
 				break;
 			case "/compare":
 				$("#container").hide();
 				$("#compare").show();
-				App = new CompareAppView;
+				App = new CompareAppView();
 				break;
 			default:
 				break;
