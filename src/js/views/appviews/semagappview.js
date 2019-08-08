@@ -1,12 +1,12 @@
 var MoneiMitzvahAppView = require("./moneimitzvahappview");
-var SemagList = require("../collections/semaglist");
-var SemagView = require("./semagview");
+var SemagList = require("../../collections/semaglist");
+var SemagView = require("../modelviews/semagview");
 
 var SemagAppView = MoneiMitzvahAppView.extend({
 
 	initialize: function() {
-		// Call super and pass it the collections/model-view class
-		MoneiMitzvahAppView.prototype.initialize(this, new SemagList());
+		this.mitzvahList = new SemagList();
+		MoneiMitzvahAppView.prototype.initialize.apply(this);
 	},
 
 	addOne: function(mitzvah) {

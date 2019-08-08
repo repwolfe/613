@@ -16,7 +16,7 @@ var Ramban = Backbone.Model.extend({
 
 		if (shihchaNum !== "" && shihchaNum != null) {
 			this.set("shihchaNumberHe", ", שכחה מספר " + shihchaNum);
-			this.set("shihchaNumberEn", ", Shichna #"+ shihchaNum);
+			this.set("shihchaNumberEn", ", Shihcha #"+ shihchaNum);
 		}
 	}
 });

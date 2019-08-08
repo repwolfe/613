@@ -1,11 +1,7 @@
 var _ = require("underscore");
 
-var templateHe = "#ramban-template-he";
-var templateEn = "#ramban-template-en";
-
-var RambanView = Backbone.View.extend({
+var MoneiMitzvahView = Backbone.View.extend({
 	tagName: "li",
-	template: _.template($(templateHe).html()),
 	
 	curLang: "he",
 
@@ -19,12 +15,12 @@ var RambanView = Backbone.View.extend({
 	languageSwitch: function() {
 		// Was Hebrew
 		if (this.curLang === "he") {
-			this.template = _.template($(templateEn).html());
+			this.template = _.template($(this.templateEn).html());
 			this.curLang = "en";
 		}
 		// Was English
 		else {
-			this.template = _.template($(templateHe).html());
+			this.template = _.template($(this.templateHe).html());
 			this.curLang = "he";
 		}
 		this.render();
@@ -34,22 +30,17 @@ var RambanView = Backbone.View.extend({
 		this.$el.html(this.template(this.model.toJSON()));
 
 		var asehOrLoSaseh = this.model.get("asehOrLoSaseh");
-		var backgroundCss = "";
 		if (asehOrLoSaseh === "A") {
-			backgroundCss = "#00ff08";
+			this.$el.addClass("aseh");
+			this.$el.removeClass("loSaaseh");
 		}
 		else if (asehOrLoSaseh === "L") {
-			backgroundCss = "#ff3b00";
+			this.$el.addClass("loSaaseh");
+			this.$el.removeClass("aseh");
 		}
-		else {
-			backgroundCss = "#000";
-		}
-		this.$el.css({
-			"background": backgroundCss
-		});
 
 		return this;
 	}
 });
 
-module.exports = RambanView;
+module.exports = MoneiMitzvahView;

@@ -1,5 +1,5 @@
-var CompareList = require("../collections/comparelist");
-var CompareView = require("./compareview");
+var CompareList = require("../../collections/comparelist");
+var CompareView = require("../modelviews/compareview");
 
 var ComparePanelView = Backbone.View.extend({
 	curLang: "he",

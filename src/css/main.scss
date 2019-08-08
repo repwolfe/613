@@ -3,6 +3,9 @@ $fancy-font: 'Alef';
 $backup-font: $reg-font;
 $font-weight: 400;
 
+$aseh-color: #82e346;
+$lo-saaseh-color: #e37546;
+
 @mixin set-font($whichfont, $fontsize, $lineheight) {
 	font: $font-weight #{$fontsize}/#{$lineheight} $whichfont, "Taamey David CLM", $backup-font, sans-serif;
 }
@@ -57,7 +60,6 @@ body {
 			margin: 0 5px;
 			background-color: #efefef;
 		}
-		
 
 		.toggled {
 			background-color: #ddd;
@@ -111,9 +113,17 @@ body {
 		vertical-align: top;
 		width: 140px;
 		height: 140px;
-		background: #f00;
+		background: #000;
 		padding: 10px;
 		margin: 5px;
+	}
+
+	.aseh {
+		background: $aseh-color;
+	}
+
+	.loSaaseh {
+		background: $lo-saaseh-color;
 	}
 }
 

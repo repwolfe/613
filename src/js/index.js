@@ -1,11 +1,11 @@
 var css = require("../css/main.scss");
 
 var Backbone = require("backbone");
-var MoneiMitzvah = require("./models/moneimitzvah");
-var RambamAppView = require("./views/rambamappview");
-var RambanAppView = require("./views/rambanappview");
-var SemagAppView = require("./views/semagappview");
-var CompareAppView = require("./views/compareappview");
+var MoneiMitzvah   = require("./models/moneimitzvah");
+var RambamAppView  = require("./views/appviews/rambamappview");
+var RambanAppView  = require("./views/appviews/rambanappview");
+var SemagAppView   = require("./views/appviews/semagappview");
+var CompareAppView = require("./views/appviews/compareappview");
 
 $(function() {
 
@@ -60,6 +60,10 @@ $(function() {
 				break;
 			default:
 				break;
+		}
+		// If starting with English
+		if ($(languageButton).text() === "A") {
+			App.setStartEnglish();
 		}
 	}
 

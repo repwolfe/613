@@ -1,12 +1,12 @@
 var MoneiMitzvahAppView = require("./moneimitzvahappview");
-var RambamList = require("../collections/rambamlist");
-var RambamView = require("./rambamview");
+var RambamList = require("../../collections/rambamlist");
+var RambamView = require("../modelviews/rambamview");
 
 var RambamAppView = MoneiMitzvahAppView.extend({
 
 	initialize: function() {
-		// Call super and pass it the collections/model-view class
-		MoneiMitzvahAppView.prototype.initialize(this, new RambamList());
+		this.mitzvahList = new RambamList();
+		MoneiMitzvahAppView.prototype.initialize.apply(this);
 		this.setSorting(this.mitzvahList.columnsHe);
 	},
 
@@ -16,7 +16,7 @@ var RambamAppView = MoneiMitzvahAppView.extend({
 	},
 
 	languageSwitch: function() {
-		MoneiMitzvahAppView.prototype.languageSwitch();
+		MoneiMitzvahAppView.prototype.languageSwitch.apply(this);
 		if (this.curLang === "en") {
 			this.setSorting(this.mitzvahList.columnsEn);
 		}
