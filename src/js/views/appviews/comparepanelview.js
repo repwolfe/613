@@ -1,44 +1,29 @@
 var CompareList = require("../../collections/comparelist");
 var CompareView = require("../modelviews/compareview");
+var MoneiMitzvahAppView = require("./moneimitzvahappview");
 
-var ComparePanelView = Backbone.View.extend({
-	curLang: "he",
-	listUrl: "",
-	listEl: "",
+var ComparePanelView = MoneiMitzvahAppView.extend({
+
 	count: 0,
 
-	initialize: function() {
-		this.TheList = new CompareList;
-		this.listenTo(this.TheList, 'add', this.addOne);
-		this.listenTo(this.TheList, 'reset', this.addAll);
-	},
+	initialize: function(el, url) {
+		this.el = el;
 
-	load: function() {
-		this.TheList.url = this.listUrl;
-		this.TheList.fetch();
+		this.mitzvahList = new CompareList();
+		this.mitzvahList.url = url;
+
+		MoneiMitzvahAppView.prototype.initialize.apply(this);
 	},
 
 	addOne: function(mitzvah) {
 		var view = new CompareView({model: mitzvah});
 		view.count =  ++this.count;
-		$(this.listEl).append(view.render().el);
+		this.$el.append(view.render().el);
 	},
 
 	addAll: function() {
 		this.count = 0;
-		this.TheList.each(this.addOne, this);
-	},
-
-	languageSwitch: function() {
-		this.TheList.each(function(mitzvah) {
-			mitzvah.trigger("languageSwitch");
-		});
-		if (this.curLang === "he") {
-			this.curLang = "en";
-		}
-		else {
-			this.curLang = "he";
-		}
+		this.mitzvahList.each(this.addOne, this);
 	}
 });
 

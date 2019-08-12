@@ -1,28 +1,27 @@
+var MoneiMitzvah = require("../../models/moneimitzvah");
 var ComparePanelView = require("./comparepanelview");
-
-var LeftList 	= new ComparePanelView;
-var MiddleList	= new ComparePanelView;
-var RightList 	= new ComparePanelView;
 
 var CompareAppView = Backbone.View.extend({
 	el: $("#compare"),
 	curLang: "he",
 
-	initialize: function() {
-		LeftList.el = $("#left");
-		LeftList.listEl = "#leftMitzvos";
-		LeftList.listUrl = '/db/rambam/ramban';
-		LeftList.load();
+	/**
+	 * @params MoneiMitzvah left, right
+	 */
+	initialize: function(left, right) {
+		var dbUrl = "/db";
+		var leftListUrl = dbUrl + left.url + right.url;
+		this.LeftList	= new ComparePanelView("#leftMitzvos", leftListUrl);
+		this.MiddleList = new ComparePanelView("#midMitzvos", leftListUrl + "?both=yes");
+		this.RightList 	= new ComparePanelView("#rightMitzvos", dbUrl + right.url + left.url);
+	},
 
-		MiddleList.el = $("#middle");
-		MiddleList.listEl = "#midMitzvos";
-		MiddleList.listUrl = '/db/rambam/ramban?both=yes';
-		MiddleList.load();
+	destroy: function() {
+		this.LeftList.destroy();
+		this.MiddleList.destroy();
+		this.RightList.destroy();
 
-		RightList.el = $("#right");
-		RightList.listEl = "#rightMitzvos";
-		RightList.listUrl = "/db/ramban/rambam";
-		RightList.load();
+		this.undelegateEvents();
 	},
 
 	languageSwitch: function() {

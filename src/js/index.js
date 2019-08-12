@@ -21,13 +21,52 @@ $(function() {
 	var MoneiMitzvos = [Rambam, Ramban, Semag];
 	var liToURL = new Map();
 
+	var recentlySelected = "";
+	var lessRecentlySelected = "";
+
 	for (const monei of MoneiMitzvos) {
 		var element = document.createElement("li");
 		element.innerHTML= monei.nameHe;
 		$(element).attr("id", monei.id);
 		$(element).click(function(e) {
 			$(e.target).toggleClass("toggled");
-			window.history.replaceState(null, null, liToURL.get(e.target.id));
+			var clickedNow = e.target.id;
+			var newUrl;
+
+			// Store previously selected monei mitzvah URL, in the event that it wasn't just deselected
+			var recentUrl = "";
+			if (recentlySelected !== "") {
+				recentUrl = liToURL.get(recentlySelected);
+			}
+
+			if (clickedNow === recentlySelected) {	// If just deselected previously selected
+				if (lessRecentlySelected !== "") {	// If ever clicked anything else
+					newUrl = liToURL.get(lessRecentlySelected);
+					recentlySelected = lessRecentlySelected;		// pretend older selected was all that has been ever clicked
+					lessRecentlySelected = "";
+				}
+				else {	// If not, have nothing selected
+					newUrl = "/";
+					recentlySelected = "";
+				}
+			}
+			else if (clickedNow === lessRecentlySelected) {		// If just deselected older selected
+				newUrl = recentUrl;
+				lessRecentlySelected = "";
+			}
+			else {	// Just selected something new; display compare view with previously selected
+				if (lessRecentlySelected !== "") {
+					$("li#" + lessRecentlySelected).toggleClass("toggled");		// untoggle older selected button
+				}
+
+				newUrl = recentUrl + liToURL.get(clickedNow);
+
+				lessRecentlySelected = recentlySelected;
+				recentlySelected = clickedNow;
+			}
+
+			window.history.replaceState(null, null, newUrl);
+
 			loadMitzvos();
 		});
 		liToURL.set(monei.id, monei.url);
@@ -43,24 +82,57 @@ $(function() {
 		if (App != null) {
 			App.destroy();
 		}
-		switch(window.location.pathname) {
-			case Rambam.url:
-				App = new RambamAppView();
-				break;
-			case Ramban.url:
-				App = new RambanAppView();
-				break;
-			case Semag.url:
-				App = new SemagAppView();
-				break;
-			case "/compare":
-				$("#container").hide();
-				$("#compare").show();
-				App = new CompareAppView();
-				break;
-			default:
-				break;
+
+		var urlPaths = window.location.pathname.split("/");	// The first entry will be empty
+
+		if (urlPaths.length === 2) {
+			$("#compare").hide();
+			$("#container").show();
+			var theUrl = "/" + urlPaths[1];
+			switch(theUrl) {
+				case Rambam.url:
+					App = new RambamAppView();
+					break;
+				case Ramban.url:
+					App = new RambanAppView();
+					break;
+				case Semag.url:
+					App = new SemagAppView();
+					break;
+			}
 		}
+		else if (urlPaths.length === 3) {
+			// Make sure the two monei mitzvos are valid and not the same one
+			var first = "/" + urlPaths[1];
+			var second = "/" + urlPaths[2];
+			var valid = false;
+			if (first !== second) {
+				for (const monei1 of MoneiMitzvos) {
+					if (first === monei1.url) {
+						for (const monei2 of MoneiMitzvos) {
+							if (second === monei2.url) {
+								$("#container").hide();
+								$("#compare").show();
+								App = new CompareAppView(monei1, monei2);
+								valid = true;
+								break;
+							}
+						}
+						break;
+					}
+				}
+			}
+			if (!valid) {
+				// Display error page
+			}
+		}
+		else if (urlPaths.length > 3) {
+			// Display error page
+		}
+		else {
+			// Display homepage
+		}
+
 		// If starting with English
 		if ($(languageButton).text() === "A") {
 			App.setStartEnglish();
