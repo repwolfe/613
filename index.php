@@ -34,6 +34,21 @@
 		</div>
 	</script>
 
+	<script type="text/template" id="chinuch-template-he">
+		<div class="hebrew">
+			&rlm;<b><%- mitzvahNumber %></b><br>
+			<b><%- mitzvahName %></b><br>
+			<%- bookName %> <%- chapter %>, <%- verse %><br>
+		</div>
+	</script>
+	<script type="text/template" id="chinuch-template-en">
+		<div class="english">
+			<b><%- mitzvahNumber %></b><br>
+			<b><%- mitzvahNameEn %></b><br>
+			<%- bookNameEn %> <%- chapter %>:<%- verse %><br>
+		</div>
+	</script>
+
 	<script type="text/template" id="semag-template-he">
 		<div class="hebrew">
 			&rlm;<b><%- mitzvahNumber %></b><br>
@@ -60,8 +75,8 @@
 		</div>
 	</script>
 
+	<base href="/">
 	<!--<script language="javascript" type="text/javascript" src="lib/jquery-3.0.0.min.js"></script>-->
-	
 	<script
 	  src="https://code.jquery.com/jquery-3.2.1.min.js"
 	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="

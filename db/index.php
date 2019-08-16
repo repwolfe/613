@@ -48,6 +48,22 @@ $container["queries"] = function($c) {
 		 )
 		 WHERE mitzvos._id = mitzvahId AND books._id = verses.bookId AND verses._id = mergedSource";
 
+	$query["chinuch"] =
+		"SELECT " . $query["sharedColumns"] . "
+		 FROM mitzvos, books, verses, (
+			-- Combine Chinuch's list with the Rambams, retreiving any information that is missing in the Chinuch's from the Rambam's
+			SELECT cMitzvahId as mitzvahId, cMitzvahNumber as mitzvahNumber,
+				(COALESCE(cSource, '') || COALESCE(rambam.source, '')) as mergedSource	-- merge source columns, replacing NULL with ''
+			FROM (	-- Combine Chinuch with ChinuchSources
+				SELECT mitzvahId as cMitzvahId, newMitzvahNumber as cMitzvahNumber, source as cSource 
+				FROM chinuch
+				LEFT JOIN chinuchSources on chinuch.mitzvahNumber = chinuchSources.mitzvahNumber
+			)
+			LEFT JOIN rambam on cMitzvahId = rambam.mitzvahId 	-- Take everything from chinuch and add any equivalent rambam's
+			ORDER BY mitzvahNumber
+		 )
+		 WHERE mitzvos._id = mitzvahId AND books._id = verses.bookId AND verses._id = mergedSource";
+
 	$query["semag"] =
 		"SELECT " . $query["sharedColumns"] . "
 		 FROM mitzvos, books, verses, (
@@ -83,88 +99,51 @@ function inBoth($a, $b) {
 		 	WHERE mitzvos._id = mitzvahId;";
 }
 
-$app->get("/verses", function(Request $request, Response $response) {
-	$res = $this->db->query($this->queries["verses"] . ";");
-	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
-	return $response;
-});
+// All the DB paths, and the column to use when selecting a single entry
+$paths = array(
+	"verses" 	=> "verses._id",
+	"mitzvos" 	=> "mitzvos._id",
+	"rambam" 	=> "rambam._id",
+	"ramban" 	=> "mitzvahNumber",
+	"chinuch"	=> "mitzvahNumber",
+	"semag" 	=> "mitzvahNumber"
+);
 
-$app->get("/verses/{id}", function(Request $request, Response $response, $args) {
-	$res = $this->db->prepare($this->queries["verses"] . " and verses._id = ?;");
-	$res->execute([$args["id"]]);
-	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
-	return $response;
-});
-
-$app->get("/mitzvos", function(Request $request, Response $response) {
-	$res = $this->db->query($this->queries["mitzvos"] . ";");
-	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
-	return $response;
-});
-
-$app->get("/mitzvos/{id}", function(Request $request, Response $response, $args) {
-	$res = $this->db->prepare($this->queries["mitzvos"] . " and mitzvos._id = ?;");
-	$res->execute([$args["id"]]);
-	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
-	return $response;
-});
-
-$app->get("/rambam/ramban", function(Request $request, Response $response) {
-	if ($request->getQueryParam("both") === "yes") {
-		$res = $this->db->query(inBoth("rambam", "ramban"));
+// Initialize every compare path (for example: /rambam/semag)
+$path_keys = array_keys($paths);
+$start = 2;
+for ($i = $start; $i < count($path_keys); ++$i) {
+	for ($j = $start; $j < count($path_keys); ++$j) {
+		if ($i != $j) {
+			$app->get("/" . $path_keys[$i] . "/" . $path_keys[$j], function(Request $request, Response $response) use ($path_keys, $i, $j) {
+				if ($request->getQueryParam("both") === "yes") {
+					$res = $this->db->query(inBoth($path_keys[$i], $path_keys[$j]));
+				}
+				else {
+					$res = $this->db->query(inThisNotThat($path_keys[$i], $path_keys[$j]));
+				}
+				$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
+				return $response;
+			});
+		}
 	}
-	else {
-		$res = $this->db->query(inThisNotThat("rambam", "ramban"));
-	}
-	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
-	return $response;
-});
+}
 
-$app->get("/ramban/rambam", function(Request $request, Response $response) {
-	$res = $this->db->query(inThisNotThat("ramban", "rambam"));
-	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
-	return $response;
-});
+// Initialize every acceptable path
+foreach ($paths as $path => $column) {
+	$app->get("/" . $path, function(Request $request, Response $response) use ($path, $column) {
+		$res = $this->db->query($this->queries[$path] . ";");
+		$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
+		return $response;
+	});
 
-$app->get("/rambam", function(Request $request, Response $response) {
-	$res = $this->db->query($this->queries["rambam"] . ";");
-	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
-	return $response;
-});
-
-$app->get("/rambam/{id}", function(Request $request, Response $response, $args) {
-	$id = $request->getAttribute("id");
-	$res = $this->db->prepare($this->queries["rambam"] . " and rambam._id = ?;");
-	$res->execute([$args["id"]]);
-	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
-	return $response;
-});
-
-$app->get("/ramban", function(Request $request, Response $response) {
-	$res = $this->db->query($this->queries["ramban"] . ";");
-	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
-	return $response;
-});
-
-$app->get("/ramban/{id}", function(Request $request, Response $response, $args) {
-	$res = $this->db->prepare($this->queries["ramban"] . " and mitzvahNumber = ?;");
-	$res->execute([$args["id"]]);
-	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
-	return $response;
-});
-
-$app->get("/semag", function(Request $request, Response $response) {
-	$res = $this->db->query($this->queries["semag"] . ";");
-	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
-	return $response;
-});
-
-$app->get("/semag/{id}", function(Request $request, Response $response, $args) {
-	$res = $this->db->prepare($this->queries["semag"] . " and mitzvahNumber = ?;");
-	$res->execute([$args["id"]]);
-	$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
-	return $response;
-});
+	$app->get("/" . $path . "/{id}", function(Request $request, Response $response, $args) use ($path, $column) {
+		$res = $this->db->prepare($this->queries[$path] . " and ". $column . " = ?;");
+		$res->execute([$args["id"]]);
+		$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
+		return $response;
+	});
+}
 
 $app->run();
 

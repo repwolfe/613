@@ -9,6 +9,18 @@ var CompareAppView = Backbone.View.extend({
 	 * @params MoneiMitzvah left, right
 	 */
 	initialize: function(left, right) {
+		this.leftTitle = $("#leftTitle");
+		this.leftTitleHe = left.nameHe;
+		this.leftTitleEn = left.nameEn;
+		this.leftTitle.html("<b>" + this.leftTitleHe +"</b>");
+
+		this.middleTitle = $("#middleTitle");
+
+		this.rightTitle = $("#rightTitle");
+		this.rightTitleHe = right.nameHe;
+		this.rightTitleEn = right.nameEn;
+		this.rightTitle.html("<b>" + this.rightTitleHe +"</b>");
+
 		var dbUrl = "/db";
 		var leftListUrl = dbUrl + left.url + right.url;
 		this.LeftList	= new ComparePanelView("#leftMitzvos", leftListUrl);
@@ -25,37 +37,37 @@ var CompareAppView = Backbone.View.extend({
 	},
 
 	languageSwitch: function() {
-		LeftList.languageSwitch();
-		MiddleList.languageSwitch();
-		RightList.languageSwitch();
+		this.LeftList.languageSwitch();
+		this.MiddleList.languageSwitch();
+		this.RightList.languageSwitch();
 
 		if (this.curLang === "he") {
-			$("#leftTitle").removeClass("hebrew");
-			$("#leftTitle").addClass("english");
-			$("#leftTitle").html("<b>Rambam</b>");
+			this.leftTitle.removeClass("hebrew");
+			this.leftTitle.addClass("english");
+			this.leftTitle.html("<b>" + this.leftTitleEn +"</b>");
 
-			$("#middleTitle").removeClass("hebrew");
-			$("#middleTitle").addClass("english");
-			$("#middleTitle").html("<b>Both</b>");
+			this.middleTitle.removeClass("hebrew");
+			this.middleTitle.addClass("english");
+			this.middleTitle.html("<b>Both</b>");
 
-			$("#rightTitle").removeClass("hebrew");
-			$("#rightTitle").addClass("english");
-			$("#rightTitle").html("<b>Ramban</b>");
+			this.rightTitle.removeClass("hebrew");
+			this.rightTitle.addClass("english");
+			this.rightTitle.html("<b>" + this.rightTitleEn +"</b>");
 
 			this.curLang = "en";
 		}
 		else {
-			$("#leftTitle").removeClass("english");
-			$("#leftTitle").addClass("hebrew");
-			$("#leftTitle").html("<b>רמב\"ם</b>");
+			this.leftTitle.removeClass("english");
+			this.leftTitle.addClass("hebrew");
+			this.leftTitle.html("<b>" + this.leftTitleHe +"</b>");
 
-			$("#middleTitle").removeClass("english");
-			$("#middleTitle").addClass("hebrew");
-			$("#middleTitle").html("<b>שניהם</b>");
+			this.middleTitle.removeClass("english");
+			this.middleTitle.addClass("hebrew");
+			this.middleTitle.html("<b>שניהם</b>");
 
-			$("#rightTitle").removeClass("english");
-			$("#rightTitle").addClass("hebrew");
-			$("#rightTitle").html("<b>רמב\"ן</b>");
+			this.rightTitle.removeClass("english");
+			this.rightTitle.addClass("hebrew");
+			this.rightTitle.html("<b>" + this.rightTitleHe +"</b>");
 
 			this.curLang = "he";
 		}
