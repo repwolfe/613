@@ -6,6 +6,8 @@ var RambamView = MoneiMitzvahView.extend({
 	
 	templateHe: "#rambam-template-he",
 	templateEn: "#rambam-template-en",
+	templateSelectedHe: "#rambam-selected-template-he",
+	templateSelectedEn: "#rambam-selected-template-en",
 
 	initialize: function() {
 		this.template = _.template($(this.templateHe).html());

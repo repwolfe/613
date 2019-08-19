@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: "./src/js/index.js",
@@ -10,7 +11,7 @@ module.exports = {
     rules: [
       { test: /\.js$/, enforce: "pre", exclude: /node_modules/, loader: "eslint-loader" },
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
-      { test: /\.scss$/, use: ["style-loader", "css-loader", "sass-loader"]}
+      { test: /\.scss$/, use: ["style-loader", "css-loader", { loader: "postcss-loader", options: { plugins: [autoprefixer()] } }, "sass-loader"]}
     ]
   },
   resolve: {

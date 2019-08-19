@@ -149,8 +149,8 @@ insert into mitzvos values (130, 'מצות מעשר עני תחת מעשר שנ�
 insert into mitzvos values (131, 'מצות וידוי מעשר', 'The confession on tithes', 'A');
 insert into mitzvos values (132, 'מצות קריאה על הביכורים', 'The recitation of verses on the first fruits', 'A');
 insert into mitzvos values (133, 'מצות חלה', 'To separate a portion from dough for the Kohen', 'A');
-insert into mitzvos values (134, 'מצות שמטת קרקעות', 'Letting the land lie foul in the seventh year', 'A');
-insert into mitzvos values (135, 'מצות שביתת הארץ בשנת השמטה', 'Resting the land from work in the seventh year', 'A');
+insert into mitzvos values (134, 'מצות שמטת קרקעות', 'To let land and its produce be ownerless in the seventh year', 'A');
+insert into mitzvos values (135, 'מצות שביתת הארץ בשנת השמטה', 'Letting the land lie fallow in the seventh year', 'A');
 insert into mitzvos values (136, 'מצות קדוש שנת היובל', 'The sanctification of the Jubilee year', 'A');
 insert into mitzvos values (137, 'מצות תקיעת שופר ביום הכפורים של יובל', 'Sounding the shofar on Yom Kippur in the Jubilee year', 'A');
 insert into mitzvos values (138, 'מצות השבת קרקע לבעליהן ביובל', 'Returning land to its original owner in the Jubilee year', 'A');

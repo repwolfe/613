@@ -14,6 +14,7 @@ $(function() {
 	var moneiMitzvosList = "#moneiMitzvosList";
 
 	var App;
+	var firstTime = true;
 
 	// Set up the buttons to display the monei mitzvos
 	var Rambam 	= new MoneiMitzvah("/rambam", "rambam", "רמב\"ם", "Rambam");
@@ -30,7 +31,7 @@ $(function() {
 		var element = document.createElement("li");
 		element.innerHTML= monei.nameHe;
 		$(element).attr("id", monei.id);
-		$(element).click(function(e) {
+		$(element).click(function(e) {	// Toggle click event handler
 			$(e.target).toggleClass("toggled");
 			var clickedNow = e.target.id;
 			var newUrl;
@@ -76,6 +77,7 @@ $(function() {
 	}
 
 	loadMitzvos();
+	firstTime = false;
 
 	/**
 	 * Display the desired monei mitzvos lists, if any. If two are selected, show their comparison
@@ -91,6 +93,7 @@ $(function() {
 			$("#compare").hide();
 			$("#container").show();
 			var theUrl = "/" + urlPaths[1];
+			var validUrl = true;
 			switch(theUrl) {
 				case Rambam.url:
 					App = new RambamAppView();
@@ -104,6 +107,13 @@ $(function() {
 				case Semag.url:
 					App = new SemagAppView();
 					break;
+				default:
+					validUrl = false;
+			}
+			if (validUrl && firstTime) {
+				// Pretoggle the correct buttons
+				recentlySelected = urlPaths[1];
+				$("li#" + recentlySelected).toggleClass("toggled");
 			}
 		}
 		else if (urlPaths.length === 3) {
@@ -120,6 +130,14 @@ $(function() {
 								$("#compare").show();
 								App = new CompareAppView(monei1, monei2);
 								valid = true;
+
+								if (firstTime) {
+									// Pretoggle the correct buttons
+									lessRecentlySelected = urlPaths[1];
+									recentlySelected = urlPaths[2];
+									$("li#" + recentlySelected).toggleClass("toggled");
+									$("li#" + lessRecentlySelected).toggleClass("toggled");
+								}
 								break;
 							}
 						}
@@ -128,14 +146,14 @@ $(function() {
 				}
 			}
 			if (!valid) {
-				// Display error page
+				// @todo Display error page
 			}
 		}
 		else if (urlPaths.length > 3) {
-			// Display error page
+			// @todo Display error page
 		}
 		else {
-			// Display homepage
+			// @todo Display homepage
 		}
 
 		// If starting with English

@@ -18,6 +18,24 @@
 			<%- mitzvahTypeEn %>, <%- punishmentEn %>, <%- whoAppliesEn %>
 		</div>
 	</script>
+	<script type="text/template" id="rambam-selected-template-he">
+		<div class="hebrew">
+			&rlm;<b><%- mitzvahNumber %></b><br>
+			<b><%- mitzvahName %></b><br>
+			<%- bookName %> <%- chapter %>, <%- verse %><br>:
+			<%- verseText %><br>
+			<%- mitzvahTypeHe %>, <%- punishmentHe %>, <%- whoAppliesHe %>
+		</div>
+	</script>
+	<script type="text/template" id="rambam-selected-template-en">
+		<div class="english">
+			<b><%- mitzvahNumber %></b><br>
+			<b><%- mitzvahNameEn %></b><br>
+			<%- bookNameEn %> <%- chapter %>:<%- verse %><br>:
+			<%- verseTextEn %><br>
+			<%- mitzvahTypeEn %>, <%- punishmentEn %>, <%- whoAppliesEn %>
+		</div>
+	</script>
 
 	<script type="text/template" id="ramban-template-he">
 		<div class="hebrew">

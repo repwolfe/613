@@ -17,7 +17,11 @@
     "url": "https://github.com/repwolfe/613/issues"
   },
   "homepage": "https://github.com/repwolfe/613#readme",
+  "browserslist": [
+    "last 4 version"
+  ],
   "devDependencies": {
+    "autoprefixer": "^9.6.1",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.0",
     "babel-preset-latest": "^6.24.1",
@@ -26,6 +30,7 @@
     "eslint": "^4.1.1",
     "eslint-loader": "^1.8.0",
     "node-sass": "^4.5.3",
+    "postcss-loader": "^3.0.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "underscore": "^1.8.3",
