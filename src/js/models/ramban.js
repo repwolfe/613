@@ -1,9 +1,12 @@
 var Ramban = Backbone.Model.extend({
+	idAttribute: "_id",
+	
 	defaults: function() {
 		return {
 			_id: 0,
 			shihchaNumberHe: "",
-			shihchaNumberEn: ""
+			shihchaNumberEn: "",
+			originalText: ""
 		};
 	},
 

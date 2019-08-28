@@ -2,6 +2,7 @@
 <head>
 	<meta charset="utf-8">
 	<link href="https://fonts.googleapis.com/css?family=Alef|Open+Sans" rel="stylesheet">
+	<!-- Rambam -->
 	<script type="text/template" id="rambam-template-he">
 		<div class="hebrew">
 			&rlm;<b><%- mitzvahNumber %></b><br>
@@ -22,21 +23,21 @@
 		<div class="hebrew">
 			&rlm;<b><%- mitzvahNumber %></b><br>
 			<b><%- mitzvahName %></b><br>
-			<%- bookName %> <%- chapter %>, <%- verse %><br>:
-			<%- verseText %><br>
-			<%- mitzvahTypeHe %>, <%- punishmentHe %>, <%- whoAppliesHe %>
+			<%- verseText %> (<%- bookName %> <%- chapter %>, <%- verse %>)<br><br>
+			<%- mitzvahTypeHe %>, <%- punishmentHe %>, <%- whoAppliesHe %><br><br>
+			<%- originalText %>
 		</div>
 	</script>
 	<script type="text/template" id="rambam-selected-template-en">
 		<div class="english">
 			<b><%- mitzvahNumber %></b><br>
 			<b><%- mitzvahNameEn %></b><br>
-			<%- bookNameEn %> <%- chapter %>:<%- verse %><br>:
-			<%- verseTextEn %><br>
+			<%- verseTextEn %> (<%- bookNameEn %> <%- chapter %>:<%- verse %>)<br><br>
 			<%- mitzvahTypeEn %>, <%- punishmentEn %>, <%- whoAppliesEn %>
 		</div>
 	</script>
 
+	<!-- Ramban -->
 	<script type="text/template" id="ramban-template-he">
 		<div class="hebrew">
 			&rlm;<b><%- mitzvahNumber %><%- shihchaNumberHe %></b><br>
@@ -51,7 +52,23 @@
 			<%- bookNameEn %> <%- chapter %>:<%- verse %><br>
 		</div>
 	</script>
+	<script type="text/template" id="ramban-selected-template-he">
+		<div class="hebrew">
+			&rlm;<b><%- mitzvahNumber %><%- shihchaNumberHe %></b><br>
+			<b><%- mitzvahName %></b><br>
+			<%- verseText %> (<%- bookName %> <%- chapter %>, <%- verse %>)<br><br>
+			<%- originalText %>
+		</div>
+	</script>
+	<script type="text/template" id="ramban-selected-template-en">
+		<div class="english">
+			<b><%- mitzvahNumber %><%- shihchaNumberEn %></b><br>
+			<b><%- mitzvahNameEn %></b><br>
+			<%- verseTextEn %> (<%- bookNameEn %> <%- chapter %>:<%- verse %>)
+		</div>
+	</script>
 
+	<!-- Chinuch -->
 	<script type="text/template" id="chinuch-template-he">
 		<div class="hebrew">
 			&rlm;<b><%- mitzvahNumber %></b><br>
@@ -66,7 +83,22 @@
 			<%- bookNameEn %> <%- chapter %>:<%- verse %><br>
 		</div>
 	</script>
+	<script type="text/template" id="chinuch-selected-template-he">
+		<div class="hebrew">
+			&rlm;<b><%- mitzvahNumber %></b><br>
+			<b><%- mitzvahName %></b><br>
+			<%- verseText %> (<%- bookName %> <%- chapter %>, <%- verse %>)
+		</div>
+	</script>
+	<script type="text/template" id="chinuch-selected-template-en">
+		<div class="english">
+			<b><%- mitzvahNumber %></b><br>
+			<b><%- mitzvahNameEn %></b><br>
+			<%- verseTextEn %> (<%- bookNameEn %> <%- chapter %>:<%- verse %>)
+		</div>
+	</script>
 
+	<!-- Semag -->
 	<script type="text/template" id="semag-template-he">
 		<div class="hebrew">
 			&rlm;<b><%- mitzvahNumber %></b><br>
@@ -81,7 +113,22 @@
 			<%- bookNameEn %> <%- chapter %>:<%- verse %><br>
 		</div>
 	</script>
+	<script type="text/template" id="semag-selected-template-he">
+		<div class="hebrew">
+			&rlm;<b><%- mitzvahNumber %></b><br>
+			<b><%- mitzvahName %></b><br>
+			<%- verseText %> (<%- bookName %> <%- chapter %>, <%- verse %>)
+		</div>
+	</script>
+	<script type="text/template" id="semag-selected-template-en">
+		<div class="english">
+			<b><%- mitzvahNumber %></b><br>
+			<b><%- mitzvahNameEn %></b><br>
+			<%- verseTextEn %> (<%- bookNameEn %> <%- chapter %>:<%- verse %>)
+		</div>
+	</script>
 
+	<!-- Compare -->
 	<script type="text/template" id="compare-template-he">
 		<div class="hebrew">
 			&rlm;<b><%- count %>) <%- mitzvahName %></b><br>
@@ -114,7 +161,7 @@
 	</div>
 	<div id="compare" dir="rtl">
 		<div id="leftTitle" class="hebrew">
-			<b>רמב"ם</b>
+			<b>רבמ"ם</b>
 		</div>
 		<div id="middleTitle" class="hebrew">
 			<b>שניהם</b>

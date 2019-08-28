@@ -18,7 +18,7 @@ var ComparePanelView = MoneiMitzvahAppView.extend({
 	addOne: function(mitzvah) {
 		var view = new CompareView({model: mitzvah});
 		view.count =  ++this.count;
-		this.$el.append(view.render().el);
+		MoneiMitzvahAppView.prototype.addOne.call(this, view);
 	},
 
 	addAll: function() {

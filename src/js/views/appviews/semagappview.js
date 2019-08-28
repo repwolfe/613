@@ -11,7 +11,7 @@ var SemagAppView = MoneiMitzvahAppView.extend({
 
 	addOne: function(mitzvah) {
 		var view = new SemagView({model: mitzvah});
-		this.$el.append(view.render().el);
+		MoneiMitzvahAppView.prototype.addOne.call(this, view);
 	}
 });
 

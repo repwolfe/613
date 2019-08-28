@@ -12,7 +12,7 @@ var RambamAppView = MoneiMitzvahAppView.extend({
 
 	addOne: function(mitzvah) {
 		var view = new RambamView({model: mitzvah});
-		this.$el.append(view.render().el);
+		MoneiMitzvahAppView.prototype.addOne.call(this, view);
 	},
 
 	languageSwitch: function() {

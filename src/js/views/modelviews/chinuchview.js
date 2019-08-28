@@ -6,6 +6,8 @@ var Chinuch = MoneiMitzvahView.extend({
 	
 	templateHe: "#chinuch-template-he",
 	templateEn: "#chinuch-template-en",
+	templateSelectedHe: "#chinuch-selected-template-he",
+	templateSelectedEn: "#chinuch-selected-template-en",
 
 	initialize: function() {
 		this.template = _.template($(this.templateHe).html());

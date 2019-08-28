@@ -4,6 +4,7 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 
 	mitzvahList: null,
 
+	previouslySelected: null,
 	startEnglish: false,
 
 	initialize: function() {
@@ -29,6 +30,11 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 		this.$el.empty();
 	},
 
+	addOne: function(view) {
+		this.listenTo(view, 'viewClicked', this.viewClicked);
+		this.$el.append(view.render().el);
+	},
+
 	addAll: function() {
 		this.mitzvahList.each(this.addOne, this);
 	},
@@ -49,6 +55,19 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 		}
 		else {
 			this.curLang = "he";
+		}
+	},
+
+	viewClicked: function(view) {
+		// @todo: maybe add option to select multiple entries
+		if (view == this.previouslySelected) {
+			this.previouslySelected = null;
+		}
+		else {
+			if (this.previouslySelected != null) {
+				this.previouslySelected.onClick({ fake_click: true });
+			}
+			this.previouslySelected = view;
 		}
 	},
 

@@ -6,7 +6,7 @@ drop table if exists chinuchNotes;
 
 create table chinuch (
 	mitzvahNumber integer NOT NULL primary key,		-- According to the original numbering system with all aseh first then lav second
-	mitzvahId integer NOT NULL UNIQUE,
+	mitzvahId integer NOT NULL UNIQUE,				-- Corresponding id from table mitzvah
 	newMitzvahNumber integer UNIQUE,				-- According to the newer numbering system, which is more chronological
 	shoresh varchar,
 	whoApplies varchar,

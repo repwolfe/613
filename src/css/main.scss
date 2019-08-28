@@ -112,13 +112,14 @@ body {
 		display: inline-block;
 		overflow-y: auto;
 		text-align: right;
-		vertical-align: top;
+		vertical-align: middle;
 		width: 140px;
 		height: 140px;
 		background: #000;
 		padding: 10px;
 		margin: 5px;
 		cursor: pointer;
+		transition: all 0.5s ease;
 	}
 
 	/* @todo: get it to work on all browsers. see https://css-tricks.com/the-current-state-of-styling-scrollbars */;
@@ -147,6 +148,7 @@ body {
 	.selected {
 		width: 250px;
 		height: 250px;
+		transition: all 0.5s ease;
 	}
 }
 

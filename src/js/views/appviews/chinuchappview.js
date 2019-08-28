@@ -11,7 +11,7 @@ var ChinuchAppView = MoneiMitzvahAppView.extend({
 
 	addOne: function(mitzvah) {
 		var view = new ChinuchView({model: mitzvah});
-		this.$el.append(view.render().el);
+		MoneiMitzvahAppView.prototype.addOne.call(this, view);
 	}
 });
 

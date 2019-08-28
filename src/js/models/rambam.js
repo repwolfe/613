@@ -1,13 +1,18 @@
 var Rambam = Backbone.Model.extend({
+	idAttribute: "_id",
+
 	defaults: function() {
 		return {
 			_id: 0,
+			verseText: "",
+			verseTextEn: "",
 			mitzvahTypeHe: "",
 			mitzvahTypeEn: "",
 			punishmentHe: "",
 			punishmentEn: "",
 			whoAppliesHe: "",
-			whoAppliesEn: ""
+			whoAppliesEn: "",
+			originalText: ""
 		};
 	},
 

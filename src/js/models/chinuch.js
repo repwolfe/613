@@ -1,7 +1,9 @@
 var Chinuch = Backbone.Model.extend({
+	idAttribute: "mitzvahNumber",
+
 	defaults: function() {
 		return {
-			_id: 0
+			mitzvahNumber: 0
 		};
 	},
 

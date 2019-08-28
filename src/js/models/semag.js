@@ -1,4 +1,6 @@
 var Semag = Backbone.Model.extend({
+	idAttribute: "_id",
+	
 	defaults: function() {
 		return {
 			_id: 0

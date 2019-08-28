@@ -5,8 +5,8 @@ drop table if exists rambanOnRambam;
 
 create table ramban (
 	_id integer NOT NULL primary key,
-	mitzvahId integer NOT NULL,
-	mitzvahNumber integer NOT NULL,
+	mitzvahId integer NOT NULL,		-- corresponding id from table mitzvah
+	mitzvahNumber integer NOT NULL,	-- the number this mitzvah is
 	shihchaNumber integer,
 	source integer,
 	originalText varchar,

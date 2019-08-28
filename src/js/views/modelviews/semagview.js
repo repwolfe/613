@@ -6,6 +6,8 @@ var SemagView = MoneiMitzvahView.extend({
 	
 	templateHe: "#semag-template-he",
 	templateEn: "#semag-template-en",
+	templateSelectedHe: "#semag-selected-template-he",
+	templateSelectedEn: "#semag-selected-template-en",
 
 	initialize: function() {
 		this.template = _.template($(this.templateHe).html());

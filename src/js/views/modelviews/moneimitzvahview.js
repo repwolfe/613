@@ -54,12 +54,13 @@ var MoneiMitzvahView = Backbone.View.extend({
 		return this;
 	},
 
-	onClick: function() {
+	onClick: function(options) {
 		this.selected = !this.selected;
 		this.$el.toggleClass("selected");
 		
 		if (this.selected) {
 			this.templates = [this.templateSelectedHe, this.templateSelectedEn];
+			this.model.fetch({success: this.render.bind(this)});		// Get the full data for this model
 		}
 		else {
 			this.templates = [this.templateHe, this.templateEn];
@@ -72,7 +73,13 @@ var MoneiMitzvahView = Backbone.View.extend({
 
 		this.template = _.template($(this.templates[templNum]).html());
 
-		this.render();
+		if (!this.selected) {
+			this.render();
+		}
+
+		if (options && !options.fake_click) {
+			this.trigger("viewClicked", this);
+		}
 	}
 });
 
