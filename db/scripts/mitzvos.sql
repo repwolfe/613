@@ -1,7 +1,6 @@
 .echo OFF
 
 drop table if exists mitzvos;
-drop table if exists bahag;
 drop table if exists rasag;
 drop table if exists zoharRakiah;
 drop table if exists seferCharedim;
@@ -334,7 +333,7 @@ insert into mitzvos values (314, 'שלא ילין הצלוב על העץ וכן 
 insert into mitzvos values (315, 'שלא לבטל שמירת המקדש', null, 'L');
 insert into mitzvos values (316, 'שלא יכנסו הכהנים בכל עת במקדש וכל שכן זרים', null, 'L');
 insert into mitzvos values (317, 'שלא יכנס בעל מום בהיכל', 'A blemished Kohen shall not enter the Temple Heichal', 'L');
-insert into mitzvos values (318, 'שלא יעבד הכן בעל מום', null, 'L');
+insert into mitzvos values (318, 'שלא יעבד הכהן בעל מום', null, 'L');
 insert into mitzvos values (319, 'שלא יעבוד כהן בעל מום עובר', 'A Kohen with a temporary blemish should not perform the Temple service', 'L');
 insert into mitzvos values (320, 'שלא יתעסקו הכהנים בעבודת הלוים ולא הלוים בעבודת הכהנים', null, 'L');
 insert into mitzvos values (321, 'שלא להכנס שתויי יין במקדש וכן שלא יורה שתוי', null, 'L');
@@ -417,7 +416,7 @@ insert into mitzvos values (397, 'שלא יאכלו כהנים ביכורים ק
 insert into mitzvos values (398, 'שלא לאכול מעשר שני בטומאה', 'Not to eat Maaser Sheni while impure', 'L');
 insert into mitzvos values (399, 'שלא לאכול מעשר שני באנינות', 'Not to eat Maaser Sheni as an Onen', 'L');
 insert into mitzvos values (400, 'שלא להוציא דמי מעשר שני בשאר דברים שאינם מאכילה ושתייה', 'Not to purchase with Maaser Sheni money anything besides food or drink', 'L');
-insert into mitzvos values (401, 'שלא לאכל טבל', null, 'L');
+insert into mitzvos values (401, 'שלא לאכל טבל', 'Not to consume untithed produce', 'L');
 insert into mitzvos values (402, 'שלא להקדים חוקי התבואות', null, 'L');
 insert into mitzvos values (403, 'שלא לאחר הנדרים והנדבות', null, 'L');
 insert into mitzvos values (404, 'שלא לעלות לרגל בלא קרבן שיהיה עמנו שנרקריבו שם', null, 'L');
@@ -720,30 +719,38 @@ insert into mitzvos values (692, 'שלא יכנס כהן הדיוט באהל ה�
 insert into mitzvos values (693, 'שלא לאכול קדשים באנינות', 'Not to eat holy food while mourning', 'L');
 insert into mitzvos values (694, 'שלא לאכול ערל תרומה', 'For someone uncircumsized not to eat Terumah', 'L');
 
-/**
-71 Misah
-	18 Skilah
-	10 Sreifa**
-	2 Hereg (Sayif)
-	9 Chenek**
-	21 Kares**
-	11 Misah Bideo Shamayim
-
-277 Lo Saaseh on Yechidim
-
-200 Aseh on Yechidim
-
-65 Parshiyos
-*/
-create table bahag (
-	_id integer NOT NULL primary key,
-	mitzvahId integer NOT NULL,
-	mitzvahNumber integer NOT NULL,
-	source varchar NOT NULL,
-	type varchar NOT NULL,
-	originalText varchar,
-	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
-);
+-- Bahag's unique mitzvos
+insert into mitzvos values (695, 'שלא לבא על נערה המאורסה', 'Not to lie with a betrothed maiden', 'L');
+insert into mitzvos values (696, 'שלא לבא על חמותו', 'Not to lie with one''s mother-in-law', 'L');
+insert into mitzvos values (697, 'שלא לבא על אם חמותו', 'Not to lie with one''s mother-in-law''s mother', 'L');
+insert into mitzvos values (698, 'שלא לבא על אם חמיו', 'Not to lie with one''s father-in-law''s mother', 'L');
+insert into mitzvos values (699, 'שלא תזנה בת כהן עם ערוה', 'For the daughter of a Kohen not to engage in illicit relations', 'L');
+insert into mitzvos values (700, 'שלא יעבוד רוב העיר עבודה זרה', 'For most of a city not to worship idols', 'L');
+insert into mitzvos values (701, 'שלא למרות כנגד הבית דין', 'Not to be rebellious against the Jewish Court', 'L');
+insert into mitzvos values (702, 'שלא תבאור אשת איש עם איש זר', 'For a married woman not to commit adultery', 'L');
+insert into mitzvos values (703, 'שלא לזםם על בת כהן שהיא זנתה', 'Not to scheme against the daughter of a Kohen by testifying that she commited adultery', 'L');
+insert into mitzvos values (704, 'שלא לבא על בת כהן שהיא אשת איש', 'Not tot commit adultery with the daughter of a Kohen', 'L');
+insert into mitzvos values (705, 'שלא ישמש מחוסר כפורים במקדש', 'Not to serve in the Temple without the requisite atonement for impurity', 'L');
+insert into mitzvos values (706, 'שלא ישמש בלי ריחוץ ידים ורגלים', 'Not to serve in the Temple without ritual hand and feet washing', 'L');
+insert into mitzvos values (707, 'שלא ילין לבקר זבח חג הפסח', 'Not to leave the Pesach Chagigah offering overnight', 'L');
+insert into mitzvos values (708, 'שלא יראה לך שאר בימי פסח', 'Not to have leaven in one''s posession on Pesach', 'L');
+insert into mitzvos values (709, 'שלא לשלם אוכל בריבית', 'Don''t pay interest with food', 'L');
+insert into mitzvos values (710, 'שלא ישמע שם עבודה זרה על פינו', 'Not to have the names of idols heard by our mouths', 'L');
+insert into mitzvos values (711, 'שלא לעשות כמעשה מצרים', 'Not to act like the Egyptians act', 'L');
+insert into mitzvos values (712, 'שלא יבדיל עולה בכפניו', 'Not to split open an Olah offering by its wings', 'L');
+insert into mitzvos values (713, 'שלא ליכנס כהן למקדש בראשו פרוע', 'For a Kohen not to enter the Temple with long hair', 'L');
+insert into mitzvos values (714, 'שלא ליכנס כהן למקדש בבגדים פרומים', 'For a Kohen not to enter the Temple with torn clothing', 'L');
+insert into mitzvos values (715, 'שלא יטמא בעל בעמיו להחלו', 'For a Kohen not to defile himself for his profaned wife', 'L');
+insert into mitzvos values (716, 'שלא יקרחו קרחה בראשם למת', 'Not to tear hair out of one''s head in mourning', 'L');
+insert into mitzvos values (717, 'שלא לגלח פאת הזקן', 'Not to shave the corner''s of one''s beard', 'L');
+insert into mitzvos values (718, 'שלא ישרטו שרטת למת', 'Not to cut oneself in mourning', 'L');
+insert into mitzvos values (719, 'שלא ישמש כהן טבול יום', 'For a Kohen not to serve in the Temple after going to the mikveh before the sun sets', 'L');
+insert into mitzvos values (720, 'שלא יפרע כהן שערו', 'For the Kohen Gadol not to have long hair', 'L');
+insert into mitzvos values (721, 'שלא יפרום כהן גדול בגדיו', 'For the Kohen Gadol not to have torn clothing', 'L');
+insert into mitzvos values (722, 'שלא יגש כהן בעל מום למזבח', 'For a blemished Kohen not to approach the altar', 'L');
+insert into mitzvos values (723, 'שלא יאכל טמא תרומה טמאה', 'For someone impure not to eat impure Terumah', 'L');
+insert into mitzvos values (724, 'שלא לסוך או לשתות תרומה', 'Not to annoint or drink untithed produce', 'L');
+insert into mitzvos values (725, 'שלא לאכול חגב שאין לה סימני כשרות', 'Not to eat a grasshopper that doesn''t have the signs of kashrus', 'L');
 
 /**
 200 Aseh on Yechidim
