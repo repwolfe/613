@@ -2,9 +2,15 @@
 
 drop table if exists mitzvos;
 drop table if exists rasag;
+drop table if exists eliyahuHaZaken;
+drop table if exists ataHinchalta;
+drop table if exists riAlbargeloni;
+drop table if exists shimonIbnGabirol;
 drop table if exists zoharRakiah;
 drop table if exists seferCharedim;
 drop table if exists semak;
+drop table if exists maamarHaSeichel;
+drop table if exists reeim;
 drop table if exists chofetzChaim;
 
 create table mitzvos (
@@ -574,7 +580,7 @@ insert into mitzvos values (555, 'שלא לגלח שער הנתק', 'Not to shav
 insert into mitzvos values (556, 'שלא לתלוש סימני צרעת', null, 'L');
 insert into mitzvos values (557, 'שלא לעבוד ולזרוע בנחל איתן', null, 'L');
 insert into mitzvos values (558, 'שלא להחיות מכשף', null, 'L');
-insert into mitzvos values (559, 'שלא להוציא חתן מביתו כל שנה ראשונה', null, 'L');
+insert into mitzvos values (559, 'שלא להוציא חתן מביתו כל שנה ראשונה', 'Not to take out a newly married man from his home the whole first year', 'L');
 insert into mitzvos values (560, 'שלא למרות על פי בית דין הגדול שיעמדו לישראל', null, 'L');
 insert into mitzvos values (561, 'שלא להוסיף על מצוות התורה', null, 'L');
 insert into mitzvos values (562, 'שלא לגרוע ממצוות התורה', null, 'L');
@@ -710,8 +716,8 @@ insert into mitzvos values (683, 'שלא לפרוש מן התורה', 'Not to re
 insert into mitzvos values (684, 'שלא לעבוד עבודה זרה דרך כבוד אפילו אין דרך עבודתה בכך', 'Not to serve idols in an honorary way, even if its not its normal form of service', 'L');
 insert into mitzvos values (685, 'שלא להקים פסל', 'Not to set up a statue', 'L');
 insert into mitzvos values (686, 'שלא יתגאו בני ישראל', 'For a Jew not to become haughty', 'L');
-insert into mitzvos values (687, 'שלא ישא איש ישראל שפחה ולא תנשא בת ישראל לעבד', 'For a Jewish man not to marry a maidservant, not a Jewish woman a slave', 'L');
-insert into mitzvos values (688, 'שלא ישא מי שנכרת הגיד שלו בת ישראל', 'For someone lacking their corona nor to marry a Jewish woman', 'L');
+insert into mitzvos values (687, 'שלא ישא איש ישראל שפחה ולא תנשא בת ישראל לעבד', 'For a Jewish man not to marry a maidservant, nor a Jewish woman a slave', 'L');
+insert into mitzvos values (688, 'שלא ישא מי שנכרת הגיד שלו בת ישראל', 'For someone lacking their corona not to marry a Jewish woman', 'L');
 insert into mitzvos values (689, 'שלא להחזיק במחלוקת', 'Not to encourage contention', 'L');
 insert into mitzvos values (690, 'שלא לחבול רכב', 'Not to take an upper millstone as collateral', 'L');
 insert into mitzvos values (691, 'שלא לקלל את עצמו', 'Not to curse oneself', 'L');
@@ -751,6 +757,180 @@ insert into mitzvos values (722, 'שלא יגש כהן בעל מום למזבח'
 insert into mitzvos values (723, 'שלא יאכל טמא תרומה טמאה', 'For someone impure not to eat impure Terumah', 'L');
 insert into mitzvos values (724, 'שלא לסוך או לשתות תרומה', 'Not to annoint or drink untithed produce', 'L');
 insert into mitzvos values (725, 'שלא לאכול חגב שאין לה סימני כשרות', 'Not to eat a grasshopper that doesn''t have the signs of kashrus', 'L');
+insert into mitzvos values (726, 'שלא יעלה בגד שעטנז עליך', 'Not to put a garment of wool and linen upon you', 'L');
+insert into mitzvos values (727, 'שלא תאכלו על הדם', 'Not to eat upon the blood', 'L');
+insert into mitzvos values (728, 'שלא להקדיש בעל מום', ' Not to sanctify an animal with a blemish', 'L');
+insert into mitzvos values (729, 'שלא להקדיש בעל מום שבפנים או אינו בגלוי', 'Not to sanctify an animal with an internal or hidden blemish', 'L');
+insert into mitzvos values (730, 'שלא ישתה נזיר משרת ענבים', 'For a Nazir not to drink something soaked in grapes', 'L');
+insert into mitzvos values (731, 'שלא להחניף', 'Not to flatter', 'L');
+insert into mitzvos values (732, 'שלא יסום עין היחיד על ה שבע אומות', 'For an individual not to pity the Seven Nations', 'L');
+insert into mitzvos values (733, 'שלא יאמר בצדקתי הביאני ה'' לרשת את-הארץ', 'Don''t say because of my righteousness Hashem bestowed this land', 'L');
+insert into mitzvos values (734, 'שלא להשקות ערפכם עוד', 'To no longer stiffen your neck', 'L');
+insert into mitzvos values (735, 'שלא להקריב חובות על במת יחיד', 'Not to bring obligation offerings on a personal altar', 'L');
+insert into mitzvos values (736, 'שלא לאכול מעשר, ברוכות חוץ מירושלים, חטאת ואשם חוץ לקלעים, בשר עולה, קדשי קלים קודם זריקה, ובכורים קודם הנחה ', 'Not to eat Maaser or Bechoros outside Yerushalayim, Chataos or Ashamos outside the Temple confines, the meat of an Olah, Kodshei Kalim before throwing the blood, or Bikkurim before placing them', 'L');
+insert into mitzvos values (737, 'שלא יעזב הלוי', 'Not to abandon the Levites', 'L');
+insert into mitzvos values (738, 'שלא יעשו אגודות אגודות', 'Not to divide into different groups', 'L');
+insert into mitzvos values (739, 'שלא תקפץ את ידך מליתן צדקה', 'Don''t clasp your hand from giving charity', 'L');
+insert into mitzvos values (740, 'שלא יאמר דיין איש פלוני קרובי', 'For a judge not to say that this litigant is his friend', 'L');
+insert into mitzvos values (741, 'שלא יאמר דיין איש פלוני עני', 'For a judge not to say that this litigant is poor', 'L');
+insert into mitzvos values (742, 'שלא יזידון עוד', 'Not to continue to wantonly sin', 'L');
+insert into mitzvos values (743, 'שלא ישיב המלך העם למצרים', 'For the King not to return the people to Egypt', 'L');
+insert into mitzvos values (744, 'שלא תוסיפון לשוב למצרים', 'Not to return to Egypt again', 'L');
+insert into mitzvos values (745, 'שלא לכרות אילני מאכל', 'Not to cut down fruit-bearing trees', 'L');
+insert into mitzvos values (746, 'שלא יזרע נחל איתן', 'Not to sew on the land where the beheaded calf occured', 'L');
+insert into mitzvos values (747, 'שלא תראה שורו נדחים', 'Not to see someone''s ox straying [and ignore it]', 'L');
+insert into mitzvos values (748, 'שלא יבוא על אנוסת אביו', 'Not to be with a women who was raped by one''s father', 'L');
+insert into mitzvos values (749, 'שלא יבוא עמוני ומואבי בקהל עד עולם', 'For an Ammonite and Moabite to never enter the congregation', 'L');
+insert into mitzvos values (750, 'שלא ישא איש ישראל שפחה', 'For a Jewish man not to marry a maidservant', 'L');
+insert into mitzvos values (751, 'שלא יעבר חתן לכל דבר כל שנה ראשונה', 'For a newly married man not to do any army work for the first year', 'L');
+insert into mitzvos values (752, 'שלא לעשק שכיר', 'Not to withold wages from an employee', 'L');
+insert into mitzvos values (753, 'שלא לאחר שכיר לילה עד הלילה שאחריו', 'Not to delay paying a night worker until the next night', 'L');
+insert into mitzvos values (754, 'שלא ליטול כל תפארת זיתיך', 'Not to take all the splendor from your olives' ,'L');
+insert into mitzvos values (755, 'שלא יהיה בביתך איפה גדולה או קטנה', 'Not to have an inaccurate dry measure in your house', 'L');
+insert into mitzvos values (756, 'שלא להניף על המזבח ברזל', 'Not to use metal in constructing the altar', 'L');
+insert into mitzvos values (757, 'שלא תסור מכל הדברים שציווה הקב"ה', 'Not to sway from all that Hashem commanded', 'L');
+
+insert into mitzvos values (758, 'מצות נתינת עורות קדשים לכהנים', 'To give the hides of offerings to Kohanim', 'A');
+insert into mitzvos values (759, 'מצות נתינת המורם תרומה מתודה לכהנים', 'To give the separated limbs of the Todah offering to the Kohanim', 'A');
+insert into mitzvos values (760, 'מצות נתינת חזה ושוק לכהנים', 'To give the breast and thigh of offerings to the Kohanim', 'A');
+insert into mitzvos values (761, 'מצות לעבד השם', 'To serve Hashem', 'A');
+insert into mitzvos values (762, 'מצות הלבשת ערומים', 'To clothe the naked', 'A');
+insert into mitzvos values (763, 'מצות קבורת מתים', 'To bury the deceased', 'A');
+insert into mitzvos values (764, 'מצות ניחום אבילים', 'To comfort those in mourning', 'A');
+insert into mitzvos values (765, 'מצות ביקור חולים', 'To visit the sick', 'A');
+insert into mitzvos values (766, 'מצות אהבת שלום אמת וצדק', 'To love peace, truth, and justice', 'A');
+-- To learn Torah is below, 851
+insert into mitzvos values (767, 'מצות ללמד תורה', 'To teach Torah', 'A');
+insert into mitzvos values (768, 'מצות שמירת התורה', 'To guard the Torah', 'A');
+insert into mitzvos values (769, 'מצות עשיית התורה', 'To fulfill the Torah', 'A');
+insert into mitzvos values (770, 'מצות שמירת שבת', 'To guard the Shabbos', 'A');
+insert into mitzvos values (771, 'מצות שמחת שבת', 'To rejoice on Shabbos', 'A');
+insert into mitzvos values (772, 'מצות עונג שבת', 'To delight in Shabbos', 'A');
+insert into mitzvos values (773, 'מצות החית האח', 'To sustain a comrade', 'A');
+insert into mitzvos values (774, 'מצות שכחה בכרם', 'To leave over forgotten grapes', 'A');
+insert into mitzvos values (775, 'מצות פאה בכרם', 'To leave over a corner of a vineyard', 'A');
+insert into mitzvos values (776, 'מצות שכחה באילן', 'To leave over forgotten fruit in a tree', 'A');
+insert into mitzvos values (777, 'מצות מתנה במתנת ידך', 'The gift based on your generosity', 'A');
+insert into mitzvos values (778, 'מצות נתינת צדקה הרבה פעמים', 'To constantly give charity', 'A');
+insert into mitzvos values (779, 'מצות נתינת צדקה בסתר', 'To give charity discreetly', 'A');
+insert into mitzvos values (780, 'מצות נתינת צדקה בתחילה לשום הלאווה ולבסוף במתנה', 'To give charity initially as a loan and subsequently as a gift', 'A');
+insert into mitzvos values (781, 'מצות ללמד בנים בתורה ומצוות', 'To teach one''s son Torah and Mitzvos', 'A');
+insert into mitzvos values (782, 'מצות שיהיו דברי תורה מחודדין בפיך', 'To have words of Torah be readily avaiable', 'A');
+insert into mitzvos values (783, 'מצות שימת דברי השם על לבבכם ועל נפשכל', 'To place Hashem''s words on your heart and soul', 'A');
+insert into mitzvos values (784, 'מצות שמירת פסח שבעת ימים', 'To guard Pesach seven days', 'A');
+insert into mitzvos values (785, 'מצות קידוש בשבת', 'Kiddush on Shabbos', 'A');
+insert into mitzvos values (786, 'מצות קידוש בראשון של פסח', 'Kiddush on the First of Pesach', 'A');
+insert into mitzvos values (787, 'מצות קידוש בשביעי של פסח', 'Kiddush on the Seventh of Pesach', 'A');
+insert into mitzvos values (788, 'מצות קידוש בשבועות', 'Kiddush on Shavuos', 'A');
+insert into mitzvos values (789, 'מצות קידוש בראש השנה', 'Kiddush on Rosh Hashanah', 'A');
+insert into mitzvos values (790, 'מצות קידוש ביום הכפורים', 'Kiddush on Yom Kippur', 'A');
+insert into mitzvos values (791, 'מצות קידוש ביום ראשון של סוכות', 'Kiddush on the First of Sukkos', 'A');
+insert into mitzvos values (792, 'מצות קידוש ביום שמיני של סוכות', 'Kiddush on the Eighth of Sukkos', 'A');
+insert into mitzvos values (793, 'מצות הלל בליל פסח', 'Hallel on Pesach night', 'A');
+insert into mitzvos values (794, 'מצות הלל ביום ראשון של פסח', 'Hallel on the First day of Pesach', 'A');
+insert into mitzvos values (795, 'מצות הלל ביום שבועות', 'Hallel on Shavuos', 'A');
+insert into mitzvos values (796, 'מצות הלל ביום ראשון של סוכות', 'Hallel on the First of Sukkos', 'A');
+insert into mitzvos values (797, 'מצות הלל ביום שני של סוכות', 'Hallel on the Second of Sukkos', 'A');
+insert into mitzvos values (798, 'מצות הלל ביום שלישי של סוכות', 'Hallel on the Third of Sukkos', 'A');
+insert into mitzvos values (799, 'מצות הלל ביום רביעי של סוכות', 'Hallel on the Fourth of Sukkos', 'A');
+insert into mitzvos values (800, 'מצות הלל ביום חמישי של סוכות', 'Hallel on the Fifth of Sukkos', 'A');
+insert into mitzvos values (801, 'מצות הלל ביום שישי של סוכות', 'Hallel on the Sixth of Sukkos', 'A');
+insert into mitzvos values (802, 'מצות הלל ביום שביעי של סוכות', 'Hallel on the Seventh of Sukkos', 'A');
+insert into mitzvos values (803, 'מצות הלל ביום שמיני עצרת', 'Hallel on Shemini Atzeres', 'A');
+insert into mitzvos values (804, 'מצות הלל ביום ראשון של חנוכה', 'Hallel on the First of Chanukah', 'A');
+insert into mitzvos values (805, 'מצות הלל ביום שני של חנוכה', 'Hallel on the Second of Chanukah', 'A');
+insert into mitzvos values (806, 'מצות הלל ביום שלישי של חנוכה', 'Hallel on the Third of Chanukah', 'A');
+insert into mitzvos values (807, 'מצות הלל ביום רביעי של חנוכה', 'Hallel on the Fourth of Chanukah', 'A');
+insert into mitzvos values (808, 'מצות הלל ביום חמישי של חנוכה', 'Hallel on the Fifth of Chanukah', 'A');
+insert into mitzvos values (809, 'מצות הלל ביום שישי של חנוכה', 'Hallel on the Sixth of Chanukah', 'A');
+insert into mitzvos values (810, 'מצות הלל ביום שביעי של חנוכה', 'Hallel on the Seventh of Chanukah', 'A');
+insert into mitzvos values (811, 'מצות הלל ביום שמיני של חנוכה', 'Hallel on the Eighth of Chanukah', 'A');
+insert into mitzvos values (812, 'מצות לגדע אשרות אלילים', 'To cut down trees of idol worship', 'A');
+insert into mitzvos values (813, 'מצות לאכות קדשים בירושלים', 'To eat kodshim in Jerusalem', 'A');
+insert into mitzvos values (814, 'מצות לשבות עבדך ואמתך ובהמתך כמוך', 'To have your servants and animals rest on Shabbos', 'A');
+insert into mitzvos values (815, 'מצות לשמוח לוי גר ואלמנה בשלש רגלים', 'To make the Levites, Orphans, and Widows joyous on Yom Tov', 'A');
+insert into mitzvos values (816, 'מצות שילום חומש אם פודה נטע רבעי או מעשר שני', 'To pay an extra fifth if redeeming fruit from the fourth year or Maaser Sheni', 'A');
+insert into mitzvos values (817, 'מצות שילום חומש אם פודה הקדש', 'To pay an extra fifth if redeeming sanctified property', 'A');
+insert into mitzvos values (818, 'מצות שילום חומש אם נהנה מהקדש', 'To pay an extra fifth if one benefitted from sanctified property', 'A');
+insert into mitzvos values (819, 'מצות שילום חומש אם גזל מחברו ונשבע לשקר', 'To pay an extra fifth if one stole from another and swore falsely', 'A');
+insert into mitzvos values (820, 'מצות נר שבת', 'Shabbos candles', 'A');
+insert into mitzvos values (821, 'מצות נר חנוכה', 'Chanukah candles', 'A');
+insert into mitzvos values (822, 'מצות ליתן נבלה לגר תושב', 'To give an animal carcass to a resident alien', 'A');
+insert into mitzvos values (823, 'מצות לאהוב משפט', 'To love justice', 'A');
+insert into mitzvos values (824, 'מצות לרדוף צדק', 'To pursue justice', 'A');
+insert into mitzvos values (825, 'מצות לגמול חסד', 'To bestow loving kindness', 'A');
+insert into mitzvos values (826, 'מצות לשמוח כלה', 'To gladden a bride', 'A');
+insert into mitzvos values (827, 'מצות יראת חכמים', 'To fear Sages', 'A');
+insert into mitzvos values (828, 'מצות שילום מדות', 'To complete measures', 'A');
+insert into mitzvos values (829, 'מצות ביעור שביעית', 'To remove unavaiable produce during Shemittah', 'A');
+insert into mitzvos values (830, 'מצות להיות קודש מלאכול שרצים ורמשים', 'To sanctify ourselves from eating bugs and critters', 'A');
+insert into mitzvos values (831, 'מצות להיות שפל רוח', 'To be of a meek spirit', 'A');
+insert into mitzvos values (832, 'מצות להדר פני זקן', 'To honor the presence of an elder', 'A');
+insert into mitzvos values (833, 'מצות להביא קרבנות שמחיוב בהם משום חטא', 'To bring offerings which are obligatory after certain sins', 'A');
+insert into mitzvos values (834, 'מצות כהן גדול הביא פר אם שיגג בהוראה', 'For the Kohen Gadol to bring a bull offering if he erred in a ruling', 'A');
+insert into mitzvos values (835, 'מצות כהן גדול להביא פר ביום הכפורים', 'For the Kohen Gadol to bring a bull offering on Yom Kippur', 'A');
+insert into mitzvos values (836, 'מצות להביא עשירית האיפה לחינוך', 'To bring a tenth of an eiphah for inauguration', 'A');
+insert into mitzvos values (837, 'מצות עבודת יום הכפורים', 'The Yom Kippur Temple service', 'A');
+insert into mitzvos values (838, 'מצות יציקת שמן במנחות', 'Pouring the oil for meal offerings', 'A');
+insert into mitzvos values (839, 'מצות בלילת שמן במנחות', 'Mixing the oil for meal offerings', 'A');
+insert into mitzvos values (840, 'מצות פתית פתי המנחות', 'To break the loaves of the meal offerings into pieces', 'A');
+insert into mitzvos values (841, 'מצות מליחת הקרבנות', 'To salt offerings', 'A');
+insert into mitzvos values (842, 'מצות תנופת הקרבנות', 'To wave offerings', 'A');
+insert into mitzvos values (843, 'מצות הגשת הקרבנות', 'To bring offerings to the altar', 'A');
+insert into mitzvos values (844, 'מצות קמיתת המחחות', 'To gather a portion of the meal offering', 'A');
+insert into mitzvos values (845, 'מצות הקטרת הקרבנות', 'To burn offerings on the altar', 'A');
+insert into mitzvos values (846, 'מצות שחיטת הקרבנות', 'To slaughter offerings', 'A');
+insert into mitzvos values (847, 'מצות מליקת הקרבנות', 'To slaughter bird offerings from behind the neck', 'A');
+insert into mitzvos values (848, 'מצות קבלות הקרבנות', 'To capture the blood of offerings', 'A');
+insert into mitzvos values (849, 'מצות הזאת הקרבנות', 'To sprinkle the blood of offerings', 'A');
+insert into mitzvos values (850, 'מצות מקרא מגילה', 'To read Megillas Esther on Purim', 'A');
+insert into mitzvos values (851, 'מצות ללמוד תורה', 'To learn Torah', 'A');
+
+-- Parshiyos
+insert into mitzvos values (852, 'פרשת סנהדרין וכלול נפשות ממונות ועבדים', 'Sanhedrin, which includes capital cases, monetary, and slaves', 'A');
+insert into mitzvos values (853, 'פרשת דיני נזיקין', 'Damages', 'L');
+insert into mitzvos values (854, 'פרשת בניין המקדש ועשיית בגדים וחינוכם', 'Building the Temple, making the garments, and inaugurating them', 'A');
+insert into mitzvos values (855, 'פרשת השמן המשחה וקטורת', 'The annointing oil and incense', 'A');
+insert into mitzvos values (856, 'פרשת תחנונים', 'Supplication', 'A');
+insert into mitzvos values (857, 'פרשת עולות מנחות ושלמים', 'Olos, Menachos, and Shelamim', 'A');
+insert into mitzvos values (858, 'פרשת מעילה', 'Misappropriation of Temple property', 'L');
+insert into mitzvos values (859, 'פרשת טומאת וטהרת נבילות שרצים אדם כלים אוכילן ומשקין', 'Impurity and Purification of carcasses, critters, man, vessels, food and drink', 'L');
+insert into mitzvos values (860, 'פרשת יולדת', 'Impurity of birth', 'L');
+insert into mitzvos values (861, 'פרשת נגעים', 'Tzaraas', 'L');
+insert into mitzvos values (862, 'פרשת טומאת זיבות נידות ושכבת זרע', 'Impurity of emissions', 'L');
+insert into mitzvos values (863, 'פרשת שפחה חרופה', 'Shifchah Charufah', 'L');
+insert into mitzvos values (864, 'פרשת ערלה', 'Fruit of a tree in its first three years', 'L');
+insert into mitzvos values (865, 'פרשת מומי בהמה', 'Blemishes of animals for offerings', 'L');
+insert into mitzvos values (866, 'פרשת נדברים ונדבות', 'Voluntary and Obligatory offerings', 'A');
+insert into mitzvos values (867, 'פרשת חבלות', 'Injuring another', 'L');
+insert into mitzvos values (868, 'פרשת ערכין', 'Donating set-values to the Temple', 'A');
+insert into mitzvos values (869, 'פרשת מקדיש וחרמים', 'Sanctifying and designating property to the Temple', 'A');
+insert into mitzvos values (870, 'פרשת מחנות ודגלים', 'Three camps and tribal arrangements', 'A');
+insert into mitzvos values (871, 'פרשת סוטה', 'Sotah', 'A');
+insert into mitzvos values (872, 'פרשת נזיר', 'Nazir', 'A');
+insert into mitzvos values (873, 'פרשת ברכת כהנים', 'Priestly Blessing', 'A');
+insert into mitzvos values (874, 'פרשת חנוכת מזבח', 'Inauguration of the Altar', 'A');
+insert into mitzvos values (875, 'פרשת נסכים', 'Libations', 'A');
+insert into mitzvos values (876, 'פרשת מתנות כהונה', 'Priestly gifts', 'A');
+insert into mitzvos values (877, 'פרשת עשרים מוספים', 'Twenty Mussaf offerings', 'A');
+insert into mitzvos values (878, 'פרשת נדרים ושבועות', 'Vows and Oaths', 'A');	
+insert into mitzvos values (879, 'פרשת תרומת המכס', 'Separating taxes', 'A');
+insert into mitzvos values (880, 'פרשת הלוקח כלי תשמיש מן הגוים', 'Taking a utensil from a non-Jew', 'A');
+insert into mitzvos values (881, 'פרשת נביא שקר', 'A false prophet', 'L');
+insert into mitzvos values (882, 'פרשת עיר הנדחת', 'A idol worshipping city', 'L');
+insert into mitzvos values (883, 'פרשת עדים זוממין', 'Conniving witnesses', 'L');
+insert into mitzvos values (884, 'פרשת עגלה ערופה', 'The beheaded calf', 'A');
+insert into mitzvos values (885, 'פרשת משפט הבכורה', 'Inheritance of the firstborn', 'A');
+insert into mitzvos values (886, 'פרשת בן סורר ומורה', 'The wayward and rebellious son', 'L');
+insert into mitzvos values (887, 'פרשת מוציא שם רע', 'The slanderous husband', 'L');
+insert into mitzvos values (888, 'פרשת אונס ומפתה', 'Rapists and Seducers', 'L');
+insert into mitzvos values (889, 'פרשת יבמין', 'Levirate marriages', 'A');
+insert into mitzvos values (890, 'פרשת שולחת יד במבושיו', 'Pursuer', 'L');
+insert into mitzvos values (891, 'פרשת בכורים', 'First fruits', 'A');
+insert into mitzvos values (892, 'פרשת אבנים גדולות', 'Writing the Torah on large stones', 'A');
+insert into mitzvos values (893, 'פרשת בכרות וקללות', 'Blessings and Curses', 'A');
+insert into mitzvos values (894, 'פרשת הקהל', 'Hakhel', 'A');
+
 
 /**
 200 Aseh on Yechidim
@@ -783,6 +963,46 @@ create table rasag (
 	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
 );
 
+create table eliyahuHaZaken (	-- Mahaduras Hiddur Zaken
+	_id integer NOT NULL primary key,
+	mitzvahId integer NOT NULL,
+	mitzvahNumber integer NOT NULL,
+	source varchar NOT NULL,
+	type varchar NOT NULL,
+	originalText varchar,
+	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
+);
+
+create table ataHinchalta (
+	_id integer NOT NULL primary key,
+	mitzvahId integer NOT NULL,
+	mitzvahNumber integer NOT NULL,
+	source varchar NOT NULL,
+	type varchar NOT NULL,
+	originalText varchar,
+	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
+);
+
+create table riAlbargeloni (	-- Nesiv Mitzvosecha
+	_id integer NOT NULL primary key,
+	mitzvahId integer NOT NULL,
+	mitzvahNumber integer NOT NULL,
+	source varchar NOT NULL,
+	type varchar NOT NULL,
+	originalText varchar,
+	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
+);
+
+create table shimonIbnGabirol (
+	_id integer NOT NULL primary key,
+	mitzvahId integer NOT NULL,
+	mitzvahNumber integer NOT NULL,
+	source varchar NOT NULL,
+	type varchar NOT NULL,
+	originalText varchar,
+	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
+);
+
 create table zoharRakiah (
 	_id integer NOT NULL primary key,
 	mitzvahId integer NOT NULL,
@@ -794,6 +1014,26 @@ create table zoharRakiah (
 );
 
 create table semak (
+	_id integer NOT NULL primary key,
+	mitzvahId integer NOT NULL,
+	mitzvahNumber integer NOT NULL,
+	source varchar NOT NULL,
+	type varchar NOT NULL,
+	originalText varchar,
+	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
+);
+
+create table maamarHaSeichel (
+	_id integer NOT NULL primary key,
+	mitzvahId integer NOT NULL,
+	mitzvahNumber integer NOT NULL,
+	source varchar NOT NULL,
+	type varchar NOT NULL,
+	originalText varchar,
+	foreign key (mitzvahId) references mitzvos(_id) on delete cascade
+);
+
+create table reeim (
 	_id integer NOT NULL primary key,
 	mitzvahId integer NOT NULL,
 	mitzvahNumber integer NOT NULL,

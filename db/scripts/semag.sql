@@ -293,7 +293,7 @@ insert into semag (_id, mitzvahId, mitzvahNumber, category) values (248, 109, 24
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (249, 249,  1, 6);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (250, 311,  2, 6);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (251, 313,  3, 6);
-insert into semag values (252, 682,  4, 6, 277);	-- Derech Mitzvosecha II doesn't list as a unique mitzvah this for some reason
+insert into semag values (252, 682,  4, 6, 277);	-- Derech Mitzvosecha II doesn't list this as a unique mitzvah for some reason
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (253, 550,  5, 6);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (254, 551,  6, 6);
 insert into semag (_id, mitzvahId, mitzvahNumber, category) values (255, 503,  7, 6);
