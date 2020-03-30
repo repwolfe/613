@@ -4,3 +4,4 @@
 .read ramban.sql
 .read chinuch.sql
 .read semag.sql
+.read bahag.sql

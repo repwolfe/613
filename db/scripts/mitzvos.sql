@@ -818,7 +818,7 @@ insert into mitzvos values (781, 'מצות ללמד בנים בתורה ומצו
 insert into mitzvos values (782, 'מצות שיהיו דברי תורה מחודדין בפיך', 'To have words of Torah be readily avaiable', 'A');
 insert into mitzvos values (783, 'מצות שימת דברי השם על לבבכם ועל נפשכל', 'To place Hashem''s words on your heart and soul', 'A');
 insert into mitzvos values (784, 'מצות שמירת פסח שבעת ימים', 'To guard Pesach seven days', 'A');
-insert into mitzvos values (785, 'מצות קידוש בשבת', 'Kiddush on Shabbos', 'A');
+--insert into mitzvos values (785, 'מצות קידוש בשבת', 'Kiddush on Shabbos', 'A');	-- Added by mistake. This mitzvah is already above #155
 insert into mitzvos values (786, 'מצות קידוש בראשון של פסח', 'Kiddush on the First of Pesach', 'A');
 insert into mitzvos values (787, 'מצות קידוש בשביעי של פסח', 'Kiddush on the Seventh of Pesach', 'A');
 insert into mitzvos values (788, 'מצות קידוש בשבועות', 'Kiddush on Shavuos', 'A');

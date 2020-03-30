@@ -58,15 +58,17 @@ $container["queries"] = function($c) {
 	$query["rambanMore"] =
 		"SELECT " . $query["sharedColumns"] . ", ramban._id as _id, verseText, verseTextEn, shihchaNumber, originalText " . $query["rambanBase"];
 
+	$query["chinuchColumns"] = "mitzvahTitle, description, shoresh, dinim, whoWhereWhenApplies";
+
 	$query["chinuchBase"] =
 		"FROM mitzvos, books, verses, (
 			-- Combine Chinuch's list with the Rambams, retreiving any information that is missing in the Chinuch's from the Rambam's
-			SELECT mergedChinuch.mitzvahNumber, mergedChinuch.mitzvahId,
+			SELECT mergedChinuch.oldMitzvahNumber, mergedChinuch.mitzvahNumber, mergedChinuch.mitzvahId, " . $query["chinuchColumns"] . ",
 				(COALESCE(mergedChinuch.source, '') || COALESCE(rambam.source, '')) AS mergedSource	-- merge source columns, replacing NULL with ''
 			FROM (	-- Combine Chinuch with ChinuchSources
-				SELECT mitzvahId, newMitzvahNumber AS mitzvahNumber, source 
+				SELECT mitzvahId, oldMitzvahNumber, chinuch.mitzvahNumber, source, " . $query["chinuchColumns"] . "
 				FROM chinuch
-				LEFT JOIN chinuchSources ON chinuch.mitzvahNumber = chinuchSources.mitzvahNumber
+				LEFT JOIN chinuchSources ON chinuch.oldMitzvahNumber = chinuchSources.mitzvahNumber
 			) AS mergedChinuch
 			LEFT JOIN rambam ON mergedChinuch.mitzvahId = rambam.mitzvahId 	-- Take everything from chinuch and add any equivalent rambam's
 			ORDER BY mergedChinuch.mitzvahNumber
@@ -77,7 +79,7 @@ $container["queries"] = function($c) {
 		"SELECT " . $query["sharedColumns"] . " " . $query["chinuchBase"];
 
 	$query["chinuchMore"] =
-		"SELECT " . $query["sharedColumns"] . ", verseText, verseTextEn " . $query["chinuchBase"];
+		"SELECT " . $query["sharedColumns"] . ", " . $query["chinuchColumns"] . ", oldMitzvahNumber, verseText, verseTextEn " . $query["chinuchBase"];
 
 	$query["semagBase"] =
 		"FROM mitzvos, books, verses, (
@@ -94,6 +96,21 @@ $container["queries"] = function($c) {
 
 	$query["semagMore"] =
 		"SELECT " . $query["sharedColumns"] . ", semag._id as _id, verseText, verseTextEn " . $query["semagBase"];
+
+	$query["bahagBase"] =
+		"FROM mitzvos, (
+			-- Combine Bahag with the notes
+		 	SELECT bahag._id, mitzvahId, mitzvahNumber, mitzvahTitle, categoryNum, COALESCE(enNote, '') as enNote -- replace NULL with ''
+			FROM bahag
+			LEFT JOIN bahagNotes ON bahag._id = bahagNotes._id
+		) as bahag
+		 WHERE mitzvos._id = mitzvahId";
+
+	$query["bahagLess"] =
+		"SELECT " . "mitzvahId, bahag._id as _id, mitzvahNumber, mitzvahName, mitzvahNameEn, asehOrLoSaseh, mitzvahTitle, categoryNum " . $query["bahagBase"];
+
+	$query["bahagMore"] =
+		"SELECT " . "mitzvahId, bahag._id as _id, mitzvahNumber, mitzvahName, mitzvahNameEn, asehOrLoSaseh, mitzvahTitle, categoryNum, enNote " . $query["bahagBase"];
 
 	return $query;
 };
@@ -126,7 +143,8 @@ $paths = array(
 	"rambam",
 	"ramban",
 	"chinuch",
-	"semag"
+	"semag",
+	"bahag"
 );
 
 // The query to use when collecting all data, retreive less columns
@@ -136,7 +154,8 @@ $queriesLess = array(
 	"rambamLess",
 	"rambanLess",
 	"chinuchLess",
-	"semagLess"
+	"semagLess",
+	"bahagLess"
 );
 
 // The query to use when collecting a specific entry, retreive all columns
@@ -146,7 +165,8 @@ $queriesMore = array(
 	array("rambamMore", 	"rambam._id"),
 	array("rambanMore", 	"ramban._id"),
 	array("chinuchMore",	"mitzvahNumber"),
-	array("semagMore", 		"semag._id")
+	array("semagMore", 		"semag._id"),
+	array("bahagMore",		"bahag._id")
 );
 
 // Initialize every compare path (for example: /rambam/semag)

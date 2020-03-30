@@ -54,13 +54,18 @@ var MoneiMitzvahView = Backbone.View.extend({
 		return this;
 	},
 
+	modelFetched: function() {
+		this.model.fillInProperties();
+		this.render();
+	},
+
 	onClick: function(options) {
 		this.selected = !this.selected;
 		this.$el.toggleClass("selected");
 		
 		if (this.selected) {
 			this.templates = [this.templateSelectedHe, this.templateSelectedEn];
-			this.model.fetch({success: this.render.bind(this)});		// Get the full data for this model
+			this.model.fetch({success: this.modelFetched.bind(this)});		// Get the full data for this model
 		}
 		else {
 			this.templates = [this.templateHe, this.templateEn];

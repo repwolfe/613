@@ -1,12 +1,13 @@
 var css = require("../css/main.scss");
 
-var Backbone = require("backbone");
-var MoneiMitzvah   = require("./models/moneimitzvah");
-var RambamAppView  = require("./views/appviews/rambamappview");
-var RambanAppView  = require("./views/appviews/rambanappview");
+var Backbone 		= require("backbone");
+var MoneiMitzvah   	= require("./models/moneimitzvah");
+var RambamAppView  	= require("./views/appviews/rambamappview");
+var RambanAppView  	= require("./views/appviews/rambanappview");
 var ChinuchAppView  = require("./views/appviews/chinuchappview");
-var SemagAppView   = require("./views/appviews/semagappview");
-var CompareAppView = require("./views/appviews/compareappview");
+var SemagAppView   	= require("./views/appviews/semagappview");
+var BahagAppView	= require("./views/appviews/bahagappview");
+var CompareAppView 	= require("./views/appviews/compareappview");
 
 $(function() {
 
@@ -21,7 +22,8 @@ $(function() {
 	var Ramban 	= new MoneiMitzvah("/ramban", "ramban", "רמב\"ן", "Ramban");
 	var Chinuch = new MoneiMitzvah("/chinuch", "chinuch", "חינוך", "Chinuch");
 	var Semag  	= new MoneiMitzvah("/semag", "semag", "סמ\"ג", "Semag");
-	var MoneiMitzvos = [Rambam, Ramban, Chinuch, Semag];
+	var Bahag  	= new MoneiMitzvah("/bahag", "bahag", "בה\"ג", "Bahag");
+	var MoneiMitzvos = [Rambam, Ramban, Chinuch, Semag, Bahag];
 	var liToURL = new Map();
 
 	var recentlySelected = "";
@@ -106,6 +108,9 @@ $(function() {
 					break;
 				case Semag.url:
 					App = new SemagAppView();
+					break;
+				case Bahag.url:
+					App = new BahagAppView();
 					break;
 				default:
 					validUrl = false;
