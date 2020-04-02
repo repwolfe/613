@@ -150,6 +150,14 @@ body {
 		height: 250px;
 		transition: all 0.5s ease;
 	}
+
+	.originalText {
+		white-space: pre-wrap;
+	}
+}
+
+.mitzvos {		/* For when there are multiple uls of mitzvos, the one to add to is #mitzvos, and the rest are styled the same */
+	@extend #mitzvos;
 }
 
 #leftMitzvos, #midMitzvos, #rightMitzvos {
@@ -164,4 +172,21 @@ body {
 			line-height: 40px;	/* Override font's line height to make it vertically center */
 		/*}*/
 	}
+}
+
+.mitzvahCatHeader {
+	text-align: center;
+	font-weight: bold;
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+
+.mitzvahCatHeader.hebrew {
+	@include set-font($fancy-font, 32px, 1.25);
+	font-weight: 900;
+}
+
+.mitzvahCatHeader.english {
+	@include set-font($reg-font, 28px, 1.25);
+	font-weight: 900;
 }

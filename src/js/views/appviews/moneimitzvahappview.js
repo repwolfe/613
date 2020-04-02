@@ -6,6 +6,9 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 
 	previouslySelected: null,
 	startEnglish: false,
+	
+	startSelected: "",		// mitzvahNumber to startSelected (String)
+	viewToSelect: null,
 
 	initialize: function() {
 		this.setElement(this.el);
@@ -32,6 +35,12 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 
 	addOne: function(view) {
 		this.listenTo(view, 'viewClicked', this.viewClicked);
+
+		if (view.model.id === this.startSelected) {
+			this.viewToSelect = view;
+			this.startSelected = "";
+		}
+
 		this.$el.append(view.render().el);
 	},
 
@@ -43,6 +52,14 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 		if (this.startEnglish) {
 			this.languageSwitch();
 			this.startEnglish = false;
+		}
+
+		// If preselecting a mitzvah
+		if (this.viewToSelect != null) {
+			this.viewToSelect.onClick();
+			var top = this.viewToSelect.$el.offset().top - 58;
+			$("body, html").stop().animate({scrollTop: top}, 800);
+			this.viewToSelect = null;
 		}
 	},
 
@@ -60,19 +77,31 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 
 	viewClicked: function(view) {
 		// @todo: maybe add option to select multiple entries
+		var newUrl = window.location.pathname.substr(0, window.location.pathname.lastIndexOf("/"));	// Start with removing the mitzvahId at the end
 		if (view == this.previouslySelected) {
 			this.previouslySelected = null;
 		}
 		else {
 			if (this.previouslySelected != null) {
 				this.previouslySelected.onClick({ fake_click: true });
+				newUrl = newUrl + "/" + view.model.id;
+			}
+			else {
+				newUrl = window.location.pathname +  "/" + view.model.id;
 			}
 			this.previouslySelected = view;
+		}
+		if (this.viewToSelect == null) {	// Don't change the URL if starting with selecting a mitzvah
+			window.history.replaceState(null, null, newUrl);
 		}
 	},
 
 	setStartEnglish: function() {
 		this.startEnglish = true;
+	},
+
+	selectOne: function(mitzvahNumber) {
+		this.startSelected = mitzvahNumber;
 	}
 });
 

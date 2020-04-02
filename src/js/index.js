@@ -18,12 +18,13 @@ $(function() {
 	var firstTime = true;
 
 	// Set up the buttons to display the monei mitzvos
-	var Rambam 	= new MoneiMitzvah("/rambam", "rambam", "רמב\"ם", "Rambam");
-	var Ramban 	= new MoneiMitzvah("/ramban", "ramban", "רמב\"ן", "Ramban");
-	var Chinuch = new MoneiMitzvah("/chinuch", "chinuch", "חינוך", "Chinuch");
-	var Semag  	= new MoneiMitzvah("/semag", "semag", "סמ\"ג", "Semag");
-	var Bahag  	= new MoneiMitzvah("/bahag", "bahag", "בה\"ג", "Bahag");
-	var MoneiMitzvos = [Rambam, Ramban, Chinuch, Semag, Bahag];
+	var Mitzvos = new MoneiMitzvah("/mitzvos",	"all",		"כל המצוות", 	"All Mitzvos");
+	var Rambam 	= new MoneiMitzvah("/rambam",	"rambam", 	"רמב\"ם", 	"Rambam");
+	var Ramban 	= new MoneiMitzvah("/ramban",	"ramban", 	"רמב\"ן", 	"Ramban");
+	var Chinuch = new MoneiMitzvah("/chinuch",	"chinuch", 	"חינוך", 		"Chinuch");
+	var Semag  	= new MoneiMitzvah("/semag",	"semag", 	"סמ\"ג", 	"Semag");
+	var Bahag  	= new MoneiMitzvah("/bahag",	"bahag", 	"בה\"ג", 	"Bahag");
+	var MoneiMitzvos = [Mitzvos, Rambam, Ramban, Chinuch, Semag, Bahag];
 	var liToURL = new Map();
 
 	var recentlySelected = "";
@@ -87,11 +88,14 @@ $(function() {
 	function loadMitzvos() {
 		if (App != null) {
 			App.destroy();
+			App = null;
 		}
 
 		var urlPaths = window.location.pathname.split("/");	// The first entry will be empty
 
-		if (urlPaths.length === 2) {
+		var selectingOne = urlPaths.length === 3 && !isNaN(urlPaths[2]);	// ex: /rambam/52
+
+		if (urlPaths.length === 2  || selectingOne) {
 			$("#compare").hide();
 			$("#container").show();
 			var theUrl = "/" + urlPaths[1];
@@ -119,6 +123,10 @@ $(function() {
 				// Pretoggle the correct buttons
 				recentlySelected = urlPaths[1];
 				$("li#" + recentlySelected).toggleClass("toggled");
+
+				if (selectingOne) {
+					App.selectOne(urlPaths[2]);
+				}
 			}
 		}
 		else if (urlPaths.length === 3) {

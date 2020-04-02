@@ -82,7 +82,7 @@ var MoneiMitzvahView = Backbone.View.extend({
 			this.render();
 		}
 
-		if (options && !options.fake_click) {
+		if (!options || !options.fake_click) {
 			this.trigger("viewClicked", this);
 		}
 	}

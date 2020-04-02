@@ -17,6 +17,10 @@ var CompareView = MoneiMitzvahView.extend({
 	render: function() {
 		this.model.set("count", this.count);
 		return MoneiMitzvahView.prototype.render.apply(this);
+	},
+
+	onClick: function() {
+		// @todo (don't call super)
 	}
 });
 
