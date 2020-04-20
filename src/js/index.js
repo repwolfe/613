@@ -2,6 +2,7 @@ var css = require("../css/main.scss");
 
 var Backbone 		= require("backbone");
 var MoneiMitzvah   	= require("./models/moneimitzvah");
+var MitzvosAppView	= require("./views/appviews/mitzvosappview");
 var RambamAppView  	= require("./views/appviews/rambamappview");
 var RambanAppView  	= require("./views/appviews/rambanappview");
 var ChinuchAppView  = require("./views/appviews/chinuchappview");
@@ -65,10 +66,18 @@ $(function() {
 					$("li#" + lessRecentlySelected).toggleClass("toggled");		// untoggle older selected button
 				}
 
-				newUrl = recentUrl + liToURL.get(clickedNow);
+				// Stop the case where one of the selected is Mitzvos, as the compare view isn't relevant
+				if (recentlySelected != "" && (clickedNow === Mitzvos.id || recentlySelected === Mitzvos.id)) {
+					$("li#" + recentlySelected).toggleClass("toggled");
+					recentUrl = "";
+					lessRecentlySelected = "";
+				}
+				else {
+					lessRecentlySelected = recentlySelected;
+				}
 
-				lessRecentlySelected = recentlySelected;
 				recentlySelected = clickedNow;
+				newUrl = recentUrl + liToURL.get(clickedNow);
 			}
 
 			window.history.replaceState(null, null, newUrl);
@@ -101,6 +110,9 @@ $(function() {
 			var theUrl = "/" + urlPaths[1];
 			var validUrl = true;
 			switch(theUrl) {
+				case Mitzvos.url:
+					App = new MitzvosAppView();
+					break;
 				case Rambam.url:
 					App = new RambamAppView();
 					break;
@@ -122,6 +134,9 @@ $(function() {
 			if (validUrl && firstTime) {
 				// Pretoggle the correct buttons
 				recentlySelected = urlPaths[1];
+				if ("/" + recentlySelected == Mitzvos.url) {
+					recentlySelected = Mitzvos.id;		// Mitzvos is the exception whose id doesn't match their URL
+				}
 				$("li#" + recentlySelected).toggleClass("toggled");
 
 				if (selectingOne) {

@@ -32,9 +32,6 @@ var BahagAppView = MoneiMitzvahAppView.extend({
 
 			this.makeNewList(this.$el.parent());
 		}
-		// $("<ul>").appendTo.$el.parent();
-		// make $el class mitzvos1 etc. set el to mitzvos
-		// add header
 
 		MoneiMitzvahAppView.prototype.addOne.call(this, view);
 	},

@@ -26,8 +26,22 @@ $container["queries"] = function($c) {
 		"SELECT * from books, verses
 		 WHERE books._id = verses.bookId";
 
-	$query["mitzvos"] =
-		"SELECT * from mitzvos";
+	$query["mitzvosBase"] =
+		"FROM mitzvos
+		 LEFT JOIN rambam ON mitzvos._id = rambam.mitzvahId
+		 LEFT JOIN ramban ON mitzvos._id = ramban.mitzvahId
+		 LEFT JOIN semag  ON mitzvos._id = semag.mitzvahId
+		 LEFT JOIN bahag  ON mitzvos._id = bahag.mitzvahId
+		 WHERE 1 = 1";	// Tautology just so the code from the other tables doesn't break (as they all end with WHERE, and this one doesn't)
+
+	$query["mitzvosColumns"] =
+		"mitzvos._id, mitzvahName, mitzvahNameEn, asehOrLoSaseh, rambam._id AS rambamId, ramban._id AS rambanId, semag._id AS semagId, bahag._id AS bahagId";
+
+	$query["mitzvosLess"] =
+		"SELECT " . $query["mitzvosColumns"] . " " . $query["mitzvosBase"] . " ORDER BY RANDOM()";
+
+	$query["mitzvosMore"] =
+		"SELECT " . $query["mitzvosColumns"] . ", rambam.mitzvahNumber as rambamNumber, ramban.mitzvahNumber as rambanNumber, semag.mitzvahNumber as semagNumber, bahag.mitzvahNumber as bahagNumber " . $query["mitzvosBase"];
 
 	$query["sharedColumns"] =
 		"mitzvahId, mitzvahNumber, mitzvahName, mitzvahNameEn, asehOrLoSaseh, bookName, bookNameEn, chapter, verse";
@@ -106,11 +120,14 @@ $container["queries"] = function($c) {
 		) as bahag
 		 WHERE mitzvos._id = mitzvahId";
 
+	$query["bahagColumns"] =
+		"mitzvahId, bahag._id as _id, mitzvahNumber, mitzvahName, mitzvahNameEn, asehOrLoSaseh, mitzvahTitle, categoryNum";
+
 	$query["bahagLess"] =
-		"SELECT " . "mitzvahId, bahag._id as _id, mitzvahNumber, mitzvahName, mitzvahNameEn, asehOrLoSaseh, mitzvahTitle, categoryNum " . $query["bahagBase"];
+		"SELECT " . $query["bahagColumns"] . " " . $query["bahagBase"];
 
 	$query["bahagMore"] =
-		"SELECT " . "mitzvahId, bahag._id as _id, mitzvahNumber, mitzvahName, mitzvahNameEn, asehOrLoSaseh, mitzvahTitle, categoryNum, enNote " . $query["bahagBase"];
+		"SELECT " . $query["bahagColumns"] . ", enNote " . $query["bahagBase"];
 
 	return $query;
 };
@@ -150,7 +167,7 @@ $paths = array(
 // The query to use when collecting all data, retreive less columns
 $queriesLess = array(
 	"verses",
-	"mitzvos",
+	"mitzvosLess",
 	"rambamLess",
 	"rambanLess",
 	"chinuchLess",
@@ -161,7 +178,7 @@ $queriesLess = array(
 // The query to use when collecting a specific entry, retreive all columns
 $queriesMore = array(
 	array("verses", 		"verses._id"),
-	array("mitzvos", 		"mitzvos._id"),
+	array("mitzvosMore",	"mitzvos._id"),
 	array("rambamMore", 	"rambam._id"),
 	array("rambanMore", 	"ramban._id"),
 	array("chinuchMore",	"mitzvahNumber"),

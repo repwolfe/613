@@ -430,7 +430,7 @@ insert into bahag values (369, 759, 7, 21,  'והמורם תרומה מתודה'
 insert into bahag values (370, 760, 7, 22,  'וחזה ושוק');
 insert into bahag values (371, 19,  7, 23,  'וברכת המזון');
 insert into bahag values (372, 11,  7, 24,  'ותלמוד תורה');
-insert into bahag values (373, 5,   7, 25,  'מאה ברכות בכל יום');
+insert into bahag values (373, 896, 7, 25,  'מאה ברכות בכל יום');
 insert into bahag values (374, 9,   7, 26,  'קידוש השם');
 insert into bahag values (375, 3,   7, 27,  'ואהבת השם');
 insert into bahag values (376, 4,   7, 28,  'ויראת השם');
@@ -716,7 +716,7 @@ insert into bahagNotes values (315, null, 'See Rav Troib''s note #66 and #103. W
 insert into bahagNotes values (349, null, 'For some reason Rav Troib claims the Rambam didn''t count this mitzvah. The Bahag doesn''t count #2 of the Rambam, so perhaps Rav Troib viewed this as a fusion of the two? See also Rav Perla''s commentary to Rav Saadiah Gaon, Aseh #3');
 insert into bahagNotes values (350, null, 'The Bahag counts this as one, whereas the Rambam counts this as two');
 insert into bahagNotes values (368, null, 'For some reason Rav Troib cross references Rambam #20, which isn''t relevant');
-insert into bahagNotes values (373, null, 'It''s up for debate if the Bahag means the Rambam''s #5. The Zohar HaRakiah (Aseh #1) understands not like Rav Troib.');
+insert into bahagNotes values (373, null, 'Rav Troib understands that the Bahag means the Rambam''s #5. The Zohar HaRakiah (Aseh #1) understands not like this, and all the Geonim that follow the opinion of the Bahag also seem to take him literally');
 insert into bahagNotes values (377, null, 'See Rav Troib''s note #4');
 insert into bahagNotes values (385, null, 'See Rav Troib''s note #11');
 insert into bahagNotes values (386, null, 'See Rav Troib''s note #12');
