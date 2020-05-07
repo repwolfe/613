@@ -2,6 +2,36 @@
 <head>
 	<meta charset="utf-8">
 	<link href="https://fonts.googleapis.com/css?family=Alef|Open+Sans" rel="stylesheet">
+	<!-- Mitzvos -->
+	<script type="text/template" id="mitzvos-template-he">
+		<div class="hebrew">
+			&rlm;<b><%- count %></b><br>
+			<b><%- mitzvahName %></b><br>
+			<%= idStringHe %><br>
+		</div>
+	</script>
+	<script type="text/template" id="mitzvos-template-en">
+		<div class="english">
+			<b><%- count %></b><br>
+			<b><%- mitzvahNameEn %></b><br>
+			<%= idStringEn %><br>
+		</div>
+	</script>
+	<script type="text/template" id="mitzvos-selected-template-he">
+		<div class="hebrew">
+			&rlm;<b><%- count %></b><br>
+			<b><%- mitzvahName %></b><br>
+			<%= idStringLongHe %><br>
+		</div>
+	</script>
+	<script type="text/template" id="mitzvos-selected-template-en">
+		<div class="english">
+			<b><%- count %></b><br>
+			<b><%- mitzvahNameEn %></b><br>
+			<%= idStringLongEn %><br>
+		</div>
+	</script>
+
 	<!-- Rambam -->
 	<script type="text/template" id="rambam-template-he">
 		<div class="hebrew">
@@ -25,7 +55,7 @@
 			<b><%- mitzvahName %></b><br>
 			<%- verseText %> (<%- bookName %> <%- chapter %>, <%- verse %>)<br><br>
 			<%- mitzvahTypeHe %>, <%- punishmentHe %>, <%- whoAppliesHe %><br><br>
-			<%- originalText %>
+			<div class="originalText"><%- originalText %></div><!-- REMOVE -->
 		</div>
 	</script>
 	<script type="text/template" id="rambam-selected-template-en">
@@ -88,6 +118,10 @@
 			&rlm;<b><%- mitzvahNumber %></b><br>
 			<b><%- mitzvahName %></b><br>
 			<%- verseText %> (<%- bookName %> <%- chapter %>, <%- verse %>)
+			<p><%- description %></p>
+			<p><%- shoresh %></p>
+			<p><%- dinim %></p>
+			<p><%- whoWhereWhenApplies %></p>
 		</div>
 	</script>
 	<script type="text/template" id="chinuch-selected-template-en">
@@ -128,15 +162,47 @@
 		</div>
 	</script>
 
+	<!-- Bahag -->
+	<script type="text/template" id="bahag-template-he">
+		<div class="hebrew">
+			&rlm;<b><%- mitzvahNumber %></b><br>
+			<b><%- mitzvahTitle %></b><br>
+			<%- mitzvahName %><br>
+		</div>
+	</script>
+	<script type="text/template" id="bahag-template-en">
+		<div class="english">
+			<b><%- mitzvahNumber %></b><br>
+			<b><%- mitzvahTitle %></b><br>
+			<%- mitzvahNameEn %><br>
+		</div>
+	</script>
+	<script type="text/template" id="bahag-selected-template-he">
+		<div class="hebrew">
+			&rlm;<b><%- mitzvahNumber %></b><br>
+			<b><%- mitzvahTitle %></b><br>
+			<%- mitzvahName %><br>
+			<p><%- enNote %></p>
+		</div>
+	</script>
+	<script type="text/template" id="bahag-selected-template-en">
+		<div class="english">
+			<b><%- mitzvahNumber %></b><br>
+			<b><%- mitzvahTitle %></b><br>
+			<%- mitzvahNameEn %><br>
+			<p><%- enNote %></p>
+		</div>
+	</script>
+
 	<!-- Compare -->
 	<script type="text/template" id="compare-template-he">
 		<div class="hebrew">
-			&rlm;<b><%- count %>) <%- mitzvahName %></b><br>
+			&rlm;<b><%- count %>) <%- mitzvahName %></b> (#<%- mitzvahNumber %>)<br>
 		</div>
 	</script>
 	<script type="text/template" id="compare-template-en">
 		<div class="english">
-			<b><%- count %>) <%- mitzvahNameEn %></b><br>
+			<b><%- count %>) <%- mitzvahNameEn %></b> (#<%- mitzvahNumber %>)<br>
 		</div>
 	</script>
 
