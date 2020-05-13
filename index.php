@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -216,32 +217,30 @@
 
 </head>
 <body>
-	<div id="language">
-		<button id="language-btn" type="button">א</button>
-	</div>
-	<div id="moneiMitzvos">
-		<ul id="moneiMitzvosList" dir="rtl" class="hebrew"></ul>
-	</div>
+	<header>
+		<div id="title">The Taryag התרי"ג</div>
+		<nav>
+			<ul id="moneiMitzvosList" dir="rtl" class="hebrew"></ul>
+		</nav>
+		<div id="languageBtn">א</div>
+	</header>
 	<div id="container" dir="rtl">
 		<ul id="mitzvos"></ul>
 	</div>
 	<div id="compare" dir="rtl">
-		<div id="leftTitle" class="hebrew">
-			<b>רבמ"ם</b>
-		</div>
-		<div id="middleTitle" class="hebrew">
-			<b>שניהם</b>
-		</div>
-		<div id="rightTitle" class="hebrew">
-			<b>רמב"ן</b>
-		</div>
 		<div id="left">
+			<div id="leftTitle" class="hebrew"></div>
 			<ul id="leftMitzvos"></ul>
 		</div>
 		<div id="middle">
+			<div id="middleTitle" class="hebrew">
+				<b>שניהם</b>
+			</div>
 			<ul id="midMitzvos"></ul>
 		</div>
 		<div id="right">
+			<div id="rightTitle" class="hebrew"></b>
+			</div>
 			<ul id="rightMitzvos"></ul>
 		</div>
 	</div>

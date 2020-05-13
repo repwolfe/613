@@ -12,7 +12,7 @@ var CompareAppView 	= require("./views/appviews/compareappview");
 
 $(function() {
 
-	var languageButton = "#language-btn";
+	var languageButton = "#languageBtn";
 	var moneiMitzvosList = "#moneiMitzvosList";
 
 	var App;
@@ -190,15 +190,13 @@ $(function() {
 		}
 	}
 
-	
-
 	/**
 	 * Switch the display to either English or Hebrew, changing text alignment and direction and format
 	 */
 	function languageClick() {
 		// Was Hebrew
 		if ($(languageButton).text() === "א") {
-			$(languageButton).text("A");
+			$(languageButton).text("a");
 
 			$(moneiMitzvosList).attr("dir", "ltr");
 			$(moneiMitzvosList).removeClass("hebrew");
@@ -229,5 +227,5 @@ $(function() {
 		App.languageSwitch();
 	}
 
-	$(languageButton).on("click", languageClick);
+	$(languageButton).click(languageClick);
 });
