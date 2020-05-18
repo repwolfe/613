@@ -185,7 +185,7 @@ $(function() {
 		}
 
 		// If starting with English
-		if ($(languageButton).text() === "A") {
+		if ($(languageButton).text() === "a") {
 			App.setStartEnglish();
 		}
 	}

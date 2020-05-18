@@ -4,6 +4,7 @@ var ComparePanelView = require("./comparepanelview");
 var CompareAppView = Backbone.View.extend({
 	el: $("#compare"),
 	curLang: "he",
+	fetchesCompleted: 0,
 
 	/**
 	 * @params MoneiMitzvah left, right
@@ -24,8 +25,13 @@ var CompareAppView = Backbone.View.extend({
 		var dbUrl = "/db";
 		var leftListUrl = dbUrl + left.url + right.url;
 		this.LeftList	= new ComparePanelView("#leftMitzvos", leftListUrl);
+		this.listenTo(this.LeftList, 'fetchComplete', this.fetchComplete);
+
 		this.MiddleList = new ComparePanelView("#midMitzvos", leftListUrl + "?both=yes");
+		this.listenTo(this.MiddleList, 'fetchComplete', this.fetchComplete);
+
 		this.RightList 	= new ComparePanelView("#rightMitzvos", dbUrl + right.url + left.url);
+		this.listenTo(this.RightList, 'fetchComplete', this.fetchComplete);
 	},
 
 	destroy: function() {
@@ -72,6 +78,17 @@ var CompareAppView = Backbone.View.extend({
 			this.curLang = "he";
 		}
 	},
+
+	fetchComplete: function() {
+		if (++this.fetchesCompleted == 3 && this.startEnglish) {
+			this.languageSwitch();
+			this.startEnglish = false;
+		}
+	},
+
+	setStartEnglish: function() {
+		this.startEnglish = true;
+	}
 });
 
 module.exports = CompareAppView;

@@ -24,6 +24,10 @@ var ComparePanelView = MoneiMitzvahAppView.extend({
 	addAll: function() {
 		this.count = 0;
 		this.mitzvahList.each(this.addOne, this);
+	},
+
+	fetchComplete: function() {
+		// override parent function and do nothing
 	}
 });
 
