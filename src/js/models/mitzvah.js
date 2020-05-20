@@ -1,5 +1,6 @@
 var Mitzvah = Backbone.Model.extend({
 	idAttribute: "_id",
+	fillProperties: true,
 	
 	defaults: function() {
 		return {
@@ -16,7 +17,9 @@ var Mitzvah = Backbone.Model.extend({
 	},
 
 	initialize: function() {
-		this.fillInProperties();
+		if (this.fillProperties) {
+			this.fillInProperties();
+		}
 	},
 
 	fillInProperties: function() {

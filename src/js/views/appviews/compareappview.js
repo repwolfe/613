@@ -80,6 +80,7 @@ var CompareAppView = Backbone.View.extend({
 	},
 
 	fetchComplete: function() {
+		// @todo: find a better way to do this. As of now there's a delay before the language changes
 		if (++this.fetchesCompleted == 3 && this.startEnglish) {
 			this.languageSwitch();
 			this.startEnglish = false;

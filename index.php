@@ -3,6 +3,22 @@
 <head>
 	<meta charset="utf-8">
 	<link href="https://fonts.googleapis.com/css?family=Alef|Open+Sans" rel="stylesheet">
+	<script type="text/template" id="home-mitzvah-template-he">
+		<div class="homeMitzvahTitle">
+			<b><%- mitzvahName %></b>
+		</div><br>
+		<div class="hebrew">
+			<%= idStringLongHe %><br>
+		</div>
+	</script>
+	<script type="text/template" id="home-mitzvah-template-en">
+		<div class="homeMitzvahTitle">
+			<b><%- mitzvahNameEn %></b>
+		</div><br>
+		<div class="english">
+			<%= idStringLongEn %><br>
+		</div>
+	</script>
 	<!-- Mitzvos -->
 	<script type="text/template" id="mitzvos-template-he">
 		<div class="hebrew">
@@ -239,8 +255,7 @@
 			<ul id="midMitzvos"></ul>
 		</div>
 		<div id="right">
-			<div id="rightTitle" class="hebrew"></b>
-			</div>
+			<div id="rightTitle" class="hebrew"></div>
 			<ul id="rightMitzvos"></ul>
 		</div>
 	</div>

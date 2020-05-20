@@ -2,6 +2,7 @@ var css = require("../css/main.scss");
 
 var Backbone 		= require("backbone");
 var MoneiMitzvah   	= require("./models/moneimitzvah");
+var HomeAppView 	= require("./views/appviews/homeappview");
 var MitzvosAppView	= require("./views/appviews/mitzvosappview");
 var RambamAppView  	= require("./views/appviews/rambamappview");
 var RambanAppView  	= require("./views/appviews/rambanappview");
@@ -110,6 +111,9 @@ $(function() {
 			var theUrl = "/" + urlPaths[1];
 			var validUrl = true;
 			switch(theUrl) {
+				case "/":
+					App = new HomeAppView();
+					break;
 				case Mitzvos.url:
 					App = new MitzvosAppView();
 					break;
@@ -131,7 +135,7 @@ $(function() {
 				default:
 					validUrl = false;
 			}
-			if (validUrl && firstTime) {
+			if (validUrl && firstTime && theUrl !== "/") {
 				// Pretoggle the correct buttons
 				recentlySelected = urlPaths[1];
 				if ("/" + recentlySelected == Mitzvos.url) {

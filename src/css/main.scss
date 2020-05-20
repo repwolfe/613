@@ -38,6 +38,11 @@ body {
 	@include set-font($reg-font, 13px, 1.25);
 }
 
+.homeMitzvahTitle {
+	text-align: center;
+	@include set-font($fancy-font, 28px, 1.25);
+}
+
 #sorting {
 	height: 50px;
 	text-align: center;
