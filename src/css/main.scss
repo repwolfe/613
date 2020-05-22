@@ -1,6 +1,6 @@
-$reg-font: Verdana;
-$fancy-font: 'Alef';
-$backup-font: $reg-font;
+$eng-font: 'Montserrat';
+$heb-font: 'Alef';
+$backup-font: Verdana;
 $font-weight: 400;
 
 $aseh-color: #82e346;
@@ -14,7 +14,7 @@ $banner-title-width: 265px;
 $language-btn-size: 36px;
 
 @mixin set-font($whichfont, $fontsize, $lineheight) {
-	font: $font-weight #{$fontsize}/#{$lineheight} $whichfont, "Taamey David CLM", $backup-font, sans-serif;
+	font: $font-weight #{$fontsize}/#{$lineheight} $whichfont, $heb-font, $backup-font, sans-serif;
 }
 
 * {	// Rest all user-agent stylesheets
@@ -28,25 +28,42 @@ body {
 	padding: 0;
 }
 
-.hebrew {
+// Language specific styling (Hebrew/English)
+body:lang(he) {
 	text-align: right;
-	@include set-font($fancy-font, 16px, 1.25);
+	@include set-font($heb-font, 16px, 1.25);
+
+	li {	// override user-agent stylesheets
+		text-align: right;
+	}
+	
+	.mitzvahCatHeader {
+		font-size: 32px;
+	}
 }
 
-.english {
+body:lang(en) {
 	text-align: left;
-	@include set-font($reg-font, 13px, 1.25);
+	@include set-font($eng-font, 13px, 1.25);
+
+	li {	// override user-agent stylesheets
+		text-align: left;
+	}
+
+	.mitzvahCatHeader {
+		font-size: 28px;
+	}
 }
 
 .homeMitzvahTitle {
 	text-align: center;
-	@include set-font($fancy-font, 28px, 1.25);
+	font-size: 28px
 }
 
 #sorting {
 	height: 50px;
 	text-align: center;
-	@include set-font($reg-font, 18px, 1.25);
+	@include set-font($eng-font, 18px, 1.25);
 
 	a {
 		padding: 10px 20px;
@@ -73,7 +90,7 @@ header {
 	}
 
 	#title, #languageBtn {
-		@include set-font($fancy-font, 32px, 1.25);
+		@include set-font($heb-font, 32px, 1.25);
 		font-weight: 700;
 	}
 
@@ -174,7 +191,6 @@ header {
 	li {
 		display: inline-block;
 		overflow-y: auto;
-		text-align: right;
 		vertical-align: middle;
 		width: 140px;
 		height: 140px;
@@ -182,7 +198,7 @@ header {
 		padding: 10px;
 		margin: 5px;
 		cursor: pointer;
-		transition: all 0.5s ease;
+		transition: width 0.5s, height 0.5s ease;
 	}
 
 	/* @todo: get it to work on all browsers. see https://css-tricks.com/the-current-state-of-styling-scrollbars */;
@@ -211,7 +227,7 @@ header {
 	.selected {
 		width: 250px;
 		height: 250px;
-		transition: all 0.5s ease;
+		transition: width 0.5s, height 0.5s ease;
 	}
 
 	.originalText {
@@ -229,27 +245,12 @@ header {
 	li {
 		width: 80%;
 		height: 40px;
-		text-align: center;
-
-		/*.hebrew, .english {
-			line-height: 40px;	/* Override font's line height to make it vertically center */
-		/*}*/
 	}
 }
 
 .mitzvahCatHeader {
 	text-align: center;
-	font-weight: bold;
 	margin-top: 25px;
 	margin-bottom: 10px;
-}
-
-.mitzvahCatHeader.hebrew {
-	@include set-font($fancy-font, 32px, 1.25);
-	font-weight: 900;
-}
-
-.mitzvahCatHeader.english {
-	@include set-font($reg-font, 28px, 1.25);
 	font-weight: 900;
 }

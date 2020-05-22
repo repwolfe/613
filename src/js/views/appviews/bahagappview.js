@@ -14,7 +14,7 @@ var BahagAppView = MoneiMitzvahAppView.extend({
 	},
 
 	makeHeader: function() {
-		var header = $("<h1 class=\"mitzvahCatHeader hebrew\">");
+		var header = $("<h1 class=\"mitzvahCatHeader\">");
 		header.html(Bahag.categoriesHe[this.currentCategory]);
 		return header;
 	},
@@ -68,8 +68,6 @@ var BahagAppView = MoneiMitzvahAppView.extend({
 		else {
 			headerTitles = Bahag.categoriesEn;
 		}
-
-		$(headers).toggleClass("hebrew english");
 
 		for (var i = 0; i < headers.length; ++i) {
 			$(headers[i]).html(headerTitles[i]);

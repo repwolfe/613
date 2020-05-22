@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link href="https://fonts.googleapis.com/css?family=Alef|Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Alef&family=Montserrat:wght@400;700" rel="stylesheet">
 	<script type="text/template" id="home-mitzvah-template-he">
 		<div class="homeMitzvahTitle">
 			<b><%- mitzvahName %></b>
@@ -232,11 +232,11 @@
 	<script language="javascript" type="text/javascript" src="dist/bundle.js"></script>
 
 </head>
-<body>
+<body lang="he">
 	<header>
 		<div id="title">The Taryag התרי"ג</div>
 		<nav>
-			<ul id="moneiMitzvosList" dir="rtl" class="hebrew"></ul>
+			<ul id="moneiMitzvosList" dir="rtl"></ul>
 		</nav>
 		<div id="languageBtn">א</div>
 	</header>
@@ -245,17 +245,17 @@
 	</div>
 	<div id="compare" dir="rtl">
 		<div id="left">
-			<div id="leftTitle" class="hebrew"></div>
+			<div id="leftTitle"></div>
 			<ul id="leftMitzvos"></ul>
 		</div>
 		<div id="middle">
-			<div id="middleTitle" class="hebrew">
+			<div id="middleTitle">
 				<b>שניהם</b>
 			</div>
 			<ul id="midMitzvos"></ul>
 		</div>
 		<div id="right">
-			<div id="rightTitle" class="hebrew"></div>
+			<div id="rightTitle"></div>
 			<ul id="rightMitzvos"></ul>
 		</div>
 	</div>

@@ -48,31 +48,15 @@ var CompareAppView = Backbone.View.extend({
 		this.RightList.languageSwitch();
 
 		if (this.curLang === "he") {
-			this.leftTitle.removeClass("hebrew");
-			this.leftTitle.addClass("english");
 			this.leftTitle.html("<b>" + this.leftTitleEn +"</b>");
-
-			this.middleTitle.removeClass("hebrew");
-			this.middleTitle.addClass("english");
 			this.middleTitle.html("<b>Both</b>");
-
-			this.rightTitle.removeClass("hebrew");
-			this.rightTitle.addClass("english");
 			this.rightTitle.html("<b>" + this.rightTitleEn +"</b>");
 
 			this.curLang = "en";
 		}
 		else {
-			this.leftTitle.removeClass("english");
-			this.leftTitle.addClass("hebrew");
 			this.leftTitle.html("<b>" + this.leftTitleHe +"</b>");
-
-			this.middleTitle.removeClass("english");
-			this.middleTitle.addClass("hebrew");
 			this.middleTitle.html("<b>שניהם</b>");
-
-			this.rightTitle.removeClass("english");
-			this.rightTitle.addClass("hebrew");
 			this.rightTitle.html("<b>" + this.rightTitleHe +"</b>");
 
 			this.curLang = "he";

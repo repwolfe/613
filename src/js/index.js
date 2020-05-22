@@ -202,9 +202,9 @@ $(function() {
 		if ($(languageButton).text() === "א") {
 			$(languageButton).text("a");
 
+			$("body").attr("lang", "en");
+
 			$(moneiMitzvosList).attr("dir", "ltr");
-			$(moneiMitzvosList).removeClass("hebrew");
-			$(moneiMitzvosList).addClass("english");
 			$(moneiMitzvosList + " li").each(function(i) {
 				$(this).text(MoneiMitzvos[i].nameEn);
 			});
@@ -217,9 +217,9 @@ $(function() {
 		else {
 			$(languageButton).text("א");
 
+			$("body").attr("lang", "he");
+
 			$(moneiMitzvosList).attr("dir", "rtl");
-			$(moneiMitzvosList).removeClass("english");
-			$(moneiMitzvosList).addClass("hebrew");
 			$(moneiMitzvosList + " li").each(function(i) {
 				$(this).text(MoneiMitzvos[i].nameHe);
 			});
