@@ -4,6 +4,8 @@ var ChinuchView = require("../modelviews/chinuchview");
 
 var ChinuchAppView = MoneiMitzvahAppView.extend({
 
+	pageDetailId: "chinuch",
+
 	initialize: function() {
 		this.mitzvahList = new ChinuchList();
 		MoneiMitzvahAppView.prototype.initialize.apply(this);

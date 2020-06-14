@@ -4,6 +4,8 @@ var SemagView = require("../modelviews/semagview");
 
 var SemagAppView = MoneiMitzvahAppView.extend({
 
+	pageDetailId: "semag",
+
 	initialize: function() {
 		this.mitzvahList = new SemagList();
 		MoneiMitzvahAppView.prototype.initialize.apply(this);

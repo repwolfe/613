@@ -4,6 +4,8 @@ var RambamView = require("../modelviews/rambamview");
 
 var RambamAppView = MoneiMitzvahAppView.extend({
 
+	pageDetailId: "rambam",
+
 	initialize: function() {
 		this.mitzvahList = new RambamList();
 		MoneiMitzvahAppView.prototype.initialize.apply(this);

@@ -26,6 +26,10 @@ $container["queries"] = function($c) {
 		"SELECT * from books, verses
 		 WHERE books._id = verses.bookId";
 
+	$query["pageDetails"] =
+		"SELECT * from pageDetails
+		 WHERE 1 = 1";	// Tautology just so the code from the other tables doesn't break (as they all end with WHERE, and this one doesn't)";
+
 	$query["mitzvosBase"] =
 		"FROM mitzvos
 		 LEFT JOIN rambam ON mitzvos._id = rambam.mitzvahId
@@ -156,6 +160,7 @@ function inBoth($a, $b) {
 // All the DB paths, and the column to use when selecting a single entry
 $paths = array(
 	"verses",
+	"pageDetails",
 	"mitzvos",
 	"rambam",
 	"ramban",
@@ -167,6 +172,7 @@ $paths = array(
 // The query to use when collecting all data, retreive less columns
 $queriesLess = array(
 	"verses",
+	"pageDetails",
 	"mitzvosLess",
 	"rambamLess",
 	"rambanLess",
@@ -178,6 +184,7 @@ $queriesLess = array(
 // The query to use when collecting a specific entry, retreive all columns
 $queriesMore = array(
 	array("verses", 		"verses._id"),
+	array("pageDetails",	"pageDetails._id"),
 	array("mitzvosMore",	"mitzvos._id"),
 	array("rambamMore", 	"rambam._id"),
 	array("rambanMore", 	"ramban._id"),

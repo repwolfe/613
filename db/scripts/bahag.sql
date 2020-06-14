@@ -591,7 +591,7 @@ insert into bahag values (530, 837, 7, 182, 'כל מעשה יום הכפורים
 insert into bahag values (531, 838, 7, 183, 'מצות כהנים ללמוד לעשות יציקות');
 insert into bahag values (532, 839, 7, 184, 'ובלילות');
 insert into bahag values (533, 840, 7, 185, 'ופתיתות');
-insert into bahag values (534, 841, 7, 186, 'מליחות');
+insert into bahag values (534, 62,  7, 186, 'מליחות');
 insert into bahag values (535, 842, 7, 187, 'תנופות');
 insert into bahag values (536, 843, 7, 188, 'הגשות');
 insert into bahag values (537, 844, 7, 189, 'קמיצות');
@@ -616,7 +616,7 @@ insert into bahag values (553, 855, 8, 5,  'פרשת שמן המשחה וקטו�
 insert into bahag values (554, 856, 8, 6,  'פרשת תחנונים');	-- A
 insert into bahag values (555, 857, 8, 7,  'פרשת עולות מנחות ושלמים');	-- A
 insert into bahag values (556, 64,  8, 8,  'פרשת חוטא וחטאת עולה ויורד');	-- A
-insert into bahag values (557, 65,  8, 9,  'פרשת אשם ודאי אדם תלוי');		-- A
+insert into bahag values (557, 65,  8, 9,  'פרשת אשם ודאי אשם תלוי');		-- A
 insert into bahag values (558, 858, 8, 10, 'פרשת מעילות');		-- L
 insert into bahag values (559, 859, 8, 11, 'פרשת טומאת נבילות וטהרת נבילות טומאת שרץ וטהרת שרץ וטומאת כלים אדם ואוכלין ומשקין');		-- L
 insert into bahag values (560, 860, 8, 12, 'פרשת יולדת');		-- L
@@ -727,6 +727,7 @@ insert into bahagNotes values (397, null, 'See Rav Troib''s note #16 and Rav Per
 insert into bahagNotes values (403, null, 'See Rav Hildesheimer''s note #19 and Rav Perla''s comment');
 insert into bahagNotes values (407, null, 'Rav Troib (note #19) is bothered that Peah for a Tree should also be listed, and wonders if perhaps there''s a typo in the Bahag. It is noteworthy that both Ri Albargaloni and Rav Shlomo ibn Gabirol count Peah for a Tree, causing the Nesiv Mitzvosecha to add it in to the Bahag.');
 insert into bahagNotes values (410, null, 'See Rav Troib''s note #20 and Rav Hildesheimer''s note #20');
+insert into bahagNotes values (418, null, 'We explained this mitzvah according to Rav Troib''s note #23. Cf. Nesiv Mitzvosecha Rashbag Aseh #105');
 insert into bahagNotes values (427, null, 'See Rav Troib''s note #27 and Rav Hildesheimer''s note #21');
 insert into bahagNotes values (428, null, 'See Rav Troib''s note #28*');
 insert into bahagNotes values (437, null, 'See Rav Troib''s note #22 and Rav Hildesheimer''s note #22');
@@ -738,6 +739,7 @@ insert into bahagNotes values (514, null, 'For some reason Rav Troib at the end 
 insert into bahagNotes values (519, null, 'See Rav Troib''s note #48');
 insert into bahagNotes values (523, null, 'For some reason Rav Troib at the end of his notes says the Bahag left this out');
 insert into bahagNotes values (529, null, 'See Rav Hildesheimer''s note #25');
+insert into bahagNotes values (534, null, 'For some reason Rav Troib claims the Rambam didn''t count this mitzvah');
 insert into bahagNotes values (545, null, 'For some reason Rav Troib at the end of his notes says the Bahag left this out');
 insert into bahagNotes values (550, null, 'See Rav Perla''s note to Rav Troib''s comment #7');
 insert into bahagNotes values (576, null, 'See Rav Troib''s note #8');

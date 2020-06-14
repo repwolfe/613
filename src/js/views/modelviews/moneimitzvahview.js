@@ -61,7 +61,7 @@ var MoneiMitzvahView = Backbone.View.extend({
 
 	onClick: function(options) {
 		// If they clicked a link in the View, it triggers this as well. Ignore it.
-		if (options && options.target.tagName.toLowerCase() === 'a') {
+		if (options && !options.fake_click && options.target.tagName.toLowerCase() === 'a') {
 			return;
 		}
 

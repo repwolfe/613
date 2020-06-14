@@ -5,6 +5,7 @@ var MoneiMitzvahAppView = require("./moneimitzvahappview");
 var ComparePanelView = MoneiMitzvahAppView.extend({
 
 	count: 0,
+	hasDetails: false,
 
 	initialize: function(el, url) {
 		this.el = el;

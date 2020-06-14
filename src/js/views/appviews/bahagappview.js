@@ -5,6 +5,7 @@ var BahagView = require("../modelviews/bahagview");
 
 var BahagAppView = MoneiMitzvahAppView.extend({
 
+	pageDetailId: "bahag",
 	currentCategory: "0",
 
 	initialize: function() {

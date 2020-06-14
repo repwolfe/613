@@ -8,16 +8,17 @@ $lo-saaseh-color: #e37546;
 
 $banner-height: 30px;
 $banner-height-large: 45px;
-
 $banner-margin: 88px;
 $banner-title-width: 265px;
 $language-btn-size: 36px;
+$banner-bottom-margin: 25px;
+$banner-offset: $banner-height-large + $banner-bottom-margin;	// To shift everything down from the fixed banner
 
 @mixin set-font($whichfont, $fontsize, $lineheight) {
 	font: $font-weight #{$fontsize}/#{$lineheight} $whichfont, $heb-font, $backup-font, sans-serif;
 }
 
-* {	// Rest all user-agent stylesheets
+* {	// Reset all user-agent stylesheets
   margin: 0;
   padding: 0;
 }
@@ -40,6 +41,10 @@ body:lang(he) {
 	.mitzvahCatHeader {
 		font-size: 32px;
 	}
+
+	#moneiMitzvosList, #pageDetailsText, #container, #compare {
+		direction: rtl;
+	}
 }
 
 body:lang(en) {
@@ -52,6 +57,10 @@ body:lang(en) {
 
 	.mitzvahCatHeader {
 		font-size: 28px;
+	}
+
+	#moneiMitzvosList, #pageDetailsText, #container, #compare {
+		direction: ltr;
 	}
 }
 
@@ -79,6 +88,7 @@ header {
 	background: url('/images/banner.png');
 	height: $banner-height-large;
 	position: fixed;	// Stay at the top of the page
+	top: 0;
 	left: 0;
 	right: 0;		// The whole width
 	z-index: 100;
@@ -146,16 +156,32 @@ header {
 	}
 }
 
+#pageDetails, #container {
+	top: $banner-offset;
+}
+
+#pageDetails {
+	position: relative;
+	margin-bottom: 25px;
+}
+
+#pageDetailsText {
+	margin: 0 auto;
+	width: 800px;
+	padding-bottom: 10px;
+
+	font-size: 18px;
+	text-align: justify;
+	text-align-last: center;
+}
+
 #container {
 	position: relative;
-	padding-top: 15px;
-	top: $banner-height-large;
 }
 
 #compare {
-	position: absolute;
-	padding-top: 15px;
-	top: $banner-height-large;
+	position: absolute;		// ??? allows each column to have its own scroll bar (see #compareSection height)
+	top: $banner-offset + 65px;
 	bottom: 0;		// Let's the compare div fill the rest of the screen
 	width: 100%;
 	display: none;

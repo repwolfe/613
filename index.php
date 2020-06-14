@@ -236,14 +236,17 @@
 	<header>
 		<div id="title">The Taryag התרי"ג</div>
 		<nav>
-			<ul id="moneiMitzvosList" dir="rtl"></ul>
+			<ul id="moneiMitzvosList"></ul>
 		</nav>
 		<div id="languageBtn">א</div>
 	</header>
-	<div id="container" dir="rtl">
+	<div id="pageDetails">
+		<div id="pageDetailsText"></div>
+		</div>
+	<div id="container">
 		<ul id="mitzvos"></ul>
 	</div>
-	<div id="compare" dir="rtl">
+	<div id="compare">
 		<div id="left">
 			<div id="leftTitle"></div>
 			<ul id="leftMitzvos"></ul>

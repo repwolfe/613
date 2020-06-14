@@ -5,6 +5,7 @@ var MitzvahView = require("../modelviews/mitzvahview");
 var MitzvosAppView = MoneiMitzvahAppView.extend({
 
 	count: 0,
+	pageDetailId: "allMitzvos",
 
 	initialize: function() {
 		this.mitzvahList = new MitzvahList();

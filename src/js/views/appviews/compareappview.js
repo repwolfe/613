@@ -1,8 +1,13 @@
+var PageDetail = require("../../models/pagedetail");
 var MoneiMitzvah = require("../../models/moneimitzvah");
 var ComparePanelView = require("./comparepanelview");
 
 var CompareAppView = Backbone.View.extend({
 	el: $("#compare"),
+
+	pageDetailId: "compare",
+	pageDetailsTag: "#pageDetailsText",
+
 	curLang: "he",
 	fetchesCompleted: 0,
 
@@ -32,6 +37,16 @@ var CompareAppView = Backbone.View.extend({
 
 		this.RightList 	= new ComparePanelView("#rightMitzvos", dbUrl + right.url + left.url);
 		this.listenTo(this.RightList, 'fetchComplete', this.fetchComplete);
+
+		this.listenTo(this, 'detailsFetchComplete', this.detailsFetchComplete);
+
+		var self = this;
+		this.pageDetails = new PageDetail({_id: this.pageDetailId});
+		this.pageDetails.fetch({
+			success: function(response, options) {
+				self.trigger('detailsFetchComplete');
+			}
+		});
 	},
 
 	destroy: function() {
@@ -47,12 +62,14 @@ var CompareAppView = Backbone.View.extend({
 		this.MiddleList.languageSwitch();
 		this.RightList.languageSwitch();
 
+		var column = "";
 		if (this.curLang === "he") {
 			this.leftTitle.html("<b>" + this.leftTitleEn +"</b>");
 			this.middleTitle.html("<b>Both</b>");
 			this.rightTitle.html("<b>" + this.rightTitleEn +"</b>");
 
 			this.curLang = "en";
+			column = "englishDetails";
 		}
 		else {
 			this.leftTitle.html("<b>" + this.leftTitleHe +"</b>");
@@ -60,19 +77,42 @@ var CompareAppView = Backbone.View.extend({
 			this.rightTitle.html("<b>" + this.rightTitleHe +"</b>");
 
 			this.curLang = "he";
+			column = "hebrewDetails";
+		}
+
+		if (this.pageDetails != null) {
+			$(this.pageDetailsTag).html(this.pageDetails.get(column));
 		}
 	},
 
 	fetchComplete: function() {
+		this.checkIfStartEnglish();
+	},
+
+	detailsFetchComplete: function() {		
+		$(this.pageDetailsTag).html(this.pageDetails.get("hebrewDetails"));
+		this.checkIfStartEnglish();
+	},
+
+	checkIfStartEnglish: function() {
 		// @todo: find a better way to do this. As of now there's a delay before the language changes
-		if (++this.fetchesCompleted == 3 && this.startEnglish) {
+		if (++this.fetchesCompleted == 4 && this.startEnglish) {
 			this.languageSwitch();
+			this.leftTitle.show();
+			this.middleTitle.show();
+			this.rightTitle.show();
+			$(this.pageDetailsTag).show();
 			this.startEnglish = false;
 		}
 	},
 
 	setStartEnglish: function() {
 		this.startEnglish = true;
+
+		$(this.pageDetailsTag).hide();
+		this.leftTitle.hide();
+		this.middleTitle.hide();
+		this.rightTitle.hide();
 	}
 });
 

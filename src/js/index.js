@@ -204,13 +204,9 @@ $(function() {
 
 			$("body").attr("lang", "en");
 
-			$(moneiMitzvosList).attr("dir", "ltr");
 			$(moneiMitzvosList + " li").each(function(i) {
 				$(this).text(MoneiMitzvos[i].nameEn);
 			});
-			
-			$("#container").attr("dir", "ltr");
-			$("#compare").attr("dir", "ltr");
 
 		}
 		// Was English
@@ -219,13 +215,9 @@ $(function() {
 
 			$("body").attr("lang", "he");
 
-			$(moneiMitzvosList).attr("dir", "rtl");
 			$(moneiMitzvosList + " li").each(function(i) {
 				$(this).text(MoneiMitzvos[i].nameHe);
 			});
-
-			$("#container").attr("dir", "rtl");
-			$("#compare").attr("dir", "rtl");
 		}
 
 		App.languageSwitch();

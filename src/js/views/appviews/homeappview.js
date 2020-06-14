@@ -1,3 +1,4 @@
+var PageDetail = require("../../models/pagedetail");
 var Mitzvah = require("../../models/mitzvah");
 var MitzvahList = require("../../collections/mitzvahlist");
 var HomeMitzvahView = require("../modelviews/homemitzvahview");
@@ -8,7 +9,15 @@ var HomeMitzvahView = require("../modelviews/homemitzvahview");
 var HomeAppView = Backbone.View.extend({
 
 	MAX_ID: 894,					// highest id value in mitzvos.sql		@todo UPDATE
-	SKIPPED_IDS: [625, 785],		// skipped id values in mitzvos.sql
+	SKIPPED_IDS: [625, 785, 841],	// skipped id values in mitzvos.sql
+
+	curLang: "he",
+
+	fetchesCompleted: 0,
+
+	pageDetailsTag: "#pageDetailsText",
+	pageDetailId: "home",
+	pageDetails: null,
 
 	el: "#mitzvos",
 	randomMitzvah: null,
@@ -16,7 +25,17 @@ var HomeAppView = Backbone.View.extend({
 	initialize: function() {
 		this.setElement(this.el);
 		this.listenTo(this, 'fetchComplete', this.fetchComplete);
+		this.listenTo(this, 'detailsFetchComplete', this.detailsFetchComplete);
 		this.generateMitzvah();
+
+		var self = this;
+
+		this.pageDetails = new PageDetail({_id: this.pageDetailId});
+		this.pageDetails.fetch({
+			success: function(response, options) {
+				self.trigger('detailsFetchComplete');
+			}
+		});
 	},
 
 	destroy: function() {
@@ -48,10 +67,46 @@ var HomeAppView = Backbone.View.extend({
 
 		view.$el.toggleClass("selected");
 		this.$el.append(view.render().el);
+
+		this.checkIfStartEnglish();
+	},
+
+	detailsFetchComplete: function() {
+		$(this.pageDetailsTag).html(this.pageDetails.get("hebrewDetails"));
+		this.checkIfStartEnglish();
+	},
+
+	checkIfStartEnglish: function() {
+		if (++this.fetchesCompleted == 2 && this.startEnglish) {
+			this.languageSwitch();
+			$(this.pageDetailsTag).show();
+			this.startEnglish = false;
+		}
 	},
 
 	languageSwitch: function() {
 		this.randomMitzvah.trigger("languageSwitch");
+
+		var column = "";
+		if (this.curLang === "he") {
+			this.curLang = "en";
+			if (this.pageDetails != null) {
+				column = "englishDetails";
+			}
+		}
+		else {
+			this.curLang = "he";
+			column = "hebrewDetails";
+		}
+
+		if (this.pageDetails != null) {
+			$(this.pageDetailsTag).html(this.pageDetails.get(column));
+		}
+	},
+
+	setStartEnglish: function() {
+		this.startEnglish = true;
+		$(this.pageDetailsTag).hide();
 	}
 });
 
