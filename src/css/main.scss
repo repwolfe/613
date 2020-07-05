@@ -3,8 +3,8 @@ $heb-font: 'Alef';
 $backup-font: Verdana;
 $font-weight: 400;
 
-$aseh-color: #82e346;
-$lo-saaseh-color: #e37546;
+$aseh-color: #96e864; //#82e346;
+$lo-saaseh-color: #e88b64; //#e37546;
 
 $banner-height: 30px;
 $banner-height-large: 45px;
@@ -16,6 +16,26 @@ $banner-offset: $banner-height-large + $banner-bottom-margin;	// To shift everyt
 
 @mixin set-font($whichfont, $fontsize, $lineheight) {
 	font: $font-weight #{$fontsize}/#{$lineheight} $whichfont, $heb-font, $backup-font, sans-serif;
+}
+
+a:link, a:visited, a:hover, a:active {
+	color: inherit;
+}
+
+a:link {
+	//text-decoration: none
+}
+
+a:visited {
+
+}
+
+a:hover {
+
+}
+
+a:active {
+
 }
 
 * {	// Reset all user-agent stylesheets
@@ -109,6 +129,13 @@ header {
 		width: $banner-title-width;
 		line-height: $banner-height-large;
 		color: #fff;
+
+		a:link {
+			position: relative;		// Needed for z-index
+			z-index: 1;				// Because the nav is shifted left, it overlaps the title, preventing the link from being clickable. Make it in front
+
+			text-decoration: none;
+		}
 	}
 
 	nav {

@@ -1,3 +1,38 @@
+# ----------------------------------------------------------------------
+# | Suppressing / Forcing the `www.` at the beginning of URLs          |
+# ----------------------------------------------------------------------
+
+# The same content should never be available under two different
+# URLs, especially not with and without `www.` at the beginning.
+# This can cause SEO problems (duplicate content), and therefore,
+# you should choose one of the alternatives and redirect the other
+# one.
+#
+# By default `Option 1` (no `www.`) is activated.
+# http://no-www.org/faq.php?q=class_b
+
+# Option 1: rewrite www.example.com → example.com
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+    RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# --------------------------
+# | Forcing HTTPS          |
+# --------------------------
+#RewriteCond %{HTTPS} !=on
+#RewriteRule ^(.*) https://%{SERVER_NAME}/$1 [R,L]
+
+# ---------------------------------------
+# | Allows RESTful Database to work     |
+# ---------------------------------------
 <IfModule mod_rewrite.c>
 	RewriteEngine	On
 	RewriteBase 	/

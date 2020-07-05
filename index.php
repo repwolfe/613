@@ -2,6 +2,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<title>The Taryag Mitzvos התרי"ג מצוות - ALPHA</title>
+	<meta name="description" content="A collection of the opinions regarding how to count the 613 commandments">
+	<meta name="author" content="Rafi Wolfe">
+
 	<link href="https://fonts.googleapis.com/css2?family=Alef&family=Montserrat:wght@400;700" rel="stylesheet">
 	<script type="text/template" id="home-mitzvah-template-he">
 		<div class="homeMitzvahTitle">
@@ -55,7 +59,7 @@
 			&rlm;<b><%- mitzvahNumber %></b><br>
 			<b><%- mitzvahName %></b><br>
 			<%- bookName %> <%- chapter %>, <%- verse %><br>
-			<%- mitzvahTypeHe %>, <%- punishmentHe %>, <%- whoAppliesHe %>
+			<!--<%- mitzvahTypeHe %>, <%- punishmentHe %>, <%- whoAppliesHe %>-->
 		</div>
 	</script>
 	<script type="text/template" id="rambam-template-en">
@@ -63,7 +67,7 @@
 			<b><%- mitzvahNumber %></b><br>
 			<b><%- mitzvahNameEn %></b><br>
 			<%- bookNameEn %> <%- chapter %>:<%- verse %><br>
-			<%- mitzvahTypeEn %>, <%- punishmentEn %>, <%- whoAppliesEn %>
+			<!--<%- mitzvahTypeEn %>, <%- punishmentEn %>, <%- whoAppliesEn %>-->
 		</div>
 	</script>
 	<script type="text/template" id="rambam-selected-template-he">
@@ -71,7 +75,7 @@
 			&rlm;<b><%- mitzvahNumber %></b><br>
 			<b><%- mitzvahName %></b><br>
 			<%- verseText %> (<%- bookName %> <%- chapter %>, <%- verse %>)<br><br>
-			<%- mitzvahTypeHe %>, <%- punishmentHe %>, <%- whoAppliesHe %><br><br>
+			<!--<%- mitzvahTypeHe %>, <%- punishmentHe %>, <%- whoAppliesHe %><br><br>-->
 			<div class="originalText"><%- originalText %></div><!-- REMOVE -->
 		</div>
 	</script>
@@ -80,7 +84,7 @@
 			<b><%- mitzvahNumber %></b><br>
 			<b><%- mitzvahNameEn %></b><br>
 			<%- verseTextEn %> (<%- bookNameEn %> <%- chapter %>:<%- verse %>)<br><br>
-			<%- mitzvahTypeEn %>, <%- punishmentEn %>, <%- whoAppliesEn %>
+			<!--<%- mitzvahTypeEn %>, <%- punishmentEn %>, <%- whoAppliesEn %>-->
 		</div>
 	</script>
 
@@ -234,7 +238,7 @@
 </head>
 <body lang="he">
 	<header>
-		<div id="title">The Taryag התרי"ג</div>
+		<div id="title"><a href="/">The Taryag התרי"ג</a></div>
 		<nav>
 			<ul id="moneiMitzvosList"></ul>
 		</nav>
