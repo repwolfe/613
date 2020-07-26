@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172333633-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-172333633-1');
+	</script>
+
 	<meta charset="utf-8">
 	<title>The Taryag Mitzvos התרי"ג מצוות - ALPHA</title>
-	<meta name="description" content="A collection of the opinions regarding how to count the 613 commandments">
+
+	<meta name="description" content="An online interface to explore and compare the listings of the 613 commandments">
 	<meta name="author" content="Rafi Wolfe">
+	<meta property="og:site_name" content="The Taryag Mitzvos">
+	<meta property="og:title" content="The Taryag Mitzvos התרי\"ג מצוות">
+	<meta property="og:description" content="An online interface to explore and compare the listings of the 613 commandments">
+	<meta property="og:url" content="https://thetaryag.com">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
 
 	<link href="https://fonts.googleapis.com/css2?family=Alef&family=Montserrat:wght@400;700" rel="stylesheet">
 	<script type="text/template" id="home-mitzvah-template-he">

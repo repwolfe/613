@@ -866,7 +866,7 @@ insert into mitzvos values (830, 'מצות להיות קודש מלאכול שר
 insert into mitzvos values (831, 'מצות להיות שפל רוח', 'To be of a meek spirit', 'A');
 insert into mitzvos values (832, 'מצות להדר פני זקן', 'To honor the presence of an elder', 'A');
 insert into mitzvos values (833, 'מצות להביא קרבנות שמחיוב בהם משום חטא', 'To bring offerings which are obligatory after certain sins', 'A');
-insert into mitzvos values (834, 'מצות כהן גדול הביא פר אם שיגג בהוראה', 'For the Kohen Gadol to bring a bull offering if he erred in a ruling', 'A');
+insert into mitzvos values (834, 'מצות כהן גדול להביא פר אם שיגג בהוראה', 'For the Kohen Gadol to bring a bull offering if he erred in a ruling', 'A');
 insert into mitzvos values (835, 'מצות כהן גדול להביא פר ביום הכפורים', 'For the Kohen Gadol to bring a bull offering on Yom Kippur', 'A');
 insert into mitzvos values (836, 'מצות להביא עשירית האיפה לחינוך', 'To bring a tenth of an eiphah for inauguration', 'A');
 insert into mitzvos values (837, 'מצות עבודת יום הכפורים', 'The Yom Kippur Temple service', 'A');
@@ -940,6 +940,24 @@ insert into mitzvos values (900, 'מצות טהרת נגעי בתים', 'The pur
 insert into mitzvos values (901, 'מצות בגדי שרד', 'Garments of the Kohanim', 'A');
 insert into mitzvos values (902, 'מצות שמן זית זך', 'Pure olive oil for the Menorah', 'A');
 insert into mitzvos values (903, 'מצות מלאכת קטורת', 'Production of the incense', 'A');
+insert into mitzvos values (904, 'מצות דיני ממונות', 'Civil laws', 'A');
+insert into mitzvos values (905, 'מצות דיני נפשות', 'Capital laws', 'A');
+insert into mitzvos values (906, 'מצות נזיקין', 'Laws of Damages', 'A');
+insert into mitzvos values (907, 'מצות מניחת מידה אחת בבית', 'To own a single measure', 'A');
+insert into mitzvos values (908, 'מצות עבד עברי מוכר עצמו ומכרוהו ב"ד ונמכר לגוי', 'A Hebrew slave who sells himself, is sold by the court, or sold to a non-Jew', 'A');
+insert into mitzvos values (909, 'מצות צאת עבד עברי ביובל', 'The release of a Hebrew slave in the Jubilee year', 'A');
+insert into mitzvos values (910, 'מצות צאת עבד עברי מיתת האדון', 'The release of a Hebrew slave with the death of his owner', 'A');
+insert into mitzvos values (911, 'מצות צאת אמה עבריה ביובל', 'The release of a Hebrew maidservant in the Jubilee year', 'A');
+insert into mitzvos values (912, 'מצות צאת אמה עבריה אחר שש שנים', 'The release of a Hebrew maidservant after six years', 'A');
+insert into mitzvos values (913, 'מצות שפחה חרופה', 'Shifchah Charufah', 'A');
+insert into mitzvos values (914, 'מצות טהרה במי מקווה ולא שאובים', 'To immerse in Mikveh water and not drawn water', 'A');
+insert into mitzvos values (915, 'מצות טהרת מחוסר כיפורים בקרבן', 'The purification of the four that need atonement with an offering', 'A');
+insert into mitzvos values (916, 'מצות טומאת האדם', 'Impurity of Humans', 'A');
+insert into mitzvos values (917, 'מצות טומאת כלים', 'Impurity of vessels', 'A');
+insert into mitzvos values (918, 'מצות טומאת משקין', 'Impurity of liquids', 'A');
+insert into mitzvos values (919, 'מצות טומאת זה וזבה', 'Impurity of a Zav or Zavah', 'A');
+insert into mitzvos values (920, 'מצות בועל נדה', 'Impurity of one who is intimate with a Niddah', 'A');
+insert into mitzvos values (921, 'מצות נסוך המים', 'Water Libations', 'A');
 
 -- Zohar HaRakiyah's unique mitzvos
 insert into mitzvos values (930, 'מצות תוספת שביתה', 'To accept Shabbos and Yom Tov early', 'A');
@@ -954,6 +972,15 @@ insert into mitzvos values (938, 'מצות שיווי לזרע אהרן', 'For a
 insert into mitzvos values (939, 'מצות קדושים יהיו', 'For the Kohanim to be Holy', 'A');
 insert into mitzvos values (940, 'מצות בעלי מום לבדק הבית ולא תמימים', 'Sanctifying blemished animals for the Temple treasury and not unblemished animals', 'A');
 insert into mitzvos values (941, 'מצות הלנה ברצפה כל הלילה', 'Fats and limbs of offerings can be put on the altar all night but not after', 'A');
+insert into mitzvos values (942, 'מצות לשפוט בצדק במה שאמרה תורה', 'For a judge to rule justly according to what the Torah proscribes', 'A');
+insert into mitzvos values (943, 'מצות קדוש בלע חטאת', 'For anything that obsorbs Chatas flavor should have the same status as it', 'A');
+insert into mitzvos values (944, 'מצות אכילת תרומה', 'For a Kohen to eat Terumah', 'A');
+insert into mitzvos values (945, 'מצות פריעת בעל חוב', 'To pay off a debt', 'A');
+insert into mitzvos values (946, 'מצות קידוש גוף הנזיר', 'For a Nazir to sanctify his body', 'A');
+insert into mitzvos values (947, 'מצות דין ערי חומה ובתי החצרים', 'The law of returning property in a walled city or a non-walled city', 'A');
+insert into mitzvos values (948, 'מצות עשה שבנדה', 'The Positive Mitzvah for a Niddah', 'A');
+insert into mitzvos values (949, 'מצות ייבום בימבה ולא גם על צרתה', 'To have Yibum with ones Yevama and not her co-wife as well', 'A');
+insert into mitzvos values (950, 'מצות הנחת שדה ברשות לוקח שני שנים', 'To leave a land in the posession of the purchaser two years', 'A');
 
 /**
 200 Aseh on Yechidim

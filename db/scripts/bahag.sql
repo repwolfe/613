@@ -562,7 +562,7 @@ insert into bahag values (501, 193, 7, 153, 'והכן יתד על אזנך');
 insert into bahag values (502, 827, 7, 154, 'ליראה מן החכמים');
 insert into bahag values (503, 217, 7, 155, 'מצות חליצה');
 insert into bahag values (504, 216, 7, 156, 'ויבום');
-insert into bahag values (505, 208, 7, 157, 'צדק הדינין');
+insert into bahag values (505, 208, 7, 157, 'צדק הינין');
 insert into bahag values (506, 828, 7, 158, 'ושילום מדות');
 insert into bahag values (507, 829, 7, 159, 'ביעור שביעית');
 insert into bahag values (508, 131, 7, 160, 'וידוי מעשר');
@@ -580,7 +580,7 @@ insert into bahag values (519, 109, 7, 171, 'וטבילה בזמנה');
 insert into bahag values (520, 83,  7, 172, 'ומצות נדרים ונדבות ועולות ושלמים');
 insert into bahag values (521, 833, 7, 173, 'וחטא חטאת ואשם');
 insert into bahag values (522, 73,  7, 174, 'להתכפר בתחנונים ובקרבן');
-insert into bahag values (523, 108, 7, 175, 'טמאים לטהר (בהזאות) [הזאה] וטבילה וקרבן (אחד) כראוי');
+insert into bahag values (523, 915, 7, 175, 'טמאים לטהר (בהזאות) [הזאה] וטבילה וקרבן (אחד) כראוי');
 insert into bahag values (524, 18,  7, 176, 'מצות מלך לכתוב לו ספר תורה לשמו');
 insert into bahag values (525, 38,  7, 177, 'מצות כהן גדול ליקח בתולה');
 insert into bahag values (526, 834, 7, 178, 'ולהביא פר הבא על כל המצות');
@@ -621,7 +621,7 @@ insert into bahag values (558, 858, 8, 10, 'פרשת מעילות');		-- L
 insert into bahag values (559, 859, 8, 11, 'פרשת טומאת נבילות וטהרת נבילות טומאת שרץ וטהרת שרץ וטומאת כלים אדם ואוכלין ומשקין');		-- L
 insert into bahag values (560, 860, 8, 12, 'פרשת יולדת');		-- L
 insert into bahag values (561, 861, 8, 13, 'פרשת נגעים');	-- L
-insert into bahag values (562, 862, 8, 14, 'פרשת זב וזבה נדה בועלנדה שכבת זרע');	-- L
+insert into bahag values (562, 862, 8, 14, 'פרשת זב וזבה נדה בועל נדה שכבת זרע');	-- L
 insert into bahag values (563, 49,  8, 15, 'פרשת יוה"כ');		-- A
 insert into bahag values (564, 863, 8, 16, 'פרשת נחרפת');		-- L
 insert into bahag values (565, 864, 8, 17, 'פרשת ערלה');		-- L
@@ -632,7 +632,7 @@ insert into bahag values (569, 27,  8, 21, 'פרשת לחם הפנים');		-- A
 insert into bahag values (570, 867, 8, 22, 'פרשת נותן מום בחברו');	-- L
 insert into bahag values (571, 140, 8, 23, 'פרשת שביעית');		-- A
 insert into bahag values (572, 138, 8, 24, 'פרשת יובל');		-- A
-insert into bahag values (573, 139, 8, 25, 'פרשת ממכר ובתי ערי חומה ובתי החצרים גור ותושב');	-- A
+insert into bahag values (573, 139, 8, 25, 'פרשת ממכר ובתי ערי חומה ובתי החצרים וגר ותושב');	-- A
 insert into bahag values (574, 868, 8, 26, 'פרשת ערכין');		-- A
 insert into bahag values (575, 869, 8, 27, 'פרשת מקדיש וחרמים');	-- A
 insert into bahag values (576, 870, 8, 28, 'פרשת כהנים ומנחת ישראל');	-- A
@@ -733,15 +733,20 @@ insert into bahagNotes values (428, null, 'See Rav Troib''s note #28*');
 insert into bahagNotes values (437, null, 'See Rav Troib''s note #22 and Rav Hildesheimer''s note #22');
 insert into bahagNotes values (475, null, 'See Rav Perla''s note');
 insert into bahagNotes values (476, null, 'The Ramban counts these last two as one mitzvah, the Bahag according to Rav Troib splits them');
+insert into bahagNotes values (481, null, 'The Nesiv Mitzvosecha sees that Rav Shlomo ibn Gabirol understood this to be referring as one mitzvah, to write a Sefer Torah. However, he says that Ri Albargaloni understood it like Rav Troib. Zohar HaRakiah as well. However, Nesiv Mitzvosecha understood this to be only one mitzvah, not five.');
 insert into bahagNotes values (492, null, 'For some reason Rav Troib cross references Rambam #56, then in his note #38 says it''s something only the Ramban counts');
 insert into bahagNotes values (496, null, 'See Rav Troib''s note #40 and Rav Hildesheimer''s note #24');
+insert into bahagNotes values (511, null, 'Sefer Yereim and Zohar HaRakiah interpret this to be referring to the mitzvah of Netilas Yadayim, washing one''s hands for bread.');
 insert into bahagNotes values (514, null, 'For some reason Rav Troib at the end of his notes says the Bahag left this out');
 insert into bahagNotes values (519, null, 'See Rav Troib''s note #48');
-insert into bahagNotes values (523, null, 'For some reason Rav Troib at the end of his notes says the Bahag left this out');
+insert into bahagNotes values (521, null, 'The Nesiv Mitzvosecha combines this and the next one into one mitzvah, although he seems to be missing the words חטאת ואשם');
+insert into bahagNotes values (523, null, 'Rav Troib equates this with Rambam''s mitzvah of purification from the ashes of the Red Heifer. However, at the end of his notes he says says the Bahag left out the Rambam''s mitzvah. Another issue is the Bahag mentions bringing an offering, which doesn''t seem relevant to the Rambam''s mitzvah. Since the Nesiv Mitzvosecha understands that the Rashbag understood the Bahag to be referring to the four impure people that need to bring an offering, and the Zohar HaRakiah also understood the Rashbag to be referring to that, we went with their approach in understanding the Bahag.');
 insert into bahagNotes values (529, null, 'See Rav Hildesheimer''s note #25');
 insert into bahagNotes values (534, null, 'For some reason Rav Troib claims the Rambam didn''t count this mitzvah');
 insert into bahagNotes values (545, null, 'For some reason Rav Troib at the end of his notes says the Bahag left this out');
 insert into bahagNotes values (550, null, 'See Rav Perla''s note to Rav Troib''s comment #7');
+insert into bahagNotes values (572, null, 'I''m not sure why Rav Troib understands this to refer the Rambam''s #138, returning land during Yovel, and not #136, sanctifying the Yovel year. Especially as that is now Nesiv Mitzvosecha understands it from Rashbag (#225).');
+insert into bahagNotes values (573, null, 'Rav Troib undertands that this is the Rambam''s #138. However, the Bahag lists both Rambam''s #138 and #139, as he discusses property in walled cities and non-walled cities. He seems to combine them together. The Zohar HaRakiah counts the two together. However, Rav Troib understood the previous parsha to be referring to #138.');
 insert into bahagNotes values (576, null, 'See Rav Troib''s note #8');
 insert into bahagNotes values (578, null, 'See Rav Hildesheimer''s note #31');
 insert into bahagNotes values (579, null, 'See Rav Hildesheimer''s note #32');
