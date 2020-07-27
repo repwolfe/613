@@ -223,7 +223,7 @@ insert into rashbag values (206, 919, 206, 'והסט');
 insert into rashbag values (207, 99,  207, 'ושכבת');
 insert into rashbag values (208, 920, 208, 'ושכבת');
 insert into rashbag values (209, 105, 209, 'ומקרה מחשבת');
-insert into rashbag values (210, 889, 210, 'ויבום נעזבת');		-- Nesiv Mitsvosecha says this is Parshas Yevamin of the Bahag and not the Mitzvah of Yibum. @todo: confirm this makes sense
+insert into rashbag values (210, 889, 210, 'ויבום נעזבת');		-- Nesiv Mitzvosecha says this is Parshas Yevamin of the Bahag and not the Mitzvah of Yibum. @todo: confirm this makes sense
 insert into rashbag values (211, 850, 211, 'ואגרת פורים.');
 insert into rashbag values (212, 217, 212, 'וחלוץ ורוקת, לאשה נתקת');
 insert into rashbag values (213, 247, 213, 'וקוץ כף מחזקת, מבושי הגברים.');
@@ -239,29 +239,29 @@ insert into rashbag values (222, 879, 222, 'ומכס');
 insert into rashbag values (223, 248, 223, 'ונחלות');
 insert into rashbag values (224, 892, 224, 'ושיד אבנים גדולות');
 insert into rashbag values (225, 136, 225, 'ויובל לדרורים.');
-insert into rashbag values (226, _, 226, '');
-insert into rashbag values (227, _, 227, '');
-insert into rashbag values (228, _, 228, '');
-insert into rashbag values (229, _, 229, '');
-insert into rashbag values (230, _, 230, '');
-insert into rashbag values (231, _, 231, '');
-insert into rashbag values (232, _, 232, '');
-insert into rashbag values (233, _, 233, '');
-insert into rashbag values (234, _, 234, '');
-insert into rashbag values (235, _, 235, '');
-insert into rashbag values (236, _, 236, '');
-insert into rashbag values (237, _, 237, '');
-insert into rashbag values (238, _, 238, '');
-insert into rashbag values (239, _, 239, '');
-insert into rashbag values (240, _, 240, '');
-insert into rashbag values (241, _, 241, '');
-insert into rashbag values (242, _, 242, '');
-insert into rashbag values (243, _, 243, '');
-insert into rashbag values (244, _, 244, '');
-insert into rashbag values (245, _, 245, '');
-insert into rashbag values (246, _, 246, '');
-insert into rashbag values (247, _, 247, '');
-insert into rashbag values (248, _, 248, '');
+insert into rashbag values (226, 59,  226, 'וחצוצרות עדה');
+insert into rashbag values (227, 759, 227, 'ומורם מתודה');
+insert into rashbag values (228, 922, 228, 'וטבול יולדה, מדמי המקורים.');
+insert into rashbag values (229, 113, 229, 'ופרה לשרפה');
+insert into rashbag values (230, 923, 230, 'וחזה לתנופה');
+insert into rashbag values (231, 40,  231, 'ומעשר האיפה');
+insert into rashbag values (232, 126, 232, 'התרומה להרים.');
+insert into rashbag values (233, 190, 233, 'ועיר יד שולחת, למלט משחת, ועם עיר נדחת, להחריב ולהחרים. ועיר כי תסגר, באבניה תגר');
+insert into rashbag values (234, 822, 234, 'ותת נבלה לגר, או מכור לנכרים.');
+insert into rashbag values (235, 171, 235, 'דמי כופר תשקול');
+insert into rashbag values (236, 924, 236, 'המסית תסקול, ביען הרים קול, לעבדה לאחרים.');
+insert into rashbag values (237, 925, 237, 'וחולם');
+insert into rashbag values (238, 180, 238, 'ועד זומם, כאחד החרימם, לבלתי ירומם, להנבא שקרים.');
+insert into rashbag values (239, 926, 239, 'ובפרעות תפרע, המוציא שם רע');
+insert into rashbag values (240, 927, 240, 'ואיש זב ומצורע, בהזות נטהרים.');
+insert into rashbag values (241, 108, 241, 'ובזה ירפא, טמא מת או נספה');
+insert into rashbag values (242, 928, 242, 'ומדיח תספה, וייראו נשארים.');
+insert into rashbag values (243, 929, 243, 'וחובל בלמשה, תכסהו בושה');
+insert into rashbag values (244, 147, 244, 'ודם על יבשה, תכסה בעפרים.');
+insert into rashbag values (245, 223, 245, 'והסוטה תשקה, למען תנקה');
+insert into rashbag values (246, 184, 246, 'ועשית מעקה, להסיר מכמורים.');
+insert into rashbag values (247, 214, 247, 'וחתן כל שנתו, יהי נקי לביתו, ויאחר מתאתו, ולא יעבור דברים.');
+insert into rashbag values (248, 191, 248, 'ויניף יד רמה, משוח מלחמה, לבל תפול אימה, בלב הנחגרים. אלא מצותי, ואלה חקותי, ואלה תורותי, תמימים וישרים. תחיינה מהיר, ותספנה יהיר, והמזהיר יזהיר, כזוהר המאורים. ולנזהר יקרב, בשמרם עקב רב, ובאור והנערב, ישרים מכתירים.');
 
 create table rashbagNotes (
 	_id integer NOT NULL primary key,
@@ -270,7 +270,7 @@ create table rashbagNotes (
 	foreign key(_id) references bahag(_id) on delete cascade
 );
 
-insert into rashbagNotes values (92, null,  'Nesiv Mitsvosecha understood the Bahag as counting only one, yet Rav Traube counted two.');
+insert into rashbagNotes values (92, null,  'Nesiv Mitzvosecha understood the Bahag as counting only one, yet Rav Troib counted two.');
 insert into rashbagNotes values (111, null, 'Rashbag uses the same expression as Bahag, and Nesiv Mitzvosecha understands it''s not referring to the mitzvah to eat matzah, but maybe it includes it.');
 insert into rashbagNotes values (124, null, 'Rav Troib counts the three types of tahara from tzaraas as one mitzvah, yet the Nesiv Mitzvosecha understood the Bahag as it being three.');
 insert into rashbagNotes values (138, null, 'Nesiv Mitzvosecha says muktarim refers to Haktaras HaKetores, but the Bahag doesn''t count it. He also says that there are five mitzvos listed here, but if you include this one there are six. So seemingly he doesn''t mean to include it in the counting. It''s strange though that he doesn''t explain himself.');
@@ -280,15 +280,20 @@ insert into rashbagNotes values (146, null, 'The Rashbag splits up the Bahag''s 
 insert into rashbagNotes values (153, null, 'Nesiv Mitzvosecha says this is the Bahag''s Parsha of Shoftim and Shotrim, but the Bahag doesn''t count such a Parsha. Rav Yerucham Fischel Perla explains that Rav Saadiah Gaon (Parsha #1) means like the Bahag, yet he calls this Parsha Shoftim and Shotrim, and Rashbag followed suit. However, since he includes less than the Bahag does, we''re equating it to the Rambam''s mitzvah of Sanhedrin.');
 insert into rashbagNotes values (154, null, 'Nesiv Mitzvosecha says Rashbag took out of Bahag''s Parsha of Sanhedrin Dinei Mammonos and Dinei Nefashos.');
 insert into rashbagNotes values (156, null, 'The Bahag''s version of this Parsha is counted as a negative mitzvah.');
-insert into rashbagNotes values (169, null, 'Nesiv Mitzvosecha doesn''t explain which mitzvah this is referring to, and simply quotes the verse it comes from. There''s reason to believe this is referring to the Bahag''s Parsha of Mishpat HaBechora (#885), but not according to the way that Rav Troib explained it (see there). Therefore, we assumed it''s the same as the Ramban''s mitzvah. However, see what the Nesiv Mitsvosecha writes at Mitzvah #223, where he seems to ignore what he wrote here.');
+insert into rashbagNotes values (169, null, 'Nesiv Mitzvosecha doesn''t explain which mitzvah this is referring to, and simply quotes the verse it comes from. There''s reason to believe this is referring to the Bahag''s Parsha of Mishpat HaBechora (#885), but not according to the way that Rav Troib explained it (see there). Therefore, we assumed it''s the same as the Ramban''s mitzvah. However, see what the Nesiv Mitzvosecha writes at Mitzvah #223, where he seems to ignore what he wrote here.');
 insert into rashbagNotes values (171, null, 'Nesiv Mitzvosecha makes a long point of explaining how this line is referring to the mitzvah of Shilum Middos that the Bahag counts, and that it''s referring to one mitzvah. However, at the end he says this section lists three mitzvos, yet he only listed two. Without an alternative, we had to interpret his explanation of why this phrase is written in the plural as being its own mitzvah. He says the poet is teaching us to own only one measure and not a dishonest measure as well.');
 insert into rashbagNotes values (172, null, 'Nesiv Mitzvosecha says Rashbag split Bahag''s Parsha of Sanhedrin and took out of it the concept of a Hebrew slave.');
 insert into rashbagNotes values (173, null, 'Nesiv Mitzvosecha says this is the Bahag''s parsha #25. However, he understands that Rashbag split it in two. This essentially makes it the same as the Rambam''s #138 and #139. Therefore, we equated the two.');
 insert into rashbagNotes values (182, null, 'Rav Troib understood that the Bahag''s Parshas Shifcha Charufa to be a negative mitzvah. However we see the Rashbag understood it to be a positive mitzvah.');
 insert into rashbagNotes values (193, null, 'This is the Bahag''s Parshas Asham Vadai Asam Talui.');
-insert into rashbagNotes values (201, null, 'Nesiv Mitsvosecha, to ensure there are 613 mitzvos, is forced to split the Bahag''s Parshas Tumas Neveilos...Umashkin into six mitzvos. Although, Rav Troib understood that to be a negative mitzvah.');
+insert into rashbagNotes values (201, null, 'Nesiv Mitzvosecha, to ensure there are 613 mitzvos, is forced to split the Bahag''s Parshas Tumas Neveilos...Umashkin into six mitzvos. Although, Rav Troib understood that to be a negative mitzvah.');
 insert into rashbagNotes values (206, null, 'Nesiv Mitzvosecha says this is the Bahag''s Parshas Zav VeZavah...Shichvas Zera split into four.');
-insert into rashbagNotes values (213, null, 'Nesiv Mitzvosecha didn''t really explain what the mitzvah is. He just writes that Chazal say its not literal but means pay money when someone embarrasses another. Does he mean there''s a mitzvah to pay what''s known as "boshess"? But none of the other Monei Mitzvos count this (except Rav Eliyahu HaZaken; see there). They all understand this verse to be referring to saving the life of someone being purused. As such, we assumed that Rashbag means that as well. Although the Bahag doesn''t count a mitzvah to safe someone being pursued, and he does count a mitzvah of cutting off the palm, he counts that as a negative mitzvah. It must be that the Rashbag disagrees. Rav Yeruchal Fischel Perla (Parshiyos #14) also understands Rashbag not to count a separate mitzvah of boshess.');
-insert into rashbagNotes values (218, null, 'Nesiv Mitsvosecha seems to understand this is the Bahag''s Parshas Orlah, but Rav Troib understood that to be a negative mitzvah. As such, we equated the Rashbag with the Rambam''s Hilulim.');
+insert into rashbagNotes values (213, null, 'Nesiv Mitzvosecha didn''t really explain what the mitzvah is. He just writes that Chazal say its not literal but means pay money when someone embarrasses another. Does he mean there''s a mitzvah to pay what''s known as "boshess"? But none of the other Monei Mitzvos count this (except Rav Eliyahu HaZaken; see there). They all understand this verse to be referring to saving the life of someone being pursued. As such, we assumed that Rashbag means that as well. Although the Bahag doesn''t count a mitzvah to save someone being pursued, and he does count a mitzvah of cutting off the palm, he counts that as a negative mitzvah. It must be that the Rashbag disagrees. Rav Yeruchal Fischel Perla (Parshiyos #14) also understands Rashbag to not count a separate mitzvah of boshess. Further, later the Rashbag seems to count all five payments as one mitzvah.');
+insert into rashbagNotes values (218, null, 'Nesiv Mitzvosecha seems to understand this is the Bahag''s Parshas Orlah, but Rav Troib understood that to be a negative mitzvah. As such, we equated the Rashbag with the Rambam''s Hilulim.');
 insert into rashbagNotes values (223, null, 'See Mitzvah #169.');
 insert into rashbagNotes values (225, null, 'Nesiv Mitzvosecha understands this to be the Parshas Yovel of the Bahag, which he says is to sanctify the Yovel year. Since Rav Troib understands it differently, we equated this with the Rambam''s #136 instead of the Bahag''s Parsha.');
+insert into rashbagNotes values (227, null, 'The Zohar HaRakiah understands this to be referring to breast and thigh of offerings, but the Nesiv Mitzvosecha disagrees.');
+insert into rashbagNotes values (228, null, 'Nesiv Mitzvosecha says this corresponds to the Bahag''s Parshas Yoledes, but Rav Troib understood that to be a negative mitzvah.');
+insert into rashbagNotes values (239, null, 'Nesiv Mitzvosecha says this is the Bahag''s negative mitzvah #230, but in the positive.');
+insert into rashbagNotes values (240, null, 'Nesiv Mitzvosecha understands Zav is mentioned here just to help the rhyming scheme.');
+insert into rashbagNotes values (241, null, 'Nesiv Mitzvosecha wasn''t clear how he understood this mitzvah. It sounds like the Rambam''s Parah Adumah.');

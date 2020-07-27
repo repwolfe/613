@@ -585,7 +585,7 @@ insert into bahag values (524, 18,  7, 176, 'מצות מלך לכתוב לו ס�
 insert into bahag values (525, 38,  7, 177, 'מצות כהן גדול ליקח בתולה');
 insert into bahag values (526, 834, 7, 178, 'ולהביא פר הבא על כל המצות');
 insert into bahag values (527, 835, 7, 179, 'ופר יום הכפורים');
-insert into bahag values (528, 836, 7, 180, 'ועשירית האפיה [לחינוך]');
+insert into bahag values (528, 836, 7, 180, 'ועשירית האיפה [לחינוך]');
 insert into bahag values (529, 40,  7, 181, '(חביתי כהנים) [חביטין]');	
 insert into bahag values (530, 837, 7, 182, 'כל מעשה יום הכפורים');
 insert into bahag values (531, 838, 7, 183, 'מצות כהנים ללמוד לעשות יציקות');
@@ -741,7 +741,7 @@ insert into bahagNotes values (514, null, 'For some reason Rav Troib at the end 
 insert into bahagNotes values (519, null, 'See Rav Troib''s note #48');
 insert into bahagNotes values (521, null, 'The Nesiv Mitzvosecha combines this and the next one into one mitzvah, although he seems to be missing the words חטאת ואשם');
 insert into bahagNotes values (523, null, 'Rav Troib equates this with Rambam''s mitzvah of purification from the ashes of the Red Heifer. However, at the end of his notes he says says the Bahag left out the Rambam''s mitzvah. Another issue is the Bahag mentions bringing an offering, which doesn''t seem relevant to the Rambam''s mitzvah. Since the Nesiv Mitzvosecha understands that the Rashbag understood the Bahag to be referring to the four impure people that need to bring an offering, and the Zohar HaRakiah also understood the Rashbag to be referring to that, we went with their approach in understanding the Bahag.');
-insert into bahagNotes values (529, null, 'See Rav Hildesheimer''s note #25');
+insert into bahagNotes values (529, null, 'See Rav Hildesheimer''s note #25, who points out that those that follow the Bahag count this as one mitzvah, not two like Rav Troib understood. Nesiv Mitzvosecha also understood the Bahag that this is one mitzvah.');
 insert into bahagNotes values (534, null, 'For some reason Rav Troib claims the Rambam didn''t count this mitzvah');
 insert into bahagNotes values (545, null, 'For some reason Rav Troib at the end of his notes says the Bahag left this out');
 insert into bahagNotes values (550, null, 'See Rav Perla''s note to Rav Troib''s comment #7');

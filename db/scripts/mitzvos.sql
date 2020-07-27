@@ -96,7 +96,7 @@ insert into mitzvos values (73, 'מצות וידוי על החטא', 'Confession
 insert into mitzvos values (74, 'מצות קרבן זב כשיתרפא מזובו', 'The offering of a zav when he recovers', 'A');
 insert into mitzvos values (75, 'מצות קרבן זבה כשתתרפא מזובה', 'The offering of a zava when she recovers', 'A');
 insert into mitzvos values (76, 'מצות קרבן יולדת', 'The offering of one who gives birth', 'A');
-insert into mitzvos values (77, 'מצות קרבן מצורע כשיתרפא מצרעתו', 'The offering of a metzora when he recovers', 'A');
+insert into mitzvos values (77, 'מצות קרבן מצורע כשיתרפא מצרעתו', 'The offering of a Metzora when he recovers', 'A');
 insert into mitzvos values (78, 'מצות מעשר בהמה טהורה בכל שנה', 'The yearly tithe of kosher animals', 'A');
 insert into mitzvos values (79, 'מצות קדוש בכורות בארץ ישראל', 'The sanctification of firstborn animals in the land of Israel', 'A');
 insert into mitzvos values (80, 'מצות פדיון בכור אדם', 'To redeem the firstborn son', 'A');
@@ -120,7 +120,7 @@ insert into mitzvos values (97, 'מצות טומאת שמנה שרצים', 'The 
 insert into mitzvos values (98, 'מצות עניין טומאת אוכלים', 'The concept of tumah of food', 'A');
 insert into mitzvos values (99, 'מצות עניין טומאת נדה שטמאה ומטמאה', 'The concept of tumah of a Niddah', 'A');
 insert into mitzvos values (100, 'מצות עניין טומאת יולדת', 'The concept of tumah of a woman who gave birth', 'A');
-insert into mitzvos values (101, 'מצות עניין טומאת מצורע', 'The concept of tumah of a metzora', 'A');
+insert into mitzvos values (101, 'מצות עניין טומאת מצורע', 'The concept of tumah of a Metzora', 'A');
 insert into mitzvos values (102, 'מצות עניין נגעי בגדים', 'The concept of tumah of tzaraas on a garment', 'A');
 insert into mitzvos values (103, 'מצות עניין טומאת בית שיהיה בו נגע', 'The concept of tumah of tzaraas on a building', 'A');
 insert into mitzvos values (104, 'מצות עניין טומאת זב להיות טמא ומטמא', 'The concept of tumah of a zav', 'A');
@@ -129,9 +129,9 @@ insert into mitzvos values (106, 'מצות עניין טומאת זבה שטמא
 insert into mitzvos values (107, 'מצות טומאה של מת', 'The concept of tumah of a corpse', 'A');
 insert into mitzvos values (108, 'מצות מי נדה שמטמאין אדם טהור ומטהרין אדם טמא מטומאת מת בלבד', 'The concept of the water of a red heffer which purify and contaminate', 'A');
 insert into mitzvos values (109, 'מצות טבילה לטמאים', 'Immersion in a mikveh for the impure', 'A');
-insert into mitzvos values (110, 'מצות הטהרה מן הצרעת שתהיה במינים ידועים', 'The purification of a metzora using known species', 'A');
-insert into mitzvos values (111, 'מצות תגלחת מצורע ביום השביעי', 'The shaving of a metzora''s hair on the seventh day of his purification', 'A');
-insert into mitzvos values (112, 'מצות הנהגת המצורע וכל מטמאי אדם בקריעה ופרימה', 'The behavior of a metzora and others who are impure with tattered clothes and dissheveled hair', 'A');
+insert into mitzvos values (110, 'מצות הטהרה מן הצרעת שתהיה במינים ידועים', 'The purification of a Metzora using known species', 'A');
+insert into mitzvos values (111, 'מצות תגלחת מצורע ביום השביעי', 'The shaving of a Metzora''s hair on the seventh day of his purification', 'A');
+insert into mitzvos values (112, 'מצות הנהגת המצורע וכל מטמאי אדם בקריעה ופרימה', 'The behavior of a Metzora and others who are impure with tattered clothes and dissheveled hair', 'A');
 insert into mitzvos values (113, 'מצות פרה אדומה', 'The preparation of the red heffer', 'A');
 insert into mitzvos values (114, 'מצות מעריך אדם שיתן דמיו הקצובין בתורה', 'For a person who volunteers his value to the Temple to give the stated value', 'A');
 insert into mitzvos values (115, 'מצות מעריך בהמה שיתן כפי שיעריכנה הכהן', 'For a person who volunteers his animal''s value to the Temple to give according to the Kohen''s evaluation', 'A');
@@ -649,7 +649,7 @@ insert into mitzvos values (621, 'מצות אכילת פירות שביעית', 
 insert into mitzvos values (622, 'מצות ישיבת הארץ', 'To settle the land of Israel', 'A');
 insert into mitzvos values (623, 'מצות לקיים שבועה של רשות', 'To fulfill a vow to do something voluntary', 'A');
 insert into mitzvos values (624, 'מצות להניח אחת מן הרוחות בלי מצור בשעת מלחמה', 'To leave one side of a city during a siege unprotected', 'A');
---insert into mitzvos values (625, 'מצות לאכול מן האילנות שבגבולה כל ימי המצור ולא לכרות אותם', 'To enjoy the fruits of the trees surrounding a city under siege and not to destroy them', 'A');	-- Derech Mitzvosecha § 1 explains the Ramban doesn't actually coutn this as a mitzvah
+insert into mitzvos values (625, 'מצות לאכול מן האילנות שבגבולה כל ימי המצור ולא לכרות אותם', 'To enjoy the fruits of the trees surrounding a city under siege and not to destroy them', 'A');	-- Derech Mitzvosecha § 1 explains the Ramban doesn't actually count this as a mitzvah. However, Zohar HaRakiah thinks Ramban does, and counts it himself, so we'll add it to the list.
 insert into mitzvos values (626, 'מצות זכירה בפה מעשה מרים', 'To recall with words the story of Miriam', 'A');
 insert into mitzvos values (627, 'מצות להיות תמים עם השם', 'To be with pure trust trust in Hashem', 'A');
 insert into mitzvos values (628, 'מצות לפרוש תרומה מן היפה', 'To separate Terumah from the best portion', 'A');
@@ -679,7 +679,7 @@ insert into mitzvos values (650, 'שלא לשנות הסדר של כלי המק�
 insert into mitzvos values (651, 'שלא ישא מואבי בת ישראל', 'A Moabite cannot marry a Jewish woman', 'L');
 insert into mitzvos values (652, 'שלא לשחוט קרבנות על מנת לאכלם או לעשות עבודתם חוץ למקומם או לזמנם', 'Not to slaughter offerings with intention to eat them or perform their service outside of their location or time', 'L');
 insert into mitzvos values (653, 'שלא לאכול קרבנות ששחטן על מנת לאכלן או להקריבן חוץ למקומן', 'Not to eat offerings which were slaughtered with intention to eat them or perform their service outside of their location', 'L');
-insert into mitzvos values (654, 'שלא לאכול הצפור ששחטו אותה לטהרת המצורע', 'Not to eat of the bird slaughtered for the metzora''s purification', 'L');
+insert into mitzvos values (654, 'שלא לאכול הצפור ששחטו אותה לטהרת המצורע', 'Not to eat of the bird slaughtered for the Metzora''s purification', 'L');
 insert into mitzvos values (655, 'שלא להקריב דבש', 'Not to offer honey', 'L');
 insert into mitzvos values (656, 'שלא להקריב מחיר כלב', 'Not to offer the exchange for a dog', 'L');
 insert into mitzvos values (657, 'שלא לאכול הפסח מבושל', 'Not to eat the Pesach offering boiled', 'L');
@@ -958,6 +958,14 @@ insert into mitzvos values (918, 'מצות טומאת משקין', 'Impurity of 
 insert into mitzvos values (919, 'מצות טומאת זה וזבה', 'Impurity of a Zav or Zavah', 'A');
 insert into mitzvos values (920, 'מצות בועל נדה', 'Impurity of one who is intimate with a Niddah', 'A');
 insert into mitzvos values (921, 'מצות נסוך המים', 'Water Libations', 'A');
+insert into mitzvos values (922, 'מצות טבילת יולדת', 'The immersion of a woman who gave birth', 'A');
+insert into mitzvos values (923, 'מצות הנפת חזה השלמים', 'To wave the breast meat of a Shelamim offering', 'A');
+insert into mitzvos values (924, 'מצות הריגת מסית', 'To execute a seducer to idol worship', 'A');
+insert into mitzvos values (925, 'מצות הריגת נביא שקר', 'To execute a false prophet', 'A');
+insert into mitzvos values (926, 'מצות הענשת מוציא שם רע מאה כסף', 'To punish a slanderer to pay his wife one-hundred shekels', 'A');
+insert into mitzvos values (927, 'מצות הזאת מצורע', 'To sprinkle a Metzora with blood to purify him', 'A');
+insert into mitzvos values (928, 'מצות הריגת מדיח', 'To execute a seducer of the masses to idol worship', 'A');
+insert into mitzvos values (929, 'מצות תשלום חמשה דברים', 'Paying the five payments for injuring another', 'A');
 
 -- Zohar HaRakiyah's unique mitzvos
 insert into mitzvos values (930, 'מצות תוספת שביתה', 'To accept Shabbos and Yom Tov early', 'A');
@@ -981,6 +989,8 @@ insert into mitzvos values (947, 'מצות דין ערי חומה ובתי הח�
 insert into mitzvos values (948, 'מצות עשה שבנדה', 'The Positive Mitzvah for a Niddah', 'A');
 insert into mitzvos values (949, 'מצות ייבום בימבה ולא גם על צרתה', 'To have Yibum with ones Yevama and not her co-wife as well', 'A');
 insert into mitzvos values (950, 'מצות הנחת שדה ברשות לוקח שני שנים', 'To leave a land in the posession of the purchaser two years', 'A');
+-- Mitzvah #625 above is written by the Ramban but Derech Mitzvosecha understands the Ramban doesn't actually count it. The Zohar HaRakiah does, so we added it above.
+insert into mitzvos values (951, 'מצות שחיטת קדשים בעזרה ולא חולין', 'To slaughter sanctified animals in the Temple and not unsanctified ones', 'A');
 
 /**
 200 Aseh on Yechidim
