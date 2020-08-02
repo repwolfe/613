@@ -74,7 +74,7 @@
 	<script type="text/template" id="rambam-template-he">
 		<div class="hebrew">
 			&rlm;<b><%- mitzvahNumber %></b><br>
-			<b><%- mitzvahName %></b><br>
+			<b><%- madahTitle %></b><br>
 			<%- bookName %> <%- chapter %>, <%- verse %><br>
 			<!--<%- mitzvahTypeHe %>, <%- punishmentHe %>, <%- whoAppliesHe %>-->
 		</div>

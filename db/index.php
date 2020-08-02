@@ -55,10 +55,10 @@ $container["queries"] = function($c) {
 		 WHERE mitzvos._id = rambam.mitzvahId and verses._id = rambam.source and books._id = verses.bookId";
 
 	$query["rambamLess"] =
-		"SELECT " . $query["sharedColumns"] . ", rambam._id, type, punishment, whoApplies " . $query["rambamBase"];
+		"SELECT " . $query["sharedColumns"] . ", rambam._id, type, punishment, whoApplies, madahTitle " . $query["rambamBase"];
 
 	$query["rambamMore"] =
-		"SELECT " . $query["sharedColumns"] . ", rambam._id, verseText, verseTextEn, type, punishment, whoApplies, originalText " . $query["rambamBase"];
+		"SELECT " . $query["sharedColumns"] . ", rambam._id, verseText, verseTextEn, type, punishment, whoApplies, madahTitle, originalText " . $query["rambamBase"];
 
 	$query["rambanBase"] =
 		"FROM mitzvos, books, verses, (
