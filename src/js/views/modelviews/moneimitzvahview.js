@@ -60,6 +60,11 @@ var MoneiMitzvahView = Backbone.View.extend({
 	},
 
 	onClick: function(options) {
+		// Ignore text selections
+		if (window.getSelection().toString()) {
+			return;
+		}
+
 		// If they clicked a link in the View, it triggers this as well. Ignore it.
 		if (options && !options.fake_click && options.target.tagName.toLowerCase() === 'a') {
 			return;
