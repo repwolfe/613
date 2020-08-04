@@ -7,6 +7,8 @@
 const DelegatedSourceDependency = require("./dependencies/DelegatedSourceDependency");
 const DelegatedModuleFactoryPlugin = require("./DelegatedModuleFactoryPlugin");
 const ExternalModuleFactoryPlugin = require("./ExternalModuleFactoryPlugin");
+const DelegatedExportsDependency = require("./dependencies/DelegatedExportsDependency");
+const NullFactory = require("./NullFactory");
 
 class DllReferencePlugin {
 	constructor(options) {
@@ -17,6 +19,7 @@ class DllReferencePlugin {
 		compiler.plugin("compilation", (compilation, params) => {
 			const normalModuleFactory = params.normalModuleFactory;
 			compilation.dependencyFactories.set(DelegatedSourceDependency, normalModuleFactory);
+			compilation.dependencyFactories.set(DelegatedExportsDependency, new NullFactory());
 		});
 
 		compiler.plugin("before-compile", (params, callback) => {
@@ -39,7 +42,7 @@ class DllReferencePlugin {
 				manifest = params["dll reference " + manifest];
 			}
 			const name = this.options.name || manifest.name;
-			const sourceType = this.options.sourceType || "var";
+			const sourceType = this.options.sourceType || (manifest && manifest.type) || "var";
 			const externals = {};
 			const source = "dll-reference " + name;
 			externals[source] = name;

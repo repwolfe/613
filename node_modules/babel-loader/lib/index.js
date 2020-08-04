@@ -16,12 +16,13 @@ var fs = require("fs");
  */
 function BabelLoaderError(name, message, codeFrame, hideStack, error) {
   Error.call(this);
-  Error.captureStackTrace(this, BabelLoaderError);
 
   this.name = "BabelLoaderError";
   this.message = formatMessage(name, message, codeFrame);
   this.hideStack = hideStack;
   this.error = error;
+
+  Error.captureStackTrace(this, BabelLoaderError);
 }
 
 BabelLoaderError.prototype = Object.create(Error.prototype);
@@ -100,14 +101,15 @@ function passMetadata(s, context, metadata) {
 module.exports = function (source, inputSourceMap) {
   var _this = this;
 
-  // Handle filenames (#106)
-  var webpackRemainingChain = loaderUtils.getRemainingRequest(this).split("!");
-  var filename = webpackRemainingChain[webpackRemainingChain.length - 1];
+  var filename = this.resourcePath;
 
   // Handle options
   var loaderOptions = loaderUtils.getOptions(this) || {};
   var fileSystem = this.fs ? this.fs : fs;
-  var babelrcPath = exists(fileSystem, loaderOptions.babelrc) ? loaderOptions.babelrc : resolveRc(fileSystem, path.dirname(filename));
+  var babelrcPath = null;
+  if (loaderOptions.babelrc !== false) {
+    babelrcPath = typeof loaderOptions.babelrc === "string" && exists(fileSystem, loaderOptions.babelrc) ? loaderOptions.babelrc : resolveRc(fileSystem, path.dirname(filename));
+  }
 
   if (babelrcPath) {
     this.addDependency(babelrcPath);

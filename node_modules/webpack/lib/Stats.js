@@ -7,8 +7,13 @@
 const RequestShortener = require("./RequestShortener");
 const SizeFormatHelpers = require("./SizeFormatHelpers");
 const formatLocation = require("./formatLocation");
+const identifierUtils = require("./util/identifier");
 
-const optionOrFallback = (optionValue, fallbackValue) => typeof optionValue !== "undefined" ? optionValue : fallbackValue;
+const optionsOrFallback = function() {
+	let optionValues = [];
+	optionValues.push.apply(optionValues, arguments);
+	return optionValues.find(optionValue => typeof optionValue !== "undefined");
+};
 
 class Stats {
 	constructor(compilation) {
@@ -45,11 +50,13 @@ class Stats {
 	}
 
 	hasWarnings() {
-		return this.compilation.warnings.length > 0;
+		return this.compilation.warnings.length > 0 ||
+			this.compilation.children.some(child => child.getStats().hasWarnings());
 	}
 
 	hasErrors() {
-		return this.compilation.errors.length > 0;
+		return this.compilation.errors.length > 0 ||
+			this.compilation.children.some(child => child.getStats().hasErrors());
 	}
 
 	// remove a prefixed "!" that can be specified to reverse sort order
@@ -79,10 +86,23 @@ class Stats {
 			typeof v !== "undefined" ? v :
 			typeof options.all !== "undefined" ? options.all : def;
 
+		const testAgainstGivenOption = (item) => {
+			if(typeof item === "string") {
+				const regExp = new RegExp(`[\\\\/]${item.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&")}([\\\\/]|$|!|\\?)`); // eslint-disable-line no-useless-escape
+				return ident => regExp.test(ident);
+			}
+			if(item && typeof item === "object" && typeof item.test === "function")
+				return ident => item.test(ident);
+			if(typeof item === "function")
+				return item;
+		};
+
 		const compilation = this.compilation;
-		const requestShortener = new RequestShortener(optionOrFallback(options.context, process.cwd()));
+		const context = optionsOrFallback(options.context, process.cwd());
+		const requestShortener = new RequestShortener(context);
 		const showPerformance = optionOrLocalFallback(options.performance, true);
 		const showHash = optionOrLocalFallback(options.hash, true);
+		const showEnv = optionOrLocalFallback(options.env, false);
 		const showVersion = optionOrLocalFallback(options.version, true);
 		const showTimings = optionOrLocalFallback(options.timings, true);
 		const showAssets = optionOrLocalFallback(options.assets, true);
@@ -104,22 +124,14 @@ class Stats {
 		const showErrors = optionOrLocalFallback(options.errors, true);
 		const showErrorDetails = optionOrLocalFallback(options.errorDetails, !forToString);
 		const showWarnings = optionOrLocalFallback(options.warnings, true);
-		const warningsFilter = optionOrFallback(options.warningsFilter, null);
+		const warningsFilter = optionsOrFallback(options.warningsFilter, null);
 		const showPublicPath = optionOrLocalFallback(options.publicPath, !forToString);
-		const excludeModules = [].concat(optionOrFallback(options.exclude, [])).map(item => {
-			if(typeof item === "string") {
-				const regExp = new RegExp(`[\\\\/]${item.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&")}([\\\\/]|$|!|\\?)`);
-				return ident => regExp.test(ident);
-			}
-			if(item && typeof item === "object" && typeof item.test === "function")
-				return ident => item.test(ident);
-			if(typeof item === "function")
-				return item;
-		});
-		const maxModules = optionOrFallback(options.maxModules, forToString ? 15 : Infinity);
-		const sortModules = optionOrFallback(options.modulesSort, "id");
-		const sortChunks = optionOrFallback(options.chunksSort, "id");
-		const sortAssets = optionOrFallback(options.assetsSort, "");
+		const excludeModules = [].concat(optionsOrFallback(options.excludeModules, options.exclude, [])).map(testAgainstGivenOption);
+		const excludeAssets = [].concat(optionsOrFallback(options.excludeAssets, [])).map(testAgainstGivenOption);
+		const maxModules = optionsOrFallback(options.maxModules, forToString ? 15 : Infinity);
+		const sortModules = optionsOrFallback(options.modulesSort, "id");
+		const sortChunks = optionsOrFallback(options.chunksSort, "id");
+		const sortAssets = optionsOrFallback(options.assetsSort, "");
 
 		if(!showCachedModules) {
 			excludeModules.push((ident, module) => !module.built);
@@ -135,6 +147,18 @@ class Stats {
 						return false;
 				}
 				return i++ < maxModules;
+			};
+		};
+
+		const createAssetFilter = () => {
+			return asset => {
+				if(excludeAssets.length > 0) {
+					const ident = asset.name;
+					const excluded = excludeAssets.some(fn => fn(ident, asset));
+					if(excluded)
+						return false;
+				}
+				return showCachedAssets || asset.emitted;
 			};
 		};
 
@@ -177,15 +201,22 @@ class Stats {
 			text += e.message;
 			if(showErrorDetails && e.details) text += `\n${e.details}`;
 			if(showErrorDetails && e.missing) text += e.missing.map(item => `\n[${item}]`).join("");
-			if(showModuleTrace && e.dependencies && e.origin) {
+			if(showModuleTrace && e.origin) {
 				text += `\n @ ${e.origin.readableIdentifier(requestShortener)}`;
-				e.dependencies.forEach(dep => {
-					if(!dep.loc) return;
-					if(typeof dep.loc === "string") return;
-					const locInfo = formatLocation(dep.loc);
-					if(!locInfo) return;
-					text += ` ${locInfo}`;
-				});
+				if(typeof e.originLoc === "object") {
+					const locInfo = formatLocation(e.originLoc);
+					if(locInfo)
+						text += ` ${locInfo}`;
+				}
+				if(e.dependencies) {
+					e.dependencies.forEach(dep => {
+						if(!dep.loc) return;
+						if(typeof dep.loc === "string") return;
+						const locInfo = formatLocation(dep.loc);
+						if(!locInfo) return;
+						text += ` ${locInfo}`;
+					});
+				}
 				let current = e.origin;
 				while(current.issuer) {
 					current = current.issuer;
@@ -219,6 +250,11 @@ class Stats {
 		if(showTimings && this.startTime && this.endTime) {
 			obj.time = this.endTime - this.startTime;
 		}
+
+		if(showEnv && options._env) {
+			obj.env = options._env;
+		}
+
 		if(compilation.needAdditionalPass) {
 			obj.needAdditionalPass = true;
 		}
@@ -229,8 +265,9 @@ class Stats {
 		}
 		if(showAssets) {
 			const assetsByFile = {};
+			const compilationAssets = Object.keys(compilation.assets);
 			obj.assetsByChunkName = {};
-			obj.assets = Object.keys(compilation.assets).map(asset => {
+			obj.assets = compilationAssets.map(asset => {
 				const obj = {
 					name: asset,
 					size: compilation.assets[asset].size(),
@@ -245,7 +282,8 @@ class Stats {
 
 				assetsByFile[asset] = obj;
 				return obj;
-			}).filter(asset => showCachedAssets || asset.emitted);
+			}).filter(createAssetFilter());
+			obj.filteredAssets = compilationAssets.length - obj.assets.length;
 
 			compilation.chunks.forEach(chunk => {
 				chunk.files.forEach(asset => {
@@ -391,7 +429,8 @@ class Stats {
 				const obj = new Stats(child).toJson(childOptions, forToString);
 				delete obj.hash;
 				delete obj.version;
-				obj.name = child.name;
+				if(child.name)
+					obj.name = identifierUtils.makePathsRelative(context, child.name, compilation.cache);
 				return obj;
 			});
 		}
@@ -406,7 +445,7 @@ class Stats {
 			options = {};
 		}
 
-		const useColors = optionOrFallback(options.colors, false);
+		const useColors = optionsOrFallback(options.colors, false);
 
 		const obj = this.toJson(options, true);
 
@@ -522,6 +561,11 @@ class Stats {
 			colors.normal("ms");
 			newline();
 		}
+		if(obj.env) {
+			colors.normal("Environment (--env): ");
+			colors.bold(JSON.stringify(obj.env, null, 2));
+			newline();
+		}
 		if(obj.publicPath) {
 			colors.normal("PublicPath: ");
 			colors.bold(obj.publicPath);
@@ -572,6 +616,16 @@ class Stats {
 				}]);
 			});
 			table(t, "rrrlll");
+		}
+		if(obj.filteredAssets > 0) {
+			colors.normal(" ");
+			if(obj.assets.length > 0)
+				colors.normal("+ ");
+			colors.normal(obj.filteredAssets);
+			if(obj.assets.length > 0)
+				colors.normal(" hidden");
+			colors.normal(obj.filteredAssets !== 1 ? " assets" : " asset");
+			newline();
 		}
 		if(obj.entrypoints) {
 			Object.keys(obj.entrypoints).forEach(name => {
@@ -650,7 +704,7 @@ class Stats {
 			if(module.usedExports !== undefined) {
 				if(module.usedExports !== true) {
 					colors.normal(prefix);
-					if(module.usedExports === false)
+					if(module.usedExports === false || module.usedExports.length === 0)
 						colors.cyan("[no exports used]");
 					else
 						colors.cyan(`[only some exports used: ${module.usedExports.join(", ")}]`);
@@ -687,9 +741,9 @@ class Stats {
 				const path = [];
 				let current = module;
 				while(current.issuer) {
-					path.unshift(current = current.issuer);
+					path.push(current = current.issuer);
 				}
-				path.forEach(module => {
+				path.reverse().forEach(module => {
 					colors.normal("[");
 					colors.normal(module.id);
 					colors.normal("] ");
@@ -866,6 +920,7 @@ class Stats {
 					chunkModules: true,
 					chunkOrigins: true,
 					depth: true,
+					env: true,
 					reasons: true,
 					usedExports: true,
 					providedExports: true,

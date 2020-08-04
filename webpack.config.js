@@ -1,11 +1,20 @@
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: "./src/js/index.js",
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: "!!pug-loader!src/templates/index.pug",
+      filename: "../index.php"
+    })
+  ],
   output: {
     path: __dirname + "/dist",
-    filename: "bundle.js"
+    filename: "bundle.[chunkhash].js"   // [contenthash] only works in webpack 4, not 3
   },
   module: {
     rules: [

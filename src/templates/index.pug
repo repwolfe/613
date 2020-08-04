@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172333633-1"></script>
+	script.
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-172333633-1');
+
+	<meta charset="utf-8">
+	<title>The Taryag Mitzvos התרי"ג מצוות - ALPHA</title>
+
+	<meta name="description" content="An online interface to explore and compare the listings of the 613 commandments">
+	<meta name="author" content="Rafi Wolfe">
+	<meta property="og:site_name" content="The Taryag Mitzvos">
+	<meta property="og:title" content='The Taryag Mitzvos התרי"ג מצוות'>
+	<meta property="og:description" content="An online interface to explore and compare the listings of the 613 commandments">
+	<meta property="og:url" content="https://thetaryag.com">
+	<meta property="og:image" content="">
+	<meta property="og:type" content="website">
+
+	<link href="https://fonts.googleapis.com/css2?family=Alef&family=Montserrat:wght@400;700" rel="stylesheet">
+
+	include mitzvahTemplates.html
+
+	<base href="/">
+	
+	<!--<script language="javascript" type="text/javascript" src="lib/jquery-3.0.0.min.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+</head>
+<body lang="he">
+	<header>
+		<div id="title"><a href="/">The Taryag התרי"ג</a></div>
+		<nav>
+			<ul id="moneiMitzvosList"></ul>
+		</nav>
+		<div id="languageBtn">א</div>
+	</header>
+	<div id="pageDetails">
+		<div id="pageDetailsText"></div>
+		</div>
+	<div id="container">
+		<ul id="mitzvos"></ul>
+	</div>
+	<div id="compare">
+		<div id="left">
+			<div id="leftTitle"></div>
+			<ul id="leftMitzvos"></ul>
+		</div>
+		<div id="middle">
+			<div id="middleTitle">
+				<b>שניהם</b>
+			</div>
+			<ul id="midMitzvos"></ul>
+		</div>
+		<div id="right">
+			<div id="rightTitle"></div>
+			<ul id="rightMitzvos"></ul>
+		</div>
+	</div>
+</body>
+</html>

@@ -5,6 +5,8 @@
 
 "use strict";
 
+const astUtils = require("../ast-utils");
+
 //------------------------------------------------------------------------------
 // Rule Definition
 //------------------------------------------------------------------------------
@@ -14,10 +16,14 @@ module.exports = {
         docs: {
             description: "disallow the use of `debugger`",
             category: "Possible Errors",
-            recommended: true
+            recommended: true,
+            url: "https://eslint.org/docs/rules/no-debugger"
         },
         fixable: "code",
-        schema: []
+        schema: [],
+        messages: {
+            unexpected: "Unexpected 'debugger' statement."
+        }
     },
 
     create(context) {
@@ -26,9 +32,12 @@ module.exports = {
             DebuggerStatement(node) {
                 context.report({
                     node,
-                    message: "Unexpected 'debugger' statement.",
+                    messageId: "unexpected",
                     fix(fixer) {
-                        return fixer.remove(node);
+                        if (astUtils.STATEMENT_LIST_PARENTS.has(node.parent.type)) {
+                            return fixer.remove(node);
+                        }
+                        return null;
                     }
                 });
             }
