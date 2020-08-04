@@ -263,6 +263,65 @@ insert into rashbag values (246, 184, 246, 'ועשית מעקה, להסיר מכ
 insert into rashbag values (247, 214, 247, 'וחתן כל שנתו, יהי נקי לביתו, ויאחר מתאתו, ולא יעבור דברים.');
 insert into rashbag values (248, 191, 248, 'ויניף יד רמה, משוח מלחמה, לבל תפול אימה, בלב הנחגרים. אלא מצותי, ואלה חקותי, ואלה תורותי, תמימים וישרים. תחיינה מהיר, ותספנה יהיר, והמזהיר יזהיר, כזוהר המאורים. ולנזהר יקרב, בשמרם עקב רב, ובאור והנערב, ישרים מכתירים.');
 
+insert into rashbag values (249, 249, 1,  'בצל שדי אחסה, וצדקו לא אכסה, במצות לא תעשה, ואגיד מישרים. כתובים באמונה, בעדות נאמנה, וכימי השנה, במספר נחקרים. יקרים מפנינים, עתידים וצפונים, לבת האיתנים, בעדיי קשורים. צאי נא לקראתי, אחותי רעיתי, ושמעי תורתי, ולקחי מוסרים. חשקתיך ואהב, פדיתיך מרהב, כמו תורי זהב, צרופים וטהורים. בצאתי נצבה, באלף ורבבה, וקול דודי זה בא, מדלג על הרים. אנכי יי, קראתיך בסיני, ולא יהיה על פני, לך אלהים אחרים.');
+insert into rashbag values (250, 250, 2,  'ולא תעשה פסל, ברשע ובכסל, ולא תשים כסל, להקניאו בזרים.');
+insert into rashbag values (251, 273, 3,  'וגור מלהבה, להביא תועבה');
+insert into rashbag values (252, 260, 4,  'ולבנות מצבה');
+insert into rashbag values (253, 261, 5,  'ולטעת אשרים.');
+insert into rashbag values (254, 529, 6,  'וסור משמע שוא, והאמן בשוא');
+insert into rashbag values (255, 310, 7,  'ולא תשא לשוא, שמותי היקרים.');
+insert into rashbag values (256, 537, 8,  'ונפש לא תנקש, אשר דמה אבקש');
+insert into rashbag values (257, 547, 9,  'ולא תתן מוקש, להכשיל העורים.');
+insert into rashbag values (258, 930, 10, 'ומצות לא נתאף, שמור פן יחרה אף');
+insert into rashbag values (259, 492, 11, 'ולגנוב לא תשאף');
+insert into rashbag values (260, 513, 12, 'ולא תחמוד חברים.');
+insert into rashbag values (261, 514, 13, 'ולא תחמוד חברים.');
+insert into rashbag values (262, 533, 14, 'ושקר לא תענה');
+insert into rashbag values (263, 504, 15, 'ויתום לא תענה');
+insert into rashbag values (264, 674, 16, 'וארצך לא תזנה, כארצות הזרים.');
+insert into rashbag values (265, 500, 17, 'והגר לא תונה');
+insert into rashbag values (266, 501, 18, 'והגר לא תונה');
+insert into rashbag values (267, 503, 19, 'והגר לא תונה');
+insert into rashbag values (268, 327, 20, 'וגזית לא תבנה');
+insert into rashbag values (269, 531, 21, 'ועל ריב לא תענה, לחרחר מתגרים.');
+insert into rashbag values (270, 563, 22, 'אלהים לא תקלל');
+insert into rashbag values (271, 311, 23, 'והשם לא תחלל');
+insert into rashbag values (272, 460, 24, 'וכרמך לא תעולל');
+insert into rashbag values (273, 461, 25, 'ופרט הבצירים.');
+insert into rashbag values (274, 565, 26, 'לא תקלל חרש, חמסו ידרש');
+insert into rashbag values (275, 466, 27, 'ולא יצמיד חורש, שורים וחמורים.');
+insert into rashbag values (276, 402, 28, 'לא תאחר בבצעך, מלאתך ומדעך');
+insert into rashbag values (277, 495, 29, 'ולא תעשוק רעך');
+insert into rashbag values (278, 403, 30, 'ולא תאחר נדרים.');
+insert into rashbag values (279, 752, 31, 'ולא תעשוק שכירך');
+insert into rashbag values (280, 459, 32, 'ולא תלקט קצירך');
+insert into rashbag values (281, 467, 33, 'ולא תחסום שורך, בדישו העמרים.');
+insert into rashbag values (282, 754, 34, 'ולא תפאר זיתך');
+insert into rashbag values (283, 458, 35, 'ולא תכלה פאתך');
+insert into rashbag values (284, 498, 36, 'ולא תונה עמיתך, במקח');
+insert into rashbag values (285, 499, 37, 'ודברים.');
+insert into rashbag values (286, 551, 38, 'ולא תשא חטאו, אשר לבו מלאו');
+insert into rashbag values (287, 550, 39, 'ולא תחשוב לשונאו, כמשטמת ערים.');
+insert into rashbag values (288, 552, 40, 'ולא תקום עמך, לבל אקום ממך');
+insert into rashbag values (289, 486, 41, 'ולא תלין עמך, פעולת נשכרים.');
+insert into rashbag values (290, 553, 42, 'ולא תטור איבות');
+insert into rashbag values (291, 931, 43, 'ולא תשאל אבות');
+insert into rashbag values (292, 535, 44, 'ולא יומתו אבות, ובנים על הורים.');
+insert into rashbag values (293, _, 45, '');
+insert into rashbag values (294, _, 46, '');
+insert into rashbag values (295, _, 47, '');
+insert into rashbag values (296, _, 48, '');
+insert into rashbag values (297, _, 49, '');
+insert into rashbag values (298, _, 50, '');
+insert into rashbag values (299, _, 51, '');
+insert into rashbag values (300, _, 52, '');
+insert into rashbag values (301, _, 53, '');
+insert into rashbag values (302, _, 54, '');
+insert into rashbag values (303, _, 55, '');
+insert into rashbag values (304, _, 56, '');
+insert into rashbag values (305, _, 57, '');
+insert into rashbag values (306, _, 58, '');
+
 create table rashbagNotes (
 	_id integer NOT NULL primary key,
 	hebrewNote varChar,
@@ -297,3 +356,7 @@ insert into rashbagNotes values (228, null, 'Nesiv Mitzvosecha says this corresp
 insert into rashbagNotes values (239, null, 'Nesiv Mitzvosecha says this is the Bahag''s negative mitzvah #230, but in the positive.');
 insert into rashbagNotes values (240, null, 'Nesiv Mitzvosecha understands Zav is mentioned here just to help the rhyming scheme.');
 insert into rashbagNotes values (241, null, 'Nesiv Mitzvosecha wasn''t clear how he understood this mitzvah. It sounds like the Rambam''s Parah Adumah.');
+insert into rashbagNotes values (254, null, 'Nesiv Mitzvosecha explains this mitzvah the opposite of the Rambam. He says its mainly coming to prohibit accepting Loshon Hara, and it includes a judge not listening to the claims without everyone present.');
+insert into rashbagNotes values (258, null, 'Since the Rashbag counts the prohibition of relations with a married woman later with the other capital crimes, he assumes this is a prohibition without a capital punishment. He cites the gemarra in Shevuos 47b for this prohibition, and what comes with it. See Azharos Rav Eliyahu HaZaken who seems to also have understood the Bahag this way. But see Yerucham Fishel Perla''s questions on this in his Hakdamah to Minyan HaOnshin § 6.');
+insert into rashbagNotes values (270, null, 'The Zohar HaRakiah understands this includes both the prohibition of cursing a Judge and Hashem, but Nesiv Mitzvosecha says this only includes cursing a Judge, as the Bahag only counts this one and not "blessing" Hashem. However, Rav Troib understood the Onesh of Megadef as referring to someone who "blesses" Hashem.')
+insert into rashbagNotes values (291, null, 'Nesiv Mitzvosecha seems to understand this is the Bahag''s #208. Rav Troib undersood that to be referring to the prohibition of charms, since everything else it could refer to was already counted. Nesiv Mitzvosecha on the other hand understands the Bahag to count the two verses Deuteronomy 18:10,11 as one prohibition, this being it. It''s strange though that Rashbag would refer to it this way, but we went with his understanding.');

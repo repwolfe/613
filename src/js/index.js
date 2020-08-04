@@ -108,7 +108,7 @@ $(function() {
 		if (urlPaths.length === 2  || selectingOne) {
 			$("#compare").hide();
 			$("#container").show();
-			var theUrl = "/" + urlPaths[1];
+			var theUrl = "/" + urlPaths[1].toLowerCase();
 			var validUrl = true;
 			switch(theUrl) {
 				case "/":

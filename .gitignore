@@ -1,3 +1,8 @@
 *.pdf
+db/scripts/helpers/*
+db/scripts/sqlite3.exe
+dist/*
+lib/*
 source_docs/*
 vendor/*
+index.php

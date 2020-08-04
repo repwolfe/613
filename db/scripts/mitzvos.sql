@@ -328,7 +328,7 @@ insert into mitzvos values (304, 'שלא לקרוא שלום לעמון ומוא
 insert into mitzvos values (305, 'שלא להשחית אילני מאכל במצור וכן כל השחתה בכלל הלאו', 'Not to destroy trees during a war, or anything needlessly', 'L');
 insert into mitzvos values (306, 'שלא לערוץ מפני אחד מכל שבעה עממין', 'Do not be afraid of the enemy during battle', 'L');
 insert into mitzvos values (307, 'שלא נשכח מעשה עמלק שעשה עם אבותינו בצאתם ממצרים', 'Not to forget what Amalek did to our ancestors', 'L');
-insert into mitzvos values (308, 'לאו דברכת השם', 'Not to "bless" Hashem', 'L');
+insert into mitzvos values (308, 'שלא לברך השם', 'Not to "bless" Hashem', 'L');
 insert into mitzvos values (309, 'שלא נשבע לשקר', 'Not to swear falsely', 'L');
 insert into mitzvos values (310, 'שלא לישבע לשוא', 'Not to swear in vain', 'L');
 insert into mitzvos values (311, 'שלא לעשות דבר שיתחלל בו שם שמים בין בני אדם', 'Not to desecrate the name of Hashem', 'L');
@@ -552,7 +552,7 @@ insert into mitzvos values (528, 'שלא להטות משפט גר או יתום'
 insert into mitzvos values (529, 'שלא לשמוע טענת בעל דין שלא בפני בעל דינו', 'Not to hear the arguments of one party without the other party being present', 'L');
 insert into mitzvos values (530, 'שלא לנטות אחרי רבים בדיני נפשות בשביל אחד', 'Not to execute someone based off of a majority of one', 'L');
 insert into mitzvos values (531, 'שלא ילמד חובה מי שלמד זכות תחילה בדיני נפשות', 'Not to judge negatively someone who was initially judged favoribly in a capital crime', 'L');
-insert into mitzvos values (532, 'שלא למנות דיין אדם שאינו חכם בדיני תורה אף על פי שהוא חכם בחכמות אחרות', 'Not to appoint a judge who isn''t knowledgable in Torah', 'L');
+insert into mitzvos values (532, 'שלא למנות דיין אדם שאינו חכם בדיני תורה אף על פי שהוא חכם בחכמות אחרות', 'Not to appoint a judge who isn''t knowledgeable in Torah', 'L');
 insert into mitzvos values (533, 'שלא להעיד בשקר', 'Not to testify falsely', 'L');
 insert into mitzvos values (534, 'שלא יעיד בעל עבירה', 'For a sinner not to testify', 'L');
 insert into mitzvos values (535, 'שלא יעיד קרוב', 'For a relative not to testify', 'L');
@@ -967,30 +967,35 @@ insert into mitzvos values (927, 'מצות הזאת מצורע', 'To sprinkle a 
 insert into mitzvos values (928, 'מצות הריגת מדיח', 'To execute a seducer of the masses to idol worship', 'A');
 insert into mitzvos values (929, 'מצות תשלום חמשה דברים', 'Paying the five payments for injuring another', 'A');
 
+insert into mitzvos values (930, 'שלא יריח בשמים שעל אשת איש', 'Not to smell the perfume of a married woman', 'L');
+insert into mitzvos values (931, 'שלא ימצא בנו מעביר בנינו באש קסם קסמים מעונן ומנחש ומכשף וחבר חבר ושאל אוב ודרש אל התים', 'Not to be found amongst us those who pass their children through fire, perform charms, divine the future, recite incantations, seek the Ov or Yidoni, or communicate with the dead', 'L');
+
 -- Zohar HaRakiyah's unique mitzvos
-insert into mitzvos values (930, 'מצות תוספת שביתה', 'To accept Shabbos and Yom Tov early', 'A');
-insert into mitzvos values (931, 'מצות ראיית הציצית', 'To stare at the Tzitzis', 'A');
-insert into mitzvos values (932, 'מצות זכירת יציאת מצרים', 'To recall the Exodus from Egypt', 'A');
-insert into mitzvos values (933, 'מצות לתרום מין על מינו', 'To separate tithes for their own species and not for a different species', 'A');
-insert into mitzvos values (934, 'מצות לפרוש מחמץ', 'To avoid eating chametz on Pesach', 'A');
-insert into mitzvos values (935, 'מצות בעילה רק עם בתולה לכהן גדול', 'For a Kohen Gadol to have relations only with a virgin', 'A');
-insert into mitzvos values (936, 'מצות נשיאת מצרי ואדומי רק מדור השלישי', 'To marry an Egyptian or Edomite only upon the third generation', 'A');
-insert into mitzvos values (937, 'מצות נשיאות כפים לכהנים ולא לזרים', 'Priestly blessing for Kohanim and not non-Kohanim', 'A');
-insert into mitzvos values (938, 'מצות שיווי לזרע אהרן', 'For a Kohen to resemble a descendant of Aharon', 'A');
-insert into mitzvos values (939, 'מצות קדושים יהיו', 'For the Kohanim to be Holy', 'A');
-insert into mitzvos values (940, 'מצות בעלי מום לבדק הבית ולא תמימים', 'Sanctifying blemished animals for the Temple treasury and not unblemished animals', 'A');
-insert into mitzvos values (941, 'מצות הלנה ברצפה כל הלילה', 'Fats and limbs of offerings can be put on the altar all night but not after', 'A');
-insert into mitzvos values (942, 'מצות לשפוט בצדק במה שאמרה תורה', 'For a judge to rule justly according to what the Torah proscribes', 'A');
-insert into mitzvos values (943, 'מצות קדוש בלע חטאת', 'For anything that obsorbs Chatas flavor should have the same status as it', 'A');
-insert into mitzvos values (944, 'מצות אכילת תרומה', 'For a Kohen to eat Terumah', 'A');
-insert into mitzvos values (945, 'מצות פריעת בעל חוב', 'To pay off a debt', 'A');
-insert into mitzvos values (946, 'מצות קידוש גוף הנזיר', 'For a Nazir to sanctify his body', 'A');
-insert into mitzvos values (947, 'מצות דין ערי חומה ובתי החצרים', 'The law of returning property in a walled city or a non-walled city', 'A');
-insert into mitzvos values (948, 'מצות עשה שבנדה', 'The Positive Mitzvah for a Niddah', 'A');
-insert into mitzvos values (949, 'מצות ייבום בימבה ולא גם על צרתה', 'To have Yibum with ones Yevama and not her co-wife as well', 'A');
-insert into mitzvos values (950, 'מצות הנחת שדה ברשות לוקח שני שנים', 'To leave a land in the posession of the purchaser two years', 'A');
+insert into mitzvos values (970, 'מצות תוספת שביתה', 'To accept Shabbos and Yom Tov early', 'A');
+insert into mitzvos values (971, 'מצות ראיית הציצית', 'To stare at the Tzitzis', 'A');
+insert into mitzvos values (972, 'מצות זכירת יציאת מצרים', 'To recall the Exodus from Egypt', 'A');
+insert into mitzvos values (973, 'מצות לתרום מין על מינו', 'To separate tithes for their own species and not for a different species', 'A');
+insert into mitzvos values (974, 'מצות לפרוש מחמץ', 'To avoid eating chametz on Pesach', 'A');
+insert into mitzvos values (975, 'מצות בעילה רק עם בתולה לכהן גדול', 'For a Kohen Gadol to have relations only with a virgin', 'A');
+insert into mitzvos values (976, 'מצות נשיאת מצרי ואדומי רק מדור השלישי', 'To marry an Egyptian or Edomite only upon the third generation', 'A');
+insert into mitzvos values (977, 'מצות נשיאות כפים לכהנים ולא לזרים', 'Priestly blessing for Kohanim and not non-Kohanim', 'A');
+insert into mitzvos values (978, 'מצות שיווי לזרע אהרן', 'For a Kohen to resemble a descendant of Aharon', 'A');
+insert into mitzvos values (979, 'מצות קדושים יהיו', 'For the Kohanim to be Holy', 'A');
+insert into mitzvos values (980, 'מצות בעלי מום לבדק הבית ולא תמימים', 'Sanctifying blemished animals for the Temple treasury and not unblemished animals', 'A');
+insert into mitzvos values (981, 'מצות הלנה ברצפה כל הלילה', 'Fats and limbs of offerings can be put on the altar all night but not after', 'A');
+insert into mitzvos values (982, 'מצות לשפוט בצדק במה שאמרה תורה', 'For a judge to rule justly according to what the Torah proscribes', 'A');
+insert into mitzvos values (983, 'מצות קדוש בלע חטאת', 'For anything that obsorbs Chatas flavor should have the same status as it', 'A');
+insert into mitzvos values (984, 'מצות אכילת תרומה', 'For a Kohen to eat Terumah', 'A');
+insert into mitzvos values (985, 'מצות פריעת בעל חוב', 'To pay off a debt', 'A');
+insert into mitzvos values (986, 'מצות קידוש גוף הנזיר', 'For a Nazir to sanctify his body', 'A');
+insert into mitzvos values (987, 'מצות דין ערי חומה ובתי החצרים', 'The law of returning property in a walled city or a non-walled city', 'A');
+insert into mitzvos values (988, 'מצות עשה שבנדה', 'The Positive Mitzvah for a Niddah', 'A');
+insert into mitzvos values (989, 'מצות ייבום בימבה ולא גם על צרתה', 'To have Yibum with ones Yevama and not her co-wife as well', 'A');
+insert into mitzvos values (990, 'מצות הנחת שדה ברשות לוקח שני שנים', 'To leave a land in the posession of the purchaser two years', 'A');
 -- Mitzvah #625 above is written by the Ramban but Derech Mitzvosecha understands the Ramban doesn't actually count it. The Zohar HaRakiah does, so we added it above.
-insert into mitzvos values (951, 'מצות שחיטת קדשים בעזרה ולא חולין', 'To slaughter sanctified animals in the Temple and not unsanctified ones', 'A');
+insert into mitzvos values (991, 'מצות שחיטת קדשים בעזרה ולא חולין', 'To slaughter sanctified animals in the Temple and not unsanctified ones', 'A');
+
+insert into mitzvos values (992, 'שלא יהיה עד דיין', 'For a witness not to be a judge', 'L');
 
 /**
 200 Aseh on Yechidim
