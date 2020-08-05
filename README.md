@@ -4,7 +4,7 @@ An online interface to explore and compare the listings of the 613 commandments.
 https://thetaryag.com
 
 ## Overview
-Jewish tradition teaches us that there are 613 commandments (see *Makkos* 23b) in the *Torah* (the Five Books of Moses), known as the *Taryag Mitzvos*.
+Jewish tradition teaches us (for example, see *Makkos* 23b) that there are 613 commandments in the *Torah* (the Five Books of Moses), known as the *Taryag Mitzvos*.
 A cursory glance at the *Torah* will yield many more than 613 commandents. Therefore, there must be some sort of criteria to determine what makes the list of *Taryag Mitzvos*.
 However, the Jewish Sages never specified which commandments written in the *Torah* made the list. The *Rishonim* (the Medieval Rabbinic scholars)
 argued about the listing of the commandments, and it seems that all these opinions were never collected in an organized way.
@@ -19,7 +19,7 @@ and each *mitzvah* (command) displays who counts it in their list. A link is pro
 The goal is to have the entire project eventually be bilingual. Everything is in Hebrew by default, but the language can be changed to English. Data that hasn't yet been
 translated will remain being displayed in Hebrew.
 
-Most of the textual data for this project came from [**Sefaria**](https://www.sefaria.org/?home) (for more details, [see below](#sources).
+Most of the textual data for this project came from [**Sefaria**](https://www.sefaria.org/?home) (for more details, [see below](#sources)).
 We are extremely grateful for their dedication to Jewish texts, making them freely available online for all.
 
 ## Technologies
