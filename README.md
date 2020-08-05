@@ -16,11 +16,11 @@ In addition to being able to view each opinion's listing, there's the ability to
 Finally, because of the differing opinions as to what makes the list, there ends up being more than 613 unique *mitzvos*. The entire accumulated list can be viewed,
 and each *mitzvah* (command) displays who counts it in their list. A link is provided to quickly navigate to that individual's list, to see how they formulate it.
 
-The goal is to have the entire site eventually be bilingual. Everything is in Hebrew by default, but the language can be changed to English. Data that hasn't yet been
+The goal is to have the entire project eventually be bilingual. Everything is in Hebrew by default, but the language can be changed to English. Data that hasn't yet been
 translated will remain being displayed in Hebrew.
 
-Most of the textual data for this project came from [**Sefaria**](https://www.sefaria.org/?home).
-We are extremely grateful for their dedication to Jewish texts, making them freely avaiable online for all. For more details, [see below](#sources).
+Most of the textual data for this project came from [**Sefaria**](https://www.sefaria.org/?home) (for more details, [see below](#sources).
+We are extremely grateful for their dedication to Jewish texts, making them freely available online for all.
 
 ## Technologies
  - [Slim](http://www.slimframework.com/) (PHP framework for a RESTful database access)
@@ -43,8 +43,8 @@ The following is a listing of the various sources for the project:
  - **Verses**: We typed the Hebrew verses ourselves. For the English verses,
      we used **Sefaria**'s [*Metsudah Chumash*](https://www.sefaria.org/Genesis.1?ven=Metsudah_Chumash,_Metsudah_Publications,_2009&lang=bi&aliyot=0) translation.
  - **Rambam**: We used **Sefaria**'s text of [*Sefer HaMitzvos*](https://www.sefaria.org/Sefer_HaMitzvot?lang=bi) and 
-     [*Introduction to Sefer HaMadah*](https://www.sefaria.org/texts/Halakhah/Mishneh%20Torah).
- - **Ramban**: We used **Sefaria**'s text of [*Hasagos HaRamban to Sefer HaMitzvos*](https://www.sefaria.org/Hasagot_HaRamban_on_Sefer_HaMitzvot?lang=bi).
+     [*Introduction to Sefer Madah*](https://www.sefaria.org/texts/Halakhah/Mishneh%20Torah).
+ - **Ramban**: We used **Sefaria**'s text of [*Hasagos HaRamban* to *Sefer HaMitzvos*](https://www.sefaria.org/Hasagot_HaRamban_on_Sefer_HaMitzvot?lang=bi).
      We used *Derech Mitzvosecha* § 1 to determine the **Ramban**'s exact listing, as well as the latter's own summary at the end of *Sefer HaMitzvos*.
  - **Chinuch**: We used **Sefaria**'s text of [*Sefer HaChinuch*](https://www.sefaria.org/Sefer_HaChinukh?lang=bi).
      We categorized his *mitzvos* ourselves using his own text.
@@ -53,7 +53,7 @@ The following is a listing of the various sources for the project:
      We used the *Mei Kama* edition [[1]](https://tablet.otzar.org/book/book.php?book=22149&pagenum=17)
      [[2]](https://tablet.otzar.org/book/book.php?book=22147&pagenum=4)
      to determine which *mitzvos* of the **Rambam** the **Semag** was referencing.
- - **Bahag**: We used the *Machon Yerushalayim* edition of *Halachos Gedolos* for the text and division of the *mitzvos*.
-     Their division was determined by
+ - **Bahag**: We used the *Machon Yerushalayim* edition of [*Halachos Gedolos*](https://tablet.otzar.org/book/book.php?book=147045&pagenum=34)
+     for the text and division of the *mitzvos*. Their division was determined by
      [*Rav Avraham Shimon Traube*](https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%A8%D7%94%D7%9D_%D7%A9%D7%9E%D7%A2%D7%95%D7%9F_%D7%98%D7%A8%D7%95%D7%99%D7%91),
      whose text, division, and notes can also be viewed [here](https://hebrewbooks.org/pdfpager.aspx?req=14119&st=&pgnum=6).
