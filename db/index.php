@@ -102,7 +102,7 @@ $container["queries"] = function($c) {
 	$query["semagBase"] =
 		"FROM mitzvos, books, verses, (
 			-- Combine Semag's list with the Rambams, retreiving any information that is missing in the Semag's from the Rambam's
-		 	SELECT semag._id, semag.mitzvahId, semag.mitzvahNumber,
+		 	SELECT semag._id, semag.mitzvahId, semag.mitzvahNumber, semagTitle,
 			(COALESCE(semag.source, '') || COALESCE(rambam.source, '')) AS mergedSource	-- merge source columns, replacing NULL with ''
 			FROM semag
 			LEFT JOIN rambam ON semag.mitzvahId = rambam.mitzvahId	-- Take everything from semag and add any equivalent rambam's
@@ -110,10 +110,10 @@ $container["queries"] = function($c) {
 		 WHERE mitzvos._id = mitzvahId AND books._id = verses.bookId AND verses._id = mergedSource";
 
 	$query["semagLess"] =
-		"SELECT " . $query["sharedColumns"] . ", semag._id as _id " . $query["semagBase"];
+		"SELECT " . $query["sharedColumns"] . ", semag._id as _id, semagTitle " . $query["semagBase"];
 
 	$query["semagMore"] =
-		"SELECT " . $query["sharedColumns"] . ", semag._id as _id, verseText, verseTextEn " . $query["semagBase"];
+		"SELECT " . $query["sharedColumns"] . ", semag._id as _id, semagTitle, verseText, verseTextEn " . $query["semagBase"];
 
 	$query["bahagBase"] =
 		"FROM mitzvos, (
