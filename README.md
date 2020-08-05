@@ -40,6 +40,8 @@ The textual data for the website's database came from a variety of sources, and 
 The following is a listing of the various sources for the project:
 
  - **All Mitzvos**: We used the **Chinuch**'s titles as a basis, and the rest we came up with on our own
+ - **Verses**: We typed the Hebrew verses ourselves. For the English verses,
+     we used **Sefaria**'s [*Metsudah Chumash*](https://www.sefaria.org/Genesis.1?ven=Metsudah_Chumash,_Metsudah_Publications,_2009&lang=bi&aliyot=0) translation.
  - **Rambam**: We used **Sefaria**'s text of [*Sefer HaMitzvos*](https://www.sefaria.org/Sefer_HaMitzvot?lang=bi) and 
      [*Introduction to Sefer HaMadah*](https://www.sefaria.org/texts/Halakhah/Mishneh%20Torah).
  - **Ramban**: We used **Sefaria**'s text of [*Hasagos HaRamban to Sefer HaMitzvos*](https://www.sefaria.org/Hasagot_HaRamban_on_Sefer_HaMitzvot?lang=bi).
