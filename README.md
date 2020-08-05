@@ -19,6 +19,9 @@ and each *mitzvah* (command) displays who counts it in their list. A link is pro
 The goal is to have the entire site eventually be bilingual. Everything is in Hebrew by default, but the language can be changed to English. Data that hasn't yet been
 translated will remain being displayed in Hebrew.
 
+Most of the textual data for this project came from [**Sefaria**](https://www.sefaria.org/?home).
+We are extremely grateful for their dedication to Jewish texts, making them freely avaiable online for all. For more details, [see below](#sources).
+
 ## Technologies
  - [Slim](http://www.slimframework.com/) (PHP framework for a RESTful database access)
  - [sqlite](https://www.sqlite.org/index.html) (to compile the .sql files into a read-only database)
@@ -47,7 +50,7 @@ The following is a listing of the various sources for the project:
  - **Semag**: We used **Sefaria**'s text of [*Sefer Mitzvos Gadol*](https://www.sefaria.org/Sefer_Mitzvot_Gadol?lang=bi).
      We used the *Mei Kama* edition [[1]](https://tablet.otzar.org/book/book.php?book=22149&pagenum=17)
      [[2]](https://tablet.otzar.org/book/book.php?book=22147&pagenum=4)
-     to determine which *mitzvos* of the **Rambam** the **Semag** was concurring with.
+     to determine which *mitzvos* of the **Rambam** the **Semag** was referencing.
  - **Bahag**: We used the *Machon Yerushalayim* edition of *Halachos Gedolos* for the text and division of the *mitzvos*.
      Their division was determined by
      [*Rav Avraham Shimon Traube*](https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%A8%D7%94%D7%9D_%D7%A9%D7%9E%D7%A2%D7%95%D7%9F_%D7%98%D7%A8%D7%95%D7%99%D7%91),
