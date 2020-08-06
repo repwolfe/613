@@ -25,11 +25,11 @@ var Rambam = Backbone.Model.extend({
 		this.set("mitzvahTypeHe", Rambam.mitzvahTypesHe[mitzvahType]);
 		this.set("mitzvahTypeEn", Rambam.mitzvahTypesEn[mitzvahType]);
 
-		var punishment = this.get("punishment");
+		var punishment = this.get("punishmentId");
 		this.set("punishmentHe", Rambam.punishmentsHe[punishment]);
 		this.set("punishmentEn", Rambam.punishmentsEn[punishment]);
 
-		var whoApplies = this.get("whoApplies");
+		var whoApplies = this.get("whoAppliesId");
 		this.set("whoAppliesHe", Rambam.whoAppliesesHe[whoApplies]);
 		this.set("whoAppliesEn", Rambam.whoAppliesesEn[whoApplies]);
 	}

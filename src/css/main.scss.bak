@@ -290,6 +290,12 @@ header {
 	.originalText {
 		white-space: pre-wrap;
 	}
+
+	p {
+		//margin: initial;
+		//margin-top: 10px;
+		//margin-bottom: 10px;
+	}
 }
 
 .mitzvos {		/* For when there are multiple uls of mitzvos, the one to add to is #mitzvos, and the rest are styled the same */

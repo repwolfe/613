@@ -114,22 +114,25 @@
 	<script type="text/template" id="chinuch-template-he">
 		<div class="hebrew">
 			&rlm;<b><%- mitzvahNumber %></b> (<%- oldMitzvahNumber %>)<br>
-			<b><%- mitzvahName %></b><br>
-			<%- bookName %> <%- chapter %>, <%- verse %><br>
+			<b><%- mitzvahTitle %></b><br>
+			<%- bookName %> <%- chapter %>, <%- verse %>
+			<p><%- whoAppliesHe %>, <%- whereAppliesHe %>, <%- whenAppliesHe %>, <%- punishmentHe %>.</p>
 		</div>
 	</script>
 	<script type="text/template" id="chinuch-template-en">
 		<div class="english">
 			<b><%- mitzvahNumber %></b> (<%- oldMitzvahNumber %>)<br>
 			<b><%- mitzvahNameEn %></b><br>
-			<%- bookNameEn %> <%- chapter %>:<%- verse %><br>
+			<%- bookNameEn %> <%- chapter %>:<%- verse %>
+			<p><%- whoAppliesEn %>, <%- whereAppliesEn %>, <%- whenAppliesEn %>, <%- punishmentEn %>.</p>
 		</div>
 	</script>
 	<script type="text/template" id="chinuch-selected-template-he">
 		<div class="hebrew">
 			&rlm;<b><%- mitzvahNumber %></b> (<%- oldMitzvahNumber %>)<br>
-			<b><%- mitzvahName %></b><br>
+			<b><%- mitzvahTitle %></b><br>
 			<%- verseText %> (<%- bookName %> <%- chapter %>, <%- verse %>)
+			<p><b>חייבים</b> <%- whoAppliesHe %>, <%- whereAppliesHe %>, <%- whenAppliesHe %>. <b>עונש</b> <%- punishmentHe %>.</p>
 			<p><%- description %></p>
 			<p><%- shoresh %></p>
 			<p><%- dinim %></p>
@@ -140,7 +143,8 @@
 		<div class="english">
 			<b><%- mitzvahNumber %></b> (<%- oldMitzvahNumber %>)<br>
 			<b><%- mitzvahNameEn %></b><br>
-			<%- verseTextEn %> (<%- bookNameEn %> <%- chapter %>:<%- verse %>)
+			<%- verseTextEn %> (<%- bookNameEn %> <%- chapter %>:<%- verse %>)<br>
+			<p><b>Applies</b> to <%- whoAppliesEn %>, <%- whereAppliesEn %>, <%- whenAppliesEn %>.<br><b>Punishable</b> by <%- punishmentEn %>.</p>
 		</div>
 	</script>
 

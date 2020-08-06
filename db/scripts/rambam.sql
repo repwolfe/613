@@ -10,8 +10,8 @@ create table rambam (
 	mitzvahNumber integer NOT NULL,
 	source integer NOT NULL,
 	type char(1) NOT NULL,			-- D(eos), P(eulah), M(iddos), (dibbu)R
-	whoApplies char(1) NOT NULL,	-- A(ll), M(en), W(omen), Y(isroel), (Y)I(sroel Men), L(eviim), K(ohanim), (Kohen Ga)D(ol), (kin)G, B(eis Din), Z(arim),
-	punishment char(1) NOT NULL,	-- N(one), K(ares), (Misah) B(idei Shamayim), S(kilah), (Serei)F(ah), C(henek), H(ereg), M(alkos)
+	whoAppliesId char(1) NOT NULL,	-- A(ll), M(en), W(omen), Y(isroel), (Y)I(sroel Men), L(eviim), K(ohanim), (Kohen Ga)D(ol), (kin)G, B(eis Din), Z(arim),
+	punishmentId char(1) NOT NULL,	-- N(one), K(ares), (Misah) B(idei Shamayim), S(kilah), (Serei)F(ah), C(henek), H(ereg), M(alkos)
 	madahTitle varchar,
 	originalText varchar,
 	foreign key (mitzvahId) references mitzvos(_id) on delete cascade,

@@ -76,15 +76,16 @@ $container["queries"] = function($c) {
 	$query["rambanMore"] =
 		"SELECT " . $query["sharedColumns"] . ", ramban._id as _id, verseText, verseTextEn, shihchaNumber, originalText " . $query["rambanBase"];
 
-	$query["chinuchColumns"] = "mitzvahTitle, description, shoresh, dinim, whoWhereWhenApplies";
+	$query["chinuchColumns"] 	 = "oldMitzvahNumber, mitzvahTitle, whereApplies, whenApplies, whoApplies, punishment";
+	$query["chinuchMoreColumns"] = "description, shoresh, dinim, whoWhereWhenApplies";
 
 	$query["chinuchBase"] =
 		"FROM mitzvos, books, verses, (
 			-- Combine Chinuch's list with the Rambams, retreiving any information that is missing in the Chinuch's from the Rambam's
-			SELECT mergedChinuch.oldMitzvahNumber, mergedChinuch.mitzvahNumber, mergedChinuch.mitzvahId, " . $query["chinuchColumns"] . ",
+			SELECT mergedChinuch.mitzvahNumber, mergedChinuch.mitzvahId, " . $query["chinuchColumns"] . ", " . $query["chinuchMoreColumns"] . ",
 				(COALESCE(mergedChinuch.source, '') || COALESCE(rambam.source, '')) AS mergedSource	-- merge source columns, replacing NULL with ''
 			FROM (	-- Combine Chinuch with ChinuchSources
-				SELECT mitzvahId, oldMitzvahNumber, chinuch.mitzvahNumber, source, " . $query["chinuchColumns"] . "
+				SELECT mitzvahId, chinuch.mitzvahNumber, source, " . $query["chinuchColumns"] . ", " . $query["chinuchMoreColumns"] . "
 				FROM chinuch
 				LEFT JOIN chinuchSources ON chinuch.oldMitzvahNumber = chinuchSources.mitzvahNumber
 			) AS mergedChinuch
@@ -94,10 +95,11 @@ $container["queries"] = function($c) {
 		 WHERE mitzvos._id = mitzvahId AND books._id = verses.bookId AND verses._id = mergedSource";
 
 	$query["chinuchLess"] =
-		"SELECT " . $query["sharedColumns"] . ", oldMitzvahNumber " . $query["chinuchBase"];
+		"SELECT " . $query["sharedColumns"] . ", " . $query["chinuchColumns"] . ", verseText, verseTextEn " . $query["chinuchBase"];
 
 	$query["chinuchMore"] =
-		"SELECT " . $query["sharedColumns"] . ", " . $query["chinuchColumns"] . ", oldMitzvahNumber, verseText, verseTextEn " . $query["chinuchBase"];
+		"SELECT " . $query["sharedColumns"] . ", " . $query["chinuchColumns"] . ", " . $query["chinuchMoreColumns"] . ",
+			verseText, verseTextEn " . $query["chinuchBase"];
 
 	$query["semagBase"] =
 		"FROM mitzvos, books, verses, (
