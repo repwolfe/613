@@ -275,7 +275,7 @@ insert into zoharHaRakiah values (262, 537, 14);
 insert into zoharHaRakiah values (263, 540, 15);
 insert into zoharHaRakiah values (264, 547, 16);
 insert into zoharHaRakiah values (265, 533, 17);
-insert into zoharHaRakiah values (266, 992, 18);
+insert into zoharHaRakiah values (266, 539, 18);
 insert into zoharHaRakiah values (267, 504, 19);
 insert into zoharHaRakiah values (268, 674, 20);
 insert into zoharHaRakiah values (269, 500, 21);

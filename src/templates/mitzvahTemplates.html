@@ -113,21 +113,21 @@
 	<!-- Chinuch -->
 	<script type="text/template" id="chinuch-template-he">
 		<div class="hebrew">
-			&rlm;<b><%- mitzvahNumber %></b><br>
+			&rlm;<b><%- mitzvahNumber %></b> (<%- oldMitzvahNumber %>)<br>
 			<b><%- mitzvahName %></b><br>
 			<%- bookName %> <%- chapter %>, <%- verse %><br>
 		</div>
 	</script>
 	<script type="text/template" id="chinuch-template-en">
 		<div class="english">
-			<b><%- mitzvahNumber %></b><br>
+			<b><%- mitzvahNumber %></b> (<%- oldMitzvahNumber %>)<br>
 			<b><%- mitzvahNameEn %></b><br>
 			<%- bookNameEn %> <%- chapter %>:<%- verse %><br>
 		</div>
 	</script>
 	<script type="text/template" id="chinuch-selected-template-he">
 		<div class="hebrew">
-			&rlm;<b><%- mitzvahNumber %></b><br>
+			&rlm;<b><%- mitzvahNumber %></b> (<%- oldMitzvahNumber %>)<br>
 			<b><%- mitzvahName %></b><br>
 			<%- verseText %> (<%- bookName %> <%- chapter %>, <%- verse %>)
 			<p><%- description %></p>
@@ -138,7 +138,7 @@
 	</script>
 	<script type="text/template" id="chinuch-selected-template-en">
 		<div class="english">
-			<b><%- mitzvahNumber %></b><br>
+			<b><%- mitzvahNumber %></b> (<%- oldMitzvahNumber %>)<br>
 			<b><%- mitzvahNameEn %></b><br>
 			<%- verseTextEn %> (<%- bookNameEn %> <%- chapter %>:<%- verse %>)
 		</div>

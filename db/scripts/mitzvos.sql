@@ -984,7 +984,7 @@ insert into mitzvos values (979, 'מצות קדושים יהיו', 'For the Koha
 insert into mitzvos values (980, 'מצות בעלי מום לבדק הבית ולא תמימים', 'Sanctifying blemished animals for the Temple treasury and not unblemished animals', 'A');
 insert into mitzvos values (981, 'מצות הלנה ברצפה כל הלילה', 'Fats and limbs of offerings can be put on the altar all night but not after', 'A');
 insert into mitzvos values (982, 'מצות לשפוט בצדק במה שאמרה תורה', 'For a judge to rule justly according to what the Torah proscribes', 'A');
-insert into mitzvos values (983, 'מצות קדוש בלע חטאת', 'For anything that obsorbs Chatas flavor should have the same status as it', 'A');
+insert into mitzvos values (983, 'מצות קדוש בלע חטאת', 'For anything that absorbs Chatas flavor should have the same status as it', 'A');
 insert into mitzvos values (984, 'מצות אכילת תרומה', 'For a Kohen to eat Terumah', 'A');
 insert into mitzvos values (985, 'מצות פריעת בעל חוב', 'To pay off a debt', 'A');
 insert into mitzvos values (986, 'מצות קידוש גוף הנזיר', 'For a Nazir to sanctify his body', 'A');
@@ -994,8 +994,6 @@ insert into mitzvos values (989, 'מצות ייבום בימבה ולא גם ע�
 insert into mitzvos values (990, 'מצות הנחת שדה ברשות לוקח שני שנים', 'To leave a land in the posession of the purchaser two years', 'A');
 -- Mitzvah #625 above is written by the Ramban but Derech Mitzvosecha understands the Ramban doesn't actually count it. The Zohar HaRakiah does, so we added it above.
 insert into mitzvos values (991, 'מצות שחיטת קדשים בעזרה ולא חולין', 'To slaughter sanctified animals in the Temple and not unsanctified ones', 'A');
-
-insert into mitzvos values (992, 'שלא יהיה עד דיין', 'For a witness not to be a judge', 'L');
 
 /**
 200 Aseh on Yechidim

@@ -94,7 +94,7 @@ $container["queries"] = function($c) {
 		 WHERE mitzvos._id = mitzvahId AND books._id = verses.bookId AND verses._id = mergedSource";
 
 	$query["chinuchLess"] =
-		"SELECT " . $query["sharedColumns"] . " " . $query["chinuchBase"];
+		"SELECT " . $query["sharedColumns"] . ", oldMitzvahNumber " . $query["chinuchBase"];
 
 	$query["chinuchMore"] =
 		"SELECT " . $query["sharedColumns"] . ", " . $query["chinuchColumns"] . ", oldMitzvahNumber, verseText, verseTextEn " . $query["chinuchBase"];

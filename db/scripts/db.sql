@@ -1,3 +1,4 @@
+.read pageDetails.sql
 .read verses.sql
 .read mitzvos.sql
 .read rambam.sql
