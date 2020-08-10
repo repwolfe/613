@@ -32,20 +32,21 @@ $container["queries"] = function($c) {
 
 	$query["mitzvosBase"] =
 		"FROM mitzvos
-		 LEFT JOIN rambam ON mitzvos._id = rambam.mitzvahId
-		 LEFT JOIN ramban ON mitzvos._id = ramban.mitzvahId
-		 LEFT JOIN semag  ON mitzvos._id = semag.mitzvahId
-		 LEFT JOIN bahag  ON mitzvos._id = bahag.mitzvahId
+		 LEFT JOIN rambam  ON mitzvos._id = rambam.mitzvahId
+		 LEFT JOIN ramban  ON mitzvos._id = ramban.mitzvahId
+		 LEFT JOIN chinuch ON mitzvos._id = chinuch.mitzvahId
+		 LEFT JOIN semag   ON mitzvos._id = semag.mitzvahId
+		 LEFT JOIN bahag   ON mitzvos._id = bahag.mitzvahId
 		 WHERE 1 = 1";	// Tautology just so the code from the other tables doesn't break (as they all end with WHERE, and this one doesn't)
 
 	$query["mitzvosColumns"] =
-		"mitzvos._id, mitzvahName, mitzvahNameEn, asehOrLoSaseh, rambam._id AS rambamId, ramban._id AS rambanId, semag._id AS semagId, bahag._id AS bahagId";
+		"mitzvos._id, mitzvahName, mitzvahNameEn, asehOrLoSaseh, rambam._id AS rambamId, ramban._id AS rambanId, chinuch.mitzvahNumber AS chinuchId, semag._id AS semagId, bahag._id AS bahagId";
 
 	$query["mitzvosLess"] =
 		"SELECT " . $query["mitzvosColumns"] . " " . $query["mitzvosBase"] . " ORDER BY RANDOM()";
 
 	$query["mitzvosMore"] =
-		"SELECT " . $query["mitzvosColumns"] . ", rambam.mitzvahNumber as rambamNumber, ramban.mitzvahNumber as rambanNumber, semag.mitzvahNumber as semagNumber, bahag.mitzvahNumber as bahagNumber " . $query["mitzvosBase"];
+		"SELECT " . $query["mitzvosColumns"] . ", rambam.mitzvahNumber as rambamNumber, ramban.mitzvahNumber as rambanNumber, chinuch.mitzvahNumber as chinuchNumber, semag.mitzvahNumber as semagNumber, bahag.mitzvahNumber as bahagNumber " . $query["mitzvosBase"];
 
 	$query["sharedColumns"] =
 		"mitzvahId, mitzvahNumber, mitzvahName, mitzvahNameEn, asehOrLoSaseh, bookName, bookNameEn, chapter, verse";

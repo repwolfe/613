@@ -1,6 +1,7 @@
 var css = require("../css/main.scss");
 
 var Backbone 		= require("backbone");
+var Mitzvah			= require("./models/mitzvah");
 var MoneiMitzvah   	= require("./models/moneimitzvah");
 var HomeAppView 	= require("./views/appviews/homeappview");
 var MitzvosAppView	= require("./views/appviews/mitzvosappview");
@@ -20,12 +21,12 @@ $(function() {
 	var firstTime = true;
 
 	// Set up the buttons to display the monei mitzvos
-	var Mitzvos = new MoneiMitzvah("/mitzvos",	"all",		"כל המצוות", 	"All Mitzvos");
-	var Rambam 	= new MoneiMitzvah("/rambam",	"rambam", 	"רמב\"ם", 	"Rambam");
-	var Ramban 	= new MoneiMitzvah("/ramban",	"ramban", 	"רמב\"ן", 	"Ramban");
-	var Chinuch = new MoneiMitzvah("/chinuch",	"chinuch", 	"חינוך", 		"Chinuch");
-	var Semag  	= new MoneiMitzvah("/semag",	"semag", 	"סמ\"ג", 	"Semag");
-	var Bahag  	= new MoneiMitzvah("/bahag",	"bahag", 	"בה\"ג", 	"Bahag");
+	var Mitzvos = new MoneiMitzvah("/mitzvos",					"all",		"כל המצוות", 					"All Mitzvos");
+	var Rambam 	= new MoneiMitzvah(Mitzvah.MoneiMitzvosUrl[0],	"rambam", 	Mitzvah.MoneiMitzvosHe[0],	Mitzvah.MoneiMitzvosEn[0]);
+	var Ramban 	= new MoneiMitzvah(Mitzvah.MoneiMitzvosUrl[1],	"ramban", 	Mitzvah.MoneiMitzvosHe[1],	Mitzvah.MoneiMitzvosEn[1]);
+	var Chinuch = new MoneiMitzvah(Mitzvah.MoneiMitzvosUrl[2],	"chinuch", 	Mitzvah.MoneiMitzvosHe[2],	Mitzvah.MoneiMitzvosEn[2]);
+	var Semag  	= new MoneiMitzvah(Mitzvah.MoneiMitzvosUrl[3],	"semag", 	Mitzvah.MoneiMitzvosHe[3],	Mitzvah.MoneiMitzvosEn[3]);
+	var Bahag  	= new MoneiMitzvah(Mitzvah.MoneiMitzvosUrl[4],	"bahag", 	Mitzvah.MoneiMitzvosHe[4],	Mitzvah.MoneiMitzvosEn[4]);
 	var MoneiMitzvos = [Mitzvos, Rambam, Ramban, Chinuch, Semag, Bahag];
 	var liToURL = new Map();
 

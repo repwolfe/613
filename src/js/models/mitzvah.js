@@ -23,8 +23,8 @@ var Mitzvah = Backbone.Model.extend({
 	},
 
 	fillInProperties: function() {
-		var ids = [this.get("rambamId"), this.get("rambanId"), this.get("semagId"), this.get("bahagId")];
-		var numbers = [this.get("rambamNumber"), this.get("rambanNumber"), this.get("semagNumber"), this.get("bahagNumber")];
+		var ids = [this.get("rambamId"), this.get("rambanId"), this.get("chinuchId"), this.get("semagId"), this.get("bahagId")];
+		var numbers = [this.get("rambamNumber"), this.get("rambanNumber"), this.get("chinuchNumber"), this.get("semagNumber"), this.get("bahagNumber")];
 
 		var idStringHe = "";
 		var idStringEn = "";
@@ -32,7 +32,7 @@ var Mitzvah = Backbone.Model.extend({
 		var idStringLongEn = "";
 		for (var i = 0; i < ids.length; ++i) {
 			if (ids[i] != null) {
-				var linkPrefix = "<a href=\"" + Mitzvah.MoneiMitzvosUrl[i] + ids[i] + "\">";
+				var linkPrefix = "<a href=\"" + Mitzvah.MoneiMitzvosUrl[i] + "/" + ids[i] + "\">";
 				idStringHe 		+= linkPrefix + Mitzvah.MoneiMitzvosHe[i] + "</a>, ";
 				idStringEn 		+= linkPrefix + Mitzvah.MoneiMitzvosEn[i] + "</a>, ";
 				idStringLongHe  += Mitzvah.MoneiMitzvosHe[i] + ": " + linkPrefix + "#" + numbers[i] + "</a><br>";
@@ -50,8 +50,8 @@ var Mitzvah = Backbone.Model.extend({
 	}
 });
 
-Mitzvah.MoneiMitzvosHe  = ["רמב\"ם", "רמב\"ן", "סמ\"ג", "בה\"ג"];
-Mitzvah.MoneiMitzvosEn  = ["Rambam", "Ramban", "Semag", "Bahag"];
-Mitzvah.MoneiMitzvosUrl = ["/rambam/", "/ramban/", "/semag/", "/bahag/"];
+Mitzvah.MoneiMitzvosHe  = ["רמב\"ם", "רמב\"ן", "חינוך", "סמ\"ג", "בה\"ג"];
+Mitzvah.MoneiMitzvosEn  = ["Rambam", "Ramban", "Chinuch", "Semag", "Bahag"];
+Mitzvah.MoneiMitzvosUrl = ["/rambam", "/ramban", "/chinuch", "/semag", "/bahag"];
 
 module.exports = Mitzvah;
