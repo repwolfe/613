@@ -4,14 +4,31 @@ var ChinuchList = Backbone.Collection.extend({
 	model: Chinuch,
 	url: "/db/chinuch",
 
-	columnsHe: [
+	sortingTitlesHe: [
 		"מספר",
-		"מקור"
+		"מספר ישן",
+		"על מי",
+		"איפה",
+		"מתי",
+		"עונש"
 	],
 
-	columnsEn: [
+	sortingTitlesEn: [
 		"Number",
-		"Source"
+		"Old Number",
+		"Who",
+		"Where",
+		"When",
+		"Punishment"
+	],
+
+	sortingUrls: [
+		"",
+		"oldMitzvahNumber",
+		"whoApplies",
+		"whereApplies",
+		"whenApplies",
+		"punishment"
 	]
 });
 

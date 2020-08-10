@@ -4,14 +4,19 @@ var RambanList = Backbone.Collection.extend({
 	model: Ramban,
 	url: "/db/ramban",
 
-	columnsHe: [
+	sortingTitlesHe: [
 		"מספר",
 		"מקור"
 	],
 
-	columnsEn: [
+	sortingTitlesEn: [
 		"Number",
 		"Source"
+	],
+	
+	sortingUrls: [
+		"",
+		"source"
 	]
 });
 

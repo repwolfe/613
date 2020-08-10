@@ -3,6 +3,7 @@ var PageDetail = require("../../models/pagedetail");
 var MoneiMitzvahAppView = Backbone.View.extend({
 	curLang: "he",
 	el: "#mitzvos",
+	sortingTag: "#sorting",
 
 	fetchesCompleted: 0,
 
@@ -10,6 +11,8 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 	pageDetailId: "-1",
 	pageDetails: null,
 	hasDetails: true,
+
+	currentSortingId: "",
 
 	mitzvahList: null,
 
@@ -21,6 +24,8 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 
 	initialize: function() {
 		this.setElement(this.el);
+		this.mitzvahListUrl = this.mitzvahList.url;
+
 		this.listenTo(this.mitzvahList, 'add', this.addOne);	// addOne to be implemented by subclasses
 		this.listenTo(this.mitzvahList, 'reset', this.addAll);
 		this.listenTo(this, 'fetchComplete', this.fetchComplete);
@@ -43,13 +48,21 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 				}
 			});
 		}
+
+		this.makeSortingButtons(this.mitzvahList.sortingTitlesHe, this.mitzvahList.sortingUrls);
 	},
 
 	destroy: function() {
-		this.mitzvahList.reset();
 		this.undelegateEvents();
-		this.$el.removeData().unbind();
+		this.emptyList();
 
+		$(this.sortingTag).empty();
+		$(this.sortingTag).hide();
+	},
+
+	emptyList: function() {
+		this.mitzvahList.reset();
+		this.$el.removeData().unbind();
 		this.$el.empty();
 	},
 
@@ -102,6 +115,57 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 		}
 	},
 
+	makeSortingButtons: function(sortingTitles, sortingUrls) {
+		if (!sortingTitles) {
+			return;
+		}
+		$(this.sortingTag).empty();
+		var self = this;
+		var i;
+		for (i in sortingTitles) {
+			var element = document.createElement("li");
+			element.innerHTML = sortingTitles[i];
+			$(element).attr("id", sortingUrls[i]);
+			if (sortingUrls[i] == this.currentSortingId) {
+				$(element).addClass("toggled");
+			}
+
+			$(element).click(function(e) {	// Toggle click event handler
+				// Clicking a new sorting choice
+				if (e.target.id != self.currentSortingId) {
+					// Deselect the previous one
+					$(self.sortingTag + " .toggled").toggleClass("toggled");
+
+					$(e.target).toggleClass("toggled");
+
+					self.emptyList();
+					self.viewToSelect = null;
+
+					// Keep it in English
+					if (self.curLang == "en") {
+						self.setStartEnglish();
+					}
+
+					self.mitzvahList.url = self.mitzvahListUrl + "?sortBy=" + e.target.id;
+					self.mitzvahList.fetch({
+						success: function(collection, response, options) {
+							if (self.startEnglish) {
+								self.mitzvahList.each(function(mitzvah) {
+									mitzvah.trigger("languageSwitch");
+								});
+								self.startEnglish = false;
+							}
+						}
+					});
+
+					self.currentSortingId = e.target.id;
+				}
+			});
+			$(this.sortingTag).append(element);
+		}
+		$(this.sortingTag).show();
+	},
+
 	languageSwitch: function() {
 		this.mitzvahList.each(function(mitzvah) {
 			mitzvah.trigger("languageSwitch");
@@ -112,10 +176,12 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 			if (this.pageDetails != null) {
 				column = "englishDetails";
 			}
+			this.makeSortingButtons(this.mitzvahList.sortingTitlesEn, this.mitzvahList.sortingUrls);
 		}
 		else {
 			this.curLang = "he";
 			column = "hebrewDetails";
+			this.makeSortingButtons(this.mitzvahList.sortingTitlesHe, this.mitzvahList.sortingUrls);
 		}
 
 		if (this.pageDetails != null) {

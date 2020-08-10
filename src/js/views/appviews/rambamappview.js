@@ -9,30 +9,11 @@ var RambamAppView = MoneiMitzvahAppView.extend({
 	initialize: function() {
 		this.mitzvahList = new RambamList();
 		MoneiMitzvahAppView.prototype.initialize.apply(this);
-		this.setSorting(this.mitzvahList.columnsHe);
 	},
 
 	addOne: function(mitzvah) {
 		var view = new RambamView({model: mitzvah});
 		MoneiMitzvahAppView.prototype.addOne.call(this, view);
-	},
-
-	languageSwitch: function() {
-		MoneiMitzvahAppView.prototype.languageSwitch.apply(this);
-		if (this.curLang === "en") {
-			this.setSorting(this.mitzvahList.columnsEn);
-		}
-		else {
-			this.setSorting(this.mitzvahList.columnsHe);
-		}
-	},
-
-	setSorting: function(columns) {
-		$("#sorting").html("");
-		var i;
-		for (i in columns) {
-			$("#sorting").append("<a href=\"#\">" + columns[i] + "</a>");
-		}
 	}
 });
 

@@ -50,9 +50,15 @@ var BahagAppView = MoneiMitzvahAppView.extend({
 	destroy: function() {
 		MoneiMitzvahAppView.prototype.destroy.call(this);
 
-		// Go back to just one <ul>
+		// Go back to just one mitzvos <ul>
 		var parent = this.$el.parent();
 		parent.empty();
+
+		// But first readd the sorting list
+		var newList = $("<ul>");
+		newList.appendTo(parent);
+		newList.attr("id", "sorting");
+		newList.hide();
 
 		this.makeNewList(parent);
 	},

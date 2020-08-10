@@ -4,20 +4,19 @@ var RambamList = Backbone.Collection.extend({
 	model: Rambam,
 	url: "/db/rambam",
 
-	columnsHe: [
+	sortingTitlesHe: [
 		"מספר",
-		"מקור",
-		"מין",
-		"על מי",
-		"עונש"
+		"מקור"
 	],
 
-	columnsEn: [
+	sortingTitlesEn: [
 		"Number",
-		"Source",
-		"Type",
-		"Who",
-		"Punishment"
+		"Source"
+	],
+
+	sortingUrls: [
+		"",
+		"source"
 	]
 });
 

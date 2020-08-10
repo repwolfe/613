@@ -55,10 +55,10 @@ $container["queries"] = function($c) {
 		 WHERE mitzvos._id = rambam.mitzvahId and verses._id = rambam.source and books._id = verses.bookId";
 
 	$query["rambamLess"] =
-		"SELECT " . $query["sharedColumns"] . ", rambam._id, type, punishment, whoApplies, madahTitle " . $query["rambamBase"];
+		"SELECT " . $query["sharedColumns"] . ", rambam._id, type, punishmentId, whoAppliesId, madahTitle " . $query["rambamBase"];
 
 	$query["rambamMore"] =
-		"SELECT " . $query["sharedColumns"] . ", rambam._id, verseText, verseTextEn, type, punishment, whoApplies, madahTitle, originalText " . $query["rambamBase"];
+		"SELECT " . $query["sharedColumns"] . ", rambam._id, verseText, verseTextEn, type, punishmentId, whoAppliesId, madahTitle, originalText " . $query["rambamBase"];
 
 	$query["rambanBase"] =
 		"FROM mitzvos, books, verses, (
@@ -219,7 +219,13 @@ for ($i = 0; $i < count($paths); ++$i) {
 	// Retreiving all entries
 	$query = $queriesLess[$i];
 	$app->get("/" . $paths[$i], function(Request $request, Response $response) use ($query) {
-		$res = $this->db->query($this->queries[$query] . ";");
+		$sortBy = $request->getQueryParam("sortBy", $default="");
+		if ($sortBy !== "") {
+			$res = $this->db->query($this->queries[$query] . " ORDER BY " . $sortBy . ";");
+		}
+		else {
+			$res = $this->db->query($this->queries[$query] . ";");
+		}
 		$response->getBody()->write(json_encode($res->fetchAll(PDO::FETCH_CLASS)));
 		return $response;
 	});

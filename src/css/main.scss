@@ -93,19 +93,29 @@ body:lang(en) {
 	font-size: 28px
 }
 
-#sorting {
-	height: 50px;
+#navLinks {
 	text-align: center;
-	@include set-font($eng-font, 18px, 1.25);
+	list-style-type: none;
+	overflow: hidden;
 
-	a {
-		padding: 10px 20px;
-		margin: 10px;
-
-		background-color: #eee;
-		border-style: solid;
-		border-width: 1px;
+	li {
+		display: inline-block;
+		height: 20px;
+		line-height: 20px;
+		padding: 5px 10px;
+		margin: 0px 5px;
+		background: #efefef;
+		cursor: pointer;
 	}
+
+	.toggled {
+		background-color: #99c2ff;
+		font-weight: 700;
+	}
+}
+
+#sorting {
+	@extend #navLinks;
 }
 
 header {
@@ -149,25 +159,8 @@ header {
 		line-height: $banner-height / 2;
 
 		#moneiMitzvosList {
-			text-align: center;
-			list-style-type: none;
-			overflow: hidden;
+			@extend #navLinks;
 			transform: translateX(-$banner-margin);
-
-			li {
-				display: inline-block;
-				height: 20px;
-				line-height: 20px;
-				padding: 5px 10px;
-				margin: 0px 5px;
-				background: #efefef;
-				cursor: pointer;
-			}
-
-			.toggled {
-				background-color: #99c2ff;
-				font-weight: 700;
-			}
 		}
 	}
 

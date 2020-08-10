@@ -4,14 +4,19 @@ var SemagList = Backbone.Collection.extend({
 	model: Semag,
 	url: "/db/semag",
 
-	columnsHe: [
+	sortingTitlesHe: [
 		"מספר",
 		"מקור"
 	],
 
-	columnsEn: [
+	sortingTitlesEn: [
 		"Number",
 		"Source"
+	],
+
+	sortingUrls: [
+		"",
+		"source"
 	]
 });
 
