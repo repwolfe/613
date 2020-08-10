@@ -221,6 +221,9 @@ for ($i = 0; $i < count($paths); ++$i) {
 	$app->get("/" . $paths[$i], function(Request $request, Response $response) use ($query) {
 		$sortBy = $request->getQueryParam("sortBy", $default="");
 		if ($sortBy !== "") {
+			if ($sortBy === "source") {	// sort by multiple columns
+				$sortBy = "bookId, chapter, verse";
+			}
 			$res = $this->db->query($this->queries[$query] . " ORDER BY " . $sortBy . ";");
 		}
 		else {
