@@ -766,7 +766,7 @@ insert into mitzvos values (732, 'שלא יסום עין היחיד על ה שב
 insert into mitzvos values (733, 'שלא יאמר בצדקתי הביאני ה'' לרשת את-הארץ', 'Don''t say because of my righteousness Hashem bestowed this land', 'L');
 insert into mitzvos values (734, 'שלא להשקות ערפכם עוד', 'To no longer stiffen your neck', 'L');
 insert into mitzvos values (735, 'שלא להקריב חובות על במת יחיד', 'Not to bring obligation offerings on a personal altar', 'L');
-insert into mitzvos values (736, 'שלא לאכול מעשר, ברוכות חוץ מירושלים, חטאת ואשם חוץ לקלעים, בשר עולה, קדשי קלים קודם זריקה, ובכורים קודם הנחה ', 'Not to eat Maaser or Bechoros outside Yerushalayim, Chataos or Ashamos outside the Temple confines, the meat of an Olah, Kodshei Kalim before throwing the blood, or Bikkurim before placing them', 'L');
+insert into mitzvos values (736, 'שלא לאכול מעשר, בכורות חוץ לירושלים, חטאת ואשם חוץ לקלעים, בשר עולה, קדשי קלים קודם זריקה, ובכורים קודם הנחה ', 'Not to eat Maaser or Bechoros outside Yerushalayim, Chataos or Ashamos outside the Temple confines, the meat of an Olah, Kodshei Kalim before throwing the blood, or Bikkurim before placing them', 'L');
 insert into mitzvos values (737, 'שלא יעזב הלוי', 'Not to abandon the Levites', 'L');
 insert into mitzvos values (738, 'שלא יעשו אגודות אגודות', 'Not to divide into different groups', 'L');
 insert into mitzvos values (739, 'שלא תקפץ את ידך מליתן צדקה', 'Don''t clasp your hand from giving charity', 'L');

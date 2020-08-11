@@ -43,7 +43,7 @@ $container["queries"] = function($c) {
 		"mitzvos._id, mitzvahName, mitzvahNameEn, asehOrLoSaseh, rambam._id AS rambamId, ramban._id AS rambanId, chinuch.mitzvahNumber AS chinuchId, semag._id AS semagId, bahag._id AS bahagId";
 
 	$query["mitzvosLess"] =
-		"SELECT " . $query["mitzvosColumns"] . " " . $query["mitzvosBase"] . " ORDER BY RANDOM()";
+		"SELECT " . $query["mitzvosColumns"] . " " . $query["mitzvosBase"];
 
 	$query["mitzvosMore"] =
 		"SELECT " . $query["mitzvosColumns"] . ", rambam.mitzvahNumber as rambamNumber, ramban.mitzvahNumber as rambanNumber, chinuch.mitzvahNumber as chinuchNumber, semag.mitzvahNumber as semagNumber, bahag.mitzvahNumber as bahagNumber " . $query["mitzvosBase"];
@@ -222,9 +222,17 @@ for ($i = 0; $i < count($paths); ++$i) {
 	$app->get("/" . $paths[$i], function(Request $request, Response $response) use ($query) {
 		$sortBy = $request->getQueryParam("sortBy", $default="");
 		if ($sortBy !== "") {
+			// Deal with special cases
 			if ($sortBy === "source") {	// sort by multiple columns
 				$sortBy = "bookId, chapter, verse";
 			}
+			else if ($sortBy === "random") {
+				$sortBy = "RANDOM()";
+			}
+			else if ($sortBy === "consensus") {	// put mitzvos everyone agrees on at the top
+				$sortBy = "(rambamId IS NULL) + (rambanId IS NULL) + (chinuchId IS NULL) + (semagId IS NULL) + (bahagId IS NULL)";
+			}
+
 			$res = $this->db->query($this->queries[$query] . " ORDER BY " . $sortBy . ";");
 		}
 		else {

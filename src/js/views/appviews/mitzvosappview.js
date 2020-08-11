@@ -9,7 +9,14 @@ var MitzvosAppView = MoneiMitzvahAppView.extend({
 
 	initialize: function() {
 		this.mitzvahList = new MitzvahList();
+		this.currentSortingId = "random";
 		MoneiMitzvahAppView.prototype.initialize.apply(this);
+	},
+
+	// @override
+	emptyList: function() {
+		MoneiMitzvahAppView.prototype.emptyList.apply(this);
+		this.count = 0;
 	},
 
 	addOne: function(mitzvah) {
