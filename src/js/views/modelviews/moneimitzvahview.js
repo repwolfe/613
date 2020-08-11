@@ -75,7 +75,13 @@ var MoneiMitzvahView = Backbone.View.extend({
 		
 		if (this.selected) {
 			this.templates = [this.templateSelectedHe, this.templateSelectedEn];
+
+			// Just in case they're sorting, temporarily remove the sorting parameter from the fetch URL
+			var modelUrl = this.model.collection.url;
+			this.model.collection.url = modelUrl.split("?")[0];
+
 			this.model.fetch({success: this.modelFetched.bind(this)});		// Get the full data for this model
+			this.model.collection.url = modelUrl;
 		}
 		else {
 			this.templates = [this.templateHe, this.templateEn];
