@@ -10,7 +10,10 @@ var MitzvosAppView = MoneiMitzvahAppView.extend({
 	initialize: function() {
 		this.mitzvahList = new MitzvahList();
 		this.currentSortingId = "random";
+		var mitzvahListUrl = this.mitzvahList.url;
+		this.mitzvahList.url += this.sortByParam + this.currentSortingId;
 		MoneiMitzvahAppView.prototype.initialize.apply(this);
+		this.mitzvahListUrl = mitzvahListUrl;		// super() overrides it, so reset it
 	},
 
 	// @override

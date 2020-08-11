@@ -13,8 +13,10 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 	hasDetails: true,
 
 	currentSortingId: "",
+	sortByParam: "?sortBy=",
 
 	mitzvahList: null,
+	fragment: null,
 
 	previouslySelected: null,
 	startEnglish: false,
@@ -32,6 +34,7 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 
 		var self = this;
 
+		this.startAdding();
 		this.mitzvahList.fetch({
 			success: function(collection, response, options) {
 				self.trigger('fetchComplete');
@@ -66,6 +69,15 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 		this.$el.empty();
 	},
 
+	startAdding: function() {
+		this.fragment = document.createDocumentFragment();
+	},
+
+	finishAdding: function() {
+		this.$el.append(this.fragment);
+		this.fragment = null;
+	},
+
 	addOne: function(view) {
 		this.listenTo(view, 'viewClicked', this.viewClicked);
 
@@ -74,7 +86,7 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 			this.startSelected = "";
 		}
 
-		this.$el.append(view.render().el);
+		this.fragment.appendChild(view.render().el);
 	},
 
 	addAll: function() {
@@ -82,6 +94,7 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 	},
 
 	fetchComplete: function() {
+		this.finishAdding();
 		this.checkIfStartEnglish();
 
 		// If preselecting a mitzvah
@@ -146,9 +159,11 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 						self.setStartEnglish();
 					}
 
-					self.mitzvahList.url = self.mitzvahListUrl + "?sortBy=" + e.target.id;
+					self.startAdding();
+					self.mitzvahList.url = self.mitzvahListUrl + self.sortByParam + e.target.id;
 					self.mitzvahList.fetch({
 						success: function(collection, response, options) {
+							self.finishAdding();
 							if (self.startEnglish) {
 								self.mitzvahList.each(function(mitzvah) {
 									mitzvah.trigger("languageSwitch");
