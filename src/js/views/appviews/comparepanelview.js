@@ -28,7 +28,7 @@ var ComparePanelView = MoneiMitzvahAppView.extend({
 	},
 
 	fetchComplete: function() {
-		// override parent function and do nothing
+		this.finishAdding();
 	}
 });
 

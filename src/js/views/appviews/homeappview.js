@@ -12,6 +12,7 @@ var HomeAppView = Backbone.View.extend({
 	SKIPPED_IDS: [625, 785, 841],	// skipped id values in mitzvos.sql
 
 	curLang: "he",
+	startEnglish: false,
 
 	fetchesCompleted: 0,
 

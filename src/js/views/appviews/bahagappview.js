@@ -11,7 +11,7 @@ var BahagAppView = MoneiMitzvahAppView.extend({
 	initialize: function() {
 		this.mitzvahList = new BahagList();
 		MoneiMitzvahAppView.prototype.initialize.apply(this);
-		this.makeHeader().prependTo(this.$el.parent());
+		this.makeHeader().insertAfter(this.$el.parent().children().eq(0));
 	},
 
 	makeHeader: function() {
@@ -27,11 +27,14 @@ var BahagAppView = MoneiMitzvahAppView.extend({
 		if (this.currentCategory != category) {
 			this.currentCategory = category;
 
+			this.finishAdding();
+
 			this.makeHeader().appendTo(this.$el.parent());
 			this.$el.removeAttr("id");
 			this.$el.attr("class", "mitzvos");
 
 			this.makeNewList(this.$el.parent());
+			this.startAdding();
 		}
 
 		MoneiMitzvahAppView.prototype.addOne.call(this, view);
