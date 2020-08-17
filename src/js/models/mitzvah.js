@@ -32,7 +32,7 @@ var Mitzvah = Backbone.Model.extend({
 		var idStringLongEn = "";
 		for (var i = 0; i < ids.length; ++i) {
 			if (ids[i] != null) {
-				var linkPrefix = "<a href=\"" + Mitzvah.MoneiMitzvosUrl[i] + "/" + ids[i] + "\">";
+				var linkPrefix = "<a href=\"" + Mitzvah.MoneiMitzvosUrl[i] + "/" + ids[i] + "\" target=\"_blank\">";
 				idStringHe 		+= linkPrefix + Mitzvah.MoneiMitzvosHe[i] + "</a>, ";
 				idStringEn 		+= linkPrefix + Mitzvah.MoneiMitzvosEn[i] + "</a>, ";
 				idStringLongHe  += Mitzvah.MoneiMitzvosHe[i] + ": " + linkPrefix + "#" + numbers[i] + "</a><br>";

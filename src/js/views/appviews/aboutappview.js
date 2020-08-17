@@ -34,7 +34,7 @@ var AboutAppView = Backbone.View.extend({
 
 				<p>המטרה שיהיה הכל בעברית ובאנגילת.</p>
 
-				<p>רוב הטקסט באו מאתר <strong>Sefaria</strong> (לפרטים נוספים, ראה להלן במקורות).</p>
+				<p>רוב הטקסט באו מאתר <strong>Sefaria</strong> (לפרטים נוספים, ראה להלן במקורות). אנו מודים מאוד על מסירותם לטקסטים יהודיים, הופכים אותם לזמינים ברשת באופן מקוון לכולם.</p>
 
 				<h1>מקורות</h1>
 
@@ -153,6 +153,7 @@ var AboutAppView = Backbone.View.extend({
 
 	setStartEnglish: function() {
 		this.curLang = "en";
+		this.fillText();
 	}
 });
 

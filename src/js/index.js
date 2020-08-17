@@ -191,7 +191,16 @@ $(function() {
 			// @todo Display error page
 		}
 		else {
-			// @todo Display homepage
+			// @todo ???
+		}
+
+		// See if they have local storage ability to save language preference
+		if (firstTime && typeof(Storage) !== "undefined") {
+			var lang = localStorage.getItem("lang");
+			// If need to update language
+			if ($(languageButton).text() === "a" && lang === "en") {
+				updateNav();
+			}
 		}
 
 		// If starting with English
@@ -200,12 +209,12 @@ $(function() {
 		}
 	}
 
-	/**
-	 * Switch the display to either English or Hebrew, changing text alignment and direction and format
-	 */
-	function languageClick() {
+	function updateNav() {
+		var curLang;
+
 		// Was English
 		if ($(languageButton).text() === "א") {
+			curLang = "he";
 			$(languageButton).text("a");
 			$(aboutLink).text("אודות");
 
@@ -218,6 +227,7 @@ $(function() {
 		}
 		// Was Hebrew
 		else {
+			curLang = "en";
 			$(languageButton).text("א");
 			$(aboutLink).text("About");
 
@@ -228,6 +238,20 @@ $(function() {
 			});
 		}
 
+		return curLang;
+	}
+
+	/**
+	 * Switch the display to either English or Hebrew, changing text alignment and direction and format
+	 * @param fake default=false
+	 */
+	function languageClick() {
+		var curLang = updateNav();
+
+		if (typeof(Storage) !== "undefined") {
+			localStorage.setItem("lang", curLang);
+		}
+		
 		App.languageSwitch();
 	}
 
