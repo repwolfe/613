@@ -209,6 +209,7 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 		var newUrl = window.location.pathname.substr(0, window.location.pathname.lastIndexOf("/"));	// Start with removing the mitzvahId at the end
 		if (view == this.previouslySelected) {
 			this.previouslySelected = null;
+			this.$el.removeClass("mitzvahSelected");
 		}
 		else {
 			if (this.previouslySelected != null) {
@@ -219,6 +220,7 @@ var MoneiMitzvahAppView = Backbone.View.extend({
 				newUrl = window.location.pathname +  "/" + view.model.id;
 			}
 			this.previouslySelected = view;
+			this.$el.addClass("mitzvahSelected");
 		}
 		if (this.viewToSelect == null) {	// Don't change the URL if starting with selecting a mitzvah
 			window.history.replaceState(null, null, newUrl);

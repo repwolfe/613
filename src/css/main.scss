@@ -133,7 +133,7 @@ header {
 		float: left;
 	}
 
-	#title, #languageBtn {
+	#title, #aboutLink, #languageBtn {
 		@include set-font($heb-font, 32px, 1.25);
 		font-weight: 700;
 	}
@@ -154,13 +154,26 @@ header {
 
 	nav {
 		margin-top: 17px;
-		width: calc(100% - #{$banner-margin + $banner-title-width + $language-btn-size + $banner-margin});		// Fill remaining width
+		width: calc(100% - #{$banner-margin + $banner-title-width + 80px + $language-btn-size + $banner-margin});		// Fill remaining width
 		height: $banner-height / 2;		// Need to set this since child is absolute, need explicit height
 		line-height: $banner-height / 2;
 
 		#moneiMitzvosList {
 			@extend #navLinks;
 			transform: translateX(-$banner-margin);
+		}
+	}
+
+	#aboutLink {
+		position: absolute;
+		right: $banner-margin + $language-btn-size + 15px;
+		line-height: $banner-height-large;
+
+		font-size: 26px;
+		color: #fff;
+
+		a:link {
+			text-decoration: none;
 		}
 	}
 
@@ -197,6 +210,24 @@ header {
 	font-size: 18px;
 	text-align: justify;
 	text-align-last: center;
+}
+
+#about {;
+	margin: 0 $banner-margin * 2;
+
+	p {
+		margin: 0.5em 25px 1em 25px;
+	}
+
+	ul {
+		margin-top: 0.5em;
+		margin-bottom: 1em;
+		list-style-type: none;
+	}
+
+	li {
+		margin: 0 25px;
+	}
 }
 
 #container {
@@ -236,8 +267,13 @@ header {
 	}
 }
 
+.mitzvahSelected {
+	//margin: 0 30px !important;
+}
+
 #mitzvos {
-	margin: 0 auto;
+	margin: 0 0px;
+	transition: margin 0.5s ease;
 	padding: 0;
 	text-align: center;
 	list-style-type: none;

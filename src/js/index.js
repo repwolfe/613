@@ -4,6 +4,7 @@ var Backbone 		= require("backbone");
 var Mitzvah			= require("./models/mitzvah");
 var MoneiMitzvah   	= require("./models/moneimitzvah");
 var HomeAppView 	= require("./views/appviews/homeappview");
+var AboutAppView	= require("./views/appviews/aboutappview");
 var MitzvosAppView	= require("./views/appviews/mitzvosappview");
 var RambamAppView  	= require("./views/appviews/rambamappview");
 var RambanAppView  	= require("./views/appviews/rambanappview");
@@ -15,6 +16,7 @@ var CompareAppView 	= require("./views/appviews/compareappview");
 $(function() {
 
 	var languageButton = "#languageBtn";
+	var aboutLink = "#aboutLink a";
 	var moneiMitzvosList = "#moneiMitzvosList";
 
 	var App;
@@ -115,6 +117,9 @@ $(function() {
 				case "/":
 					App = new HomeAppView();
 					break;
+				case "/about":
+					App = new AboutAppView();
+					break;
 				case Mitzvos.url:
 					App = new MitzvosAppView();
 					break;
@@ -136,7 +141,7 @@ $(function() {
 				default:
 					validUrl = false;
 			}
-			if (validUrl && firstTime && theUrl !== "/") {
+			if (validUrl && firstTime && theUrl !== "/" && theUrl !== "/about") {
 				// Pretoggle the correct buttons
 				recentlySelected = urlPaths[1];
 				if ("/" + recentlySelected == Mitzvos.url) {
@@ -190,7 +195,7 @@ $(function() {
 		}
 
 		// If starting with English
-		if ($(languageButton).text() === "a") {
+		if ($(languageButton).text() === "א") {
 			App.setStartEnglish();
 		}
 	}
@@ -199,25 +204,27 @@ $(function() {
 	 * Switch the display to either English or Hebrew, changing text alignment and direction and format
 	 */
 	function languageClick() {
-		// Was Hebrew
+		// Was English
 		if ($(languageButton).text() === "א") {
 			$(languageButton).text("a");
-
-			$("body").attr("lang", "en");
-
-			$(moneiMitzvosList + " li").each(function(i) {
-				$(this).text(MoneiMitzvos[i].nameEn);
-			});
-
-		}
-		// Was English
-		else {
-			$(languageButton).text("א");
+			$(aboutLink).text("אודות");
 
 			$("body").attr("lang", "he");
 
 			$(moneiMitzvosList + " li").each(function(i) {
 				$(this).text(MoneiMitzvos[i].nameHe);
+			});
+
+		}
+		// Was Hebrew
+		else {
+			$(languageButton).text("א");
+			$(aboutLink).text("About");
+
+			$("body").attr("lang", "en");
+
+			$(moneiMitzvosList + " li").each(function(i) {
+				$(this).text(MoneiMitzvos[i].nameEn);
 			});
 		}
 

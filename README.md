@@ -41,7 +41,7 @@ We are extremely grateful for their dedication to Jewish texts, making them free
 The textual data for the website's database came from a variety of sources, and other resources were used to organize the information appropriately.
 The following is a listing of the various sources for the project:
 
- - **All Mitzvos**: We used the **Chinuch**'s titles as a basis, and the rest we came up with on our own
+ - **All Mitzvos**: We used the **Chinuch**'s titles as a basis, and the rest we came up with on our own.
  - **Verses**: We typed the Hebrew verses ourselves. For the English verses,
      we used **Sefaria**'s [*Metsudah Chumash*](https://www.sefaria.org/Genesis.1?ven=Metsudah_Chumash,_Metsudah_Publications,_2009&lang=bi&aliyot=0) translation.
  - **Rambam**: We used **Sefaria**'s text of [*Sefer HaMitzvos*](https://www.sefaria.org/Sefer_HaMitzvot?lang=bi) and 
