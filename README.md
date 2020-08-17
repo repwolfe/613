@@ -1,3 +1,5 @@
+[עברית](https://github.com/repwolfe/613/blob/master/README.he.md)
+
 # The Taryag Mitzvos התרי"ג מצות
 An online interface to explore and compare the listings of the 613 commandments.
 
