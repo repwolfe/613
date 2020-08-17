@@ -1,6 +1,6 @@
 <div dir="rtl">
  
-[English](https://github.com/repwolfe/613/edit/master/README.md)
+[English](https://github.com/repwolfe/613/blob/master/README.md)
 
 # התרי"ג מצות The Taryag Mitzvos
 ממשק מקוון לחיפוש ולהשוואה בין הרשימות של התרי"ג מצות.
@@ -43,7 +43,7 @@ https://thetaryag.com
    השתמשנו בדרך מצותיך [§ 1](https://hebrewbooks.org/pdfpager.aspx?req=30749&st=&pgnum=222) להבין הרשימה המדויקת של **רמב"ן**,
    וגם בהסיכום של ה**רמב"ן** בסוף ספר המצות.
  - **חינוך**: השתמשנו בטקסט [ספר החינוך](https://www.sefaria.org/Sefer_HaChinukh?lang=bi) של **Sefaria**.
-   סיווגנו המצות לפי מה שכבת המחבר בעצמו. לגבי הסדר הישן, השתמשנו ב[מהדורה מודקמת](https://hebrewbooks.org/pdfpager.aspx?req=40631&st=&pgnum=32&hilite=).
+   סיווגנו המצות לפי מה שכתב המחבר בעצמו. לגבי הסדר הישן, השתמשנו ב[מהדורה מוקדמת](https://hebrewbooks.org/pdfpager.aspx?req=40631&st=&pgnum=32&hilite=).
  - **סמ"ג**: השתמשנו בטקסט [ספר מצות גדול](https://www.sefaria.org/Sefer_Mitzvot_Gadol?lang=bi) של **Sefaria**.
    השתמשנו במהדורת מי קמא [[1]](https://tablet.otzar.org/book/book.php?book=22149&pagenum=17)
    [[2]](https://tablet.otzar.org/book/book.php?book=22147&pagenum=4)
