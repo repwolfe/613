@@ -66,7 +66,7 @@ Chinuch.whenAppliesHe = [
 Chinuch.whenAppliesEn = [
 	"in all times",
 	"when there is real Smicha",
-	"when Temple is built",
+	"when the Temple is built",
 	"when the Jubilee year applies"
 ];
 

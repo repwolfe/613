@@ -34,7 +34,8 @@ var AboutAppView = Backbone.View.extend({
 
 				<p>המטרה שיהיה הכל בעברית ובאנגילת.</p>
 
-				<p>רוב הטקסט באו מאתר <strong>Sefaria</strong> (לפרטים נוספים, ראה להלן במקורות). אנו מודים מאוד על מסירותם לטקסטים יהודיים, הופכים אותם לזמינים ברשת באופן מקוון לכולם.</p>
+				<p>רוב הטקסט באו מאתר <a href="https://www.sefaria.org/?home" target="_blank"><strong>Sefaria</strong></a> (לפרטים נוספים, ראה להלן במקורות).
+				אנו מודים מאוד על מסירותם לטקסטים יהודיים, הופכים אותם לזמינים ברשת באופן מקוון לכולם.</p>
 
 				<h1>מקורות</h1>
 
@@ -94,8 +95,8 @@ var AboutAppView = Backbone.View.extend({
 			<p>The goal is to have the entire project eventually be bilingual. Everything is in Hebrew by default, but the language can be changed to English.
 			Data that hasn't yet been translated will remain displayed in Hebrew.</p>
 
-			<p>Most of the textual data for this project came from Sefaria (for more details, see below). We are extremely grateful for their dedication
-			to Jewish texts, making them freely available online for all.</p>
+			<p>Most of the textual data for this project came from <a href="https://www.sefaria.org/?home" target="_blank"><strong>Sefaria</strong></a>
+			(for more details, see below). We are extremely grateful for their dedication to Jewish texts, making them freely available online for all.</p>
 
 			<h1>Sources</h1>
 

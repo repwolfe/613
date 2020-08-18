@@ -209,6 +209,9 @@ $(function() {
 		}
 	}
 
+	/**
+	 * Switch the display to either English or Hebrew, changing text alignment and direction and format
+	 */
 	function updateNav() {
 		var curLang;
 
@@ -241,10 +244,6 @@ $(function() {
 		return curLang;
 	}
 
-	/**
-	 * Switch the display to either English or Hebrew, changing text alignment and direction and format
-	 * @param fake default=false
-	 */
 	function languageClick() {
 		var curLang = updateNav();
 

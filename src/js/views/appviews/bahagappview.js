@@ -7,17 +7,50 @@ var BahagAppView = MoneiMitzvahAppView.extend({
 
 	pageDetailId: "bahag",
 	currentCategory: "0",
+	categoryTitlesHe: null,
+	categoryTitlesEn: null,
+	numInCategory: 0,
 
 	initialize: function() {
 		this.mitzvahList = new BahagList();
+
+		this.categoryTitlesHe = [...Bahag.categoriesHe];	// clone
+		this.categoryTitlesEn = [...Bahag.categoriesEn];
+
 		MoneiMitzvahAppView.prototype.initialize.apply(this);
 		this.makeHeader().insertAfter(this.$el.parent().children().eq(0));
 	},
 
+	destroy: function() {
+		MoneiMitzvahAppView.prototype.destroy.call(this);
+
+		// Go back to just one mitzvos <ul>
+		$(".mitzvahCatHeader").remove();
+		$(".mitzvos").remove();
+
+		this.$el.empty();
+	},
+
 	makeHeader: function() {
 		var header = $("<h1 class=\"mitzvahCatHeader\">");
-		header.html(Bahag.categoriesHe[this.currentCategory]);
+		header.html(this.categoryTitlesHe[this.currentCategory]);
 		return header;
+	},
+
+	addTotalToHeader: function() {
+		// Add how many in this category to the header
+		this.categoryTitlesHe[this.currentCategory] += " (" + this.numInCategory + ")";
+		this.categoryTitlesEn[this.currentCategory] += " (" + this.numInCategory + ")";
+		this.numInCategory = 0;
+
+		var headerTitle;
+		if (this.curLang === "he") {
+			headerTitle = this.categoryTitlesHe[this.currentCategory];
+		}
+		else {
+			headerTitle = this.categoryTitlesEn[this.currentCategory];
+		}
+		$(".mitzvahCatHeader").last().html(headerTitle);
 	},
 
 	addOne: function(mitzvah) {
@@ -25,6 +58,7 @@ var BahagAppView = MoneiMitzvahAppView.extend({
 
 		var category = mitzvah.get("categoryNum");
 		if (this.currentCategory != category) {
+			this.addTotalToHeader();
 			this.currentCategory = category;
 
 			this.finishAdding();
@@ -37,6 +71,7 @@ var BahagAppView = MoneiMitzvahAppView.extend({
 			this.startAdding();
 		}
 
+		++this.numInCategory;
 		MoneiMitzvahAppView.prototype.addOne.call(this, view);
 	},
 
@@ -50,20 +85,10 @@ var BahagAppView = MoneiMitzvahAppView.extend({
 		this.setElement(newList);
 	},
 
-	destroy: function() {
-		MoneiMitzvahAppView.prototype.destroy.call(this);
+	fetchComplete: function() {
+		this.addTotalToHeader();
 
-		// Go back to just one mitzvos <ul>
-		var parent = this.$el.parent();
-		parent.empty();
-
-		// But first readd the sorting list
-		var newList = $("<ul>");
-		newList.appendTo(parent);
-		newList.attr("id", "sorting");
-		newList.hide();
-
-		this.makeNewList(parent);
+		MoneiMitzvahAppView.prototype.fetchComplete.call(this);
 	},
 
 	languageSwitch: function () {
@@ -73,10 +98,10 @@ var BahagAppView = MoneiMitzvahAppView.extend({
 		var headers = $(".mitzvahCatHeader");
 		var headerTitles;
 		if (this.curLang === "he") {
-			headerTitles = Bahag.categoriesHe;
+			headerTitles = this.categoryTitlesHe;
 		}
 		else {
-			headerTitles = Bahag.categoriesEn;
+			headerTitles = this.categoryTitlesEn;
 		}
 
 		for (var i = 0; i < headers.length; ++i) {
