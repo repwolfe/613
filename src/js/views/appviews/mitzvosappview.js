@@ -26,19 +26,6 @@ var MitzvosAppView = MoneiMitzvahAppView.extend({
 		var view = new MitzvahView({model: mitzvah});
 		view.count =  ++this.count;
 		MoneiMitzvahAppView.prototype.addOne.call(this, view);
-	},
-
-	// @override
-	viewClicked: function(view) {
-		if (view == this.previouslySelected) {
-			this.previouslySelected = null;
-		}
-		else {
-			if (this.previouslySelected != null) {
-				this.previouslySelected.onClick({ fake_click: true });
-			}
-			this.previouslySelected = view;
-		}
 	}
 });
 
