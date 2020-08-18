@@ -12,10 +12,6 @@ var HomeMitzvahView = MoneiMitzvahView.extend({
 		MoneiMitzvahView.prototype.initialize.apply(this);
 	},
 
-	render: function() {
-		return MoneiMitzvahView.prototype.render.apply(this);
-	},
-
 	onClick: function() {
 
 	}

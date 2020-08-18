@@ -12,7 +12,13 @@ var Chinuch = MoneiMitzvahView.extend({
 	initialize: function() {
 		this.template = _.template($(this.templateHe).html());
 		MoneiMitzvahView.prototype.initialize.apply(this);
-	}
+	},
+
+	// @override
+	modelFetched: function() {
+		this.model.fillInDetailedProperties();
+		MoneiMitzvahView.prototype.modelFetched.apply(this);
+	},
 });
 
 module.exports = Chinuch;

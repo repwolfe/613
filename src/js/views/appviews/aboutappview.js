@@ -55,7 +55,7 @@ var AboutAppView = Backbone.View.extend({
 						<strong>Sefaria</strong>. סיווגנו המצות לפי מה שכתב המחבר בעצמו. לגבי הסדר הישן, השתמשנו
 						ב<a href="https://hebrewbooks.org/pdfpager.aspx?req=40631&st=&pgnum=32&hilite=" target="_blank">מהדורה מוקדמת</a>.</li>
 					<li><strong>סמ"ג</strong>: השתמשנו בטקסט <a href="https://www.sefaria.org/Sefer_Mitzvot_Gadol?lang=bi" target="_blank">ספר מצות גדול</a> של
-						<strong>Sefaria</strong>.השתמשנו במהדורת מי קמא
+						<strong>Sefaria</strong>. השתמשנו במהדורת מי קמא
 						<a href="https://tablet.otzar.org/book/book.php?book=22149&pagenum=17" target="_blank">[1]</a>
 						<a href="https://tablet.otzar.org/book/book.php?book=22147&pagenum=4" target="_blank">[2]</a>
 						להבין איזה מצוה של ה<strong>רמב"ם</strong> התיחס ה<strong>סמ"ג</strong>.
@@ -65,7 +65,7 @@ var AboutAppView = Backbone.View.extend({
 						<a href="https://tablet.otzar.org/book/book.php?book=147045&pagenum=34" target="_blank">הלכות גדולות</a>
 						מהדורת מכון ירושלים בשביל הטקסט וחלוקה של המצות. חלוקה שלהם חילקו
 						<a href="https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%A8%D7%94%D7%9D_%D7%A9%D7%9E%D7%A2%D7%95%D7%9F_%D7%98%D7%A8%D7%95%D7%99%D7%91"
-						target="_blank">הרב אברהם שמעון טריו</a>, שאת הטקסט,
+						target="_blank">הרב אברהם שמעון טריוב</a>, שאת הטקסט,
 						החלוקה והערות שלו ניתן לראות גם <a href="https://hebrewbooks.org/pdfpager.aspx?req=14119&st=&pgnum=6" target="_blank">כאן</a>.</li>
 				</ul>
 
@@ -89,7 +89,7 @@ var AboutAppView = Backbone.View.extend({
 			and where they differ.</p>
 
 			<p>Finally, because of the differing opinions as to what makes the list, there ends up being more than 613 unique mitzvos.
-			The entire accumulated list can be viewed, and each mitzvah (command) displays who counts it in their list. A link is provided to quickly
+			The entire accumulated list can be viewed, and each <em>mitzvah</em> (command) displays who counts it in their list. A link is provided to quickly
 			navigate to that individual's list, to see how they formulate it.</p>
 
 			<p>The goal is to have the entire project eventually be bilingual. Everything is in Hebrew by default, but the language can be changed to English.

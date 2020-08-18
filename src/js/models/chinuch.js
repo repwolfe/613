@@ -20,9 +20,6 @@ var Chinuch = Backbone.Model.extend({
 	},
 
 	fillInProperties: function() {
-		//var originalText = this.get("originalText");
-		//originalText = originalText.replace(new RegExp("<br>", 'g'), "\n");
-		//this.set("originalText", originalText);
 
 		var whereApplies = parseInt(this.get("whereApplies"));
 		this.set("whereAppliesHe", Chinuch.whereAppliesHe[whereApplies]);
@@ -39,6 +36,16 @@ var Chinuch = Backbone.Model.extend({
 		var punishment = parseInt(this.get("punishment"));
 		this.set("punishmentHe", Chinuch.punishmentHe[punishment]);
 		this.set("punishmentEn", Chinuch.punishmentEn[punishment]);
+	},
+
+	fillInDetailedProperties() {
+		// Add paragraphs when the DB just has a newline
+		var properties = ["description", "shoresh", "dinim", "whoWhereWhenApplies"];
+		for (var property in properties) {
+			var propertyText = this.get(properties[property]);
+			propertyText = propertyText.replace(new RegExp("\n", 'g'), "</p><p>");
+			this.set(properties[property], propertyText);
+		}
 	}
 });
 
