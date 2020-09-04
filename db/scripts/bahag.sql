@@ -235,7 +235,7 @@ insert into bahag values (176, 486, 6, 105, 'לא תלין פעולת שכיר')
 insert into bahag values (177, 565, 6, 106, 'לא תקלל חרש');
 insert into bahag values (178, 547, 6, 107, 'לא תתן מכשול');
 insert into bahag values (179, 521, 6, 108, 'לא תעשו עול במשפט');
-insert into bahag values (180, 425, 6, 109, 'לא תשא פני דל');
+insert into bahag values (180, 932, 6, 109, 'לא תשא פני דל');
 insert into bahag values (181, 523, 6, 110, 'ולא תהדר פני גדול');
 insert into bahag values (182, 549, 6, 111, 'לא תלך רכיל');
 insert into bahag values (183, 545, 6, 112, 'לא תעמוד על דם רעך');
@@ -695,6 +695,7 @@ insert into bahagNotes values (156, null, 'The Rambam used this for the prohibit
 insert into bahagNotes values (158, null, 'The Rambam used this for the prohibition of eating tevel (listed as Onshim #61). Rav Troib suggests it''s a new prohibition');
 insert into bahagNotes values (159, null, 'Treifah was already counted above (#113)');
 insert into bahagNotes values (170, null, 'Rav Troib cross references this as Rambam''s #144, but it should be #244');
+insert into bahagNotes values (180, null, 'Rav Troib cross references this as Rambam''s #177, but it should be #277. In fact, the Bahag counts this mitzvah twice. Rav Troib says to see his notes #6.');
 insert into bahagNotes values (183, null, 'For some reason Rav Troib at the end of his notes says the Bahag left this out');
 insert into bahagNotes values (192, null, 'The Rambam uses this for the prohibition of Ben Sorer UMoreh (listed as Onshim #18). Rav Troib suggests it''s for the other prohibitions included');
 insert into bahagNotes values (199, null, 'See Rav Troib''s note #66 and #103. We''re assuming the Bahag is the same as the Semag in this matter');

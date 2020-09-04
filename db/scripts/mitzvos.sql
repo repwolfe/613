@@ -40,7 +40,7 @@ insert into mitzvos values (17, 'מצות לכתוב כל אחד מישראל ס
 insert into mitzvos values (18, 'מצות על המלך לכתוב ספר תורה אחד יתר על שאר בני ישראל', 'For a King to write one more sefer Torah than the rest of the Jews', 'A');
 insert into mitzvos values (19, 'מצות ברכת המזון', 'Grace after Meals', 'A');
 insert into mitzvos values (20, 'מצות בניין בית הבחירה', 'Building the Temple', 'A');
-insert into mitzvos values (21, 'מצות היראה מן המקדש', 'Fearing the Temple', 'A');
+insert into mitzvos values (21, 'מצות היראה מן המקדש', 'Revering the Temple', 'A');
 insert into mitzvos values (22, 'מצות שמירת המקדש', 'Guarding the Temple', 'A');
 insert into mitzvos values (23, 'מצות עבודת הלוי במקדש', 'Service of the Leviim in the Temple', 'A');
 insert into mitzvos values (24, 'מצות קדוש ידים ורגלים בשעת עבודה', 'Washing the hands and feet for the Temple service', 'A');
@@ -365,7 +365,7 @@ insert into mitzvos values (341, 'שלא נזרוק דם בעל מום על המ
 insert into mitzvos values (342, 'שלא נקטיר אימורי בעלי מומין', 'Not to burn the limbs of a blemished animal', 'L');
 insert into mitzvos values (343, 'שלא להקריב קרבן בעל מום עובר', 'Not to sacrifice an animal with a temporary blemish', 'L');
 insert into mitzvos values (344, 'שלא להקריב קרבן בעל מום מיד הגוים', 'Not to offer a blemished sacrifice from a non-Jew', 'L');
-insert into mitzvos values (345, 'שלא נתן מום בקדשים', 'Not to place a blemish on a sanctified animal', 'L');
+insert into mitzvos values (345, 'שלא ליתן מום בקדשים', 'Not to place a blemish on a sanctified animal', 'L');
 insert into mitzvos values (346, 'שלא להקריב שאור או דבש', 'Not to offer leaven or honey', 'L');
 insert into mitzvos values (347, 'שלא להקריב קרבן בלא מלח', 'Not to bring an offering without salt', 'L');
 insert into mitzvos values (348, 'שלא להקריב אתנן זונה ומחיר כלב', 'Not to offer a harlot''s wage or the exchange for a dog', 'L');
@@ -788,6 +788,7 @@ insert into mitzvos values (754, 'שלא ליטול כל תפארת זיתיך',
 insert into mitzvos values (755, 'שלא יהיה בביתך איפה גדולה או קטנה', 'Not to have an inaccurate dry measure in your house', 'L');
 insert into mitzvos values (756, 'שלא להניף על המזבח ברזל', 'Not to use metal in constructing the altar', 'L');
 insert into mitzvos values (757, 'שלא תסור מכל הדברים שציווה הקב"ה', 'Not to sway from all that Hashem commanded', 'L');
+-- Another unique mitzvah forgot to add for the Bahag is below 932
 
 insert into mitzvos values (758, 'מצות נתינת עורות קדשים לכהנים', 'To give the hides of offerings to Kohanim', 'A');
 insert into mitzvos values (759, 'מצות נתינת המורם תרומה מתודה לכהנים', 'To give the separated limbs of the Todah offering to the Kohanim', 'A');
@@ -969,6 +970,9 @@ insert into mitzvos values (929, 'מצות תשלום חמשה דברים', 'Pay
 
 insert into mitzvos values (930, 'שלא יריח בשמים שעל אשת איש', 'Not to smell the perfume of a married woman', 'L');
 insert into mitzvos values (931, 'שלא ימצא בנו מעביר בנינו באש קסם קסמים מעונן ומנחש ומכשף וחבר חבר ושאל אוב ודרש אל התים', 'Not to be found amongst us those who pass their children through fire, perform charms, divine the future, recite incantations, seek the Ov or Yidoni, or communicate with the dead', 'L');
+insert into mitzvos values (932, 'שלא לשאת פני דל', 'Not to favor a poor person un judgment', 'L');	-- Really belongs with Bahag's unique mitzvos
+insert into mitzvos values (933, 'שלא להנות מתקרובת עבודה זרה', 'Not to benefit from something offered to an idol', 'L');
+insert into mitzvos values (934, 'שלא יעשה מדרגות למזבח', 'Not to build steps to go up the Altar', 'L');
 
 -- Zohar HaRakiyah's unique mitzvos
 insert into mitzvos values (970, 'מצות תוספת שביתה', 'To accept Shabbos and Yom Tov early', 'A');
@@ -994,6 +998,8 @@ insert into mitzvos values (989, 'מצות ייבום בימבה ולא גם ע�
 insert into mitzvos values (990, 'מצות הנחת שדה ברשות לוקח שני שנים', 'To leave a land in the posession of the purchaser two years', 'A');
 -- Mitzvah #625 above is written by the Ramban but Derech Mitzvosecha understands the Ramban doesn't actually count it. The Zohar HaRakiah does, so we added it above.
 insert into mitzvos values (991, 'מצות שחיטת קדשים בעזרה ולא חולין', 'To slaughter sanctified animals in the Temple and not unsanctified ones', 'A');
+
+insert into mitzvos values (992, 'שלא להתפיס תמימים לבד הבית', 'Not to give unblemished animals sanctity of the Temple treasury', 'L');
 
 /**
 200 Aseh on Yechidim
