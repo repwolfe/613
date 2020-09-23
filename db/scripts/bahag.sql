@@ -49,7 +49,7 @@ insert into bahag values (9,  255, 0, 9,  'והנותן מזרעו למולך');
 insert into bahag values (10, 256, 0, 10, 'ובעל אוב');
 insert into bahag values (11, 257, 0, 11, 'וידעוני');
 insert into bahag values (12, 568, 0, 12, 'והמחלל את השבת');
-insert into bahag values (13, 566, 0, 13, 'והמבקלל אביו ואמו');
+insert into bahag values (13, 566, 0, 13, 'והמקלל אביו ואמו');
 insert into bahag values (14, 695, 0, 14, 'והבא על נערה מאורשה');
 insert into bahag values (15, 264, 0, 15, 'והמסית');
 insert into bahag values (16, 263, 0, 16, 'והמדיח');

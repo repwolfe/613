@@ -762,7 +762,7 @@ insert into mitzvos values (728, 'שלא להקדיש בעל מום', ' Not to s
 insert into mitzvos values (729, 'שלא להקדיש בעל מום שבפנים או אינו בגלוי', 'Not to sanctify an animal with an internal or hidden blemish', 'L');
 insert into mitzvos values (730, 'שלא ישתה נזיר משרת ענבים', 'For a Nazir not to drink something soaked in grapes', 'L');
 insert into mitzvos values (731, 'שלא להחניף', 'Not to flatter', 'L');
-insert into mitzvos values (732, 'שלא יסום עין היחיד על ה שבע אומות', 'For an individual not to pity the Seven Nations', 'L');
+insert into mitzvos values (732, 'שלא יסום עין היחיד עלה שבע אומות', 'For an individual not to pity the Seven Nations', 'L');
 insert into mitzvos values (733, 'שלא יאמר בצדקתי הביאני ה'' לרשת את-הארץ', 'Don''t say because of my righteousness Hashem bestowed this land', 'L');
 insert into mitzvos values (734, 'שלא להשקות ערפכם עוד', 'To no longer stiffen your neck', 'L');
 insert into mitzvos values (735, 'שלא להקריב חובות על במת יחיד', 'Not to bring obligation offerings on a personal altar', 'L');
@@ -973,6 +973,7 @@ insert into mitzvos values (931, 'שלא ימצא בנו מעביר בנינו �
 insert into mitzvos values (932, 'שלא לשאת פני דל', 'Not to favor a poor person un judgment', 'L');	-- Really belongs with Bahag's unique mitzvos
 insert into mitzvos values (933, 'שלא להנות מתקרובת עבודה זרה', 'Not to benefit from something offered to an idol', 'L');
 insert into mitzvos values (934, 'שלא יעשה מדרגות למזבח', 'Not to build steps to go up the Altar', 'L');
+insert into mitzvos values (935, 'שלא ילין אימורי שאר הקרבנות בלילה', 'Not to leave over the parts of offerings overnight', 'L');
 
 -- Zohar HaRakiyah's unique mitzvos
 insert into mitzvos values (970, 'מצות תוספת שביתה', 'To accept Shabbos and Yom Tov early', 'A');
@@ -992,14 +993,16 @@ insert into mitzvos values (983, 'מצות קדוש בלע חטאת', 'For anyth
 insert into mitzvos values (984, 'מצות אכילת תרומה', 'For a Kohen to eat Terumah', 'A');
 insert into mitzvos values (985, 'מצות פריעת בעל חוב', 'To pay off a debt', 'A');
 insert into mitzvos values (986, 'מצות קידוש גוף הנזיר', 'For a Nazir to sanctify his body', 'A');
-insert into mitzvos values (987, 'מצות דין ערי חומה ובתי החצרים', 'The law of returning property in a walled city or a non-walled city', 'A');
-insert into mitzvos values (988, 'מצות עשה שבנדה', 'The Positive Mitzvah for a Niddah', 'A');
-insert into mitzvos values (989, 'מצות ייבום בימבה ולא גם על צרתה', 'To have Yibum with ones Yevama and not her co-wife as well', 'A');
-insert into mitzvos values (990, 'מצות הנחת שדה ברשות לוקח שני שנים', 'To leave a land in the posession of the purchaser two years', 'A');
+insert into mitzvos values (987, 'מצות עשה שבנדה', 'The Positive Mitzvah for a Niddah', 'A');
+insert into mitzvos values (988, 'מצות ייבום בימבה ולא גם על צרתה', 'To have Yibum with one''s Yevama and not her co-wife as well', 'A');
+insert into mitzvos values (989, 'מצות הנחת שדה ברשות לוקח שני שנים', 'To leave a land in the posession of the purchaser two years', 'A');
 -- Mitzvah #625 above is written by the Ramban but Derech Mitzvosecha understands the Ramban doesn't actually count it. The Zohar HaRakiah does, so we added it above.
-insert into mitzvos values (991, 'מצות שחיטת קדשים בעזרה ולא חולין', 'To slaughter sanctified animals in the Temple and not unsanctified ones', 'A');
+insert into mitzvos values (990, 'מצות שחיטת קדשים בעזרה ולא חולין', 'To slaughter sanctified animals in the Temple and not unsanctified ones', 'A');
 
-insert into mitzvos values (992, 'שלא להתפיס תמימים לבד הבית', 'Not to give unblemished animals sanctity of the Temple treasury', 'L');
+insert into mitzvos values (991, 'שלא להתפיס תמימים לבד הבית', 'Not to give unblemished animals sanctity of the Temple treasury', 'L');
+insert into mitzvos values (992, 'שלא לאכול בדרך זולל שמביא לידי מיתה', 'Not to eat like a glutton in a way that will lead to the death penalty', 'L');
+insert into mitzvos values (993, 'שלא לאכול דם איברים', 'Not to eat the blood found in an animal''s limbs', 'L');
+insert into mitzvos values (994, 'שלא להרבות עשיר למחצית השקל', 'For a wealthy person not to donate more than a half shekel', 'L');
 
 /**
 200 Aseh on Yechidim

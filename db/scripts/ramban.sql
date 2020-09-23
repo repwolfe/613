@@ -406,8 +406,8 @@ insert into ramban (_id, mitzvahId, mitzvahNumber) values (387, 384, 387);
 insert into ramban (_id, mitzvahId, mitzvahNumber) values (388, 385, 388);
 insert into ramban (_id, mitzvahId, mitzvahNumber) values (389, 386, 389);
 insert into ramban (_id, mitzvahId, mitzvahNumber) values (390, 387, 390);
-insert into ramban (_id, mitzvahId, mitzvahNumber) values (391, 388, 391);	-- Cholek on #141, 142
-insert into ramban (_id, mitzvahId, mitzvahNumber) values (392, 391, 392);
+insert into ramban (_id, mitzvahId, mitzvahNumber) values (391, 388, 391);
+insert into ramban (_id, mitzvahId, mitzvahNumber) values (392, 389, 392);	-- Cholek on #142, 143
 insert into ramban (_id, mitzvahId, mitzvahNumber) values (393, 392, 393);
 insert into ramban (_id, mitzvahId, mitzvahNumber) values (394, 393, 394);
 insert into ramban (_id, mitzvahId, mitzvahNumber) values (395, 394, 395);
