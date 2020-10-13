@@ -7,7 +7,7 @@ https://thetaryag.com
 
 ## Overview
 Jewish tradition teaches us (for example, see *Makkos* 23b) that there are 613 commandments in the *Torah* (the Five Books of Moses), known as the *Taryag Mitzvos*.
-A cursory glance at the *Torah* will yield many more than 613 commandents. Therefore, there must be some sort of criteria to determine what makes the list of *Taryag Mitzvos*.
+A cursory glance at the *Torah* will yield many more than 613 commandments. Therefore, there must be some sort of criteria to determine what makes the list of *Taryag Mitzvos*.
 However, the Jewish Sages never specified which commandments written in the *Torah* made the list. The *Rishonim* (the Medieval Rabbinic scholars)
 argued about the listing of the commandments, and it seems that all these opinions were never collected in an organized way.
 The purpose of this project is to present most of the opinions in a visually pleasing manner. The *mitzvos* can be viewed, explored, and sorted,
