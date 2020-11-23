@@ -61,3 +61,15 @@ The following is a listing of the various sources for the project:
      for the text and division of the *mitzvos*. Their division was determined by
      [*Rav Avraham Shimon Traube*](https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%A8%D7%94%D7%9D_%D7%A9%D7%9E%D7%A2%D7%95%D7%9F_%D7%98%D7%A8%D7%95%D7%99%D7%91),
      whose text, division, and notes can also be viewed [here](https://hebrewbooks.org/pdfpager.aspx?req=14119&st=&pgnum=6).
+
+## TODO
+The following is a non-exhaustive list of what still needs to be completed:
+
+ - Include a visual listing of the following opinions on the Taryag Mitzvos: **Semak**, **Sefer Charedim**, **Rav Saadiah Gaon**, **Sefer Yereim**, **Ri Albargaloni**, **Ata Hinchalta**, **Rav Eliyahu HaZaken**, and perhaps **Sefer HaMitzvos HaKatzar** by the **Chofetz Chaim**.
+ - The ability to sort the mitzvos according to the *Aseres HaDibros*. The plan is to implement this for the listings of **Rav Saadiah Gaon**, as he already categorized them this way (although the two lists aren't exactly the same, which will create challenges), **Semag** (**Ma'amar HaSeichel** sorts his listing this way), and perhaps **Ramban** (who sorts some of the mitzvos this way). Also worth investigating is **Keser Torah** by **Rav Dovid Vital**.
+ - Make the website mobile friendly.
+ - Fix some efficiency bugs as the website is sometimes slow, and some other visual bugs.
+ - Add an efficient search bar.
+ 
+ ## Help support us
+ There's a lot of work still left to do, and unfortunately we can't do it so quickly without funding. If you would like to help support us to accomplish our goals, please be in touch via email: contact@thetaryag.com. Sponsorship opportunities are also available. We look forward to hearing from you.
