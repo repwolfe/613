@@ -1,0 +1,23 @@
+$aseh-color: #96e864; //#82e346;
+$lo-saaseh-color: #e88b64; //#e37546;
+
+.mitzvah {
+	display: inline-block;
+	box-shadow: 2px 2px 5px #aaa;
+	overflow-y: auto;
+	vertical-align: middle;
+	width: 140px;
+	height: 140px;
+	padding: 10px;
+	margin: 5px;
+	cursor: pointer;
+	transition: width 0.5s, height 0.5s ease;
+}
+
+.aseh {
+	background: $aseh-color;
+}
+
+.loSaaseh {
+	background: $lo-saaseh-color;
+}
