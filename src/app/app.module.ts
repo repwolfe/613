@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MitzvahComponent } from './mitzvos/mitzvah.component';
@@ -16,7 +17,7 @@ import { RambamListComponent } from './mitzvos/rambam/rambam-list/rambam-list.co
 		RambamListComponent
 	],
 	imports: [
-		BrowserModule
+		BrowserModule, HttpClientModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
