@@ -1,6 +1,9 @@
 <div id="mitzvos">
-	<app-rambam
-		*ngFor="let rambam of rambams"
-		[model]="rambam">
-	</app-rambam>
+	<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+	<div *ngIf="!isLoading">
+		<app-rambam
+			*ngFor="let rambam of rambams"
+			[model]="rambam">
+		</app-rambam>
+	</div>
 </div>

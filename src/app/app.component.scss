@@ -12,6 +12,10 @@ $font-weight: 400;
 // Language specific styling (Hebrew/English)
 app-root:lang(he) {
 	text-align: right;
+	.mitzvah {
+		text-align: right;
+	}
+
 	@include set-font($heb-font, 16px, 1.25);
 
 	#moneiMitzvosList, #pageDetailsText, #cont, #compare {
@@ -21,6 +25,10 @@ app-root:lang(he) {
 
 app-root:lang(en) {
 	text-align: left;
+	.mitzvah {
+		text-align: left;
+	}
+
 	@include set-font($eng-font, 13px, 1.25);
 
 	#moneiMitzvosList, #pageDetailsText, #cont, #compare {

@@ -1,6 +1,6 @@
 {
     "/db/*": {
-        "target": "http://localhost:80",
+        "target": "https://www.thetaryag.com",
         "changeOrigin": true,
         "secure": false,
         "logLevel": "debug"

@@ -1,5 +1,6 @@
 import { HttpService } from './../../http.service';
 import { Injectable } from '@angular/core';
+
 import { Subject, Observable } from 'rxjs';
 
 import { RambamModel } from './rambam.model';
@@ -17,9 +18,12 @@ export class RambamService {
 	 */
 	getRambams() {
 		if (this.rambams.length == 0) {
-			this.http.getMitzvos(this.rambamUrl).subscribe(mitzvos => {
-				this.rambams = mitzvos as RambamModel[];
+			this.http.getMitzvos<RambamModel[]>(this.rambamUrl)
+			.subscribe(mitzvos => {
+				this.rambams = mitzvos;
 				this.listChanged.next(this.rambams.slice());
+			}, error => {
+				console.log(error);
 			});
 		}
 		return this.rambams.slice();

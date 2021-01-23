@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { MitzvahComponent } from './mitzvos/mitzvah.component';
 import { MitzvosListComponent } from './mitzvos/mitzvos-list/mitzvos-list.component';
 import { RambamComponent } from './mitzvos/rambam/rambam.component';
@@ -11,6 +12,7 @@ import { RambamListComponent } from './mitzvos/rambam/rambam-list/rambam-list.co
 @NgModule({
 	declarations: [
 		AppComponent,
+		LoadingSpinnerComponent,
 		MitzvahComponent,
 		MitzvosListComponent,
 		RambamComponent,

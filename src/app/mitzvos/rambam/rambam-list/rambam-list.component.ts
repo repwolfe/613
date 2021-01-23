@@ -8,12 +8,13 @@ import { RambamService } from '../rambam.service';
 @Component({
   selector: 'app-rambam-list',
   templateUrl: './rambam-list.component.html',
-  styleUrls: ['./rambam-list.component.scss'],
+  styleUrls: ['../../mitzvos-list/mitzvos-list.component.scss', './rambam-list.component.scss'],
   providers: [RambamService]
 })
 export class RambamListComponent extends MitzvosListComponent implements OnDestroy {
 
 	rambams: RambamModel[];
+	isLoading = false;
 	listSubscription: Subscription;
 
 	constructor(private rambamService: RambamService) { super() }
@@ -21,8 +22,13 @@ export class RambamListComponent extends MitzvosListComponent implements OnDestr
 	ngOnInit(): void {
 		this.listSubscription = this.rambamService.listChanged.subscribe(rambams => {
 			this.rambams = rambams;
+			this.isLoading = false;
 		});
+		this.isLoading = true;
 		this.rambams = this.rambamService.getRambams();
+		if (this.rambams.length != 0) {
+			this.isLoading = false;
+		}
 	}
 
 	ngOnDestroy() {

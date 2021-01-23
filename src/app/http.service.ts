@@ -8,11 +8,11 @@ export class HttpService {
 
     constructor(private http: HttpClient) {}
 
-    getMitzvah(moneiMitzvah: string, id: string) {
-        return this.http.get<MitzvahModel>(this.apiUrl + moneiMitzvah + '/' + id);
+    getMitzvah<T>(moneiMitzvah: string, id: string) {
+        return this.http.get<T>(this.apiUrl + moneiMitzvah + '/' + id);
     }
 
-    getMitzvos(moneiMitzvah: string) {
-        return this.http.get<MitzvahModel[]>(this.apiUrl + moneiMitzvah);
+    getMitzvos<T>(moneiMitzvah: string) {
+        return this.http.get<T>(this.apiUrl + moneiMitzvah);
     }
 }
