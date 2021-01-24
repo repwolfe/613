@@ -1,0 +1,12 @@
+<div
+	class="mitzvah hebrew"
+	[ngClass]="{
+		aseh: model.asehOrLoSaseh === 'A',
+		loSaaseh: model.asehOrLoSaseh === 'L',
+		selected: selected
+	}"
+	(click)="onClick()">
+	&rlm;<b>{{ model.mitzvahNumber }}</b><br>
+	<b>{{ model.mitzvahTitle }}</b><br>
+	{{ model.mitzvahName }}<br>
+</div>

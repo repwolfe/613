@@ -1,4 +1,3 @@
-import { MitzvahModel } from './mitzvos/mitzvah.model';
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 

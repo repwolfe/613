@@ -1,0 +1,11 @@
+<div id="mitzvos">
+	<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+	<div *ngIf="!isLoading">
+		<app-bahag
+			#bahagComponent
+			*ngFor="let bahag of mitzvahList"
+			[model]="bahag"
+			(mitzvahSelected)="onMitzvahSelected(bahagComponent)">
+		</app-bahag>
+	</div>
+</div>

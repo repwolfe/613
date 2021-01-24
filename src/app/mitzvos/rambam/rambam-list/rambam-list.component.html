@@ -3,7 +3,7 @@
 	<div *ngIf="!isLoading">
 		<app-rambam
 			#rambamComponent
-			*ngFor="let rambam of rambams"
+			*ngFor="let rambam of mitzvahList"
 			[model]="rambam"
 			(mitzvahSelected)="onMitzvahSelected(rambamComponent)">
 		</app-rambam>
