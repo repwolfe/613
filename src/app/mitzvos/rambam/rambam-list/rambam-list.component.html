@@ -2,8 +2,10 @@
 	<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
 	<div *ngIf="!isLoading">
 		<app-rambam
+			#rambamComponent
 			*ngFor="let rambam of rambams"
-			[model]="rambam">
+			[model]="rambam"
+			(mitzvahSelected)="onMitzvahSelected(rambamComponent)">
 		</app-rambam>
 	</div>
 </div>
