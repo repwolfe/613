@@ -8,10 +8,8 @@ import { RambamModel } from './rambam.model';
 	templateUrl: './rambam.component.html',
 	styleUrls: ['../mitzvah.component.scss', './rambam.component.scss']		// inherit super's scss
 })
-export class RambamComponent extends MitzvahComponent {
-
-	@Input() model: RambamModel;
-
+export class RambamComponent extends MitzvahComponent<RambamModel> {
+	
 	constructor() { super() }
 
 	ngOnInit(): void {

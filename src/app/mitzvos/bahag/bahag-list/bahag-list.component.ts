@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { MitzvosListComponent } from './../../mitzvos-list/mitzvos-list.component';
 import { BahagModel } from '../bahag.model';
@@ -12,5 +13,9 @@ import { BahagService } from '../bahag.service';
 })
 export class BahagListComponent extends MitzvosListComponent<BahagModel> {
 
-    constructor(private bahagService: BahagService) { super(bahagService) }
+    constructor(private bahagService: BahagService,
+                protected router: Router,
+                protected route: ActivatedRoute) {
+        super(bahagService, router, route);
+    }
 }

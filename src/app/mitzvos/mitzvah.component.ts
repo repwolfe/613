@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 import { MitzvahModel } from './mitzvah.model';
 
@@ -7,14 +7,20 @@ import { MitzvahModel } from './mitzvah.model';
 	templateUrl: './mitzvah.component.html',
 	styleUrls: ['./mitzvah.component.scss']
 })
-export class MitzvahComponent implements OnInit {
+export class MitzvahComponent<T extends MitzvahModel> implements OnInit {
 
+	@Input() model: T;
+	@Output() mitzvahSelected = new EventEmitter<MitzvahComponent<T>>();
+	
 	selected = false;
-	@Output() mitzvahSelected = new EventEmitter<MitzvahComponent>();
 
 	constructor() { }
 
 	ngOnInit(): void {
+	}
+
+	get id() {
+		return this.model._id;
 	}
 
 	onClick() {

@@ -1,5 +1,5 @@
 export interface MitzvahModel {
-	id: number,
+	_id: number,
 	mitzvahName: string,
 	mitzvahNameEn: string,
 	asehOrLoSaseh: 'A' | 'L'

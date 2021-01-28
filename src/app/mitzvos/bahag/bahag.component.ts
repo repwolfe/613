@@ -8,6 +8,6 @@ import { BahagModel } from './bahag.model';
     templateUrl: './bahag.component.html',
     styleUrls: ['../mitzvah.component.scss',  './bahag.component.scss']
 })
-export class BahagComponent extends MitzvahComponent {
-    @Input() model: BahagModel;
+export class BahagComponent extends MitzvahComponent<BahagModel> {
+    
 }

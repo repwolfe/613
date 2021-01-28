@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { MitzvosListComponent } from '../../mitzvos-list/mitzvos-list.component';
 import { RambamModel } from '../rambam.model';
@@ -12,5 +13,9 @@ import { RambamService } from '../rambam.service';
 })
 export class RambamListComponent extends MitzvosListComponent<RambamModel> {
 
-	constructor(private rambamService: RambamService) { super(rambamService) }
+	constructor(private rambamService: RambamService,
+				protected router: Router,
+				protected route: ActivatedRoute) {
+		super(rambamService, router, route);
+	}
 }
