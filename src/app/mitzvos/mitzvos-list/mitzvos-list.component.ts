@@ -16,13 +16,7 @@ export class MitzvosListComponent<T extends MitzvahModel> implements OnInit, OnD
 	isLoading = false;
 	
 	protected listSubscription: Subscription;
-	protected mitzvahList: T[];
-
-	protected mitzvahDetailSub: Subscription;
-	protected mitzvahDetail: T = null;
-
-	protected previouslySelected: MitzvahComponent<T>;
-	protected selectedId: number = null;
+	private _mitzvahList: readonly T[];
 
 	constructor(protected mitzvosService: MitzvosService<T>,
 				protected router: Router,
@@ -30,45 +24,46 @@ export class MitzvosListComponent<T extends MitzvahModel> implements OnInit, OnD
 
 	ngOnInit(): void {
 		this.route.paramMap.subscribe(params => {
-			this.selectedId = +params.get('id');
-			console.log('Mitzvah id: ' + this.selectedId);
-			this.mitzvahDetail = this.mitzvosService.getMitzvah(this.selectedId);
+			// Preselect a mitzvah
+			const selectedId = params.get('id');
+			if (selectedId !== '') {	// Only if actually selected
+				this.mitzvosService.selectMitzvah(+selectedId);
+			}
 		});
 
 		this.listSubscription = this.mitzvosService.listChanged.subscribe(mitzvos => {
-			this.mitzvahList = mitzvos;
+			this._mitzvahList = mitzvos;
 			this.isLoading = false;
 		});
 
-		this.mitzvahDetailSub = this.mitzvosService.mitzvahLoaded.subscribe(mitzvah => {
-			this.mitzvahDetail = mitzvah;
-			console.log(mitzvah);
-		});
-
 		this.isLoading = true;
-		this.mitzvahList = this.mitzvosService.getMitzvos();
-		if (this.mitzvahList.length != 0) {
+		this._mitzvahList = this.mitzvosService.getMitzvos();
+		if (this._mitzvahList.length != 0) {
 			this.isLoading = false;
 		}
 	}
 
 	ngOnDestroy() {
 		this.listSubscription.unsubscribe();
-		this.mitzvahDetailSub.unsubscribe();
+	}
+
+	protected get mitzvahList() {
+		// mitzvahList could contain null entries, as it,s sorted by mitzvahIds
+		return this.filterNullMitzvos();
+	}
+	
+	private filterNullMitzvos() : T[] {
+		return this._mitzvahList.filter((x): x is T => x != null);
 	}
 
 	onMitzvahSelected(mitzvah: MitzvahComponent<T>) {
-		if (this.previouslySelected === mitzvah) {
-			this.previouslySelected = null;
+		if (this.mitzvosService.selectedId === mitzvah.id) {
+			// Deselect
+			this.mitzvosService.selectMitzvah(mitzvah.id);
 			this.router.navigate([this.mitzvosService.mitzvahUrl]);
 		}
 		else {
-			if (this.previouslySelected != null) {
-				this.previouslySelected.deselect();
-			}
-			this.previouslySelected = mitzvah;
-			this.selectedId = mitzvah.id;
-			this.router.navigate([this.mitzvosService.mitzvahUrl, this.selectedId]);
+			this.router.navigate([this.mitzvosService.mitzvahUrl, mitzvah.id]);
 		}
 	}
 }

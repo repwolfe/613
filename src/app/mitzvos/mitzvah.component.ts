@@ -12,23 +12,21 @@ export class MitzvahComponent<T extends MitzvahModel> implements OnInit {
 	@Input() model: T;
 	@Output() mitzvahSelected = new EventEmitter<MitzvahComponent<T>>();
 	
-	selected = false;
-
 	constructor() { }
 
 	ngOnInit(): void {
 	}
 
-	get id() {
+	get id() : number {
 		return this.model._id;
 	}
 
 	onClick() {
-		this.selected = !this.selected;
+		this.model.selected = !this.model.selected;
 		this.mitzvahSelected.emit(this);
 	}
 
 	deselect() {
-		this.selected = false;
+		this.model.selected = false;
 	}
 }

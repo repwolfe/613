@@ -3,11 +3,35 @@
 	[ngClass]="{
 		aseh: model.asehOrLoSaseh === 'A',
 		loSaaseh: model.asehOrLoSaseh === 'L',
-		selected: selected
+		selected: model.selected
 	}"
 	(click)="onClick()">
+	<ng-container *ngIf="!model.selected then he"></ng-container>
+	<ng-container *ngIf="model.selected then heSelected"></ng-container>
+</div>
+
+<ng-template #he>
 	&rlm;<b>{{ model.mitzvahNumber }}</b><br>
 	<b>{{ model.madahTitle }}</b><br>
 	{{ model.bookName }} {{ model.chapter }}, {{ model.verse }}<br>
-	<!--<%- mitzvahTypeHe %>, <%- punishmentHe %>, <%- whoAppliesHe %>-->
-</div>
+	<!--{{ model.mitzvahTypeHe }}, {{ model.punishmentHe }}, {{ model.whoAppliesHe }}-->
+</ng-template>
+
+<ng-template #en>
+	<b>{{ model.mitzvahNumber }}</b><br>
+	<b>{{ model.mitzvahNameEn }}</b><br>
+	{{ model.bookNameEn }} {{ model.chapter }}:{{ model.verse }}<br>
+	<!--{{ model.mitzvahTypeEn }}, {{ model.punishmentEn }}, {{ model.whoAppliesEn }}-->
+</ng-template>
+
+<ng-template #heSelected>
+	&rlm;<b>{{ model.mitzvahNumber }}</b><br>
+	<b>{{ model.madahTitle }}</b><br>
+	{{ model.verseText }} ({{ model.bookName }} {{ model.chapter }}, {{ model.verse }})<br><br>
+	<!--{{ model.mitzvahTypeHe }}, {{ model.punishmentHe }}, {{ model.whoAppliesHe }}<br><br>-->
+	<div class="originalText">{{ model.originalText }}</div><!-- REMOVE -->
+</ng-template>
+
+<ng-template #enSelected>
+
+</ng-template>

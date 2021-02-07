@@ -3,10 +3,35 @@
 	[ngClass]="{
 		aseh: model.asehOrLoSaseh === 'A',
 		loSaaseh: model.asehOrLoSaseh === 'L',
-		selected: selected
+		selected: model.selected
 	}"
 	(click)="onClick()">
+	<ng-container *ngIf="!model.selected then he"></ng-container>
+	<ng-container *ngIf="model.selected then heSelect"></ng-container>
+</div>
+
+<ng-template #he>
 	&rlm;<b>{{ model.mitzvahNumber }}</b><br>
 	<b>{{ model.mitzvahTitle }}</b><br>
 	{{ model.mitzvahName }}<br>
-</div>
+</ng-template>
+
+<ng-template #en>
+	<b>{{ model.mitzvahNumber }}</b><br>
+	<b>{{ model.mitzvahTitle }}</b><br>
+	{{ model.mitzvahNameEn }}<br>
+</ng-template>
+
+<ng-template #heSelect>
+	&rlm;<b>{{ model.mitzvahNumber }}</b><br>
+	<b>{{ model.mitzvahTitle }}</b><br>
+	{{ model.mitzvahName }}<br>
+	<p>{{ model.enNote }}</p>
+</ng-template>
+
+<ng-template #enSelect>
+	<b>{{ model.mitzvahNumber }}</b><br>
+	<b>{{ model.mitzvahTitle }}</b><br>
+	{{ model.mitzvahNameEn }}<br>
+	<p>{{ model.enNote }}</p>
+</ng-template>

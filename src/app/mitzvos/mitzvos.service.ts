@@ -6,11 +6,12 @@ import { MitzvahModel } from './mitzvah.model';
 
 @Injectable()
 export class MitzvosService<T extends MitzvahModel> {
-	private mitzvahList: T[] = [];      // Cached list of the basic details of the mitzvos
-	private mitzvahDetails: T[] = [];   // Cached list of detailed mitzvos that were requested
+	private _mitzvahList: T[] = [];      // Cached list of the basic details of the mitzvos
+	private loadedDetails: Set<number> = new Set<number>();
+	private lastLoadedDetail: T;
+	private _selectedId: number = null;
 
-	listChanged = new Subject<T[]>();
-	mitzvahLoaded = new Subject<T>();
+	listChanged = new Subject<readonly T[]>();
 	
 	constructor(protected _mitzvahUrl: string, protected http: HttpService) {}
 
@@ -18,33 +19,71 @@ export class MitzvosService<T extends MitzvahModel> {
 		return this._mitzvahUrl;
 	}
 
+	get mitzvahList() : readonly T[] {
+		return this._mitzvahList;
+	}
+
+	get selectedId() : number {
+		return this._selectedId;
+	}
+
+	selectMitzvah(id: number) {
+		if (this._selectedId != null) {
+			// Deselect the previous mitzvah
+			this._mitzvahList[this._selectedId].selected = false;
+
+			// Clicked the same mitzvah as before. Do nothing more
+			if (this._selectedId == id) {
+				this._selectedId = null;
+				return;
+			}
+		}
+		this._selectedId = id;
+		this.loadMitzvah(id);
+	}
+
 	/**
 	 * Returns a copy of the list of mitzvos
 	 */
 	getMitzvos() {
 		if (this.mitzvahList.length == 0) {
-			this.http.getMitzvos<T[]>(this.mitzvahUrl)
+			this.http.getMitzvos<T>(this.mitzvahUrl)
 				.subscribe(mitzvos => {
-					this.mitzvahList = mitzvos;
-					this.listChanged.next(this.mitzvahList.slice());
+					this._mitzvahList = mitzvos;
+
+					// If loaded a mitzvah detail before the list was populated
+					if (this.lastLoadedDetail != null) {
+						this._mitzvahList[this.lastLoadedDetail._id] = this.lastLoadedDetail;
+						this.lastLoadedDetail = null;
+					}
+
+					this.listChanged.next(this.mitzvahList);
 				}, error => {
 					console.log(error);
 				});
 		}
-		return this.mitzvahList.slice();
+		return this.mitzvahList;
 	}
 	
 	/**
-	 * Returns the details of a particular mitzvah
+	 * Loads the details of a particular mitzvah
 	 */
-	getMitzvah(id: number) {
-		if (this.mitzvahDetails[id] == null) {
+	private loadMitzvah(id: number) {
+		if (!this.loadedDetails.has(id)) {
 			this.http.getMitzvah<T>(this.mitzvahUrl, id)
 				.subscribe(mitzvah => {
-					this.mitzvahDetails[id] = mitzvah;
-					this.mitzvahLoaded.next(Object.assign({}, mitzvah));  // Return a copy
+					if (this._selectedId == id) {
+						mitzvah.selected = true;
+					}
+					this.loadedDetails.add(id);
+					this.lastLoadedDetail = mitzvah;
+
+					// Put the mitzvah detail in the list, if populated
+					if (this._mitzvahList.length != 0) {
+						this._mitzvahList[id] = mitzvah;
+						this.listChanged.next(this.mitzvahList);
+					}	// If not, will add when it's loaded
 				});
 		}
-		return Object.assign({}, this.mitzvahDetails[id]);
 	}
 }
