@@ -1,9 +1,10 @@
-'use strict';
+"use strict";
 
-var toString = Object.prototype.toString
+var objToString = Object.prototype.toString, id = objToString.call(new Date());
 
-  , id = toString.call(new Date());
-
-module.exports = function (x) {
-	return (x && ((x instanceof Date) || (toString.call(x) === id))) || false;
+module.exports = function (value) {
+	return (
+		(value && !isNaN(value) && (value instanceof Date || objToString.call(value) === id)) ||
+		false
+	);
 };

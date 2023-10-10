@@ -28,11 +28,10 @@
         }
       },
       'xcode_settings': {
-        'CLANG_CXX_LANGUAGE_STANDARD': 'c++11',
         'CLANG_CXX_LIBRARY': 'libc++',
         'OTHER_LDFLAGS': [],
         'GCC_ENABLE_CPP_EXCEPTIONS': 'NO',
-        'MACOSX_DEPLOYMENT_TARGET': '10.7'
+        'MACOSX_DEPLOYMENT_TARGET': '10.11'
       },
       'include_dirs': [
         '<!(node -e "require(\'nan\')")',
@@ -68,21 +67,6 @@
               '<(libsass_library)',
             ],
           }
-        }],
-        ['OS=="win" and MSVS_VERSION == "2015"', {
-          'msvs_settings': {
-            'VCCLCompilerTool': {
-              'AdditionalOptions': [
-                # disable Thread-Safe "Magic" for local static variables
-                '/Zc:threadSafeInit-',
-              ],
-            },
-          },
-        }],
-        ['OS!="win"', {
-          'cflags_cc+': [
-            '-std=c++0x'
-          ]
         }]
       ]
     }

@@ -3,7 +3,6 @@
  */
 
 var fs = require('fs'),
-  mkdir = require('mkdirp'),
   path = require('path'),
   spawn = require('cross-spawn'),
   sass = require('../lib/extensions');
@@ -19,12 +18,12 @@ function afterBuild(options) {
   var install = sass.getBinaryPath();
   var target = path.join(__dirname, '..', 'build',
     options.debug ? 'Debug' :
-        process.config.target_defaults
-            ?  process.config.target_defaults.default_configuration
-            : 'Release',
+      process.config.target_defaults
+        ?  process.config.target_defaults.default_configuration
+        : 'Release',
     'binding.node');
 
-  mkdir(path.dirname(install), function(err) {
+  fs.mkdir(path.dirname(install), {recursive: true}, function(err) {
     if (err && err.code !== 'EEXIST') {
       console.error(err.message);
       return;

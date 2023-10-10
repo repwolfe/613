@@ -33,17 +33,17 @@
  * anywhere in the project.
  */
 
-import Webpack = require('.');
+import Webpack = require(".");
 
 export {};
 
-declare module '.' {
+declare module "." {
     namespace Stats {
         interface ToStringOptionsObject {
             /**
              * preset for the default values
              */
-            preset?: Preset;
+            preset?: Preset | undefined;
         }
     }
 }
