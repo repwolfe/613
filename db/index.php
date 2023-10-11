@@ -217,7 +217,7 @@ for ($i = $start; $i < count($paths); ++$i) {
 
 // Initialize every acceptable path
 for ($i = 0; $i < count($paths); ++$i) {
-	// Retreiving all entries
+	// Retrieving all entries
 	$query = $queriesLess[$i];
 	$app->get("/" . $paths[$i], function(Request $request, Response $response) use ($query) {
 		$sortBy = $request->getQueryParam("sortBy", $default="");

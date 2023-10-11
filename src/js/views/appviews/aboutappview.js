@@ -37,6 +37,28 @@ var AboutAppView = Backbone.View.extend({
 				<p>רוב הטקסט באו מאתר <a href="https://www.sefaria.org/?home" target="_blank"><strong>Sefaria</strong></a> (לפרטים נוספים, ראה להלן במקורות).
 				אנו מודים מאוד על מסירותם לטקסטים יהודיים, הופכים אותם לזמינים ברשת באופן מקוון לכולם.</p>
 
+				<h1>לעשות</h1>
+				<p>להלן רשימה לא ממצה על מה שעוד יש להשלים:</p>
+
+				<div id=\"todoList\">
+				<ul>
+				<li>כלול רישום ויזואלי של הדעות הבאות על מצוות תרי"ג:
+					<strong>הרב שמעון אבן גבירול</strong>, <strong>זוהר הרקיע</strong>, <strong>סמ\"ק</strong>, <strong>ספר חרדים</strong>, <strong>הרב סעדיה גאון</strong>,
+					<strong>ספר יראים</strong>, <strong>ר"י אלברגלוני</strong>, <strong>אתה הנחלת</strong>, <strong>הרב אליהו הזקן</strong>,
+					ואולי <strong>ספר המצוות הקצר</strong> מאת ה<strong>חפץ חיים</strong>.</li>
+				<li>היכולת למיין את המצוות לפי עשרת הדברות. התוכנית היא ליישם זאת לרשימותיו של <strong>הרב סעדיה גאון</strong>, מכיוון שכבר סיווג אותן כך (למרות ששתי הרשימות אינן זהות זה לזה, וזה יצור קשיים),
+					<strong>סמ\"ג</strong> (ש<strong>מאמר השכל</strong> כבר ממיין את הרישום שלו כך), ואולי הרמב\"ן (שממיין כך כמה מהמצוות).
+					כדאי גם לחקור את <strong>כתר תורה</strong> מאת <strong>הרב דוד ויטאל</strong>.</li>
+				<li>הפוך את האתר לידידותי לנייד.</li>
+				<li>תקן כמה באגים ליעילות מכיוון שהאתר לפעמים איטי, וכמה באגים חזותיים אחרים.</li>
+				<li>הוסף סרגל חיפוש יעיל.</li>
+				</ul>
+				</div>
+
+				<h1>עזור לתמוך בנו</h1>
+				<p>נותרה עוד הרבה עבודה לעשות, ולצערנו אנחנו לא יכולים לעשות את זה כל כך מהר בלי מימון. אם ברצונך לעזור לתמוך בנו בהגשמת מטרותינו, אנא צור קשר באמצעות דוא"ל:
+				<a href=\"mailto:contact@thetaryag.com">contact@thetaryag.com</a>. קיימות גם הזדמנויות חסות. אנו מצפים לשמוע ממך.</p>
+
 				<h1>מקורות</h1>
 
 				<ul>
@@ -79,7 +101,7 @@ var AboutAppView = Backbone.View.extend({
 			<h1>Overview</h1>
 
 			<p>Jewish tradition teaches us (for example, see Makkos 23b) that there are 613 commandments in the Torah (the Five Books of Moses), known as
-			the Taryag Mitzvos. A cursory glance at the Torah will yield many more than 613 commandents. Therefore, there must be some sort of criteria
+			the Taryag Mitzvos. A cursory glance at the Torah will yield many more than 613 commandments. Therefore, there must be some sort of criteria
 			to determine what makes the list of Taryag Mitzvos.	However, the Jewish Sages never specified which commandments written in the Torah made
 			the list. The Rishonim (the Medieval Rabbinic scholars) argued about the listing of the commandments, and it seems that all these opinions
 			were never collected in an organized way. The purpose of this project is to present most of the opinions in a visually pleasing manner.
@@ -97,6 +119,32 @@ var AboutAppView = Backbone.View.extend({
 
 			<p>Most of the textual data for this project came from <a href="https://www.sefaria.org/?home" target="_blank"><strong>Sefaria</strong></a>
 			(for more details, see below). We are extremely grateful for their dedication to Jewish texts, making them freely available online for all.</p>
+
+			<h1>TODO</h1>
+			<p>The following is a non-exhaustive list of what still needs to be completed:</p>
+
+			<div id=\"todoList\">
+			<ul>
+			<li>Include a visual listing of the following opinions on the Taryag Mitzvos:
+				<strong>Rav Shlomo ibn Gabirol</strong>, <strong>Zohar HaRakiah</strong>, <strong>Semak</strong>, <strong>Sefer Charedim</strong>,
+				<strong>Rav Saadiah Gaon</strong>, <strong>Sefer Yereim</strong>, <strong>Ri Albargaloni</strong>, <strong>Ata Hinchalta</strong>,
+				<strong>Rav Eliyahu HaZaken</strong>, and perhaps <strong>Sefer HaMitzvos HaKatzar</strong> by the <strong>Chofetz Chaim</strong>.</li>
+			<li>The ability to sort the mitzvos according to the Aseres HaDibros.
+				The plan is to implement this for the listings of <strong>Rav Saadiah Gaon</strong>, as he already categorized them this way
+				(although the two lists aren't exactly the same, which will create challenges), <strong>Semag</strong>
+				(<strong>Ma'amar HaSeichel</strong> sorts his listing this way), and perhaps <strong>Ramban</strong>
+				(who sorts some of the mitzvos this way). Also worth investigating is <strong>Keser Torah</strong> by <strong>Rav Dovid Vital</strong>.</li>
+			<li>Make the website mobile friendly.</li>
+			<li>Fix some efficiency bugs as the website is sometimes slow, and some other visual bugs.</li>
+			<li>Add an efficient search bar.</li>
+			</ul>
+			</div>
+
+			<h1>Help support us</h1>
+			<p>There's a lot of work still left to do, and unfortunately we can't do it so quickly without funding.
+				If you would like to help support us to accomplish our goals, please be in touch via email:
+				<a href=\"mailto:contact@thetaryag.com\">contact@thetaryag.com</a>. Sponsorship opportunities are also available.
+				We look forward to hearing from you.</p>
 
 			<h1>Sources</h1>
 

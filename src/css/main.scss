@@ -228,6 +228,16 @@ header {
 	li {
 		margin: 0 25px;
 	}
+
+	#todoList {
+		ul {
+			list-style-type: initial;
+		}
+
+		li {
+			margin: 0 50px;
+		}
+	}
 }
 
 #container {

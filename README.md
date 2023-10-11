@@ -47,7 +47,9 @@ There's a lot of work still left to do, and unfortunately we can't do it so quic
   1. Pull the project from git
   2. Install Slim, which creates a folder called `vendor`
   3. Navigate to the `db/scripts/` folder. Using sqlite, run the command `.read db.sql`, and then `.backup ../db.db`
-  4. Run the command `npm run build`, which creates an `index.php` file in the home directory, and builds `dist/bundle[hash].js`
+  4. If the node_modules folder is missing, run the command `npm install`
+  5. If `npm install` doesn't work, try the command `npm config set legacy-peer-deps true`
+  6. Run the command `npm run build`, which creates an `index.php` file in the home directory, and builds `dist/bundle[hash].js`
   
 ## Sources
 The textual data for the website's database came from a variety of sources, and other resources were used to organize the information appropriately.

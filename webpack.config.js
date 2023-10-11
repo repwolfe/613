@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: "./src/js/index.js",
+  devtool: 'source-map',
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -14,6 +15,7 @@ module.exports = {
   ],
   output: {
     path: __dirname + "/dist",
+    sourceMapFilename: "./bundle.js.map",
     filename: "bundle.[chunkhash].js"   // [contenthash] only works in webpack 4, not 3
   },
   module: {

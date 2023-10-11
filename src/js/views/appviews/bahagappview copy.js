@@ -11,24 +11,18 @@ var BahagAppView = MoneiMitzvahAppView.extend({
 	categoryTitlesEn: null,
 	numInCategory: 0,
 
-	/**
-	 * TODO: Fix the way this is set up. It's assuming the Bahag's list is in order
-	 * but if it were to be sorted a different way then the different category
-	 * lists and headers would break
-	 */
 	initialize: function() {
 		this.mitzvahList = new BahagList();
 
 		this.categoryTitlesHe = [...Bahag.categoriesHe];	// clone
 		this.categoryTitlesEn = [...Bahag.categoriesEn];
 
-		this.currentSortingId = "_id";	// Instead of mitzvahId
-		var mitzvahListUrl = this.mitzvahList.url;
-		this.mitzvahList.url += this.sortByParam + this.currentSortingId;
-
 		MoneiMitzvahAppView.prototype.initialize.apply(this);
-		this.mitzvahListUrl = mitzvahListUrl;		// super() overrides it, so reset it
-		this.makeHeader().insertAfter(this.$el.parent().children().eq(0));
+
+		for(let i = 0; i < this.categoryTitlesHe.length; ++i) {
+			this.makeHeader(i).appendTo(this.$el.parent());
+			$("<ul class=\"mitzvos\">").appendTo(this.$el.parent());
+		}
 	},
 
 	destroy: function() {
@@ -41,10 +35,17 @@ var BahagAppView = MoneiMitzvahAppView.extend({
 		this.$el.empty();
 	},
 
-	makeHeader: function() {
-		var header = $("<h1 class=\"mitzvahCatHeader\">");
-		header.html(this.categoryTitlesHe[this.currentCategory]);
+	makeHeader: function(category) {
+		var header = $("<h1 class=\"mitzvahCatHeader\" id=\"mitzvahCatHeader" + category + "\">");
+		header.html(this.categoryTitlesHe[category]);
 		return header;
+	},
+
+	selectCorrectList: function(category) {
+		this.currentCategory = category;
+		this.$el.removeAttr("id");
+		this.setElement($("#mitzvahCatHeader" + this.currentCategory).next());	// the adjacent mitzvos list
+		this.$el.attr("id", "mitzvos");
 	},
 
 	addTotalToHeader: function() {
@@ -60,7 +61,7 @@ var BahagAppView = MoneiMitzvahAppView.extend({
 		else {
 			headerTitle = this.categoryTitlesEn[this.currentCategory];
 		}
-		$(".mitzvahCatHeader").last().html(headerTitle);
+		$("#mitzvahCatHeader" + this.currentCategory).html(headerTitle);
 	},
 
 	addOne: function(mitzvah) {
@@ -68,16 +69,16 @@ var BahagAppView = MoneiMitzvahAppView.extend({
 
 		var category = mitzvah.get("categoryNum");
 		if (this.currentCategory != category) {
-			this.addTotalToHeader();
-			this.currentCategory = category;
+			this.selectCorrectList(category);
+			//this.addTotalToHeader();
 
 			this.finishAdding();
 
-			this.makeHeader().appendTo(this.$el.parent());
-			this.$el.removeAttr("id");
-			this.$el.attr("class", "mitzvos");
+			//this.makeHeader().appendTo(this.$el.parent());
+			//this.$el.removeAttr("id");
+			//this.$el.attr("class", "mitzvos");
 
-			this.makeNewList(this.$el.parent());
+			//this.makeNewList(this.$el.parent());
 			this.startAdding();
 		}
 
