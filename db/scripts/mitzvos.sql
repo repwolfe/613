@@ -645,7 +645,7 @@ insert into mitzvos values (617, 'מצות קרית שמע בערב', 'Reciting 
 insert into mitzvos values (618, 'מצות הקטרת באין הארבים', 'Burning the afternoon incense', 'A');
 insert into mitzvos values (619, 'מצות קרבן התמיד בין הערבים', 'The daily afternoon Tamid offering', 'A');
 insert into mitzvos values (620, 'מצות עבודת הכהנים בקרבנות', 'The Temple Service of the Kohanim with the offerings', 'A');
-insert into mitzvos values (621, 'מצות אכילת פירות שביעית', 'To only eat Shemittah fruit', 'A');
+insert into mitzvos values (621, 'מצות אכילת פירות שביעית', 'To only eat Shemittah fruit and not sell them', 'A');
 insert into mitzvos values (622, 'מצות ישיבת הארץ', 'To settle the land of Israel', 'A');
 insert into mitzvos values (623, 'מצות לקיים שבועה של רשות', 'To fulfill a vow to do something voluntary', 'A');
 insert into mitzvos values (624, 'מצות להניח אחת מן הרוחות בלי מצור בשעת מלחמה', 'To leave one side of a city during a siege unprotected', 'A');
@@ -704,6 +704,7 @@ insert into mitzvos values (675, 'שלא יחלל כהן גדול המקדש ב�
 insert into mitzvos values (676, 'שלא תטמא ב"ד את הארץ בלינת המת', 'For Beis Din not to profane the land by leaving a corpse hanging', 'L');
 insert into mitzvos values (677, 'שלא לחלוק על הכהונה', 'Not to dispute the Kehuna', 'L');
 insert into mitzvos values (678, 'שלא להנות מעגלה ערופה ופטר חמור', 'Not to benefit from the beheaded calf or firstborn of a donkey', 'L');
+-- Four more unique mitzvos of the Ramban which were forgotten are below (1020-1023)
 
 -- Semag's unique mitzvos
 insert into mitzvos values (679, 'מצות צדקות הדין על כל מאורע ויחשוב כי הכל לטובתו', 'To consider everything that happens to you to be for the good', 'A');
@@ -1003,6 +1004,13 @@ insert into mitzvos values (991, 'שלא להתפיס תמימים לבד הבי
 insert into mitzvos values (992, 'שלא לאכול בדרך זולל שמביא לידי מיתה', 'Not to eat like a glutton in a way that will lead to the death penalty', 'L');
 insert into mitzvos values (993, 'שלא לאכול דם איברים', 'Not to eat the blood found in an animal''s limbs', 'L');
 insert into mitzvos values (994, 'שלא להרבות עשיר למחצית השקל', 'For a wealthy person not to donate more than a half shekel', 'L');
+
+-- Four unique mitzvos of the Ramban that were forgotten
+-- TODO fix zoharHaRakiah and Ramban numbers to not have gaps
+insert into mitzvos values (1020, 'שלא לעשות קרבן מבעל מום', 'Not to offer in any way a blemished offering', 'L');
+insert into mitzvos values (1021, 'שלא לעשות מלחמה עם מואב', 'Not to wage war against Moav', 'L');
+insert into mitzvos values (1022, 'שלא לעשות מלחמה עם עמון', 'Not to wage war against Ammon', 'L');
+insert into mitzvos values (1023, 'שלא לעשות מלחמה עם עשיו', 'Not to wage war against Eisav', 'L');
 
 /**
 200 Aseh on Yechidim
